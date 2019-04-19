@@ -135,46 +135,12 @@ img {
 
 .site-header {
   height: 68px;
-  width: 100%;
-
-  border: 1px solid red;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  &-inner {
-    height: 100%;
-
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  &-logoType {
-    width: 20%;
-
-    display: inline;
-    flex-grow: 0;
-    margin: 0;
-    position: relative;
-  }
+  border: 1px solid white;
 
   &-nav {
-    width: 60%;
-
-    align-items: center;
-    display: flex;
-    justify-content: center;
-
     ul {
       width: 94%;
       max-width: 620px;
-
-      display: flex;
-      // justify-content: center;
-      align-items: center;
-      text-align: center;
 
       li {
         flex-grow: 1;
@@ -182,7 +148,6 @@ img {
         a {
           line-height: 1;
 
-          display: block;
           padding: 8px;
           position: relative;
           white-space: nowrap;
@@ -191,37 +156,26 @@ img {
     }
   }
 
-  &-action {
-    width: 20%;
-    min-width: 150px;
-
-    align-items: baseline;
-    display: flex;
-    justify-content: flex-end;
-  }
+  &-action { min-width: 150px; }
 }
 
 main {
   min-height: 600px;
-  background: #000;
 }
 
 .section-intro {
-  position: relative;
-  text-align: center;
+
+  background: #000;
 
   &-logo {
     width: 150px;
     height: 150px;
 
     border: 1px solid white;
-
-    margin: 0 auto 16px;
   }
 
   &-logoType {
     max-width: 260px;
-    margin: 0 auto;
   }
 }
 
@@ -234,122 +188,82 @@ main {
 }
 
 .section-venue {
-  position: relative;
   background-color: #444;
+}
 
-  &-gallery {
-    // position: absolute;
-	// top: 0;
-	// left: 0;
-	width: 1000px;
-	height: 100%;
-	overflow: hidden;
+.section-tickets {
+  background-color: #000;
 
-	ul {
-		width: auto;
-		height: 100%;
-		white-space: nowrap;
-	}
+  .eventbrite-embedded {
+    width: 100%;
+    height: 500px;
 
-	&-item {
-		height: 100%;
-		width: 600px;
-		display: inline-block;
-		&:nth-child(even) {
-			background-color: #000;
-		}
-
-		&:nth-child(odd){
-			background-color: #999;
-		}
-	}
+    border: 1px solid white;
   }
 }
 
-// .pt-9 {
-//   padding-top: 144px !important;
-// }
+.section-sponsors {
+  background-color: #444;
 
-// .pb-8 {
-//   padding-bottom: 96px !important;
-// }
+  &-list {
+    li {
+      width: calc(100% / 5);
+      max-width: calc(100% / 5);
 
-// .pb-9 {
-//   padding-bottom: 144px !important;
-// }
+      border: 1px solid white;
 
-// .mt-5 {
-//   margin-top: 36px !important;
-// }
+      flex-grow: 1;
+      padding: 20px 10px;
+    }
+  }
+}
 
-// .mb-3 {
-//   margin-bottom: 12px !important;
-// }
+.section-newsletter {
+  background-color: #000;
 
-// .mb-4 {
-//   margin-bottom: 24px !important;
-// }
+  &-logo {
+    width: 80px;
+    height: 80px;
 
-// .mb-5 {
-//   margin-bottom: 36px !important;
-// }
+    border: 1px solid white;
+  }
 
-// .h2 {
-//   letter-spacing: 0;
-//   line-height: 1.5;
-//   font-size: 20px;
-//   font-weight: 300;
+  form {
+    width: 588px;
+    max-width: 100%;
 
-//   display: block;
-// }
+    align-items: baseline;
+    display: flex;
 
-// .h3 {
-//   letter-spacing: 2px;
-//   line-height: 1.214;
-//   font-size: 30px;
-//   font-weight: 300;
+    input {
+      border: 0;
+      height: 47px;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-radius: none;
+      background: transparent;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      border-bottom: 1px solid #fff;
+    }
+  }
 
-//   display: block;
-// }
+}
 
-// .h4 {
-//   letter-spacing: 3px;
-//   line-height: 1.05;
-//   font-size: 18px;
-//   font-weight: 300;
+.overlay {
+  width: 100%;
+  height: 100%;
 
-//   display: block;
-// }
+  opacity: 0.7;
 
-// .h5 {
-//   letter-spacing: 3px;
-//   line-height: 1.05;
-//   font-size: 13px;
-//   font-weight: 300;
+  position: absolute;
 
-//   display: block;
-// }
-
-// .uppercase {
-//   text-transform: uppercase;
-// }
-
-// .text-center {
-//   text-align: center;
-// }
-
-// .mx-auto {
-//   margin-right: auto !important;
-//   margin-left: auto !important;
-// }
-
-// .col-md-8 {
-//   width: 66.6666666667%;
-// }
-
-// .col-md-8 {
-//   width: 66.6666666667%;
-// }
+  &-dark {
+    background-color: #000;
+  }
+}
 
 .container {
   max-width: 1152px;

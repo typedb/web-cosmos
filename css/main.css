@@ -121,74 +121,39 @@ img {
    ========================================================================== */
 .site-header {
   height: 68px;
-  width: 100%;
-  border: 1px solid red;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.site-header-inner {
-  height: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.site-header-logoType {
-  width: 20%;
-  display: inline;
-  flex-grow: 0;
-  margin: 0;
-  position: relative;
-}
-.site-header-nav {
-  width: 60%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  border: 1px solid white;
 }
 .site-header-nav ul {
   width: 94%;
   max-width: 620px;
-  display: flex;
-  align-items: center;
-  text-align: center;
 }
 .site-header-nav ul li {
   flex-grow: 1;
 }
 .site-header-nav ul li a {
   line-height: 1;
-  display: block;
   padding: 8px;
   position: relative;
   white-space: nowrap;
 }
 .site-header-action {
-  width: 20%;
   min-width: 150px;
-  align-items: baseline;
-  display: flex;
-  justify-content: flex-end;
 }
 
 main {
   min-height: 600px;
-  background: #000;
 }
 
 .section-intro {
-  position: relative;
-  text-align: center;
+  background: #000;
 }
 .section-intro-logo {
   width: 150px;
   height: 150px;
   border: 1px solid white;
-  margin: 0 auto 16px;
 }
 .section-intro-logoType {
   max-width: 260px;
-  margin: 0 auto;
 }
 
 .section-speakers {
@@ -200,29 +165,65 @@ main {
 }
 
 .section-venue {
-  position: relative;
   background-color: #444;
 }
-.section-venue-gallery {
-  width: 1000px;
-  height: 100%;
-  overflow: hidden;
-}
-.section-venue-gallery ul {
-  width: auto;
-  height: 100%;
-  white-space: nowrap;
-}
-.section-venue-gallery-item {
-  height: 100%;
-  width: 600px;
-  display: inline-block;
-}
-.section-venue-gallery-item:nth-child(even) {
+
+.section-tickets {
   background-color: #000;
 }
-.section-venue-gallery-item:nth-child(odd) {
-  background-color: #999;
+.section-tickets .eventbrite-embedded {
+  width: 100%;
+  height: 500px;
+  border: 1px solid white;
+}
+
+.section-sponsors {
+  background-color: #444;
+}
+.section-sponsors-list li {
+  width: calc(100% / 5);
+  max-width: calc(100% / 5);
+  border: 1px solid white;
+  flex-grow: 1;
+  padding: 20px 10px;
+}
+
+.section-newsletter {
+  background-color: #000;
+}
+.section-newsletter-logo {
+  width: 80px;
+  height: 80px;
+  border: 1px solid white;
+}
+.section-newsletter form {
+  width: 588px;
+  max-width: 100%;
+  align-items: baseline;
+  display: flex;
+}
+.section-newsletter form input {
+  border: 0;
+  height: 47px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: none;
+  background: transparent;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #fff;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+}
+.overlay-dark {
+  background-color: #000;
 }
 
 .container {

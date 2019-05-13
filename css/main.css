@@ -134,10 +134,16 @@ main {
   .section-intro-logoType {
     max-width: 260px; }
 
-.section-motives {
+.section-description {
   background-color: #444; }
 
+.section-motives {
+  background-color: #000; }
+
 .section-speakers {
+  background-color: #444; }
+
+.section-apply {
   background-color: #000; }
 
 .section-venue {

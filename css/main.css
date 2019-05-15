@@ -94,6 +94,12 @@ img {
   max-width: 100%;
   display: block; }
 
+code {
+  background: #747474;
+  padding: 0px 5px 2px 5px;
+  font-family: monospace;
+  font-size: 18px; }
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */

@@ -118,6 +118,13 @@ img {
   display: block;
 }
 
+code {
+  background: #747474;
+  padding: 0px 5px 2px 5px;
+  font-family: monospace;
+  font-size: 18px;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -179,11 +186,19 @@ main {
   }
 }
 
-.section-speakers {
+.section-description {
   background-color: #444;
 }
 
 .section-motives {
+  background-color: #000;
+}
+
+.section-speakers {
+  background-color: #444;
+}
+
+.section-apply {
   background-color: #000;
 }
 

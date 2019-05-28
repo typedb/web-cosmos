@@ -11,8 +11,7 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
-}
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -25,13 +24,11 @@ html {
  */
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
@@ -42,8 +39,7 @@ hr {
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -56,8 +52,7 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
@@ -65,15 +60,13 @@ video {
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea {
-  resize: vertical;
-}
+  resize: vertical; }
 
 /*
  * Custom resets
@@ -83,28 +76,29 @@ textarea {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  color: #fff;
-}
-*:before, *:after {
-  box-sizing: 0;
-}
+  color: #fff; }
+  *:before, *:after {
+    box-sizing: 0; }
 
 ol,
 ul {
   list-style: none;
-  margin: 0;
-}
+  margin: 0; }
 
 a {
   color: inherit;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 img {
   height: auto;
   max-width: 100%;
-  display: block;
-}
+  display: block; }
+
+code {
+  background: #747474;
+  padding: 0px 5px 2px 5px;
+  font-family: monospace;
+  font-size: 18px; }
 
 /* ==========================================================================
    Browser Upgrade Prompt
@@ -113,136 +107,115 @@ img {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
-}
+  padding: 0.2em 0; }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 .site-header {
   height: 68px;
-  border: 1px solid white;
-}
-.site-header-nav ul {
-  width: 94%;
-  max-width: 620px;
-}
-.site-header-nav ul li {
-  flex-grow: 1;
-}
-.site-header-nav ul li a {
-  line-height: 1;
-  padding: 8px;
-  position: relative;
-  white-space: nowrap;
-}
-.site-header-action {
-  min-width: 150px;
-}
+  border: 1px solid white; }
+  .site-header-nav ul {
+    width: 94%;
+    max-width: 620px; }
+    .site-header-nav ul li {
+      flex-grow: 1; }
+      .site-header-nav ul li a {
+        line-height: 1;
+        padding: 8px;
+        position: relative;
+        white-space: nowrap; }
+  .site-header-action {
+    min-width: 150px; }
 
 main {
-  min-height: 600px;
-}
+  min-height: 600px; }
 
 .section-intro {
-  background: #000;
-}
-.section-intro-logo {
-  width: 150px;
-  height: 150px;
-  border: 1px solid white;
-}
-.section-intro-logoType {
-  max-width: 260px;
-}
+  background: #000; }
+  .section-intro-logo {
+    width: 150px;
+    height: 150px;
+    border: 1px solid white; }
+  .section-intro-logoType {
+    max-width: 260px; }
 
-.section-speakers {
-  background-color: #444;
-}
+.section-description {
+  background-color: #444; }
 
 .section-motives {
-  background-color: #000;
-}
+  background-color: #000; }
+
+.section-speakers {
+  background-color: #444; }
+
+.section-apply {
+  background-color: #000; }
 
 .section-venue {
-  background-color: #444;
-}
+  background-color: #444; }
 
 .section-tickets {
-  background-color: #000;
-}
-.section-tickets .eventbrite-embedded {
-  width: 100%;
-  height: 500px;
-  border: 1px solid white;
-}
+  background-color: #000; }
+  .section-tickets .eventbrite-embedded {
+    width: 100%;
+    height: 500px;
+    border: 1px solid white; }
 
 .section-sponsors {
-  background-color: #444;
-}
-.section-sponsors-list li {
-  width: calc(100% / 5);
-  max-width: calc(100% / 5);
-  border: 1px solid white;
-  flex-grow: 1;
-  padding: 20px 10px;
-}
+  background-color: #444; }
+  .section-sponsors-list li {
+    width: calc(100% / 5);
+    max-width: calc(100% / 5);
+    border: 1px solid white;
+    flex-grow: 1;
+    padding: 20px 10px; }
 
 .section-newsletter {
-  background-color: #000;
-}
-.section-newsletter-logo {
-  width: 80px;
-  height: 80px;
-  border: 1px solid white;
-}
-.section-newsletter form {
-  width: 588px;
-  max-width: 100%;
-  align-items: baseline;
-  display: flex;
-}
-.section-newsletter form input {
-  border: 0;
-  height: 47px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  border-radius: none;
-  background: transparent;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  border-bottom: 1px solid #fff;
-}
+  background-color: #000; }
+  .section-newsletter-logo {
+    width: 80px;
+    height: 80px;
+    border: 1px solid white; }
+  .section-newsletter form {
+    width: 588px;
+    max-width: 100%;
+    align-items: baseline;
+    display: flex; }
+    .section-newsletter form input {
+      border: 0;
+      height: 47px;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-radius: none;
+      background: transparent;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      border-bottom: 1px solid #fff; }
 
 .overlay {
   width: 100%;
   height: 100%;
   opacity: 0.7;
-  position: absolute;
-}
-.overlay-dark {
-  background-color: #000;
-}
+  position: absolute; }
+  .overlay-dark {
+    background-color: #000; }
 
 .container {
   max-width: 1152px;
   width: 94%;
-  padding: 0;
-}
-.container:before {
-  display: table;
-  content: "";
-}
-.container-wide {
-  width: 94%;
-  max-width: 1440px;
-}
-.container-full {
-  max-width: 100%;
-  overflow: hidden;
-}
+  padding: 0; }
+  .container:before {
+    display: table;
+    content: ""; }
+  .container-wide {
+    width: 94%;
+    max-width: 1440px; }
+  .container-full {
+    max-width: 100%;
+    overflow: hidden; }
 
 .button {
   background: transparent;
@@ -254,8 +227,7 @@ main {
   text-align: center;
   display: inline-block;
   padding: 12px 16px;
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /* ==========================================================================
    Helper classes
@@ -264,8 +236,7 @@ main {
  * Hide visually and from screen readers
  */
 .hidden {
-  display: none !important;
-}
+  display: none !important; }
 
 /*
 * Hide only visually, but have it available for screen readers:
@@ -285,8 +256,7 @@ main {
   position: absolute;
   width: 1px;
   white-space: nowrap;
-  /* 1 */
-}
+  /* 1 */ }
 
 /*
 * Extends the .visuallyhidden class to allow the element
@@ -301,15 +271,13 @@ main {
   overflow: visible;
   position: static;
   width: auto;
-  white-space: inherit;
-}
+  white-space: inherit; }
 
 /*
 * Hide visually and from screen readers, but maintain layout
 */
 .invisible {
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
 * Clearfix: contain floats
@@ -327,12 +295,10 @@ main {
   content: " ";
   /* 1 */
   display: table;
-  /* 2 */
-}
+  /* 2 */ }
 
 .clearfix:after {
-  clear: both;
-}
+  clear: both; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -340,11 +306,11 @@ main {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
+  /* Style adjustments for viewports that meet the condition */ }
+
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
+  /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -359,63 +325,41 @@ main {
     /* Black prints faster */
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
+    text-shadow: none !important; }
   a,
   a:visited {
-    text-decoration: underline;
-  }
-
+    text-decoration: underline; }
   a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
+    content: " (" attr(href) ")"; }
   abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
+    content: " (" attr(title) ")"; }
   /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
-  }
-
+    content: ""; }
   pre {
-    white-space: pre-wrap !important;
-  }
-
+    white-space: pre-wrap !important; }
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
   thead {
-    display: table-header-group;
-  }
-
+    display: table-header-group; }
   tr,
   img {
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3;
-  }
-
+    widows: 3; }
   h2,
   h3 {
-    page-break-after: avoid;
-  }
-}
+    page-break-after: avoid; } }

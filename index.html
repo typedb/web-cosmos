@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
@@ -185,7 +186,8 @@
                 <div class="col-10 cl-md-8 mx-auto">
                     <p class="h2 Geogrotesque-Md">The Cosmos Voyagers</p>
                     <div class="row pt-8 pb-8">
-                        <ul class="w-100 d-flex flex-wrap align-items-center justify-content-center" data-animate-in="up">
+                        <ul class="w-100 d-flex flex-wrap align-items-center justify-content-center"
+                            data-animate-in="up">
                             <li>
                                 <a href="#" target="_blank">
                                     <img src="img/speakers/1.png" alt="speaker 1" />
@@ -223,9 +225,9 @@
                             </li>
                         </ul>
                     </div>
-                        <a class="button h5" href="#">
-                            See All Speakers
-                        </a>
+                    <a class="button h5" href="#">
+                        See All Speakers
+                    </a>
                 </div>
                 <!-- illustrations -->
                 <div class="planet-4"></div>
@@ -262,7 +264,8 @@
                 <div class="row">
                     <div class="col-3 cl-md-8 mx-auto">
                         <div style="margin-top: 88px;">
-                            <p class="h2 Geogrotesque-Md text-capitalize">Kensington <br />Conference and <br />Events Centre</p>
+                            <p class="h2 Geogrotesque-Md text-capitalize">Kensington <br />Conference and <br />Events
+                                Centre</p>
                             <p class="h4 Titillium-Lt pb-3 pt-3" style="color: #BDB5FF; line-height: 35px;">
                                 Kensington Town Hall,<br />
                                 Hornton Street,<br />
@@ -275,7 +278,7 @@
                         </div>
                     </div>
                     <div class="col-7">
-                        <img src="img/london.svg" data-animate-in="fade"/>
+                        <img src="img/london.svg" data-animate-in="fade" />
                     </div>
                 </div>
             </div>
@@ -293,9 +296,26 @@
             <div class="container pt-11 pb-11 text-center">
                 <div class="col-10 cl-md-8 mx-auto">
                     <p class="h2 Geogrotesque-Md">Get Tickets</p>
-                    <div class="eventbrite-embedded mt-5">
+                    <div id="eventbrite-widget-container-58504110369" class="eventbrite-embedded mt-5"></div>
 
-                    </div>
+                    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+                    <script type="text/javascript">
+                        // var exampleCallback = function () {
+                        //     console.log('Order complete!');
+                        // };
+
+                        window.EBWidgets.createWidget({
+                            // Required
+                            widgetType: 'checkout',
+                            eventId: '58504110369',
+                            iframeContainerId: 'eventbrite-widget-container-58504110369',
+
+                            // Optional
+                            iframeContainerHeight: 451,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+                            // onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+                        });
+                    </script>
                 </div>
             </div>
 

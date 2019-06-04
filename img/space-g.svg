@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3177px" height="1000px" viewBox="0 0 3177 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="3177" height="1000"></rect>
+        <linearGradient x1="48.3272298%" y1="3.50256216%" x2="48.3272298%" y2="88.3372759%" id="linearGradient-3">
+            <stop stop-color="#080642" offset="0%"></stop>
+            <stop stop-color="#170C44" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="48.2913246%" x2="49.1798706%" y2="50.6252833%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <rect stroke="#979797" x="0.5" y="0.5" width="3176" height="999"></rect>
+            <rect id="BG-Copy-4" fill="url(#linearGradient-3)" mask="url(#mask-2)" x="0" y="-21" width="3177" height="1021"></rect>
+            <path d="M764.225255,471.242198 C1028.5359,579.702488 1028.5359,701.139988 1565.15494,718.905613 C2101.77399,736.671238 2304.40579,448.01692 2778.22611,528.188795 C3094.10632,581.636712 3284.74926,738.817057 3350.15494,999.729832 L-173.845057,999.729832 C-220.323107,699.184039 -196.83092,503.878862 -103.368495,413.814302 C36.8251429,278.71746 499.914615,362.781908 764.225255,471.242198 Z" id="Path-7-Copy" fill="url(#linearGradient-4)" opacity="0.023176" mask="url(#mask-2)" transform="translate(1576.577471, 671.864916) scale(-1, 1) translate(-1576.577471, -671.864916) "></path>
+        </g>
+    </g>
+</svg>

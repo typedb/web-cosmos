@@ -1,0 +1,71 @@
+.section-speakers {
+  position: relative;
+
+  .container {
+    position: relative;
+  }
+
+  .space {
+    @include absolute-background(100%, 1964px, 0px, cover, repeat);
+
+    background-image: url(../img/space-c.svg);
+
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .stars {
+    @include absolute-background(100%, 760px, 50px, auto, repeat);
+
+    background-image: url(../img/stars-c.svg);
+    z-index: -1;
+  }
+
+  .planet-4,
+  .planet-5 {
+    @include absolute-background(160px, 160px, 0px, contain, no-repeat);
+
+    background-position: center center;
+    z-index: 0;
+  }
+
+  .planet-4 {
+    background-image: url(../img/planet-4.svg);
+    left: 0px;
+    top: -40px;
+  }
+
+  .planet-5 {
+    background-image: url(../img/planet-5.svg);
+    bottom: -40px;
+    right: 0px;
+  }
+
+  ul {
+    li {
+      width: 160px;
+
+      background-image: url(../img/speaker-bg.svg);
+      background-position: top center;
+      background-repeat: no-repeat;
+
+      margin-right: 60px;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin: 10px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

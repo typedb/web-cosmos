@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="587px" viewBox="0 0 1920 587" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>Path 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="45.1150609%" x2="49.1798706%" y2="51.7876248%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.043176">
+        <g id="Grakn-Presentation1" transform="translate(0.000000, -4897.000000)" fill="url(#linearGradient-1)">
+            <g id="7th-section-" transform="translate(-243.000000, 4821.000000)">
+                <path d="M242.657101,76.0794512 C474.473002,313.651484 769.253968,438.359375 1127,450.203125 C1663.61905,467.96875 1866.25085,179.314432 2340.07116,259.486307 C2655.95137,312.934224 2676.49564,441.395161 2401.70398,644.86912 C1307.85502,979.115592 592.578976,966.782258 255.875851,607.86912 C-80.8272737,248.955981 -85.2335237,71.6927585 242.657101,76.0794512 Z" id="Path-7"></path>
+            </g>
+        </g>
+    </g>
+</svg>

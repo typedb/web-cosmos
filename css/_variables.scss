@@ -1,41 +1,4 @@
-// overriding bootstrap variables
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
-
-$spacer: 1rem !default;
-$spacers: () !default;
-$spacers: map-merge(
-  (
-    0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 2.25),
-    6: ($spacer * 3),
-    7: ($spacer * 4.5),
-    8: ($spacer * 6),
-    9: ($spacer * 9)
-  ),
-  $spacers
-);
-
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$sizes: map-merge(
-  (
-    20: 20%,
-    25: 25%,
-    50: 50%,
-    60: 60%,
-    75: 75%,
-    100: 100%,
-    auto: auto
-  ),
-  $sizes
-);
+// colors
+$color-brand: #13EBA8;
+$color-text-on-brand: #240F61;
+$color-bg-brand: #321472;

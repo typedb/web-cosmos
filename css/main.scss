@@ -1,3 +1,5 @@
+@import "./variables";
+
 /*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -38,19 +40,6 @@ html {
 }
 
 /*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
@@ -63,24 +52,6 @@ img,
 svg,
 video {
   vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
 }
 
 /*
@@ -107,8 +78,14 @@ ul {
 }
 
 a {
-  color: inherit;
+  color: $color-brand;
   text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: $color-brand;
+  }
 }
 
 img {
@@ -119,10 +96,13 @@ img {
 }
 
 code {
-  background: #747474;
-  padding: 0px 5px 2px 5px;
-  font-family: monospace;
-  font-size: 18px;
+  background: $color-bg-brand;
+  padding: 3px 5px;
+  font-family: "sf mono";
+  font-size: 16px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /* ==========================================================================
@@ -137,134 +117,188 @@ code {
 }
 
 /* ==========================================================================
+   Generic styles
+   ========================================================================== */
+.text-color-brand {
+  color: $color-brand;
+}
+
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-.site-header {
-  height: 68px;
-  border: 1px solid white;
+@import "./mixins";
+@import "./header";
+@import "./intro";
+@import "./motives";
+@import "./speakers";
+@import "./venue";
+@import ".//tickets";
 
-  &-nav {
-    ul {
-      width: 94%;
-      max-width: 620px;
+.divider {
+  width: 100%;
+  height: 28px;
 
-      li {
-        flex-grow: 1;
+  background-image: url(../img/divider.png);
+  background-repeat: no-repeat;
+  background-position: center center;
 
-        a {
-          line-height: 1;
-
-          padding: 8px;
-          position: relative;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-
-  &-action { min-width: 150px; }
+  margin: 0 auto;
 }
 
-main {
-  min-height: 600px;
-}
+*[data-animate-in="fade"] {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
 
-.section-intro {
-
-  background: #000;
-
-  &-logo {
-    width: 150px;
-    height: 150px;
-
-    border: 1px solid white;
-  }
-
-  &-logoType {
-    max-width: 260px;
+  &.in-view {
+    transition-delay: 0.4s;
+    opacity: 1;
   }
 }
 
-.section-description {
-  background-color: #444;
+*[data-animate-in="right"] {
+  opacity: 0;
+  transform: translate3d(100px, 0px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.section-motives {
-  background-color: #000;
+*[data-animate-in="up"] {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.section-speakers {
-  background-color: #444;
+
+*[data-animate-in="left"] {
+  opacity: 0;
+  transform: translate3d(-100px, 0px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+
+  &.in-view {
+    opacity: 1;
+    transform: none;
+  }
 }
+
 
 .section-apply {
-  background-color: #000;
-}
-
-.section-venue {
-  background-color: #444;
-}
-
-.section-tickets {
-  background-color: #000;
-
-  .eventbrite-embedded {
-    width: 100%;
-    height: 500px;
-
-    border: 1px solid white;
-  }
+  width: 100%;
+  background-image: url(../img/solar-system.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .section-sponsors {
-  background-color: #444;
+  position: relative;
 
-  &-list {
+  .space {
+    @include absolute-background(100%, 100%, 0px, cover, repeat);
+
+    background-image: url(../img/space-f.svg);
+    z-index: -2;
+  }
+
+  ul {
     li {
-      width: calc(100% / 5);
-      max-width: calc(100% / 5);
+      width: 160px;
+      margin-right: 60px;
+      padding-top: 32px;
 
-      border: 1px solid white;
-
-      flex-grow: 1;
-      padding: 20px 10px;
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }
 
 .section-newsletter {
-  background-color: #000;
-
   &-logo {
-    width: 80px;
-    height: 80px;
-
-    border: 1px solid white;
+    width: 115px;
+    height: 104px;
   }
 
   form {
     width: 588px;
     max-width: 100%;
 
-    align-items: baseline;
-    display: flex;
-
     input {
-      border: 0;
-      height: 47px;
-      border: none;
-      outline: none;
+      height: 49px;
+      width: 400px;
+
+      background-color: #120a39;
+      border: 1px solid #bdb5ff;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
       box-shadow: none;
-      border-radius: none;
-      background: transparent;
       font-size: 13px;
+      outline: none;
       text-transform: uppercase;
       letter-spacing: 3px;
-      border-bottom: 1px solid #fff;
+
+      display: inline;
+      padding: 5px 10px;
+
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #bdb5ff;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #bdb5ff;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #bdb5ff;
+      }
+    }
+
+    button {
+      height: 49px;
+      border-radius: 0 5px 5px 0;
+
+      display: inline;
     }
   }
 
+  .container {
+    position: relative;
+  }
+
+  .planet-3,
+  .spaceship {
+    background-position: center center;
+  }
+
+  .planet-3 {
+    @include absolute-background(138px, 138px, 0, auto, no-repeat);
+
+    background-image: url(../img/planet-3.svg);
+    bottom: 100px;
+    right: 40px;
+    z-index: -1;
+  }
+
+  .spaceship {
+    @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+
+    background-image: url(../img/spaceship.svg);
+    top: 20px;
+    left: 60px;
+    z-index: -1;
+  }
 }
 
 .overlay {
@@ -281,7 +315,8 @@ main {
 }
 
 .container {
-  max-width: 1152px;
+  // max-width: 1152px;
+  max-width: 1400px;
   width: 94%;
   padding: 0;
 
@@ -302,17 +337,53 @@ main {
 }
 
 .button {
-  background: transparent;
-  border: 1px solid white;
+  background: $color-brand;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  font-weight: 500;
+  color: $color-text-on-brand !important;
+  font-family: "Titillium-SmBd";
   text-align: center;
 
   display: inline-block;
   padding: 12px 16px;
   vertical-align: middle;
+
+  &:hover {
+    background-color: darken($color-brand, 5%);
+    text-decoration: none;
+    bottom: 0;
+  }
+}
+
+footer {
+  position: relative;
+
+  .space {
+    @include absolute-background(100%, 1202px, 0px, cover, no-repeat);
+
+    background-image: url(../img/space-g.png);
+    background-position: bottom center;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .container {
+    border-top: 1px solid #4446B6;
+
+    .social-links, .footer-top-line {
+      a {
+        color: white;
+        margin-left: 16px;
+      }
+    }
+
+    .by-grakn {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* ==========================================================================

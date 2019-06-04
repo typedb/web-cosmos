@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="800px" viewBox="0 0 1920 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>BG</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="48.3272298%" y1="5.61210517%" x2="48.3272298%" y2="88.3372759%" id="linearGradient-1">
+            <stop stop-color="#170C44" offset="0%"></stop>
+            <stop stop-color="#0F0538" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Grakn-Presentation1" transform="translate(0.000000, -4863.000000)" fill="url(#linearGradient-1)">
+            <g id="7th-section-" transform="translate(-243.000000, 4821.000000)">
+                <rect id="BG" x="243" y="42" width="1920" height="800"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+@mixin absolute-background($width, $height, $margin, $bg-size, $bg-repeat) {
+  @if ($margin > 0) {
+    width: calc(#{$width} - (#{$margin} * 2));
+    height: calc(#{$height} - (#{$margin} * 2));
+  } @else {
+    width: $width;
+    height: $height;
+  }
+
+  background-size: $bg-size;
+  background-repeat: $bg-repeat;
+  position: absolute;
+  margin: $margin;
+}

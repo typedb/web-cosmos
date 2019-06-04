@@ -1,0 +1,92 @@
+.section-intro {
+
+  .stars {
+    @include absolute-background(100%, 773px, 50px, contain, no-repeat);
+
+    background-image: url(../img/stars-a.svg);
+    z-index: -10;
+  }
+
+  .space {
+    @include absolute-background(100%, 1500px, 0, auto, repeat);
+
+    background-image: url(../img/space-a.svg);
+    z-index: -11;
+  }
+
+  .futuristic-city {
+    @include absolute-background(100%, 800px, 0, cover, no-repeat);
+
+    background-image: url(../img/futuristic-city-bg.svg);
+    background-position: center bottom;
+    bottom: 0;
+  }
+
+  .sub-section-summary {
+    padding-top: 216px;
+
+    &-logo {
+      width: 150px;
+      height: 150px;
+    }
+
+    &-logoType {
+      max-width: 260px;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .planet-1,
+    .planet-2,
+    .planet-3,
+    .spaceship {
+      background-position: center center;
+    }
+
+    .planet-1 {
+      @include absolute-background(205px, 205px, 0, auto, no-repeat);
+
+      background-image: url(../img/planet-1.svg);
+      right: 0;
+      top: -90px;
+      z-index: -8;
+    }
+
+    .planet-2 {
+      @include absolute-background(238px, 172px, 0, auto, no-repeat);
+
+      background-image: url(../img/planet-2.svg);
+      top: -60px;
+      z-index: -9;
+    }
+
+    .planet-3 {
+      @include absolute-background(138px, 138px, 0, auto, no-repeat);
+
+      background-image: url(../img/planet-3.svg);
+      bottom: 0;
+      left: 100px;
+      z-index: -7;
+    }
+
+    .spaceship {
+      @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+
+      background-image: url(../img/spaceship.svg);
+      bottom: 0;
+      right: 60px;
+      z-index: -6;
+    }
+  }
+
+  .sub-section-description {
+    height: 750px;
+
+    .h5 {
+      line-height: 28px;
+      letter-spacing: 1px;
+    }
+  }
+}

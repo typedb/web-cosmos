@@ -1,0 +1,43 @@
+.site-header {
+  height: 90px;
+  transition: background .26s ease-in-out;
+
+  &.is-scrolling {
+    background: #190d47;
+  }
+
+  &-logo {
+    a {
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    img { margin-top: -10px;}
+    span { line-height: 68px; }
+  }
+
+  &-nav {
+    ul {
+      width: 94%;
+      max-width: 620px;
+
+      li {
+        font-size: 18px;
+        flex-grow: 1;
+
+        a {
+          color: white;
+          line-height: 1;
+
+          padding: 8px;
+          position: relative;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &-action {
+    font-size: 18px;
+    min-width: 150px;
+  }
+}

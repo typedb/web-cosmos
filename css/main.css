@@ -11,7 +11,8 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -24,22 +25,13 @@ html {
  */
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none; }
-
-/*
- * A better looking default horizontal rule
- */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0; }
+  text-shadow: none;
+}
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -52,21 +44,8 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle; }
-
-/*
- * Remove default fieldset styles.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0; }
-
-/*
- * Allow only vertical resizing of textareas.
- */
-textarea {
-  resize: vertical; }
+  vertical-align: middle;
+}
 
 /*
  * Custom resets
@@ -76,29 +55,41 @@ textarea {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  color: #fff; }
-  *:before, *:after {
-    box-sizing: 0; }
+  color: #fff;
+}
+*:before, *:after {
+  box-sizing: 0;
+}
 
 ol,
 ul {
   list-style: none;
-  margin: 0; }
+  margin: 0;
+}
 
 a {
-  color: inherit;
-  text-decoration: none; }
+  color: #13EBA8;
+  text-decoration: none;
+}
+a:hover, a:focus, a:visited {
+  color: #13EBA8;
+}
 
 img {
   height: auto;
   max-width: 100%;
-  display: block; }
+  display: block;
+}
 
 code {
-  background: #747474;
-  padding: 0px 5px 2px 5px;
-  font-family: monospace;
-  font-size: 18px; }
+  background: #321472;
+  padding: 3px 5px;
+  font-family: "sf mono";
+  font-size: 16px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
 
 /* ==========================================================================
    Browser Upgrade Prompt
@@ -107,127 +98,545 @@ code {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0; }
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Generic styles
+   ========================================================================== */
+.text-color-brand {
+  color: #13EBA8;
+}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 .site-header {
-  height: 68px;
-  border: 1px solid white; }
-  .site-header-nav ul {
-    width: 94%;
-    max-width: 620px; }
-    .site-header-nav ul li {
-      flex-grow: 1; }
-      .site-header-nav ul li a {
-        line-height: 1;
-        padding: 8px;
-        position: relative;
-        white-space: nowrap; }
-  .site-header-action {
-    min-width: 150px; }
+  height: 90px;
+  transition: background .26s ease-in-out;
+}
+.site-header.is-scrolling {
+  background: #190d47;
+}
+.site-header-logo a {
+  margin-top: 10px;
+  text-decoration: none;
+}
+.site-header-logo img {
+  margin-top: -10px;
+}
+.site-header-logo span {
+  line-height: 68px;
+}
+.site-header-nav ul {
+  width: 94%;
+  max-width: 620px;
+}
+.site-header-nav ul li {
+  font-size: 18px;
+  flex-grow: 1;
+}
+.site-header-nav ul li a {
+  color: white;
+  line-height: 1;
+  padding: 8px;
+  position: relative;
+  white-space: nowrap;
+}
+.site-header-action {
+  font-size: 18px;
+  min-width: 150px;
+}
 
-main {
-  min-height: 600px; }
-
-.section-intro {
-  background: #000; }
-  .section-intro-logo {
-    width: 150px;
-    height: 150px;
-    border: 1px solid white; }
-  .section-intro-logoType {
-    max-width: 260px; }
-
-.section-description {
-  background-color: #444; }
+.section-intro .stars {
+  width: calc(100% - (50px * 2));
+  height: calc(773px - (50px * 2));
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 50px;
+  background-image: url(../img/stars-a.svg);
+  z-index: -10;
+}
+.section-intro .space {
+  width: 100%;
+  height: 1500px;
+  background-size: auto;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/space-a.svg);
+  z-index: -11;
+}
+.section-intro .futuristic-city {
+  width: 100%;
+  height: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/futuristic-city-bg.svg);
+  background-position: center bottom;
+  bottom: 0;
+}
+.section-intro .sub-section-summary {
+  padding-top: 216px;
+}
+.section-intro .sub-section-summary-logo {
+  width: 150px;
+  height: 150px;
+}
+.section-intro .sub-section-summary-logoType {
+  max-width: 260px;
+}
+.section-intro .sub-section-summary .container {
+  position: relative;
+}
+.section-intro .sub-section-summary .planet-1,
+.section-intro .sub-section-summary .planet-2,
+.section-intro .sub-section-summary .planet-3,
+.section-intro .sub-section-summary .spaceship {
+  background-position: center center;
+}
+.section-intro .sub-section-summary .planet-1 {
+  width: 205px;
+  height: 205px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-1.svg);
+  right: 0;
+  top: -90px;
+  z-index: -8;
+}
+.section-intro .sub-section-summary .planet-2 {
+  width: 238px;
+  height: 172px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-2.svg);
+  top: -60px;
+  z-index: -9;
+}
+.section-intro .sub-section-summary .planet-3 {
+  width: 138px;
+  height: 138px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-3.svg);
+  bottom: 0;
+  left: 100px;
+  z-index: -7;
+}
+.section-intro .sub-section-summary .spaceship {
+  width: 129px;
+  height: 190px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/spaceship.svg);
+  bottom: 0;
+  right: 60px;
+  z-index: -6;
+}
+.section-intro .sub-section-description {
+  height: 750px;
+}
+.section-intro .sub-section-description .h5 {
+  line-height: 28px;
+  letter-spacing: 1px;
+}
 
 .section-motives {
-  background-color: #000; }
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+.section-motives .stars {
+  width: calc(100% - (50px * 2));
+  height: calc(100% - (50px * 2));
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 50px;
+  background-image: url(../img/stars-b.svg);
+  z-index: -1;
+}
+.section-motives .space {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/space-b.svg);
+  z-index: -2;
+}
+.section-motives p {
+  line-height: 28px;
+}
+.section-motives .h2 {
+  line-height: 50px;
+}
 
 .section-speakers {
-  background-color: #444; }
+  position: relative;
+}
+.section-speakers .container {
+  position: relative;
+}
+.section-speakers .space {
+  width: 100%;
+  height: 1964px;
+  background-size: cover;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/space-c.svg);
+  bottom: 0;
+  z-index: -2;
+}
+.section-speakers .stars {
+  width: calc(100% - (50px * 2));
+  height: calc(760px - (50px * 2));
+  background-size: auto;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 50px;
+  background-image: url(../img/stars-c.svg);
+  z-index: -1;
+}
+.section-speakers .planet-4,
+.section-speakers .planet-5 {
+  width: 160px;
+  height: 160px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-position: center center;
+  z-index: 0;
+}
+.section-speakers .planet-4 {
+  background-image: url(../img/planet-4.svg);
+  left: 0px;
+  top: -40px;
+}
+.section-speakers .planet-5 {
+  background-image: url(../img/planet-5.svg);
+  bottom: -40px;
+  right: 0px;
+}
+.section-speakers ul li {
+  width: 160px;
+  background-image: url(../img/speaker-bg.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  margin-right: 60px;
+}
+.section-speakers ul li:last-child {
+  margin: 0;
+}
+.section-speakers ul li a:hover {
+  text-decoration: none;
+}
+.section-speakers ul li img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 10px;
+  margin-bottom: 25px;
+}
 
-.section-apply {
-  background-color: #000; }
-
-.section-venue {
-  background-color: #444; }
+.section-venue .space {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/space-d.svg);
+  z-index: -2;
+}
+.section-venue .stars {
+  width: calc(100% - (50px * 2));
+  height: calc(668px - (50px * 2));
+  background-size: auto;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 50px;
+  background-image: url(../img/stars-d.svg);
+  z-index: -1;
+}
 
 .section-tickets {
-  background-color: #000; }
-  .section-tickets .eventbrite-embedded {
-    width: 100%;
-    height: 500px;
-    border: 1px solid white; }
+  position: relative;
+}
+.section-tickets .space {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/tickets-bg.png);
+  z-index: -2;
+}
+.section-tickets .stars {
+  width: calc(100% - (50px * 2));
+  height: calc(100% - (50px * 2));
+  background-size: contain;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 50px;
+  background-image: url(../img/stars-e.svg);
+  z-index: -1;
+}
+.section-tickets .waves {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/wave.png);
+  background-position: bottom center;
+  z-index: -1;
+}
+.section-tickets .eventbrite-embedded {
+  width: 100%;
+  height: 1000px;
+  border: 1px solid white;
+}
+
+.divider {
+  width: 100%;
+  height: 28px;
+  background-image: url(../img/divider.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 auto;
+}
+
+*[data-animate-in="fade"] {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+*[data-animate-in="fade"].in-view {
+  transition-delay: 0.4s;
+  opacity: 1;
+}
+
+*[data-animate-in="right"] {
+  opacity: 0;
+  transform: translate3d(100px, 0px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+}
+*[data-animate-in="right"].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+*[data-animate-in="up"] {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+}
+*[data-animate-in="up"].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+*[data-animate-in="left"] {
+  opacity: 0;
+  transform: translate3d(-100px, 0px, 0);
+  transition: opacity 1s ease-in, transform 0.6s ease;
+}
+*[data-animate-in="left"].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.section-apply {
+  width: 100%;
+  background-image: url(../img/solar-system.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .section-sponsors {
-  background-color: #444; }
-  .section-sponsors-list li {
-    width: calc(100% / 5);
-    max-width: calc(100% / 5);
-    border: 1px solid white;
-    flex-grow: 1;
-    padding: 20px 10px; }
+  position: relative;
+}
+.section-sponsors .space {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/space-f.svg);
+  z-index: -2;
+}
+.section-sponsors ul li {
+  width: 160px;
+  margin-right: 60px;
+  padding-top: 32px;
+}
+.section-sponsors ul li:last-child {
+  margin: 0;
+}
 
-.section-newsletter {
-  background-color: #000; }
-  .section-newsletter-logo {
-    width: 80px;
-    height: 80px;
-    border: 1px solid white; }
-  .section-newsletter form {
-    width: 588px;
-    max-width: 100%;
-    align-items: baseline;
-    display: flex; }
-    .section-newsletter form input {
-      border: 0;
-      height: 47px;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      border-radius: none;
-      background: transparent;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      border-bottom: 1px solid #fff; }
+.section-newsletter-logo {
+  width: 115px;
+  height: 104px;
+}
+.section-newsletter form {
+  width: 588px;
+  max-width: 100%;
+}
+.section-newsletter form input {
+  height: 49px;
+  width: 400px;
+  background-color: #120a39;
+  border: 1px solid #bdb5ff;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  font-size: 13px;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: inline;
+  padding: 5px 10px;
+}
+.section-newsletter form input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bdb5ff;
+  opacity: 1;
+  /* Firefox */
+}
+.section-newsletter form input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bdb5ff;
+}
+.section-newsletter form input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bdb5ff;
+}
+.section-newsletter form button {
+  height: 49px;
+  border-radius: 0 5px 5px 0;
+  display: inline;
+}
+.section-newsletter .container {
+  position: relative;
+}
+.section-newsletter .planet-3,
+.section-newsletter .spaceship {
+  background-position: center center;
+}
+.section-newsletter .planet-3 {
+  width: 138px;
+  height: 138px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-3.svg);
+  bottom: 100px;
+  right: 40px;
+  z-index: -1;
+}
+.section-newsletter .spaceship {
+  width: 129px;
+  height: 190px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/spaceship.svg);
+  top: 20px;
+  left: 60px;
+  z-index: -1;
+}
 
 .overlay {
   width: 100%;
   height: 100%;
   opacity: 0.7;
-  position: absolute; }
-  .overlay-dark {
-    background-color: #000; }
+  position: absolute;
+}
+.overlay-dark {
+  background-color: #000;
+}
 
 .container {
-  max-width: 1152px;
+  max-width: 1400px;
   width: 94%;
-  padding: 0; }
-  .container:before {
-    display: table;
-    content: ""; }
-  .container-wide {
-    width: 94%;
-    max-width: 1440px; }
-  .container-full {
-    max-width: 100%;
-    overflow: hidden; }
+  padding: 0;
+}
+.container:before {
+  display: table;
+  content: "";
+}
+.container-wide {
+  width: 94%;
+  max-width: 1440px;
+}
+.container-full {
+  max-width: 100%;
+  overflow: hidden;
+}
 
 .button {
-  background: transparent;
-  border: 1px solid white;
+  background: #13EBA8;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  font-weight: 500;
+  color: #240F61 !important;
+  font-family: "Titillium-SmBd";
   text-align: center;
   display: inline-block;
   padding: 12px 16px;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
+.button:hover {
+  background-color: #11d397;
+  text-decoration: none;
+  bottom: 0;
+}
+
+footer {
+  position: relative;
+}
+footer .space {
+  width: 100%;
+  height: 1202px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/space-g.png);
+  background-position: bottom center;
+  bottom: 0;
+  z-index: -2;
+}
+footer .container {
+  border-top: 1px solid #4446B6;
+}
+footer .container .social-links a, footer .container .footer-top-line a {
+  color: white;
+  margin-left: 16px;
+}
+footer .container .by-grakn:hover {
+  text-decoration: none;
+}
 
 /* ==========================================================================
    Helper classes
@@ -236,7 +645,8 @@ main {
  * Hide visually and from screen readers
  */
 .hidden {
-  display: none !important; }
+  display: none !important;
+}
 
 /*
 * Hide only visually, but have it available for screen readers:
@@ -256,7 +666,8 @@ main {
   position: absolute;
   width: 1px;
   white-space: nowrap;
-  /* 1 */ }
+  /* 1 */
+}
 
 /*
 * Extends the .visuallyhidden class to allow the element
@@ -271,13 +682,15 @@ main {
   overflow: visible;
   position: static;
   width: auto;
-  white-space: inherit; }
+  white-space: inherit;
+}
 
 /*
 * Hide visually and from screen readers, but maintain layout
 */
 .invisible {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
 * Clearfix: contain floats
@@ -295,10 +708,12 @@ main {
   content: " ";
   /* 1 */
   display: table;
-  /* 2 */ }
+  /* 2 */
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -306,11 +721,11 @@ main {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
-
+  /* Style adjustments for viewports that meet the condition */
+}
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
-
+  /* Style adjustments for high resolution devices */
+}
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -325,41 +740,63 @@ main {
     /* Black prints faster */
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    text-shadow: none !important; }
+    text-shadow: none !important;
+  }
+
   a,
   a:visited {
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
+
   a[href]:after {
-    content: " (" attr(href) ")"; }
+    content: " (" attr(href) ")";
+  }
+
   abbr[title]:after {
-    content: " (" attr(title) ")"; }
+    content: " (" attr(title) ")";
+  }
+
   /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: ""; }
+    content: "";
+  }
+
   pre {
-    white-space: pre-wrap !important; }
+    white-space: pre-wrap !important;
+  }
+
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+
   /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
   thead {
-    display: table-header-group; }
+    display: table-header-group;
+  }
+
   tr,
   img {
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3; }
+    widows: 3;
+  }
+
   h2,
   h3 {
-    page-break-after: avoid; } }
+    page-break-after: avoid;
+  }
+}

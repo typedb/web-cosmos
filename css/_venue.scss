@@ -1,15 +1,15 @@
 .section-venue {
-  .space {
+  .bg {
     @include absolute-background(100%, 100%, 0px, cover, repeat);
 
-    background-image: url(../img/space-d.svg);
+    background-image: url(../img/bg-venue.svg);
     z-index: -2;
   }
 
   .stars {
     @include absolute-background(100%, 668px, 50px, auto, repeat);
 
-    background-image: url(../img/stars-d.svg);
+    background-image: url(../img/stars-venue.svg);
     z-index: -1;
   }
 }

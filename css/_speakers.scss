@@ -17,26 +17,26 @@
   .stars {
     @include absolute-background(100%, 760px, 50px, auto, repeat);
 
-    background-image: url(../img/stars-c.svg);
+    background-image: url(../img/stars-speakers.svg);
     z-index: -1;
   }
 
-  .planet-4,
-  .planet-5 {
+  .planet-purple-dark,
+  .planet-pink-dark {
     @include absolute-background(160px, 160px, 0px, contain, no-repeat);
 
     background-position: center center;
     z-index: 0;
   }
 
-  .planet-4 {
-    background-image: url(../img/planet-4.svg);
+  .planet-purple-dark {
+    background-image: url(../img/planet-purple-dark.svg);
     left: 0px;
     top: -40px;
   }
 
-  .planet-5 {
-    background-image: url(../img/planet-5.svg);
+  .planet-pink-dark {
+    background-image: url(../img/planet-pink-dark.svg);
     bottom: -40px;
     right: 0px;
   }
@@ -45,7 +45,7 @@
     li {
       width: 160px;
 
-      background-image: url(../img/speaker-bg.svg);
+      background-image: url(../img/speaker-frame.svg);
       background-position: top center;
       background-repeat: no-repeat;
 

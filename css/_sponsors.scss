@@ -1,0 +1,15 @@
+.section-sponsors {
+  position: relative;
+
+  ul {
+    li {
+      width: 160px;
+      margin-right: 60px;
+      padding-top: 32px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

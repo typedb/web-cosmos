@@ -134,6 +134,9 @@ code {
 @import "./speakers";
 @import "./venue";
 @import ".//tickets";
+@import "./sponsors";
+@import "./newsletter";
+@import "./footer";
 
 .divider {
   width: 100%;
@@ -198,122 +201,6 @@ code {
   background-repeat: no-repeat;
 }
 
-.section-sponsors {
-  position: relative;
-
-  .space {
-    @include absolute-background(100%, 100%, 0px, cover, repeat);
-
-    background-image: url(../img/space-f.svg);
-    z-index: -2;
-  }
-
-  ul {
-    li {
-      width: 160px;
-      margin-right: 60px;
-      padding-top: 32px;
-
-      &:last-child {
-        margin: 0;
-      }
-    }
-  }
-}
-
-.section-newsletter {
-  &-logo {
-    width: 115px;
-    height: 104px;
-  }
-
-  form {
-    width: 588px;
-    max-width: 100%;
-
-    input {
-      height: 49px;
-      width: 400px;
-
-      background-color: #120a39;
-      border: 1px solid #bdb5ff;
-      border-right: none;
-      border-radius: 5px 0 0 5px;
-      box-shadow: none;
-      font-size: 13px;
-      outline: none;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-
-      display: inline;
-      padding: 5px 10px;
-
-      &::placeholder {
-        /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: #bdb5ff;
-        opacity: 1; /* Firefox */
-      }
-
-      &:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
-        color: #bdb5ff;
-      }
-
-      &::-ms-input-placeholder {
-        /* Microsoft Edge */
-        color: #bdb5ff;
-      }
-    }
-
-    button {
-      height: 49px;
-      border-radius: 0 5px 5px 0;
-
-      display: inline;
-    }
-  }
-
-  .container {
-    position: relative;
-  }
-
-  .planet-3,
-  .spaceship {
-    background-position: center center;
-  }
-
-  .planet-3 {
-    @include absolute-background(138px, 138px, 0, auto, no-repeat);
-
-    background-image: url(../img/planet-3.svg);
-    bottom: 100px;
-    right: 40px;
-    z-index: -1;
-  }
-
-  .spaceship {
-    @include absolute-background(129px, 190px, 0px, auto, no-repeat);
-
-    background-image: url(../img/spaceship.svg);
-    top: 20px;
-    left: 60px;
-    z-index: -1;
-  }
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-
-  opacity: 0.7;
-
-  position: absolute;
-
-  &-dark {
-    background-color: #000;
-  }
-}
-
 .container {
   // max-width: 1152px;
   max-width: 1400px;
@@ -353,36 +240,6 @@ code {
     background-color: darken($color-brand, 5%);
     text-decoration: none;
     bottom: 0;
-  }
-}
-
-footer {
-  position: relative;
-
-  .space {
-    @include absolute-background(100%, 1202px, 0px, cover, no-repeat);
-
-    background-image: url(../img/space-g.png);
-    background-position: bottom center;
-    bottom: 0;
-    z-index: -2;
-  }
-
-  .container {
-    border-top: 1px solid #4446B6;
-
-    .social-links, .footer-top-line {
-      a {
-        color: white;
-        margin-left: 16px;
-      }
-    }
-
-    .by-grakn {
-      &:hover {
-        text-decoration: none;
-      }
-    }
   }
 }
 

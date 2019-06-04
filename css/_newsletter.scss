@@ -1,0 +1,78 @@
+.section-newsletter {
+    &-logo {
+      width: 115px;
+      height: 104px;
+    }
+
+    form {
+      width: 588px;
+      max-width: 100%;
+
+      input {
+        height: 49px;
+        width: 400px;
+
+        background-color: #120a39;
+        border: 1px solid #bdb5ff;
+        border-right: none;
+        border-radius: 5px 0 0 5px;
+        box-shadow: none;
+        font-size: 13px;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        display: inline;
+        padding: 5px 10px;
+
+        &::placeholder {
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: #bdb5ff;
+          opacity: 1; /* Firefox */
+        }
+
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: #bdb5ff;
+        }
+
+        &::-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: #bdb5ff;
+        }
+      }
+
+      button {
+        height: 49px;
+        border-radius: 0 5px 5px 0;
+
+        display: inline;
+      }
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .planet-pink {
+      @include absolute-background(138px, 138px, 0, auto, no-repeat);
+
+      background-image: url(../img/planet-pink.svg);
+      background-position: center center;
+
+      bottom: 100px;
+      right: 40px;
+      z-index: -1;
+    }
+
+    .spaceship {
+      @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+
+      background-image: url(../img/spaceship.svg);
+      background-position: center center;
+
+      top: 20px;
+      left: 60px;
+      z-index: -1;
+    }
+  }

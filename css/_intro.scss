@@ -1,23 +1,23 @@
 .section-intro {
 
+  .bg {
+    @include absolute-background(100%, 1500px, 0, auto, repeat);
+
+    background-image: url(../img/bg-intro.svg);
+    z-index: -11;
+  }
+
   .stars {
     @include absolute-background(100%, 773px, 50px, contain, no-repeat);
 
-    background-image: url(../img/stars-a.svg);
+    background-image: url(../img/stars-intro.svg);
     z-index: -10;
-  }
-
-  .space {
-    @include absolute-background(100%, 1500px, 0, auto, repeat);
-
-    background-image: url(../img/space-a.svg);
-    z-index: -11;
   }
 
   .futuristic-city {
     @include absolute-background(100%, 800px, 0, cover, no-repeat);
 
-    background-image: url(../img/futuristic-city-bg.svg);
+    background-image: url(../img/futuristic-city.svg);
     background-position: center bottom;
     bottom: 0;
   }
@@ -25,47 +25,38 @@
   .sub-section-summary {
     padding-top: 216px;
 
-    &-logo {
-      width: 150px;
-      height: 150px;
-    }
-
-    &-logoType {
-      max-width: 260px;
-    }
-
     .container {
       position: relative;
     }
 
-    .planet-1,
-    .planet-2,
-    .planet-3,
+    .planet-blue,
+    .planet-purple,
+    .planet-pink,
     .spaceship {
       background-position: center center;
     }
 
-    .planet-1 {
+    .planet-blue {
       @include absolute-background(205px, 205px, 0, auto, no-repeat);
 
-      background-image: url(../img/planet-1.svg);
+      background-image: url(../img/planet-blue.svg);
       right: 0;
       top: -90px;
       z-index: -8;
     }
 
-    .planet-2 {
+    .planet-purple {
       @include absolute-background(238px, 172px, 0, auto, no-repeat);
 
-      background-image: url(../img/planet-2.svg);
+      background-image: url(../img/planet-purple.svg);
       top: -60px;
       z-index: -9;
     }
 
-    .planet-3 {
+    .planet-pink {
       @include absolute-background(138px, 138px, 0, auto, no-repeat);
 
-      background-image: url(../img/planet-3.svg);
+      background-image: url(../img/planet-pink.svg);
       bottom: 0;
       left: 100px;
       z-index: -7;

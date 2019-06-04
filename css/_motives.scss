@@ -7,14 +7,14 @@
   .stars {
     @include absolute-background(100%, 100%, 50px, contain, no-repeat);
 
-    background-image: url(../img/stars-b.svg);
+    background-image: url(../img/stars-motives.svg);
     z-index: -1;
   }
 
-  .space {
-    @include absolute-background(100%, 100%, 0, cover, no-repeat);
+  .bg {
+    @include absolute-background(100%, 1964px, 0, cover, no-repeat);
 
-    background-image: url(../img/space-b.svg);
+    background-image: url(../img/bg-motives-speakers.svg);
     z-index: -2;
   }
 

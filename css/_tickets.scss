@@ -1,24 +1,24 @@
 .section-tickets {
   position: relative;
 
-  .space {
+  .bg {
     @include absolute-background(100%, 100%, 0px, cover, repeat);
 
-    background-image: url(../img/tickets-bg.png);
+    background-image: url(../img/bg-tickets.png);
     z-index: -2;
   }
 
   .stars {
     @include absolute-background(100%, 100%, 50px, contain, repeat);
 
-    background-image: url(../img/stars-e.svg);
+    background-image: url(../img/stars-tickets.svg);
     z-index: -1;
   }
 
   .waves {
     @include absolute-background(100%, 100%, 0px, contain, no-repeat);
 
-    background-image: url(../img/wave.png);
+    background-image: url(../img/wave-tickets.png);
     background-position: bottom center;
     z-index: -1;
   }

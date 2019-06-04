@@ -148,6 +148,16 @@ code {
   min-width: 150px;
 }
 
+.section-intro .bg {
+  width: 100%;
+  height: 1500px;
+  background-size: auto;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/bg-intro.svg);
+  z-index: -11;
+}
 .section-intro .stars {
   width: calc(100% - (50px * 2));
   height: calc(773px - (50px * 2));
@@ -155,18 +165,8 @@ code {
   background-repeat: no-repeat;
   position: absolute;
   margin: 50px;
-  background-image: url(../img/stars-a.svg);
+  background-image: url(../img/stars-intro.svg);
   z-index: -10;
-}
-.section-intro .space {
-  width: 100%;
-  height: 1500px;
-  background-size: auto;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/space-a.svg);
-  z-index: -11;
 }
 .section-intro .futuristic-city {
   width: 100%;
@@ -175,60 +175,53 @@ code {
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
-  background-image: url(../img/futuristic-city-bg.svg);
+  background-image: url(../img/futuristic-city.svg);
   background-position: center bottom;
   bottom: 0;
 }
 .section-intro .sub-section-summary {
   padding-top: 216px;
 }
-.section-intro .sub-section-summary-logo {
-  width: 150px;
-  height: 150px;
-}
-.section-intro .sub-section-summary-logoType {
-  max-width: 260px;
-}
 .section-intro .sub-section-summary .container {
   position: relative;
 }
-.section-intro .sub-section-summary .planet-1,
-.section-intro .sub-section-summary .planet-2,
-.section-intro .sub-section-summary .planet-3,
+.section-intro .sub-section-summary .planet-blue,
+.section-intro .sub-section-summary .planet-purple,
+.section-intro .sub-section-summary .planet-pink,
 .section-intro .sub-section-summary .spaceship {
   background-position: center center;
 }
-.section-intro .sub-section-summary .planet-1 {
+.section-intro .sub-section-summary .planet-blue {
   width: 205px;
   height: 205px;
   background-size: auto;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
-  background-image: url(../img/planet-1.svg);
+  background-image: url(../img/planet-blue.svg);
   right: 0;
   top: -90px;
   z-index: -8;
 }
-.section-intro .sub-section-summary .planet-2 {
+.section-intro .sub-section-summary .planet-purple {
   width: 238px;
   height: 172px;
   background-size: auto;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
-  background-image: url(../img/planet-2.svg);
+  background-image: url(../img/planet-purple.svg);
   top: -60px;
   z-index: -9;
 }
-.section-intro .sub-section-summary .planet-3 {
+.section-intro .sub-section-summary .planet-pink {
   width: 138px;
   height: 138px;
   background-size: auto;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
-  background-image: url(../img/planet-3.svg);
+  background-image: url(../img/planet-pink.svg);
   bottom: 0;
   left: 100px;
   z-index: -7;
@@ -265,17 +258,17 @@ code {
   background-repeat: no-repeat;
   position: absolute;
   margin: 50px;
-  background-image: url(../img/stars-b.svg);
+  background-image: url(../img/stars-motives.svg);
   z-index: -1;
 }
-.section-motives .space {
+.section-motives .bg {
   width: 100%;
-  height: 100%;
+  height: 1964px;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
-  background-image: url(../img/space-b.svg);
+  background-image: url(../img/bg-motives-speakers.svg);
   z-index: -2;
 }
 .section-motives p {
@@ -309,11 +302,11 @@ code {
   background-repeat: repeat;
   position: absolute;
   margin: 50px;
-  background-image: url(../img/stars-c.svg);
+  background-image: url(../img/stars-speakers.svg);
   z-index: -1;
 }
-.section-speakers .planet-4,
-.section-speakers .planet-5 {
+.section-speakers .planet-purple-dark,
+.section-speakers .planet-pink-dark {
   width: 160px;
   height: 160px;
   background-size: contain;
@@ -323,19 +316,19 @@ code {
   background-position: center center;
   z-index: 0;
 }
-.section-speakers .planet-4 {
-  background-image: url(../img/planet-4.svg);
+.section-speakers .planet-purple-dark {
+  background-image: url(../img/planet-purple-dark.svg);
   left: 0px;
   top: -40px;
 }
-.section-speakers .planet-5 {
-  background-image: url(../img/planet-5.svg);
+.section-speakers .planet-pink-dark {
+  background-image: url(../img/planet-pink-dark.svg);
   bottom: -40px;
   right: 0px;
 }
 .section-speakers ul li {
   width: 160px;
-  background-image: url(../img/speaker-bg.svg);
+  background-image: url(../img/speaker-frame.svg);
   background-position: top center;
   background-repeat: no-repeat;
   margin-right: 60px;
@@ -354,14 +347,14 @@ code {
   margin-bottom: 25px;
 }
 
-.section-venue .space {
+.section-venue .bg {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: repeat;
   position: absolute;
   margin: 0px;
-  background-image: url(../img/space-d.svg);
+  background-image: url(../img/bg-venue.svg);
   z-index: -2;
 }
 .section-venue .stars {
@@ -371,21 +364,21 @@ code {
   background-repeat: repeat;
   position: absolute;
   margin: 50px;
-  background-image: url(../img/stars-d.svg);
+  background-image: url(../img/stars-venue.svg);
   z-index: -1;
 }
 
 .section-tickets {
   position: relative;
 }
-.section-tickets .space {
+.section-tickets .bg {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: repeat;
   position: absolute;
   margin: 0px;
-  background-image: url(../img/tickets-bg.png);
+  background-image: url(../img/bg-tickets.png);
   z-index: -2;
 }
 .section-tickets .stars {
@@ -395,7 +388,7 @@ code {
   background-repeat: repeat;
   position: absolute;
   margin: 50px;
-  background-image: url(../img/stars-e.svg);
+  background-image: url(../img/stars-tickets.svg);
   z-index: -1;
 }
 .section-tickets .waves {
@@ -405,7 +398,7 @@ code {
   background-repeat: no-repeat;
   position: absolute;
   margin: 0px;
-  background-image: url(../img/wave.png);
+  background-image: url(../img/wave-tickets.png);
   background-position: bottom center;
   z-index: -1;
 }
@@ -413,6 +406,117 @@ code {
   width: 100%;
   height: 451px;
   border: 1px solid white;
+}
+
+.section-sponsors {
+  position: relative;
+}
+.section-sponsors ul li {
+  width: 160px;
+  margin-right: 60px;
+  padding-top: 32px;
+}
+.section-sponsors ul li:last-child {
+  margin: 0;
+}
+
+.section-newsletter-logo {
+  width: 115px;
+  height: 104px;
+}
+.section-newsletter form {
+  width: 588px;
+  max-width: 100%;
+}
+.section-newsletter form input {
+  height: 49px;
+  width: 400px;
+  background-color: #120a39;
+  border: 1px solid #bdb5ff;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  font-size: 13px;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: inline;
+  padding: 5px 10px;
+}
+.section-newsletter form input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bdb5ff;
+  opacity: 1;
+  /* Firefox */
+}
+.section-newsletter form input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bdb5ff;
+}
+.section-newsletter form input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bdb5ff;
+}
+.section-newsletter form button {
+  height: 49px;
+  border-radius: 0 5px 5px 0;
+  display: inline;
+}
+.section-newsletter .container {
+  position: relative;
+}
+.section-newsletter .planet-pink {
+  width: 138px;
+  height: 138px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-pink.svg);
+  background-position: center center;
+  bottom: 100px;
+  right: 40px;
+  z-index: -1;
+}
+.section-newsletter .spaceship {
+  width: 129px;
+  height: 190px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/spaceship.svg);
+  background-position: center center;
+  top: 20px;
+  left: 60px;
+  z-index: -1;
+}
+
+footer {
+  position: relative;
+}
+footer .bg {
+  width: 100%;
+  height: 1202px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/bg-footer.png);
+  background-position: bottom center;
+  bottom: 0;
+  z-index: -2;
+}
+footer .container {
+  border-top: 1px solid #4446b6;
+}
+footer .container .social-links a,
+footer .container .footer-top-line a {
+  color: white;
+  margin-left: 16px;
+}
+footer .container .by-grakn:hover {
+  text-decoration: none;
 }
 
 .divider {
@@ -470,112 +574,6 @@ code {
   background-repeat: no-repeat;
 }
 
-.section-sponsors {
-  position: relative;
-}
-.section-sponsors .space {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/space-f.svg);
-  z-index: -2;
-}
-.section-sponsors ul li {
-  width: 160px;
-  margin-right: 60px;
-  padding-top: 32px;
-}
-.section-sponsors ul li:last-child {
-  margin: 0;
-}
-
-.section-newsletter-logo {
-  width: 115px;
-  height: 104px;
-}
-.section-newsletter form {
-  width: 588px;
-  max-width: 100%;
-}
-.section-newsletter form input {
-  height: 49px;
-  width: 400px;
-  background-color: #120a39;
-  border: 1px solid #bdb5ff;
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  box-shadow: none;
-  font-size: 13px;
-  outline: none;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  display: inline;
-  padding: 5px 10px;
-}
-.section-newsletter form input::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #bdb5ff;
-  opacity: 1;
-  /* Firefox */
-}
-.section-newsletter form input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #bdb5ff;
-}
-.section-newsletter form input::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #bdb5ff;
-}
-.section-newsletter form button {
-  height: 49px;
-  border-radius: 0 5px 5px 0;
-  display: inline;
-}
-.section-newsletter .container {
-  position: relative;
-}
-.section-newsletter .planet-3,
-.section-newsletter .spaceship {
-  background-position: center center;
-}
-.section-newsletter .planet-3 {
-  width: 138px;
-  height: 138px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/planet-3.svg);
-  bottom: 100px;
-  right: 40px;
-  z-index: -1;
-}
-.section-newsletter .spaceship {
-  width: 129px;
-  height: 190px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/spaceship.svg);
-  top: 20px;
-  left: 60px;
-  z-index: -1;
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-}
-.overlay-dark {
-  background-color: #000;
-}
-
 .container {
   max-width: 1400px;
   width: 94%;
@@ -610,32 +608,6 @@ code {
   background-color: #11d397;
   text-decoration: none;
   bottom: 0;
-}
-
-footer {
-  position: relative;
-}
-footer .space {
-  width: 100%;
-  height: 1202px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/space-g.png);
-  background-position: bottom center;
-  bottom: 0;
-  z-index: -2;
-}
-footer .container {
-  border-top: 1px solid #4446B6;
-}
-footer .container .social-links a, footer .container .footer-top-line a {
-  color: white;
-  margin-left: 16px;
-}
-footer .container .by-grakn:hover {
-  text-decoration: none;
 }
 
 /* ==========================================================================

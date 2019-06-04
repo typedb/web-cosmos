@@ -5,12 +5,13 @@
     }
 
     form {
-      width: 588px;
+      width: 530px;
       max-width: 100%;
+      position: relative;
 
       input {
         height: 49px;
-        width: 400px;
+        width: 431px;
 
         background-color: #120a39;
         border: 1px solid #bdb5ff;
@@ -22,8 +23,9 @@
         text-transform: uppercase;
         letter-spacing: 3px;
 
-        display: inline;
         padding: 5px 10px;
+        position: absolute;
+        left: 0;
 
         &::placeholder {
           /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -46,7 +48,9 @@
         height: 49px;
         border-radius: 0 5px 5px 0;
 
-        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
 

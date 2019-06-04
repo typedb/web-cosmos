@@ -32,7 +32,7 @@
                     h-100 d-flex align-items-center justify-content-center">
             <div class="site-header-logo
                         w-20 d-inline position-relative">
-                <a href="/" class="d-inline-block">
+                <a href="#" class="d-inline-block">
                     <img class="d-inline-block" src="img/logo-header.svg" alt="COSMOS" />
                     <p class="h4 Geogrotesque-Md
                               d-inline-block ml-3">GRAKN COSMOS</p>
@@ -55,7 +55,7 @@
 
             <div class="site-header-action
                         w-20 d-flex align-items-baseline justify-content-end">
-                <a class="button" href="#">
+                <a class="button" data-scroll-to="tickets">
                     Get Tickets
                 </a>
             </div>
@@ -99,7 +99,8 @@
 
                     <a class="button
                                 h5
-                                px-7 mt-2" href="#">
+                                px-7 mt-2"
+                        href="#" data-scroll-to="tickets">
                         Get Tickets
                     </a>
 
@@ -320,7 +321,7 @@
         </div>
 
 
-        <div class="section-tickets">
+        <div id="tickets" class="section-tickets">
             <div class="bg"></div>
             <div class="waves"></div>
             <div class="stars"></div>
@@ -423,8 +424,8 @@
                           py-4 mx-auto col-md-8">Grakn Cosmos</p>
 
                 <form class="mx-auto col-10 cl-md-8">
-                    <input type="email" placeholder="Stay tuned with conference updates" /><!--
-                    --><button class="button" type="submit" value="Subscribe">Subscribe</button>
+                    <input type="email" placeholder="Stay tuned with conference updates" />
+                    <button class="button" type="submit" value="Subscribe">Subscribe</button>
                 </form>
 
                 <div class="spaceship"></div>

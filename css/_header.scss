@@ -1,6 +1,6 @@
 .site-header {
   height: 90px;
-  transition: background .26s ease-in-out;
+  @include transition(background, .26s, ease-in-out);
 
   &.is-scrolling {
     background: #190d47;

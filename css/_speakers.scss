@@ -62,7 +62,9 @@
       img {
         width: 140px;
         height: 140px;
-        border-radius: 50%;
+
+        @include border-radius(50%);
+
         margin: 10px;
         margin-bottom: 25px;
       }

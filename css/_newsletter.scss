@@ -19,8 +19,8 @@
         background-color: #120a39;
         border: 1px solid #bdb5ff;
         border-right: none;
-        border-radius: 5px 0 0 5px;
-        box-shadow: none;
+        @include border-radius(5px 0 0 5px);
+        @include box-shadow(none);
         font-size: 13px;
         outline: none;
         text-transform: uppercase;
@@ -33,7 +33,7 @@
         &::placeholder {
           /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: #bdb5ff;
-          opacity: 1; /* Firefox */
+          @include opacity(1);
         }
 
         &:-ms-input-placeholder {
@@ -49,7 +49,8 @@
 
       button {
         height: 50px;
-        border-radius: 0 5px 5px 0;
+
+        @include border-radius(0 5px 5px 0);
 
         position: absolute;
         top: 0;

@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 /*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
 
@@ -97,12 +98,11 @@ img {
 
 code {
   background: $color-bg-brand;
-  padding: 3px 5px;
+  @include border-radius(3px);
   font-family: "sf mono";
   font-size: 16px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+
+  padding: 3px 5px;
 }
 
 /* ==========================================================================
@@ -127,7 +127,6 @@ code {
    Author's custom styles
    ========================================================================== */
 
-@import "./mixins";
 @import "./header";
 @import "./intro";
 @import "./motives";
@@ -150,49 +149,59 @@ code {
 }
 
 *[data-animate-in="fade"] {
-  opacity: 0;
-  transition: opacity 0.6s ease-in;
+  @include opacity(0);
+  @include transition(opacity, 0.6s, ease-in);
 
   &.in-view {
-    transition-delay: 0.4s;
-    opacity: 1;
-  }
-}
-
-*[data-animate-in="right"] {
-  opacity: 0;
-  transform: translate3d(100px, 0px, 0);
-  transition: opacity 1s ease-in, transform 0.6s ease;
-
-  &.in-view {
-    opacity: 1;
-    transform: none;
+    @include transition-delay(0.2s);
+    @include opacity(1);
   }
 }
 
 *[data-animate-in="up"] {
-  opacity: 0;
-  transform: translate3d(0, 50px, 0);
+  @include opacity(0);
+  @include transform(translate3d(0, 50px, 0));
   transition: opacity 1s ease-in, transform 0.6s ease;
+  -moz-transition: opacity 1s ease-in, transform 0.6s ease;
+  -webkit-transition: opacity 1s ease-in, transform 0.6s ease;
+  -o-transition: opacity 1s ease-in, transform 0.6s ease;
 
   &.in-view {
-    opacity: 1;
-    transform: none;
+    @include transition-delay(0.2s);
+    @include opacity(1);
+    @include transform(none);
   }
 }
 
+*[data-animate-in="right"] {
+  @include opacity(0);
+  @include transform(translate3d(100px, 0px, 0));
+  transition: opacity 1s ease-in, transform 0.6s ease;
+  -moz-transition: opacity 1s ease-in, transform 0.6s ease;
+  -webkit-transition: opacity 1s ease-in, transform 0.6s ease;
+  -o-transition: opacity 1s ease-in, transform 0.6s ease;
+
+  &.in-view {
+    @include transition-delay(0.2s);
+    @include opacity(1);
+    @include transform(none);
+  }
+}
 
 *[data-animate-in="left"] {
-  opacity: 0;
-  transform: translate3d(-100px, 0px, 0);
+  @include opacity(0);
+  @include transform(translate3d(-100px, 0px, 0));
   transition: opacity 1s ease-in, transform 0.6s ease;
+  -moz-transition: opacity 1s ease-in, transform 0.6s ease;
+  -webkit-transition: opacity 1s ease-in, transform 0.6s ease;
+  -o-transition: opacity 1s ease-in, transform 0.6s ease;
 
   &.in-view {
-    opacity: 1;
-    transform: none;
+    @include transition-delay(0.2s);
+    @include opacity(1);
+    @include transform(none);
   }
 }
-
 
 .section-apply {
   width: 100%;
@@ -225,9 +234,7 @@ code {
 
 .button {
   background: $color-brand;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
   color: $color-text-on-brand !important;
   cursor: pointer;
   font-family: "Titillium-SmBd";
@@ -350,9 +357,7 @@ code {
   *:after {
     background: transparent !important;
     color: #000 !important; /* Black prints faster */
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    @include box-shadow(none !important);
   }
 
   a,

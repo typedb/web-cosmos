@@ -2,12 +2,9 @@ footer {
   .container {
     border-top: 1px solid #4446b6;
 
-    .social-links,
-    .footer-top-line {
-      a {
-        color: white;
-        margin-left: 16px;
-      }
+    a {
+      color: white;
+      margin-left: 16px;
     }
 
     .by-grakn:hover {

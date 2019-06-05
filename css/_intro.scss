@@ -25,6 +25,13 @@
   .sub-section-summary {
     padding-top: 216px;
 
+    .grakn-logo-inline {
+      background-color: lighten($color-bg-brand, 5%);
+      @include border-radius(3px);
+
+      padding: 5px;
+    }
+
     .container {
       position: relative;
     }

@@ -51,12 +51,11 @@
       border-right: none;
       @include border-radius(5px 0 0 5px);
       @include box-shadow(none);
-      font-size: 13px;
+      font-size: 16px;
       outline: none;
-      text-transform: uppercase;
       letter-spacing: 3px;
 
-      padding: 5px 10px;
+      padding: 5px 20px;
       position: absolute;
       left: 0;
 
@@ -111,7 +110,7 @@
   .planet-pink {
     @include absolute-background(138px, 138px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-pink.svg);
+    background-image: url(../img/planet-pink-medium.svg);
     background-position: center center;
 
     bottom: 100px;

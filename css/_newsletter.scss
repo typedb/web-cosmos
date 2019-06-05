@@ -5,12 +5,15 @@
     }
 
     form {
-      width: 530px;
       max-width: 100%;
+      width: 530px;
+      height: 50px;
+
+      padding: 0;
       position: relative;
 
       input {
-        height: 49px;
+        height: 50px;
         width: 431px;
 
         background-color: #120a39;
@@ -45,12 +48,28 @@
       }
 
       button {
-        height: 49px;
+        height: 50px;
         border-radius: 0 5px 5px 0;
 
         position: absolute;
         top: 0;
         right: 0;
+      }
+
+      .form-messages {
+        width: 530px;
+        height: fit-content;
+
+        padding: 10px 5px;
+        position: absolute;
+        top: 50px;
+
+        .response {
+          font-size: 14px;
+          text-align: left;
+
+          &.error { color: #e74c3c; }
+        }
       }
     }
 

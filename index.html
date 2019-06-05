@@ -10,6 +10,10 @@
     <meta property="og:title" content="Grakn Cosmos">
     <meta property="og:type" content="website">
     <meta property="og:image" content="icon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="192">
+    <meta property="og:image:height" content="192">
+
     <meta property="og:url" content="????????????????????????????????????????">
     <meta property="og:site_name" content="Grakn Cosmos">
     <meta property="og:site_name" content="The universal conference of technologies built using GRAKN.AI">
@@ -64,9 +68,9 @@
 
             <div class="site-header-action
                         w-20 d-flex align-items-baseline justify-content-end">
-                <a class="button" data-scroll-to="tickets">
+                <div id="eventbrite-widget-modal-trigger-58504110369" class="button">
                     Get Tickets
-                </a>
+                </div>
             </div>
         </div>
     </header>
@@ -106,12 +110,11 @@
                     <p class="h5 Titillium-Lt
                               mb-4">Kensington Conference and Events Centre | London, United Kingdom</p>
 
-                    <a class="button
-                                h5
-                                px-7 mt-2"
-                        href="#" data-scroll-to="tickets">
+                    <div id="eventbrite-widget-modal-trigger-58504110369" class="button
+                                                                               h5
+                                                                               px-7 mt-2">
                         Get Tickets
-                    </a>
+                    </div>
 
                     <div class="planet-blue"></div>
                     <div class="planet-purple"></div>
@@ -286,10 +289,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <a class="button
+                        <div class="button
                                 h5" href="#">
                             See All Speakers
-                        </a>
+                        </div>
                     </div>
 
                     <div class="planet-purple-dark"></div>
@@ -347,7 +350,7 @@
         </div>
 
 
-        <div id="tickets" class="section-tickets">
+        <!-- <div id="tickets" class="section-tickets">
             <div class="bg"></div>
             <div class="waves"></div>
             <div class="stars"></div>
@@ -386,7 +389,7 @@
             </div>
 
             <div class="divider"></div>
-        </div>
+        </div> -->
 
         <div class="section-sponsors-newsletter">
             <div class="bg"></div>
@@ -522,6 +525,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Noscript content for added SEO -->
+    <noscript><a href="https://www.eventbrite.com/e/grakn-cosmos-2019-tickets-58504110369" rel="noopener noreferrer" target="_blank"></noscript>
+    <!-- You can customize this button any way you like -->
+    <!-- <button id="eventbrite-widget-modal-trigger-58504110369" type="button">Buy Tickets</button> -->
+    <noscript></a>Buy Tickets on Eventbrite</noscript>
+
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+    <script type="text/javascript">
+        var exampleCallback = function() {
+            console.log('Order complete!');
+        };
+
+        window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '58504110369',
+            modal: true,
+            modalTriggerElementId: 'eventbrite-widget-modal-trigger-58504110369',
+            onOrderComplete: exampleCallback
+        });
+    </script>
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

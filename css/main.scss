@@ -243,15 +243,18 @@ code {
 }
 
 .button {
+  height: 50px;
+
   background: $color-brand;
   @include border-radius(5px);
   color: $color-text-on-brand !important;
   cursor: pointer;
   font-family: "Geogrotesque-Md";
+  line-height: 50px;
   text-align: center;
 
   display: inline-block;
-  padding: 12px 16px;
+  padding: 0 16px;
   vertical-align: middle;
 
   &:hover {

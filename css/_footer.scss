@@ -1,16 +1,4 @@
 footer {
-  position: relative;
-
-  .bg {
-    @include absolute-background(100%, 1202px, 0, cover, no-repeat);
-
-    background-image: url(../img/bg-footer.png);
-    background-position: bottom center;
-
-    bottom: 0;
-    z-index: -2;
-  }
-
   .container {
     border-top: 1px solid #4446b6;
 

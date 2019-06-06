@@ -1,9 +1,28 @@
 $(document).ready(function () {
+    $("html").niceScroll({
+        cursorcolor: "#190d47",
+        cursorwidth: "12px",
+        cursorborder: "0px solid #000",
+        scrollspeed: 60,
+        autohidemode: true,
+        // background: '#ddd',
+        hidecursordelay: 400,
+        cursorfixedheight: false,
+        cursorminheight: 20,
+        enablekeyboard: true,
+        horizrailenabled: true,
+        bouncescroll: false,
+        smoothscroll: true,
+        iframeautoresize: true,
+        touchbehavior: false,
+        zindex: 999
+    });
+
     header();
 
     detectInView();
 
-    scrollTo();
+    scrollToSection();
 
     $('form button').bind('click', function (event) {
         if (event) event.preventDefault();
@@ -68,9 +87,8 @@ function detectInView() {
     }, 500);
 }
 
-function scrollTo() {
+function scrollToSection() {
     $('*[data-scroll-to]').on('click touchstart:not(touchmove)', function () {
-
         var trigger = $(this).attr('data-scroll-to'),
             target = $("#" + trigger),
             ss = 1000, //scroll speed
@@ -152,8 +170,8 @@ async function swapSpeakers(initialSpeakers) {
         for (let i of swappingIndexes) {
             await new Promise(done => setTimeout(() => done(), 3000));
 
-            speakerToRemoveFullName = $('#speakers-list li:nth-child(' + i +')').data("speaker-id");
-            $('#speakers-list li:nth-child(' + i +')').fadeOut("slow", function(){
+            speakerToRemoveFullName = $('#speakers-list li:nth-child(' + i + ')').data("speaker-id");
+            $('#speakers-list li:nth-child(' + i + ')').fadeOut("slow", function () {
                 const replacingSpeaker = $(generateSpeakerHtml(hiddenSpeakers[0])).hide();
                 $(this).replaceWith(replacingSpeaker);
                 replacingSpeaker.fadeIn("slow");

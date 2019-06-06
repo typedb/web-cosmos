@@ -740,13 +740,6 @@ footer .container .by-grakn:hover {
   -webkit-transform: none;
 }
 
-.section-apply {
-  width: 100%;
-  background-image: url(../img/solar-system.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .container {
   max-width: 1400px;
   width: 94%;

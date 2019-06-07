@@ -1,10 +1,8 @@
 .section-venue {
-  .bg {
-    @include absolute-background(100%, 100%, 0px, cover, repeat);
+  background: rgb(10, 9, 38);
+  background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(23, 12, 68, 1) 100%);
 
-    background-image: url(../img/bg-venue.svg);
-    z-index: -2;
-  }
+  z-index: -2;
 
   .stars {
     @include absolute-background(100%, 668px, 50px, auto, repeat);

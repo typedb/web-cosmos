@@ -151,21 +151,16 @@ code {
   min-width: 150px;
 }
 
-.section-intro .bg {
-  width: 100%;
-  height: 100%;
-  background-size: auto;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/bg-intro.svg);
+.section-intro {
+  background: #0a0926;
+  background: linear-gradient(180deg, #0a0926 0%, #28116b 35%, #00c8d8 100%);
   z-index: -11;
 }
 .section-intro .stars {
   width: calc(100% - (50px * 2));
   height: calc(773px - (50px * 2));
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   position: absolute;
   margin: 50px;
   background-image: url(../img/stars-intro.svg);
@@ -257,27 +252,20 @@ code {
 }
 
 .section-motives-speakers {
+  background: #0a0926;
+  background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%);
   position: relative;
+  z-index: -2;
 }
 .section-motives-speakers .stars {
   width: calc(100% - (50px * 2));
   height: calc(100% - (50px * 2));
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   position: absolute;
   margin: 50px;
   background-image: url(../img/stars-motives.svg);
   z-index: -1;
-}
-.section-motives-speakers .bg {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/bg-motives-speakers.svg);
-  z-index: -2;
 }
 
 .section-motives {
@@ -337,7 +325,7 @@ code {
 }
 .section-speakers .planet-pink-dark {
   background-image: url(../img/planet-pink-dark.svg);
-  bottom: -40px;
+  bottom: -20px;
   right: 0px;
 }
 .section-speakers ul li {
@@ -370,14 +358,9 @@ code {
   text-decoration: none;
 }
 
-.section-venue .bg {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/bg-venue.svg);
+.section-venue {
+  background: #0a0926;
+  background: linear-gradient(180deg, #0a0926 0%, #170c44 100%);
   z-index: -2;
 }
 .section-venue .stars {
@@ -391,73 +374,10 @@ code {
   z-index: -1;
 }
 
-.section-tickets {
-  position: relative;
-}
-.section-tickets .bg {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/bg-tickets.png);
-  z-index: -2;
-}
-.section-tickets .stars {
-  width: calc(100% - (50px * 2));
-  height: calc(100% - (50px * 2));
-  background-size: contain;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 50px;
-  background-image: url(../img/stars-tickets.svg);
-  z-index: -1;
-}
-.section-tickets .waves {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/wave-tickets.png);
-  background-position: bottom center;
-  z-index: -1;
-}
-.section-tickets .container {
-  position: relative;
-}
-.section-tickets .planet-blue {
-  width: 190px;
-  height: 190px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/planet-blue.svg);
-  top: -10px;
-  right: -70px;
-  z-index: 0;
-}
-.section-tickets .eventbrite-embedded {
-  width: 100%;
-  height: 451px;
-  border: 1px solid white;
-}
-
 .section-sponsors-newsletter {
   position: relative;
-}
-.section-sponsors-newsletter .bg {
-  width: 100%;
-  height: calc(100% + 116px);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/bg-footer.png);
-  background-position: bottom center;
+  background: #170c44;
+  background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
   z-index: -2;
 }
 
@@ -575,6 +495,10 @@ code {
   z-index: -1;
 }
 
+footer {
+  background: #0f0538;
+  background: linear-gradient(180deg, #0f0538 0%, #170c44 100%);
+}
 footer .container {
   border-top: 1px solid #4446b6;
 }
@@ -596,7 +520,7 @@ footer .container .by-grakn:hover {
 .divider {
   width: 100%;
   height: 28px;
-  background-image: url(../img/divider.png);
+  background-image: url(../img/divider.svg);
   background-repeat: no-repeat;
   background-position: center center;
   margin: 0 auto;

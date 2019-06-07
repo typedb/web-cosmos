@@ -1,14 +1,11 @@
 .section-intro {
+  background: rgb(10,9,38);
+  background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(40,17,107,1) 35%, rgba(0,200,216,1) 100%);
 
-  .bg {
-    @include absolute-background(100%, 100%, 0, auto, repeat);
-
-    background-image: url(../img/bg-intro.svg);
-    z-index: -11;
-  }
+  z-index: -11;
 
   .stars {
-    @include absolute-background(100%, 773px, 50px, contain, no-repeat);
+    @include absolute-background(100%, 773px, 50px, contain, repeat);
 
     background-image: url(../img/stars-intro.svg);
     z-index: -10;

@@ -1,18 +1,15 @@
 .section-motives-speakers {
+  background: rgb(10, 9, 38);
+  background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(11, 7, 67, 1) 100%);
+
   position: relative;
+  z-index: -2;
 
   .stars {
-    @include absolute-background(100%, 100%, 50px, contain, no-repeat);
+    @include absolute-background(100%, 100%, 50px, contain, repeat);
 
     background-image: url(../img/stars-motives.svg);
     z-index: -1;
-  }
-
-  .bg {
-    @include absolute-background(100%, 100%, 0, cover, no-repeat);
-
-    background-image: url(../img/bg-motives-speakers.svg);
-    z-index: -2;
   }
 }
 
@@ -70,7 +67,7 @@
 
   .planet-pink-dark {
     background-image: url(../img/planet-pink-dark.svg);
-    bottom: -40px;
+    bottom: -20px;
     right: 0px;
   }
 

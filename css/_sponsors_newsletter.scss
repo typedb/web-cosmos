@@ -1,14 +1,10 @@
 .section-sponsors-newsletter {
   position: relative;
 
-  .bg {
-    @include absolute-background(100%, calc(100% + 116px), 0, cover, no-repeat);
+  background: rgb(23,12,68);
+  background: linear-gradient(180deg, rgba(23,12,68,1) 0%, rgba(15,5,56,1) 100%);
 
-    background-image: url(../img/bg-footer.png);
-    background-position: bottom center;
-
-    z-index: -2;
-  }
+  z-index: -2;
 }
 
 .section-sponsors {

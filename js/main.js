@@ -5,10 +5,7 @@ $(document).ready(function () {
 
     scrollToSection();
 
-    $('form button').bind('click', function (event) {
-        if (event) event.preventDefault();
-        subscribe($('form'));
-    });
+    handleSubscription();
 
     loadSpeakers();
 });
@@ -92,6 +89,14 @@ function scrollToSection() {
     });
 }
 
+function handleSubscription() {
+    $('form button').bind('click', function (event) {
+        if (event) event.preventDefault();
+        $(this).html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+        subscribe($('form'));
+    });
+}
+
 function subscribe($form) {
     $.ajax({
         type: $form.attr('method'),
@@ -105,9 +110,11 @@ function subscribe($form) {
             if (data.result != "success") {
                 $('#mce-success-response').hide();
                 $('#mce-error-response').html(data.msg.replace("0 -", "")).show();
+                $('form button').html('Subscribe');
             } else {
                 $('#mce-error-response').hide();
                 $('#mce-success-response').html(data.msg).show();
+                $('form button').html('Subscribe');
             }
         }
     });

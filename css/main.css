@@ -428,6 +428,7 @@ code {
   color: #bdb5ff;
 }
 .section-newsletter form button {
+  width: 100px;
   height: 50px;
   border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -435,6 +436,10 @@ code {
   position: absolute;
   top: 0;
   right: 0;
+}
+.section-newsletter form button .spinner-border {
+  color: #240F61;
+  margin-top: 9px;
 }
 .section-newsletter form .form-messages {
   width: 530px;

@@ -73,6 +73,7 @@
     }
 
     button {
+      width: 100px;
       height: 50px;
 
       @include border-radius(0 5px 5px 0);
@@ -80,6 +81,11 @@
       position: absolute;
       top: 0;
       right: 0;
+
+      .spinner-border {
+        color: #240F61;
+        margin-top: 9px;
+      }
     }
 
     .form-messages {

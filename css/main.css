@@ -152,19 +152,15 @@ code {
 }
 
 .section-intro {
+  position: relative;
+}
+.section-intro .bg {
   background: #0a0926;
   background: linear-gradient(180deg, #0a0926 0%, #28116b 35%, #00c8d8 100%);
-  z-index: -11;
 }
 .section-intro .stars {
-  width: calc(100% - (50px * 2));
-  height: calc(773px - (50px * 2));
-  background-size: contain;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 50px;
+  height: calc(773px - 50px);
   background-image: url(../img/stars-intro.svg);
-  z-index: -10;
 }
 .section-intro .futuristic-city {
   width: 100%;
@@ -252,20 +248,15 @@ code {
 }
 
 .section-motives-speakers {
+  position: relative;
+}
+.section-motives-speakers .bg {
   background: #0a0926;
   background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%);
-  position: relative;
-  z-index: -2;
 }
 .section-motives-speakers .stars {
-  width: calc(100% - (50px * 2));
-  height: calc(100% - (50px * 2));
-  background-size: contain;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 50px;
+  height: calc(100% - 100px);
   background-image: url(../img/stars-motives.svg);
-  z-index: -1;
 }
 
 .section-motives {
@@ -358,27 +349,21 @@ code {
   text-decoration: none;
 }
 
-.section-venue {
+.section-venue .bg {
   background: #0a0926;
   background: linear-gradient(180deg, #0a0926 0%, #170c44 100%);
-  z-index: -2;
 }
 .section-venue .stars {
-  width: calc(100% - (50px * 2));
-  height: calc(668px - (50px * 2));
-  background-size: auto;
-  background-repeat: repeat;
-  position: absolute;
-  margin: 50px;
+  height: calc(668px - 100px);
   background-image: url(../img/stars-venue.svg);
-  z-index: -1;
 }
 
 .section-sponsors-newsletter {
   position: relative;
+}
+.section-sponsors-newsletter .bg {
   background: #170c44;
   background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
-  z-index: -2;
 }
 
 .section-sponsors {
@@ -508,6 +493,22 @@ footer .container a {
 }
 footer .container .by-grakn:hover {
   text-decoration: none;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1000;
+}
+
+.stars {
+  width: calc(100% - 100px);
+  background-size: contain;
+  background-repeat: repeat;
+  position: absolute;
+  margin: 50px;
+  z-index: -999;
 }
 
 .hamburger-inner {

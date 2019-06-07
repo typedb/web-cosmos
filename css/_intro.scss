@@ -1,14 +1,14 @@
 .section-intro {
-  background: rgb(10,9,38);
-  background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(40,17,107,1) 35%, rgba(0,200,216,1) 100%);
+  position: relative;
 
-  z-index: -11;
+  .bg {
+    background: rgb(10,9,38);
+    background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(40,17,107,1) 35%, rgba(0,200,216,1) 100%);
+  }
 
   .stars {
-    @include absolute-background(100%, 773px, 50px, contain, repeat);
-
+    height: calc(773px - 50px);
     background-image: url(../img/stars-intro.svg);
-    z-index: -10;
   }
 
   .futuristic-city {

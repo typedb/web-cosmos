@@ -38,7 +38,7 @@
   <![endif]-->
 
     <header class="site-header
-                   w-100 position-fixed fixed-top fixed-left"
+                   w-100 position-fixed fixed-top fixed-left d-none"
             role="banner">
         <div class="site-header-inner
                     container container-wide
@@ -88,7 +88,7 @@
     <main aria-label="Content" role="main">
         <div id="intro" class="section-intro" style="position: relative;">
             <div class="bg"></div>
-            <div class="stars"></div>
+            <div class="stars d-none d-sm-block"></div>
             <div class="futuristic-city"></div>
 
             <div class="sub-section-summary
@@ -98,16 +98,17 @@
                 <div class="container
                             text-center">
                     <div class="section-intro-logo
-                                mx-auto mb-4">
+                                mx-auto mb-8 mb-md-6">
                         <img class="section-intro-logoType
-                                    mb-4 mx-auto"
+                                    mx-auto"
                              src="img/logo-intro.svg" alt="COSMOS">
                     </div>
 
                     <p class="h1 Geogrotesque-Rg
-                              mx-auto mb-3 col-md-8">Grakn Cosmos: The universe of orderly systems</p>
+                              mx-auto mb-5 mb-md-3 col-md-8">Grakn Cosmos: The universe of orderly systems</p>
 
                     <p class="h5 Titillium-Lt
+                              line-height-default
                               mx-auto mb-4 col-md-9">
                         Welcome to the universal conference of technologies built using
                         <a href="https://grakn.ai" target="_blank">
@@ -119,6 +120,7 @@
                               mt-10 mb-4">30th-31st of January, 2020</p>
 
                     <p class="h5 Titillium-Lt
+                              line-height-default
                               mb-4">Kensington Conference and Events Centre | London, United Kingdom</p>
 
                     <div id="eventbrite-widget-modal-trigger-58504110369" class="button
@@ -127,10 +129,10 @@
                         Get Tickets
                     </div>
 
-                    <div class="planet-blue"></div>
-                    <div class="planet-purple"></div>
-                    <div class="planet-pink"></div>
-                    <div class="spaceship"></div>
+                    <div class="planet-blue d-none d-sm-block"></div>
+                    <div class="planet-purple d-none d-sm-block"></div>
+                    <div class="planet-pink d-none d-sm-block"></div>
+                    <div class="spaceship d-none d-sm-block"></div>
                 </div>
             </div>
 
@@ -149,7 +151,7 @@
                     <p class="h5 Titillium-Lt
                               mt-6">
                         The "cosmos" is the universe viewed as a complex and orderly system, as opposed to chaos.
-                        <a href="https://grakn.ai" target="_blank"><code>Grakn isa database;</code></a>
+                        <a href="https://grakn.ai" target="_blank"><code class="text-nowrap">Grakn isa database;</code></a>
                         <br />one that empowers complex systems to be more intelligent through logic, reasoning, and
                         knowledge
                         engineering.
@@ -174,7 +176,7 @@
 
         <div id="motives" class="section-motives">
             <div class="bg"></div>
-            <div class="stars"></div>
+            <div class="stars d-none d-sm-block"></div>
             <div class="container
                         py-11">
                 <div class="mx-auto col-10 cl-md-8">
@@ -182,43 +184,39 @@
                         Join the conference that brings together those who are changing
                         the universe with Grakn, one intelligent system at a time.
                     </p>
-                    <div class="row pt-6" data-animate-in="right">
-                        <div class="col">
-                            <img src="img/pioneers.svg" />
-                        </div>
-                        <div class="col pt-8">
+                    <div class="row pt-10 pt-sm-6" data-animate-in="right">
+                        <img class="w-100 w-sm-50" src="img/pioneers.svg" />
+                        <div class="w-100 w-sm-50 pt-sm-8 text-center text-sm-left">
                             <p class="h3 Geogrotesque-Rg">Meet the pioneers.</p>
                             <p class="h5 Titillium-Lt
-                                    pt-2">
+                                      pt-2">
                                 Meet the people behind the @username: the inventors, the innovators and the rule
                                 breakers.
                             </p>
                         </div>
                     </div>
-                    <div class="row" data-animate-in="left">
-                        <div class="col pt-8">
+
+                    <div class="row pt-10 pt-sm-6 flex-sm-row-reverse" data-animate-in="left">
+                        <img class="w-100 w-sm-50" src="img/future.svg" />
+                        <div class="w-100 w-sm-50 pt-sm-8
+                                    text-center text-sm-left">
                             <p class="h3 Geogrotesque-Rg">Look to the future.</p>
                             <p class="h5 Titillium-Lt
-                                    pt-2">
+                            pt-2">
                                 Explore the applications of knowledge engineering pushing the boundary of intelligent
                                 systems.
                             </p>
                         </div>
-                        <div class="col">
-                            <img src="img/future.svg" />
-                        </div>
                     </div>
 
-                    <div class="row" data-animate-in="right">
-                        <div class="col">
-                            <img src="img/inspired.svg" />
-                        </div>
-                        <div class="col pt-8">
+                    <div class="row pt-10 pt-sm-6" data-animate-in="right">
+                        <img class="w-100 w-sm-50" src="img/inspired.svg" />
+                        <div class="w-100 w-sm-50 pt-sm-8 text-center text-sm-left">
                             <p class="h3 Geogrotesque-Rg">Be inspired.</p>
                             <p class="h5 Titillium-Lt
                                     pt-2">
-                                Empower yourself with the wisdom, ideas, and technology to build a better future.
-                                Together.
+                                    Empower yourself with the wisdom, ideas, and technology to build a better future.
+                                    Together.
                             </p>
                         </div>
                     </div>
@@ -231,7 +229,7 @@
 
         <div id="speakers" class="section-speakers">
             <div class="bg"></div>
-            <div class="stars"></div>
+            <div class="stars d-none d-sm-block"></div>
 
             <div class="container
                         text-center
@@ -253,7 +251,7 @@
                                     <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none d-sm-list-item">
                                 <a href="#" target="_blank">
                                     <div class="speaker-frame">
                                         <img src="img/speakers/speaker-1.png" alt="speaker 1" />
@@ -264,7 +262,7 @@
                                     <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none d-sm-list-item">
                                 <a href="#" target="_blank">
                                     <div class="speaker-frame">
                                         <img src="img/speakers/speaker-1.png" alt="speaker 1" />
@@ -275,7 +273,7 @@
                                     <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none d-sm-list-item">
                                 <a href="#" target="_blank">
                                     <div class="speaker-frame">
                                         <img src="img/speakers/speaker-1.png" alt="speaker 1" />
@@ -286,7 +284,7 @@
                                     <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none d-sm-list-item">
                                 <a href="#" target="_blank">
                                     <div class="speaker-frame">
                                         <img src="img/speakers/speaker-1.png" alt="speaker 1" />
@@ -305,8 +303,8 @@
                     </div>
                 </div>
 
-                <div class="planet-purple-dark"></div>
-                <div class="planet-pink-dark"></div>
+                <div class="planet-purple-dark d-none d-sm-block"></div>
+                <div class="planet-pink-dark d-none d-sm-block"></div>
             </div>
         </div>
 
@@ -326,11 +324,11 @@
                     <p class="h2 Geogrotesque-Rg">Bring your Grakn story</p>
                     <p class="h5 Titillium-Lt mt-6" style="line-height: 30px;">
                         Share your story of knowledge engineering intelligent systems with the community.
-                        <br />Share your challenges, your solutions, your innovations, and your lessons.
-                        <br />Let us celebrate your achievements with you and tell the universe about it.
+                        <br class="d-none d-sm-block"/>Share your challenges, your solutions, your innovations, and your lessons.
+                        <br class="d-none d-sm-block"/>Let us celebrate your achievements with you and tell the universe about it.
                     </p>
                     <div class="mt-6">
-                        <a class="button" style="background-color: white;" href="#">
+                        <a class="button" href="#">
                             Apply to Speak
                         </a>
                     </div>
@@ -339,33 +337,39 @@
         </div>
 
         <div id="venue" class="section-venue">
-            <div class="stars"></div>
+            <div class="stars d-none d-sm-block"></div>
             <div class="bg"></div>
 
             <div class="container
-                        py-15">
-                <div class="row">
-                    <div class="mx-auto col-3 cl-md-8">
-                        <div style="margin-top: 88px;">
-                            <p class="h2 Geogrotesque-Rg text-capitalize">Kensington <br />Conference and <br />Events
-                                Centre</p>
-                            <p class="h4 Titillium-Lt py-3" style="color: #BDB5FF; line-height: 35px;">
-                                Kensington Town Hall,<br />
+                        pt-15 pb-4">
+                <div class="mx-auto col-10 cl-md-8">
+                    <div class="row flex-row-reverse">
+                        <img class="w-100 w-md-60 mb-md-5" src="img/london.svg" data-animate-in="fade" />
+
+                        <div class="w-100 w-md-40 mt-md-11 mb-13
+                                    text-center text-md-left">
+                            <p class="h2 Geogrotesque-Rg text-capitalize">
+                                Kensington
+                                <br class="d-none d-md-block"/>Conference and
+                                <br class="d-none d-md-block"/>Events Centre
+                            </p>
+                            <p class="address
+                                    h4 Titillium-Lt py-3">
+                                Kensington Town Hall,<br class="d-none d-md-block"/>
                                 Hornton Street,<br />
-                                London W8 7NX,<br />
+                                London W8 7NX,<br class="d-none d-md-block"/>
                                 United Kingdom
                             </p>
-                            <a class="text-uppercase" href="https://goo.gl/maps/W1Mffr2qJZGH6ENM9" target="_blank">
-                                view map
+                            <a class="button
+                                      px-7 mt-2 mx-md-auto"
+                                href="https://goo.gl/maps/W1Mffr2qJZGH6ENM9" target="_blank">
+                                View Map
                             </a>
                         </div>
                     </div>
-                    <div class="col-7">
-                        <img src="img/london.svg" data-animate-in="fade" />
-                    </div>
                 </div>
+                <div class="divider"></div>
             </div>
-            <div class="divider"></div>
         </div>
 
         <div id="sponsors" class="section-sponsors">
@@ -376,41 +380,37 @@
             py-11">
                 <div class="mx-auto col-10 cl-md-8">
                     <p class="h2 Geogrotesque-Rg">Sponsors and Community Partners</p>
-                    <p class="h5 Titillium-Lt
-                            mt-4">
+                    <p class="h5 Titillium-Lt line-height-default
+                              mt-4">
                         Meet the organisations that make Grakn Cosmos possible.
                         If you'd like to learn more about sponsorships,
                         <a href="mailto:cosmos@grakn.ai?Subject=Grakn%20Cosmos%20Sponsorships">contact us</a>.
                     </p>
                     <div class="row
                                 pt-7">
-                        <ul class="w-100 d-flex flex-wrap align-items-center justify-content-center">
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img src="img/sponsors/sponsor-1.png" alt="sponsor 1" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img src="img/sponsors/sponsor-1.png" alt="sponsor 2" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img src="img/sponsors/sponsor-1.png" alt="sponsor 3" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img src="img/sponsors/sponsor-1.png" alt="sponsor 4" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img src="img/sponsors/sponsor-1.png" alt="sponsor 5" />
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="w-50 w-md-25 p-3">
+                            <a href="#" target="_blank">
+                                <img src="img/sponsors/sponsor-1.png" alt="sponsor 1" />
+                            </a>
+                        </div>
+
+                        <div class="w-50 w-md-25 p-3">
+                            <a href="#" target="_blank">
+                                <img src="img/sponsors/sponsor-1.png" alt="sponsor 1" />
+                            </a>
+                        </div>
+
+                        <div class="w-50 w-md-25 p-3">
+                            <a href="#" target="_blank">
+                                <img src="img/sponsors/sponsor-1.png" alt="sponsor 1" />
+                            </a>
+                        </div>
+
+                        <div class="w-50 w-md-25 p-3">
+                            <a href="#" target="_blank">
+                                <img src="img/sponsors/sponsor-1.png" alt="sponsor 1" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -422,7 +422,7 @@
         <div class="section-newsletter
                     text-center
                     position-relative">
-            <div class="wave"></div>
+            <div class="wave d-none d-sm-block"></div>
             <div class="bg"></div>
 
             <div class="container
@@ -435,9 +435,10 @@
                 <p class="h3 Geogrotesque-Rg text-uppercase
                         py-4 mx-auto col-md-8">Grakn Cosmos</p>
 
-                <div id="mc_embed_signup">
+                <div id="mc_embed_signup" class="px-3">
                     <form action="https://grakn.us8.list-manage.com/subscribe/post-json?u=b27e8984466b0dc642a917ba5&amp;id=3742a20dc0&&c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mx-auto col-10 cl-md-8" target="_blank" novalidate>
-                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Stay tuned with conference updates" required>
+                        <input type="email" value="" name="EMAIL" class="email d-none d-sm-block" id="mce-EMAIL" placeholder="Stay tuned with conference updates" required>
+                        <input type="email" value="" name="EMAIL" class="email d-block d-sm-none" id="mce-EMAIL" placeholder="Stay tuned" required>
                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                         <div style="position: absolute; left: -5000px;" aria-hidden="true">
                             <input type="text" name="b_b27e8984466b0dc642a917ba5_3742a20dc0" tabindex="-1" value="">
@@ -455,14 +456,14 @@
                     </form>
                 </div>
 
-                <div class="spaceship"></div>
-                <div class="planet-pink"></div>
+                <div class="spaceship d-none d-sm-block"></div>
+                <div class="planet-pink d-none d-sm-block"></div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container pt-4 pb-4">
+    <div class="big-footer d-none d-md-block">
+        <div class="container py-4">
             <div
                 class="footer-top-line
                        h6 Titillium-Lt
@@ -485,24 +486,57 @@
                 </a>
                 <div class="h6 Titillium-Lt
                             d-flex flex-wrap align-items-center justify-content-begin flex-row-reverse flex-grow-1">
-                        <span> 2019 Grakn Labs Ltd.</span>
-                        <span class="h5" style="padding: 5px 5px 0 0">©</span>
-                        <span style="padding: 0 5px">/</span>
-                        <span><a href="/privacy-policy.html">Privacy Policy</a></span>
-                    <div
-                        class="social-links
-                               h6 Titillium-Lt
-                               d-flex flex-wrap align-items-center justify-content-begin flex-row-reverse pr-4">
-                        <a href="#"><img src="img/social/facebook.svg" /></a>
-                        <a href="#"><img src="img/social/slack.svg" /></a>
-                        <a href="#"><img src="img/social/twitter.svg" /></a>
-                        <a href="#"><img src="img/social/github.svg" /></a>
-                        <a href="#"><img src="img/social/linked-in.svg" /></a>
-                    </div>
+                    <span> 2019 Grakn Labs Ltd.</span>
+                    <span class="h5" style="padding: 5px 5px 0 0">©</span>
+                    <span style="padding: 0 5px">/</span>
+                    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+                </div>
+                <div
+                    class="social-links
+                            h6 Titillium-Lt
+                            d-flex flex-wrap align-items-center justify-content-begin flex-row-reverse pr-4">
+                    <a href="#"><img src="img/social/facebook.svg" /></a>
+                    <a href="#"><img src="img/social/slack.svg" /></a>
+                    <a href="#"><img src="img/social/twitter.svg" /></a>
+                    <a href="#"><img src="img/social/github.svg" /></a>
+                    <a href="#"><img src="img/social/linked-in.svg" /></a>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="small-footer d-block d-md-none">
+        <div class="container">
+            <div class="social-links
+                    h6 Titillium-Lt
+                    d-flex flex-wrap align-items-center justify-content-between flex-row-reverse pt-6 mx-auto"
+                style="width: 250px">
+                <a href="#"><img src="img/social/facebook.svg" /></a>
+                <a href="#"><img src="img/social/slack.svg" /></a>
+                <a href="#"><img src="img/social/twitter.svg" /></a>
+                <a href="#"><img src="img/social/github.svg" /></a>
+                <a href="#"><img src="img/social/linked-in.svg" /></a>
+            </div>
+            <div class="h6 Titillium-Lt text-center
+                        pt-6 mx-auto">
+                <span> 2019 Grakn Labs Ltd.</span>
+                <span class="h5 pr-1">©</span>
+                <span class="pr-1">/</span>
+                <span><a class="m-0" href="/privacy-policy.html">Privacy Policy</a></span>
+            </div>
+            <a class="by-grakn
+                          d-flex flex-items-center flex-justify-center flex-grow-1 mx-auto py-6"
+                href="https://github.com/"
+                target="_blank"
+                style="width: 180px">
+                <img src="img/code.svg" class="mr-2" alt="coded">
+                <span class="mr-2">with</span>
+                <img src="img/heart.svg" class="mr-2" alt="love">
+                <span class="mr-2">by</span>
+                <img src="img/logo-graknai.svg" alt="Grakn Labs">
+            </a>
+        </div>
+    </div>
 
     <!-- Noscript content for added SEO -->
     <noscript><a href="https://www.eventbrite.com/e/grakn-cosmos-2019-tickets-58504110369" rel="noopener noreferrer" target="_blank"></noscript>

@@ -1,3 +1,4 @@
+
 @import "./variables";
 @import "./mixins";
 
@@ -137,6 +138,26 @@ code {
 @import "./newsletter";
 @import "./footer";
 
+html {
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+p {
+  @include sm {
+    padding: 0 20px !important;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.line-height-default {
+  line-height: 30px;
+}
+
 *:focus {
   outline: none !important;
 }
@@ -237,13 +258,6 @@ code {
     @include transform(none);
   }
 }
-
-// .section-apply {
-//   width: 100%;
-//   background-image: url(../img/solar-system.svg);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-// }
 
 .container {
   // max-width: 1152px;

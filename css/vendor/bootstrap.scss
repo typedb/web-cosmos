@@ -7,8 +7,8 @@
 
 @import "functions";
 @import "variables";
-@import "../bootstrap-override";
 @import "mixins";
+@import "../bootstrap-override";
 @import "root";
 @import "reboot";
 @import "type";
@@ -43,3 +43,14 @@
 @import "spinners";
 @import "utilities";
 @import "print";
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      @each $prop, $abbrev in (width: w, height: h) {
+        @each $size, $length in $sizes {
+          .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        }
+      }
+    }
+  }

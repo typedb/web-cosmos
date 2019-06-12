@@ -6,6 +6,11 @@
     background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(23,12,68,1) 100%);
   }
 
+  .address {
+    color: #BDB5FF;
+    line-height: 35px;
+  }
+
   .stars {
     height: calc(668px - 100px);
     background-image: url(../img/stars-venue.svg);

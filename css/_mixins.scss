@@ -13,6 +13,8 @@
   margin: $margin;
 }
 
+// Browser compatible css attributes
+
 @mixin border-radius($radius: 5px) {
   border-radius: $radius;
   -moz-border-radius: $radius;
@@ -54,4 +56,18 @@
   -ms-transform: $deg;
   -o-transform: $deg;
   -webkit-transform: $deg;
+}
+
+// media queries
+@mixin sm {
+  @media (max-width: 576px) { @content; }
+}
+@mixin md {
+  @media (min-width: 768px) { @content; }
+}
+@mixin lg {
+  @media (min-width: 992px) { @content; }
+}
+@mixin xl {
+  @media (min-width: 1200px) { @content; }
 }

@@ -196,6 +196,7 @@ code {
 .site-header.mobile .site-header-nav .button {
   display: block !important;
   margin: 40px 0 20px 0;
+  font-size: 1.2em;
 }
 
 .section-intro {
@@ -368,6 +369,7 @@ code {
 }
 .section-speakers ul li {
   width: 160px;
+  display: list-item;
   margin-right: 60px;
 }
 .section-speakers ul li .speaker-frame {
@@ -409,7 +411,7 @@ code {
 .section-apply .bg-wrapper .bg {
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
@@ -434,11 +436,15 @@ code {
   position: relative;
 }
 .section-apply .container .apply-content {
-  width: 1400px;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+.section-apply .container .button {
+  background-color: white;
+  color: #2346E7 !important;
 }
 
 .section-venue {
@@ -447,6 +453,10 @@ code {
 .section-venue .bg {
   background: #0a0926;
   background: linear-gradient(180deg, #0a0926 0%, #170c44 100%);
+}
+.section-venue .address {
+  color: #BDB5FF;
+  line-height: 35px;
 }
 .section-venue .stars {
   height: calc(668px - 100px);
@@ -459,14 +469,6 @@ code {
 .section-sponsors .bg {
   background: #170c44;
   background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
-}
-.section-sponsors ul li {
-  width: 160px;
-  margin-right: 60px;
-  padding-top: 32px;
-}
-.section-sponsors ul li:last-child {
-  margin: 0;
 }
 
 .section-newsletter {
@@ -593,18 +595,38 @@ code {
   z-index: -1;
 }
 
-footer {
+.big-footer, .small-footer {
   background: #090642;
 }
-footer .container {
+.big-footer .container, .small-footer .container {
   border-top: 1px solid #4446b6;
 }
-footer .container a {
+.big-footer .container a, .small-footer .container a {
   color: white;
   margin-left: 16px;
 }
-footer .container .by-grakn:hover {
+.big-footer .container .by-grakn:hover, .small-footer .container .by-grakn:hover {
   text-decoration: none;
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  p {
+    padding: 0 20px !important;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.line-height-default {
+  line-height: 30px;
 }
 
 *:focus {

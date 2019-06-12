@@ -124,7 +124,14 @@ function subscribe($form) {
 
 function loadSpeakers() {
     let allSpeakersHtml = "";
-    const initialSpeakers = speakersList.slice(0, 5);
+    // number of speakers to load and display are determined by the
+    // number if `li`s that are chosen to be displayed based on the
+    // user's screen size
+    const numOfSpeakers = $('#speakers-list li').filter(function () {
+        return $(this).css('display') === 'list-item'
+    }).length;
+
+    const initialSpeakers = speakersList.slice(0, numOfSpeakers);
     for (const speaker of initialSpeakers) {
         generateSpeakerHtml(speaker);
         allSpeakersHtml += generateSpeakerHtml(speaker);
@@ -154,7 +161,12 @@ function generateSpeakerHtml(speaker) {
 async function swapSpeakers(initialSpeakers) {
     const displayedSpeakers = initialSpeakers;
     const hiddenSpeakers = speakersList.filter((i) => !initialSpeakers.includes(i));
-    const swappingIndexes = [1, 4, 2, 5, 3];
+    const completeSwappingIndexes = [1, 4, 2, 5, 3];
+    const swappingIndexes = [];
+
+    for (let i = 0; i < initialSpeakers.length; i++) {
+        swappingIndexes.push(completeSwappingIndexes[i]);
+    }
 
     while (true) {
         for (let i of swappingIndexes) {
@@ -193,6 +205,8 @@ function mobileMenu() {
             $('.site-header').removeClass('expanded');
         }
     });
+
+    $('header').attr("style", "display: block !important");
 
     function toggleMobileMenu() {
         const windowWidth = $(window).width();

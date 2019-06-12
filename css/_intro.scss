@@ -17,6 +17,10 @@
     background-image: url(../img/futuristic-city.svg);
     background-position: center bottom;
     bottom: 0;
+
+    @media (max-width: 1400px) {
+      background-image: url(../img/mobile-futuristic-city.svg);
+    }
   }
 
   .sub-section-summary {

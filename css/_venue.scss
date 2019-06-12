@@ -1,6 +1,10 @@
 .section-venue {
   position: relative;
 
+  .row {
+    position: relative;
+  }
+
   .bg {
     background: rgb(10,9,38);
     background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(23,12,68,1) 100%);
@@ -14,5 +18,32 @@
   .stars {
     height: calc(668px - 100px);
     background-image: url(../img/stars-venue.svg);
+  }
+
+  // .london {
+  //   height: 455px;
+  //   background: url(../img/london.svg) no-repeat;
+
+  //   // @media (max-width: 768px) {
+  //   //   position: absolute;
+  //   //   right: 0;
+  //   // }
+  // }
+
+  .mobile-london {
+    width: 542px;
+    height: 448px;
+
+    background: url(../img/mobile-london.svg) no-repeat;
+
+    position: absolute;
+    right: 0;
+    top: 120px;
+  }
+
+  .venue-details {
+    @media (max-width: 768px) {
+      padding-top: 460px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 .site-header {
   height: 90px;
-  @include transition(background, .26s, ease-in-out);
+  @include transition(background, 0.26s, ease-in-out);
 
   &.is-scrolling {
     background: #190d47;
@@ -11,8 +11,12 @@
       margin-top: 10px;
       text-decoration: none;
     }
-    img { margin-top: -10px;}
-    span { line-height: 68px; }
+    img {
+      margin-top: -10px;
+    }
+    span {
+      line-height: 68px;
+    }
   }
 
   &-nav {
@@ -28,7 +32,7 @@
           color: white;
           line-height: 1;
 
-          padding: 8px;
+          // padding: 8px;
           position: relative;
           white-space: nowrap;
         }
@@ -42,6 +46,68 @@
   }
 
   &.mobile {
-    
+    .site-header-nav {
+      display: none !important;
+    }
+
+    &.expanded {
+      height: auto;
+      background: #190d47;
+      display: block;
+
+      .site-header-nav, ul {
+        display: block !important;
+      }
+    }
+
+    .site-header-logo p,
+    .site-header-action {
+      display: none !important;
+    }
+
+    .site-header-inner {
+      display: block !important;
+    }
+
+    .hamburger {
+      display: block !important;
+    }
+
+    .site-header-logo img {
+      margin-top: -7px
+    }
+
+    .site-header-inner {
+      padding: 20px;
+    }
+
+    .site-header-nav {
+      width: 100% !important;
+
+      ul {
+        width: 100%;
+        max-width: 100%;
+
+        text-align: left !important;
+
+        margin: 0;
+        padding-top: 40px;
+
+        li {
+          border-top: 1px solid #281572;
+          padding: 15px 0;
+
+          &:last-child {
+            border-bottom: 1px solid #281572;
+          }
+        }
+      }
+
+      .button {
+        display: block !important;
+
+        margin: 40px 0 20px 0;
+      }
+    }
   }
 }

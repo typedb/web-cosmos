@@ -72,7 +72,6 @@ video {
   }
 }
 
-
 ol,
 ul {
   list-style: none;
@@ -96,7 +95,6 @@ img {
 
   display: block;
 }
-
 
 code {
   background: $color-bg-brand;
@@ -139,6 +137,10 @@ code {
 @import "./newsletter";
 @import "./footer";
 
+*:focus {
+  outline: none !important;
+}
+
 .bg {
   width: 100%;
   height: 100%;
@@ -158,9 +160,16 @@ code {
   z-index: -999;
 }
 
+.hamburger {
+  padding-top: 12px;
+}
+
 .hamburger-inner {
-  background-color: white;
-  &:after, &:before { background-color: white; }
+  background-color: white !important;
+  &:after,
+  &:before {
+    background-color: white !important;
+  }
 }
 
 .divider {

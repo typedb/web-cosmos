@@ -8,6 +8,8 @@ $(document).ready(function () {
     handleSubscription();
 
     loadSpeakers();
+
+    mobileMenu();
 });
 
 function header() {
@@ -167,6 +169,37 @@ async function swapSpeakers(initialSpeakers) {
             displayedSpeakers[i - 1] = hiddenSpeakers[0];
             hiddenSpeakers.shift();
             hiddenSpeakers.push(speakersList.filter(s => s.fullName === speakerToRemoveFullName)[0]);
+        }
+    }
+}
+
+function mobileMenu() {
+    toggleMobileMenu();
+
+    $(window).resize(function () {
+        toggleMobileMenu();
+    })
+
+    $('.hamburger').click(function () {
+        $(this).toggleClass('is-active');
+        $('.site-header').toggleClass('expanded');
+    });
+
+    $(window).click(function (e) {
+        const clickedElement = $(e.target);
+        const menuIsClicked = clickedElement.hasClass("hamburger") || clickedElement.parents('.hamburger').length;
+        if (!menuIsClicked) {
+            $('.hamburger').removeClass('is-active');
+            $('.site-header').removeClass('expanded');
+        }
+    });
+
+    function toggleMobileMenu() {
+        const windowWidth = $(window).width();
+        if (windowWidth < 1210) {
+            $('.site-header').addClass('mobile');
+        } else {
+            $('.site-header').removeClass('mobile');
         }
     }
 }

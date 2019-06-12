@@ -169,6 +169,7 @@ code {
 }
 .site-header.mobile .hamburger {
   display: block !important;
+  padding-right: 0;
 }
 .site-header.mobile .site-header-logo img {
   margin-top: -7px;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3178px" height="503px" viewBox="0 0 3178 503" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="3178" height="508"></rect>
+        <linearGradient x1="50%" y1="48.2913246%" x2="49.1798706%" y2="50.6252833%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(0.000000, -5.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <path d="M712.225255,132.53971 C976.535895,241 976.535895,362.4375 1513.15494,380.203125 C2049.77399,397.96875 2252.40579,109.314432 2726.22611,189.486307 C3042.10632,242.934224 3232.74926,400.114569 3298.15494,661.027344 L-225.845057,661.027344 C-272.323107,360.481551 -248.83092,165.176374 -155.368495,75.1118136 C-15.1748571,-59.9850275 447.914615,24.0794202 712.225255,132.53971 Z" id="Path-7-Copy-3" fill="url(#linearGradient-3)" opacity="0.043176" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

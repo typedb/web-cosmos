@@ -1,8 +1,9 @@
 .section-venue {
+  position: relative;
 
   .bg {
-    background: rgb(10, 9, 38);
-    background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(23, 12, 68, 1) 100%);
+    background: rgb(10,9,38);
+    background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(23,12,68,1) 100%);
   }
 
   .stars {

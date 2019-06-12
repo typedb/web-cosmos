@@ -247,22 +247,18 @@ code {
   letter-spacing: 1px;
 }
 
-.section-motives-speakers {
-  position: relative;
-}
-.section-motives-speakers .bg {
-  background: #0a0926;
-  background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%);
-}
-.section-motives-speakers .stars {
-  height: calc(100% - 100px);
-  background-image: url(../img/stars-motives.svg);
-}
-
 .section-motives {
   width: 100%;
   position: relative;
   z-index: 0;
+}
+.section-motives .bg {
+  background: #0a0926;
+  background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%);
+}
+.section-motives .stars {
+  height: calc(100% - 100px);
+  background-image: url(../img/stars-motives.svg);
 }
 .section-motives p {
   line-height: 28px;
@@ -273,6 +269,10 @@ code {
 
 .section-speakers {
   position: relative;
+}
+.section-speakers .bg {
+  background: #0b0743;
+  background: linear-gradient(180deg, #0b0743 0%, #0a0926 100%);
 }
 .section-speakers .container {
   position: relative;
@@ -349,6 +349,54 @@ code {
   text-decoration: none;
 }
 
+.section-apply {
+  width: 100%;
+  background-color: #0a0926;
+  position: relative;
+}
+.section-apply .bg-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.section-apply .bg-wrapper .bg {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/galaxy.svg);
+  background-color: #2346E7;
+  background-position: center center;
+  z-index: 0;
+}
+.section-apply .bg-wrapper svg {
+  width: 100%;
+  height: 10vw;
+  position: absolute;
+}
+.section-apply .bg-wrapper svg.top-mask {
+  top: 0;
+}
+.section-apply .bg-wrapper svg.bottom-mask {
+  bottom: 0;
+}
+.section-apply .container {
+  height: 600px;
+  position: relative;
+}
+.section-apply .container .apply-content {
+  width: 1400px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section-venue {
+  position: relative;
+}
 .section-venue .bg {
   background: #0a0926;
   background: linear-gradient(180deg, #0a0926 0%, #170c44 100%);
@@ -358,16 +406,12 @@ code {
   background-image: url(../img/stars-venue.svg);
 }
 
-.section-sponsors-newsletter {
-  position: relative;
-}
-.section-sponsors-newsletter .bg {
-  background: #170c44;
-  background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
-}
-
 .section-sponsors {
   position: relative;
+}
+.section-sponsors .bg {
+  background: #170c44;
+  background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
 }
 .section-sponsors ul li {
   width: 160px;
@@ -378,6 +422,23 @@ code {
   margin: 0;
 }
 
+.section-newsletter {
+  position: relative;
+}
+.section-newsletter .bg {
+  background: #100638;
+  background: linear-gradient(180deg, #100638 0%, #090642 100%);
+}
+.section-newsletter .wave {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/wave-newsletter.svg);
+  background-position: bottom;
+}
 .section-newsletter-logo {
   width: 115px;
   height: 104px;
@@ -438,7 +499,7 @@ code {
   right: 0;
 }
 .section-newsletter form button .spinner-border {
-  color: #240F61;
+  color: #240f61;
   margin-top: 9px;
 }
 .section-newsletter form .form-messages {
@@ -486,8 +547,7 @@ code {
 }
 
 footer {
-  background: #0f0538;
-  background: linear-gradient(180deg, #0f0538 0%, #170c44 100%);
+  background: #090642;
 }
 footer .container {
   border-top: 1px solid #4446b6;

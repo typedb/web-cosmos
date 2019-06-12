@@ -1,0 +1,50 @@
+.section-apply {
+  width: 100%;
+
+  background-color: rgba(10, 9, 38, 1);
+
+  position: relative;
+
+  .bg-wrapper {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    .bg {
+        @include absolute-background(100%, 100%, 0, contain, no-repeat);
+        background-image: url(../img/galaxy.svg);
+        background-color: #2346E7;
+        background-position: center center;
+        z-index: 0;
+    }
+
+    svg {
+        width: 100%;
+        height: 10vw;
+
+        position: absolute;
+
+        &.top-mask {
+            top: 0;
+        }
+
+        &.bottom-mask {
+            bottom: 0;
+        }
+    }
+  }
+
+  .container {
+    height: 600px;
+    position: relative;
+
+    .apply-content {
+      width: 1400px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

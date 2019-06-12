@@ -175,7 +175,7 @@ code {
   margin-top: -7px;
 }
 .site-header.mobile .site-header-inner {
-  padding: 20px;
+  padding: 20px 25px 5px 30px;
 }
 .site-header.mobile .site-header-nav {
   width: 100% !important;

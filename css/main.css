@@ -164,9 +164,6 @@ code {
 .site-header.mobile .site-header-action {
   display: none !important;
 }
-.site-header.mobile .site-header-inner {
-  display: block !important;
-}
 .site-header.mobile .hamburger {
   display: block !important;
   padding-right: 0;
@@ -175,7 +172,9 @@ code {
   margin-top: -7px;
 }
 .site-header.mobile .site-header-inner {
-  padding: 20px 25px 5px 30px;
+  display: block !important;
+  margin: 0 block;
+  padding: 20px 25px 20px 25px;
 }
 .site-header.mobile .site-header-nav {
   width: 100% !important;

@@ -65,10 +65,6 @@
       display: none !important;
     }
 
-    .site-header-inner {
-      display: block !important;
-    }
-
     .hamburger {
       display: block !important;
       padding-right: 0;
@@ -79,7 +75,9 @@
     }
 
     .site-header-inner {
-      padding: 20px 25px 5px 30px;
+      display: block !important;
+      margin: 0 block;
+      padding: 20px 25px 20px 25px;
     }
 
     .site-header-nav {

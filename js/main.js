@@ -128,7 +128,7 @@ function loadSpeakers() {
     // number if `li`s that are chosen to be displayed based on the
     // user's screen size
     const numOfSpeakers = $('#speakers-list li').filter(function () {
-        return $(this).css('display') === 'list-item'
+        return $(this).css('display') != 'none';
     }).length;
 
     const initialSpeakers = speakersList.slice(0, numOfSpeakers);

@@ -2,8 +2,8 @@
   position: relative;
 
   .bg {
-    background: rgb(10,9,38);
-    background: linear-gradient(180deg, rgba(10,9,38,1) 0%, rgba(40,17,107,1) 35%, rgba(0,200,216,1) 100%);
+    background: rgb(10, 9, 38);
+    background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(40, 17, 107, 1) 35%, rgba(0, 200, 216, 1) 100%);
   }
 
   .stars {
@@ -18,8 +18,45 @@
     background-position: center bottom;
     bottom: 0;
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1480px) {
+      background-image: url(../img/tablet-futuristic-city.svg);
+      background-size: contain;
+    }
+
+    @media (max-width: 768px) {
       background-image: url(../img/mobile-futuristic-city.svg);
+      background-size: contain;
+    }
+  }
+
+  .planet-pink {
+    @include absolute-background(138px, 138px, 0, auto, no-repeat);
+
+    background-image: url(../img/planet-pink.svg);
+    top: 600px;
+    left: 100px;
+    z-index: -7;
+
+    @media (max-width: 1200px) {
+      top: 720px;
+    }
+  }
+
+  .spaceship {
+    @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+
+    background-image: url(../img/spaceship.svg);
+    top: 580px;
+    right: 60px;
+    z-index: -6;
+
+    @media (max-width: 1200px) {
+      top: 730px;
+
+      @include transform(scaleX(-1));
+
+      filter: FlipH;
+      -ms-filter: "FlipH";
     }
   }
 
@@ -59,24 +96,6 @@
       background-image: url(../img/planet-purple.svg);
       top: -60px;
       z-index: -9;
-    }
-
-    .planet-pink {
-      @include absolute-background(138px, 138px, 0, auto, no-repeat);
-
-      background-image: url(../img/planet-pink.svg);
-      bottom: 0;
-      left: 100px;
-      z-index: -7;
-    }
-
-    .spaceship {
-      @include absolute-background(129px, 190px, 0px, auto, no-repeat);
-
-      background-image: url(../img/spaceship.svg);
-      bottom: 0;
-      right: 60px;
-      z-index: -6;
     }
   }
 

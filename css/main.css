@@ -221,9 +221,57 @@ code {
   background-position: center bottom;
   bottom: 0;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1480px) {
+  .section-intro .futuristic-city {
+    background-image: url(../img/tablet-futuristic-city.svg);
+    background-size: contain;
+  }
+}
+@media (max-width: 768px) {
   .section-intro .futuristic-city {
     background-image: url(../img/mobile-futuristic-city.svg);
+    background-size: contain;
+  }
+}
+.section-intro .planet-pink {
+  width: 138px;
+  height: 138px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-pink.svg);
+  top: 600px;
+  left: 100px;
+  z-index: -7;
+}
+@media (max-width: 1200px) {
+  .section-intro .planet-pink {
+    top: 720px;
+  }
+}
+.section-intro .spaceship {
+  width: 129px;
+  height: 190px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/spaceship.svg);
+  top: 580px;
+  right: 60px;
+  z-index: -6;
+}
+@media (max-width: 1200px) {
+  .section-intro .spaceship {
+    top: 730px;
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
   }
 }
 .section-intro .sub-section-summary {
@@ -267,30 +315,6 @@ code {
   background-image: url(../img/planet-purple.svg);
   top: -60px;
   z-index: -9;
-}
-.section-intro .sub-section-summary .planet-pink {
-  width: 138px;
-  height: 138px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0;
-  background-image: url(../img/planet-pink.svg);
-  bottom: 0;
-  left: 100px;
-  z-index: -7;
-}
-.section-intro .sub-section-summary .spaceship {
-  width: 129px;
-  height: 190px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin: 0px;
-  background-image: url(../img/spaceship.svg);
-  bottom: 0;
-  right: 60px;
-  z-index: -6;
 }
 .section-intro .sub-section-description {
   height: 750px;

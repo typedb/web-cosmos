@@ -29,35 +29,25 @@
     }
   }
 
-  .planet-pink {
+  .m-planet-pink {
     @include absolute-background(138px, 138px, 0, auto, no-repeat);
 
     background-image: url(../img/planet-pink.svg);
-    top: 600px;
+    top: 720px;
     left: 100px;
     z-index: -7;
-
-    @media (max-width: 1200px) {
-      top: 720px;
-    }
   }
 
-  .spaceship {
+  .m-spaceship {
     @include absolute-background(129px, 190px, 0px, auto, no-repeat);
 
     background-image: url(../img/spaceship.svg);
-    top: 580px;
+    top: 730px;
     right: 60px;
     z-index: -6;
-
-    @media (max-width: 1200px) {
-      top: 730px;
-
-      @include transform(scaleX(-1));
-
-      filter: FlipH;
-      -ms-filter: "FlipH";
-    }
+    @include transform(scaleX(-1));
+    filter: FlipH;
+    -ms-filter: "FlipH";
   }
 
   .sub-section-summary {
@@ -96,6 +86,32 @@
       background-image: url(../img/planet-purple.svg);
       top: -60px;
       z-index: -9;
+    }
+
+    .planet-pink {
+      @include absolute-background(138px, 138px, 0, auto, no-repeat);
+
+      background-image: url(../img/planet-pink.svg);
+      top: 330px;
+      left: 100px;
+      z-index: -7;
+
+      @media (max-width: 1330px) {
+        display: none;
+      }
+    }
+
+    .spaceship {
+      @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+
+      background-image: url(../img/spaceship.svg);
+      top: 300px;
+      right: 60px;
+      z-index: -6;
+
+      @media (max-width: 1330px) {
+        display: none;
+      }
     }
   }
 

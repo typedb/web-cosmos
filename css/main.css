@@ -233,7 +233,7 @@ code {
     background-size: contain;
   }
 }
-.section-intro .planet-pink {
+.section-intro .m-planet-pink {
   width: 138px;
   height: 138px;
   background-size: auto;
@@ -241,16 +241,11 @@ code {
   position: absolute;
   margin: 0;
   background-image: url(../img/planet-pink.svg);
-  top: 600px;
+  top: 720px;
   left: 100px;
   z-index: -7;
 }
-@media (max-width: 1200px) {
-  .section-intro .planet-pink {
-    top: 720px;
-  }
-}
-.section-intro .spaceship {
+.section-intro .m-spaceship {
   width: 129px;
   height: 190px;
   background-size: auto;
@@ -258,21 +253,16 @@ code {
   position: absolute;
   margin: 0px;
   background-image: url(../img/spaceship.svg);
-  top: 580px;
+  top: 730px;
   right: 60px;
   z-index: -6;
-}
-@media (max-width: 1200px) {
-  .section-intro .spaceship {
-    top: 730px;
-    transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-  }
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 .section-intro .sub-section-summary {
   padding-top: 216px;
@@ -315,6 +305,40 @@ code {
   background-image: url(../img/planet-purple.svg);
   top: -60px;
   z-index: -9;
+}
+.section-intro .sub-section-summary .planet-pink {
+  width: 138px;
+  height: 138px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0;
+  background-image: url(../img/planet-pink.svg);
+  top: 330px;
+  left: 100px;
+  z-index: -7;
+}
+@media (max-width: 1330px) {
+  .section-intro .sub-section-summary .planet-pink {
+    display: none;
+  }
+}
+.section-intro .sub-section-summary .spaceship {
+  width: 129px;
+  height: 190px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 0px;
+  background-image: url(../img/spaceship.svg);
+  top: 300px;
+  right: 60px;
+  z-index: -6;
+}
+@media (max-width: 1330px) {
+  .section-intro .sub-section-summary .spaceship {
+    display: none;
+  }
 }
 .section-intro .sub-section-description {
   height: 750px;

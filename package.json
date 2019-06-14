@@ -1,0 +1,27 @@
+{
+  "name": "grakn-web-cosmos",
+  "version": "1.0.0",
+  "description": "The website of Grakn Cosmos 2020",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graknlabs/web%3Dcosmos.git"
+  },
+  "author": "soroush@grakn.ai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graknlabs/web%3Dcosmos/issues"
+  },
+  "homepage": "https://github.com/graknlabs/web%3Dcosmos#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-rename": "^1.4.0"
+  }
+}

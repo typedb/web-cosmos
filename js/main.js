@@ -123,21 +123,23 @@ function subscribe($form) {
 }
 
 function loadSpeakers() {
-    let allSpeakersHtml = "";
-    // number of speakers to load and display are determined by the
-    // number if `li`s that are chosen to be displayed based on the
-    // user's screen size
-    const numOfSpeakers = $('#speakers-list li').filter(function () {
-        return $(this).css('display') != 'none';
-    }).length;
+    if ($('#speakers-list').length) {
+        let allSpeakersHtml = "";
+        // number of speakers to load and display are determined by the
+        // number if `li`s that are chosen to be displayed based on the
+        // user's screen size
+        const numOfSpeakers = $('#speakers-list li').filter(function () {
+            return $(this).css('display') != 'none';
+        }).length;
 
-    const initialSpeakers = speakersList.slice(0, numOfSpeakers);
-    for (const speaker of initialSpeakers) {
-        generateSpeakerHtml(speaker);
-        allSpeakersHtml += generateSpeakerHtml(speaker);
+        const initialSpeakers = speakersList.slice(0, numOfSpeakers);
+        for (const speaker of initialSpeakers) {
+            generateSpeakerHtml(speaker);
+            allSpeakersHtml += generateSpeakerHtml(speaker);
+        }
+        $('#speakers-list').html(allSpeakersHtml);
+        swapSpeakers(initialSpeakers);
     }
-    $('#speakers-list').html(allSpeakersHtml);
-    swapSpeakers(initialSpeakers);
 }
 
 function generateSpeakerHtml(speaker) {

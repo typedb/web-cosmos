@@ -320,7 +320,7 @@ code {
   height: 750px;
 }
 .section-intro .sub-section-description .h5 {
-  line-height: 28px;
+  line-height: 35px;
   letter-spacing: 1px;
 }
 
@@ -445,7 +445,7 @@ code {
   position: absolute;
   margin: 0;
   background-image: url(../img/galaxy.svg);
-  background-color: #2346E7;
+  background-color: #2346e7;
   background-position: center center;
   z-index: 0;
 }
@@ -473,7 +473,17 @@ code {
 }
 .section-apply .container .button {
   background-color: white;
-  color: #2346E7 !important;
+  color: #2346e7 !important;
+}
+@media (max-width: 768px) {
+  .section-apply .container {
+    height: 400px;
+  }
+}
+@media (max-width: 992px) {
+  .section-apply .container {
+    height: 500px;
+  }
 }
 
 .section-venue {
@@ -502,7 +512,12 @@ code {
   right: 0;
   top: 120px;
 }
-@media (max-width: 768px) {
+@media (max-width: 540px) {
+  .section-venue .mobile-london {
+    width: 500px;
+  }
+}
+@media (max-width: 770px) {
   .section-venue .venue-details {
     padding-top: 460px;
   }
@@ -514,6 +529,10 @@ code {
 .section-sponsors .bg {
   background: #170c44;
   background: linear-gradient(180deg, #170c44 0%, #0f0538 100%);
+}
+.section-sponsors .stars {
+  height: calc(668px - 100px);
+  background-image: url(../img/stars-sponsors.svg);
 }
 
 .section-newsletter {
@@ -656,6 +675,11 @@ code {
 
 @media (max-width: 576px) {
   html {
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 768px) {
+  html {
     font-size: 14px;
   }
 }
@@ -670,7 +694,15 @@ button {
   cursor: pointer;
 }
 
-.line-height-default {
+.h1 {
+  line-height: 50px;
+}
+
+.h2, .h3 {
+  line-height: 40px;
+}
+
+.h4, .h5 {
   line-height: 30px;
 }
 

@@ -12,26 +12,26 @@
     position: absolute;
 
     .bg {
-        @include absolute-background(100%, 100%, 0, cover, no-repeat);
-        background-image: url(../img/galaxy.svg);
-        background-color: #2346E7;
-        background-position: center center;
-        z-index: 0;
+      @include absolute-background(100%, 100%, 0, cover, no-repeat);
+      background-image: url(../img/galaxy.svg);
+      background-color: #2346e7;
+      background-position: center center;
+      z-index: 0;
     }
 
     svg {
-        width: 100%;
-        height: 10vw;
+      width: 100%;
+      height: 10vw;
 
-        position: absolute;
+      position: absolute;
 
-        &.top-mask {
-            top: 0;
-        }
+      &.top-mask {
+        top: 0;
+      }
 
-        &.bottom-mask {
-            bottom: 0;
-        }
+      &.bottom-mask {
+        bottom: 0;
+      }
     }
   }
 
@@ -49,7 +49,16 @@
 
     .button {
       background-color: white;
-      color: #2346E7 !important;
+      color: #2346e7 !important;
     }
+
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+
+    @media (max-width: 992px) {
+      height: 500px;
+    }
+
   }
 }

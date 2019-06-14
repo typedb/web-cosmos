@@ -1,3 +1,4 @@
+
 @import "./variables";
 @import "./mixins";
 
@@ -138,7 +139,11 @@ code {
 @import "./footer";
 
 html {
-  @include sm {
+  @media (max-width: 576px) {
+    font-size: 13px !important;
+  }
+
+  @media (max-width: 768px) {
     font-size: 14px;
   }
 }
@@ -153,7 +158,15 @@ button {
   cursor: pointer;
 }
 
-.line-height-default {
+.h1 {
+  line-height: 50px;
+}
+
+.h2, .h3 {
+  line-height: 40px;
+}
+
+.h4, .h5 {
   line-height: 30px;
 }
 

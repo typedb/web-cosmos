@@ -29,10 +29,14 @@
     position: absolute;
     right: 0;
     top: 120px;
+
+    @media (max-width: 540px) {
+      width: 500px;
+    }
   }
 
   .venue-details {
-    @media (max-width: 768px) {
+    @media (max-width: 770px) {
       padding-top: 460px;
     }
   }

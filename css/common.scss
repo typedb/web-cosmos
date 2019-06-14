@@ -1,6 +1,3 @@
-
-
-
 @import "./variables";
 @import "./mixins";
 
@@ -131,14 +128,8 @@ code {
    ========================================================================== */
 
 @import "./header";
-@import "./intro";
-@import "./motives";
-@import "./speakers";
-@import "./apply";
-@import "./venue";
-@import "./sponsors";
-@import "./newsletter";
 @import "./footer";
+
 
 html {
   @media (max-width: 576px) {

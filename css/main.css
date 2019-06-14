@@ -545,12 +545,12 @@ code {
 .section-newsletter .wave {
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   margin: 0;
   background-image: url(../img/wave-newsletter.svg);
-  background-position: bottom;
+  background-position: top;
 }
 .section-newsletter-logo {
   width: 115px;

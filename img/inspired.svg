@@ -11,9 +11,9 @@
         <filter x="-21.5%" y="-54.1%" width="143.0%" height="208.1%" filterUnits="objectBoundingBox" id="filter-2">
             <feGaussianBlur stdDeviation="33" in="SourceGraphic"></feGaussianBlur>
         </filter>
-        <linearGradient x1="37.9833863%" y1="86.3219778%" x2="15.0091886%" y2="32.3776388%" id="linearGradient-3">
+        <linearGradient x1="60.788983%" y1="135.168782%" x2="-42.7727714%" y2="-23.7719952%" id="linearGradient-3">
             <stop stop-color="#0B0743" stop-opacity="0" offset="0%"></stop>
-            <stop stop-color="#0B0743" offset="3.57368872%"></stop>
+            <stop stop-color="#0B0743" offset="38.6113786%"></stop>
             <stop stop-color="#2F58D4" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="98.5536318%" y1="48.5536318%" x2="1.44636824%" y2="48.5536318%" id="linearGradient-4">

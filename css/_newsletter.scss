@@ -7,9 +7,9 @@
   }
 
   .wave {
-    @include absolute-background(100%, 100%, 0, contain, no-repeat);
+    @include absolute-background(100%, 100%, 0, cover, no-repeat);
     background-image: url(../img/wave-newsletter.svg);
-    background-position: bottom;
+    background-position: top;
   }
 
   &-logo {

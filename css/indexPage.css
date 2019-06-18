@@ -314,7 +314,7 @@
     position: relative; }
     .section-newsletter form input {
       height: 50px;
-      width: 100%;
+      width: calc(100% - 90px);
       background-color: #120a39;
       border: 1px solid #bdb5ff;
       border-right: none;

@@ -46,6 +46,9 @@
     width: 160px;
     display: list-item;
     margin-right: 60px; }
+    @media (max-width: 576px) {
+      .section-speakers ul li {
+        width: 180px; } }
     .section-speakers ul li .speaker-frame {
       background-image: url(../img/speaker-frame.svg);
       background-position: top center;
@@ -62,6 +65,10 @@
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         display: block; }
+        @media (max-width: 576px) {
+          .section-speakers ul li .speaker-frame img {
+            width: 160px;
+            height: 160px; } }
     .section-speakers ul li:last-child {
       margin: 0; }
     .section-speakers ul li a:hover {

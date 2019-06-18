@@ -142,9 +142,11 @@ html {
 }
 
 p {
-  @include sm {
-    padding: 0 20px !important;
-  }
+  padding-left: 0;
+  padding-right: 0;
+  // @include sm {
+  //   padding: 0 20px !important;
+  // }
 }
 
 button {
@@ -157,10 +159,18 @@ button {
 
 .h2, .h3 {
   line-height: 40px;
+
+  @media (max-width: 576px) {
+    line-height: 30px;
+  }
 }
 
 .h4, .h5 {
   line-height: 30px;
+
+  @media (max-width: 576px) {
+    line-height: 25px;
+  }
 }
 
 *:focus {

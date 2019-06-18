@@ -49,6 +49,9 @@
   ul {
     li {
       width: 160px;
+      @media (max-width: 576px) {
+        width: 180px;
+      }
 
       display: list-item;
       margin-right: 60px;
@@ -69,6 +72,11 @@
         img {
           width: 140px;
           height: 140px;
+
+          @media (max-width: 576px) {
+            width: 160px;
+            height: 160px;
+          }
 
           @include border-radius(50%);
 

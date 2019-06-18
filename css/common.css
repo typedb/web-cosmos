@@ -185,9 +185,9 @@ code {
   html {
     font-size: 14px; } }
 
-@media (max-width: 576px) {
-  p {
-    padding: 0 20px !important; } }
+p {
+  padding-left: 0;
+  padding-right: 0; }
 
 button {
   cursor: pointer; }
@@ -197,9 +197,15 @@ button {
 
 .h2, .h3 {
   line-height: 40px; }
+  @media (max-width: 576px) {
+    .h2, .h3 {
+      line-height: 30px; } }
 
 .h4, .h5 {
   line-height: 30px; }
+  @media (max-width: 576px) {
+    .h4, .h5 {
+      line-height: 25px; } }
 
 *:focus {
   outline: none !important; }

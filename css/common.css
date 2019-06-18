@@ -103,7 +103,10 @@ code {
   transition: background 0.26s ease-in-out;
   -moz-transition: background 0.26s ease-in-out;
   -webkit-transition: background 0.26s ease-in-out;
-  -o-transition: background 0.26s ease-in-out; }
+  -o-transition: background 0.26s ease-in-out;
+  box-sizing: border-box; }
+  .site-header * {
+    box-sizing: border-box; }
   .site-header.is-scrolling {
     background: #190d47; }
   .site-header-logo a {
@@ -299,11 +302,11 @@ button {
   /* IE 8 */
   filter: alpha(opacity = 0);
   /* IE 5-7 */
-  transform: translate3d(100px, 0px, 0);
-  -moz-transform: translate3d(100px, 0px, 0);
-  -ms-transform: translate3d(100px, 0px, 0);
-  -o-transform: translate3d(100px, 0px, 0);
-  -webkit-transform: translate3d(100px, 0px, 0);
+  transform: translate3d(40px, 0px, 0);
+  -moz-transform: translate3d(40px, 0px, 0);
+  -ms-transform: translate3d(40px, 0px, 0);
+  -o-transform: translate3d(40px, 0px, 0);
+  -webkit-transform: translate3d(40px, 0px, 0);
   transition: opacity 1s ease-in, transform 0.6s ease;
   -moz-transition: opacity 1s ease-in, transform 0.6s ease;
   -webkit-transition: opacity 1s ease-in, transform 0.6s ease;
@@ -334,11 +337,11 @@ button {
   /* IE 8 */
   filter: alpha(opacity = 0);
   /* IE 5-7 */
-  transform: translate3d(-100px, 0px, 0);
-  -moz-transform: translate3d(-100px, 0px, 0);
-  -ms-transform: translate3d(-100px, 0px, 0);
-  -o-transform: translate3d(-100px, 0px, 0);
-  -webkit-transform: translate3d(-100px, 0px, 0);
+  transform: translate3d(-40px, 0px, 0);
+  -moz-transform: translate3d(-40px, 0px, 0);
+  -ms-transform: translate3d(-40px, 0px, 0);
+  -o-transform: translate3d(-40px, 0px, 0);
+  -webkit-transform: translate3d(-40px, 0px, 0);
   transition: opacity 1s ease-in, transform 0.6s ease;
   -moz-transition: opacity 1s ease-in, transform 0.6s ease;
   -webkit-transition: opacity 1s ease-in, transform 0.6s ease;

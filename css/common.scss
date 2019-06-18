@@ -236,7 +236,7 @@ button {
 
 *[data-animate-in="right"] {
   @include opacity(0);
-  @include transform(translate3d(100px, 0px, 0));
+  @include transform(translate3d(40px, 0px, 0));
   transition: opacity 1s ease-in, transform 0.6s ease;
   -moz-transition: opacity 1s ease-in, transform 0.6s ease;
   -webkit-transition: opacity 1s ease-in, transform 0.6s ease;
@@ -251,7 +251,7 @@ button {
 
 *[data-animate-in="left"] {
   @include opacity(0);
-  @include transform(translate3d(-100px, 0px, 0));
+  @include transform(translate3d(-40px, 0px, 0));
   transition: opacity 1s ease-in, transform 0.6s ease;
   -moz-transition: opacity 1s ease-in, transform 0.6s ease;
   -webkit-transition: opacity 1s ease-in, transform 0.6s ease;

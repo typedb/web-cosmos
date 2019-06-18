@@ -92,7 +92,7 @@
     position: relative; }
     .section-newsletter form input {
       height: 50px;
-      width: 431px;
+      width: 100%;
       background-color: #120a39;
       border: 1px solid #bdb5ff;
       border-right: none;
@@ -137,7 +137,7 @@
         color: #240f61;
         margin-top: 9px; }
     .section-newsletter form .form-messages {
-      width: 530px;
+      width: 100%;
       height: fit-content;
       padding: 10px 5px;
       position: absolute;

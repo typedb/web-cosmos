@@ -2,6 +2,13 @@
   height: 90px;
   @include transition(background, 0.26s, ease-in-out);
 
+
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
   &.is-scrolling {
     background: #190d47;
   }

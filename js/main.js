@@ -4,6 +4,9 @@ $(document).ready(function () {
     scrollToSection();
 
     loadSpeakers();
+    $(window).resize(() => {
+        loadSpeakers();
+    });
 });
 
 function detectInView() {
@@ -80,7 +83,7 @@ function loadSpeakers() {
         // number of speakers to load and display are determined by the
         // number if `li`s that are chosen to be displayed based on the
         // user's screen size
-        const numOfSpeakers = $('#speakers-list li').filter(function () {
+        const numOfSpeakers = $('#speakers-list-hidden li').filter(function () {
             return $(this).css('display') != 'none';
         }).length;
 
@@ -115,26 +118,36 @@ function generateSpeakerHtml(speaker) {
 async function swapSpeakers(initialSpeakers) {
     const displayedSpeakers = initialSpeakers;
     const hiddenSpeakers = speakersList.filter((i) => !initialSpeakers.includes(i));
-    const completeSwappingIndexes = [1, 4, 2, 5, 3];
-    const swappingIndexes = [];
+    const swappingIndexes = {
+        5: [1, 4, 2, 5, 3],
+        4: [1, 3, 2, 4],
+        3: [1, 3, 2],
+        2: [1, 2],
+        1: [1]
+    };
+    const numOfSpeakers = displayedSpeakers.length;
+    let shouldSwapSpeakers = true;
 
-    for (let i = 0; i < initialSpeakers.length; i++) {
-        swappingIndexes.push(completeSwappingIndexes[i]);
-    }
+    $(window).resize(() => {
+        shouldSwapSpeakers = false;
+    });
 
-    while (true) {
-        for (let i of swappingIndexes) {
-            await new Promise(done => setTimeout(() => done(), 3000));
+    while (shouldSwapSpeakers) {
+        for (let i of swappingIndexes[numOfSpeakers]) {
+            if (shouldSwapSpeakers) {
+                const delay = 5 / numOfSpeakers * 1000;
+                await new Promise(done => setTimeout(() => done(), delay));
 
-            speakerToRemoveFullName = $('#speakers-list li:nth-child(' + i + ')').data("speaker-id");
-            $('#speakers-list li:nth-child(' + i + ')').fadeOut("slow", function () {
-                const replacingSpeaker = $(generateSpeakerHtml(hiddenSpeakers[0])).hide();
-                $(this).replaceWith(replacingSpeaker);
-                replacingSpeaker.fadeIn("slow");
-            });
-            displayedSpeakers[i - 1] = hiddenSpeakers[0];
-            hiddenSpeakers.shift();
-            hiddenSpeakers.push(speakersList.filter(s => s.fullName === speakerToRemoveFullName)[0]);
+                speakerToRemoveFullName = $('#speakers-list li:nth-child(' + i + ')').data("speaker-id");
+                $('#speakers-list li:nth-child(' + i + ')').fadeOut("slow", function () {
+                    const replacingSpeaker = $(generateSpeakerHtml(hiddenSpeakers[0])).hide();
+                    $(this).replaceWith(replacingSpeaker);
+                    replacingSpeaker.fadeIn("slow");
+                });
+                displayedSpeakers[i - 1] = hiddenSpeakers[0];
+                hiddenSpeakers.shift();
+                hiddenSpeakers.push(speakersList.filter(s => s.fullName === speakerToRemoveFullName)[0]);
+            }
         }
     }
 }

@@ -130,13 +130,29 @@ code {
   .site-header-action {
     font-size: 18px;
     min-width: 150px; }
+  @media (max-width: 576px) {
+    .site-header.mobile {
+      height: 70px; }
+      .site-header.mobile .site-header-logo a {
+        margin-top: 1px;
+        margin-left: -9px; }
+      .site-header.mobile .hamburger {
+        padding-top: 11px; }
+        .site-header.mobile .hamburger-box {
+          width: 30px;
+          height: 16px; }
+        .site-header.mobile .hamburger-inner {
+          width: 35px; }
+          .site-header.mobile .hamburger-inner:before, .site-header.mobile .hamburger-inner:after {
+            width: 35px; } }
   .site-header.mobile .site-header-nav {
     display: none !important; }
   .site-header.mobile.expanded {
     height: auto;
     background: #190d47;
     display: block; }
-    .site-header.mobile.expanded .site-header-nav, .site-header.mobile.expanded ul {
+    .site-header.mobile.expanded .site-header-nav,
+    .site-header.mobile.expanded ul {
       display: block !important; }
   .site-header.mobile .site-header-logo p,
   .site-header.mobile .site-header-action {

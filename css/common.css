@@ -104,10 +104,6 @@ code {
   -moz-transition: background 0.26s ease-in-out;
   -webkit-transition: background 0.26s ease-in-out;
   -o-transition: background 0.26s ease-in-out;
-  transition: border 0.26s ease-in-out;
-  -moz-transition: border 0.26s ease-in-out;
-  -webkit-transition: border 0.26s ease-in-out;
-  -o-transition: border 0.26s ease-in-out;
   box-sizing: border-box; }
   .site-header * {
     box-sizing: border-box; }

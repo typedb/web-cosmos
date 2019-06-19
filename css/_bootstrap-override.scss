@@ -31,6 +31,10 @@ $spacers: map-merge(
   $spacers
 );
 
+.c-pointer {
+  cursor: pointer;
+}
+
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default

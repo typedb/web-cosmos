@@ -4,6 +4,9 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.c-pointer {
+  cursor: pointer; }
+
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0 !important; }
 

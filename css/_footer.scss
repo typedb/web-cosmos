@@ -1,5 +1,6 @@
-.big-footer, .small-footer {
-  background: rgba(9,6,66,1);
+.big-footer,
+.small-footer {
+  background: rgba(9, 6, 66, 1);
 
   .container {
     border-top: 1px solid #4446b6;
@@ -9,8 +10,11 @@
       margin-left: 16px;
     }
 
-    .by-grakn:hover {
-      text-decoration: none;
+    .by-grakn {
+      margin: 0;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

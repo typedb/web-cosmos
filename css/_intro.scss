@@ -17,6 +17,7 @@
     background-image: url(../img/futuristic-city.svg);
     background-position: center bottom;
     bottom: 0;
+    z-index: -1;
 
     @media (max-width: 1480px) {
       background-image: url(../img/tablet-futuristic-city.svg);
@@ -53,11 +54,22 @@
   .sub-section-summary {
     padding-top: 216px;
 
+    .h1 {
+      @media (max-width: 576px) {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+
     .grakn-logo-inline {
       background-color: lighten($color-bg-brand, 5%);
       @include border-radius(3px);
 
       padding: 5px;
+
+      @media (max-width: 576px) {
+        width: 80px;
+      }
     }
 
     .container {

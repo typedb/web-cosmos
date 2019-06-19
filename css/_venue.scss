@@ -21,23 +21,29 @@
   }
 
   .mobile-london {
-    width: 542px;
-    height: 448px;
+    width: 100%;
+    height: 310px;
 
     background: url(../img/mobile-london.svg) no-repeat;
+    background-size: contain;
 
     position: absolute;
     right: 0;
     top: 120px;
+  }
 
-    @media (max-width: 540px) {
-      width: 500px;
-    }
+  img {
+    padding-top: 10%;
   }
 
   .venue-details {
-    @media (max-width: 770px) {
-      padding-top: 460px;
+    padding-top: 5%;
+  }
+
+  .h2 {
+    @media (max-width: 576px) {
+      font-size: 21px;
+      line-height: 25px;
     }
   }
 }

@@ -1,3 +1,6 @@
+@import "./vendor/functions";
+@import "./vendor/variables";
+
 .section-newsletter {
   position: relative;
 
@@ -34,7 +37,6 @@
       border-right: none;
       @include border-radius(5px 0 0 5px);
       @include box-shadow(none);
-      font-size: 16px;
       outline: none;
       letter-spacing: 3px;
 
@@ -42,20 +44,28 @@
       position: absolute;
       left: 0;
 
+      @media (max-width: 576px) {
+        padding: 3px 10px;
+        letter-spacing: 0;
+      }
+
       &::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: #bdb5ff;
         @include opacity(1);
+        font-size: $font-size-base * 1.25;
       }
 
       &:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         color: #bdb5ff;
+        font-size: $font-size-base * 1.25;
       }
 
       &::-ms-input-placeholder {
         /* Microsoft Edge */
         color: #bdb5ff;
+        font-size: $font-size-base * 1.25;
       }
     }
 

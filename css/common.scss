@@ -142,8 +142,8 @@ html {
 }
 
 p {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   // @include sm {
   //   padding: 0 20px !important;
   // }

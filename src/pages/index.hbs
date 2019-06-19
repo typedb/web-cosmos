@@ -31,8 +31,7 @@
                               mx-auto mb-4 col-md-9">
                 Welcome to the universal conference of technologies built using
                 <a href="https://grakn.ai" target="_blank">
-                    <img class="grakn-logo-inline d-inline ml-1 mb-1" src="img/logo-graknai.svg" width="100"
-                        height="100" alt="GRAKN.AI" />
+                    <img class="grakn-logo-inline d-inline ml-1 mb-1" src="img/logo-graknai.svg" width="100" height="100" alt="GRAKN.AI" />
                 </a>
             </p>
 
@@ -42,7 +41,7 @@
             <p class="h5 Titillium-Lt
                               mb-4">
                 Kensington Conference and Events Centre
-                <span class="d-none d-sm-block">|</span>
+                <span class="d-none d-sm-inline px-1"> | </span>
                 <br class="d-block d-sm-none" />
                 London, United Kingdom
             </p>
@@ -65,8 +64,8 @@
     <div class="sub-section-description
                         container
                         text-center">
-        <div class="mx-auto
-                            col-10 cl-md-8">
+        {{!-- <div class="mx-auto
+                            col-12 cl-md-8"> --}}
 
             <p class="h2 Geogrotesque-Rg text-center">
                 What is Grakn Cosmos?
@@ -75,7 +74,7 @@
             <p class="h5 Titillium-Lt
                               mt-6">
                 The "cosmos" is the universe viewed as a complex and orderly system, as opposed to chaos.
-                <a href="https://grakn.ai" target="_blank"><code class="text-nowrap">Grakn isa database;</code></a>
+                <a href="https://grakn.ai" target="_blank"><code class="text-nowrap c-pointer">Grakn isa database;</code></a>
                 one that empowers complex systems to be more intelligent through logic, reasoning, and
                 knowledge
                 engineering.
@@ -94,7 +93,7 @@
                               mt-6">
                 Welcome, to Grakn Cosmos.
             </p>
-        </div>
+        {{!-- </div> --}}
     </div>
 </div>
 
@@ -103,7 +102,7 @@
     <div class="stars d-none d-md-block"></div>
     <div class="container
                         py-11">
-        <div class="mx-auto col-10 cl-md-8">
+        <div class="mx-auto col-12 cl-md-8">
             <p class="h2 Geogrotesque-Rg text-center" data-animate-in="fade">
                 Join the conference that brings together those who are changing
                 the universe with Grakn, one intelligent system at a time.
@@ -158,7 +157,7 @@
     <div class="container
                         text-center
                         pt-12 pb-11">
-        <div class="mx-auto col-10 cl-md-8">
+        <div class="mx-auto col-12 cl-md-8">
             <p class="h2 Geogrotesque-Rg">The Cosmos Voyagers</p>
             <div class="row py-8">
                 <ul id="speakers-list-hidden" class="d-none"
@@ -268,13 +267,14 @@
 <div id="venue" class="section-venue">
     <div class="stars d-none d-md-block"></div>
     <div class="bg"></div>
-    <div class="mobile-london d-md-none"></div>
+    <img class="w-100 w-lg-60 mb-lg-5 d-none d-sm-block d-md-none" src="img/london.svg" data-animate-in="fade" />
+    <img class="w-60 mb-lg-5 mx-auto d-block d-sm-none d-md-none" src="img/mobile-london.svg" data-animate-in="fade" />
 
     <div class="container
-                        pt-15 pb-4">
-        <div class="mx-auto col-10">
+                        pt-0 pb-4">
+        <div class="mx-auto col-12">
             <div class="row flex-row-reverse">
-                <img class="w-100 w-lg-60 mb-lg-5 d-none d-md-block" src="img/london.svg" data-animate-in="fade" />
+                <img class="w-100 w-lg-60 mb-lg-5 d-none d-sm-none d-md-block" src="img/london.svg" data-animate-in="fade" />
 
                 <div class="venue-details
                                     w-100 w-lg-40 mt-lg-11 mb-13
@@ -313,7 +313,7 @@
     <div class="container
             text-center
             py-11">
-        <div class="mx-auto col-10 cl-md-8">
+        <div class="mx-auto col-12 cl-md-8">
             <p class="h2 Geogrotesque-Rg">Sponsors and Community Partners</p>
             <p class="h5 Titillium-Lt
                               mt-4">
@@ -374,16 +374,16 @@
             <form
                 action="https://grakn.us8.list-manage.com/subscribe/post-json?u=b27e8984466b0dc642a917ba5&amp;id=3742a20dc0&&c=?"
                 method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                class="validate mx-auto col-10 cl-md-8" target="_blank" novalidate>
-                <input type="email" value="" name="EMAIL" class="email d-none d-sm-block Titillium-Lt" id="mce-EMAIL"
+                class="validate mx-auto col-12 cl-md-8" target="_blank" novalidate>
+                <input type="email" value="" name="EMAIL" class="email d-none d-sm-block h5 Titillium-Lt" id="mce-EMAIL"
                     placeholder="Stay tuned with conference updates" required>
-                <input type="email" value="" name="EMAIL" class="email d-block d-sm-none Titillium-Lt" id="mce-EMAIL"
+                <input type="email" value="" name="EMAIL" class="email d-block d-sm-none h5 Titillium-Lt" id="mce-EMAIL"
                     placeholder="Stay tuned" required>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true">
                     <input type="text" name="b_b27e8984466b0dc642a917ba5_3742a20dc0" tabindex="-1" value="">
                 </div>
-                <button class="button" type="submit" id="mc-embedded-subscribe">Subscribe</button>
+                <button class="button h5" type="submit" id="mc-embedded-subscribe">Subscribe</button>
 
                 <div id="mce-responses" class="form-messages clear">
                     <div class="response error

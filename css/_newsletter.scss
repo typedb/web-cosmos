@@ -22,7 +22,7 @@
 
   form {
     max-width: 100%;
-    width: 530px;
+    width: 550px;
     height: 50px;
 
     padding: 0;
@@ -38,7 +38,7 @@
       @include border-radius(5px 0 0 5px);
       @include box-shadow(none);
       outline: none;
-      letter-spacing: 3px;
+      letter-spacing: 1px;
 
       padding: 5px 20px;
       position: absolute;
@@ -70,7 +70,7 @@
     }
 
     button {
-      width: 100px;
+      width: 110px;
       height: 50px;
 
       @include border-radius(0 5px 5px 0);

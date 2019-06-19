@@ -319,7 +319,7 @@
     height: 104px; }
   .section-newsletter form {
     max-width: 100%;
-    width: 530px;
+    width: 550px;
     height: 50px;
     padding: 0;
     position: relative; }
@@ -336,7 +336,7 @@
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
       outline: none;
-      letter-spacing: 3px;
+      letter-spacing: 1px;
       padding: 5px 20px;
       position: absolute;
       left: 0; }
@@ -364,7 +364,7 @@
         color: #bdb5ff;
         font-size: 1.25rem; }
     .section-newsletter form button {
-      width: 100px;
+      width: 110px;
       height: 50px;
       border-radius: 0 5px 5px 0;
       -moz-border-radius: 0 5px 5px 0;

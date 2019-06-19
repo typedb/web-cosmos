@@ -68,7 +68,8 @@
       .section-intro .m-planet-blue {
         top: 115px;
         right: 0;
-        width: 70px; } }
+        width: 70px;
+        background-position: left; } }
   .section-intro .m-planet-pink {
     width: 138px;
     height: 138px;

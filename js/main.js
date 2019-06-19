@@ -10,47 +10,53 @@ $(document).ready(function () {
 });
 
 function detectInView() {
-    const items = document.querySelectorAll('*[data-animate-in], *[data-detect-viewport]'),
-        pageOffset = window.pageYOffset;
+    const windowWidth = $(window).width();
 
-    function isScrolledIntoView(el) {
-        const rect = el.getBoundingClientRect(),
-            elemTop = rect.top,
-            elemBottom = rect.top + el.offsetHeight,
-            bottomWin = pageOffset + window.innerHeight;
+    if (windowWidth > 500) {
+        const items = document.querySelectorAll('*[data-animate-in], *[data-detect-viewport]'),
+            pageOffset = window.pageYOffset;
 
-        return (elemTop < bottomWin && elemBottom > 0);
-    }
+        function isScrolledIntoView(el) {
+            const rect = el.getBoundingClientRect(),
+                elemTop = rect.top,
+                elemBottom = rect.top + el.offsetHeight,
+                bottomWin = pageOffset + window.innerHeight;
 
-    function detect() {
-        for (let i = 0; i < items.length; i++) {
-            if (isScrolledIntoView(items[i])) {
-                if (!items[i].classList.contains('in-view')) {
-                    items[i].classList.add('in-view');
+            return (elemTop < bottomWin && elemBottom > 0);
+        }
+
+        function detect() {
+            for (let i = 0; i < items.length; i++) {
+                if (isScrolledIntoView(items[i])) {
+                    if (!items[i].classList.contains('in-view')) {
+                        items[i].classList.add('in-view');
+                    }
                 }
             }
         }
-    }
 
-    window.addEventListener('scroll', detect);
-    window.addEventListener('resize', detect);
+        window.addEventListener('scroll', detect);
+        window.addEventListener('resize', detect);
 
 
-    for (let i = 0; i < items.length; i++) {
-        let d = 0,
-            el = items[i];
+        for (let i = 0; i < items.length; i++) {
+            let d = 0,
+                el = items[i];
 
-        if (items[i].getAttribute('data-animate-in-delay')) {
-            d = items[i].getAttribute('data-animate-in-delay') / 1000 + 's';
-        } else {
-            d = 0;
+            if (items[i].getAttribute('data-animate-in-delay')) {
+                d = items[i].getAttribute('data-animate-in-delay') / 1000 + 's';
+            } else {
+                d = 0;
+            }
+            el.style.transitionDelay = d;
         }
-        el.style.transitionDelay = d;
-    }
 
-    setTimeout(function () {
-        detect();
-    }, 500);
+        setTimeout(function () {
+            detect();
+        }, 500);
+    } else {
+        $('[data-animate-in]').removeAttr('data-animate-in');
+    }
 }
 
 function scrollToSection() {

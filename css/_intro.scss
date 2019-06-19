@@ -30,6 +30,53 @@
     }
   }
 
+  .m-planet-blue,
+  .m-planet-purple,
+  .m-planet-pink,
+  .m-spaceship {
+    background-position: center center;
+  }
+
+
+  .m-planet-purple {
+    @include absolute-background(205px, 205px, 0, auto, no-repeat);
+
+    background-image: url(../img/planet-purple.svg);
+    top: 160px;
+    left: 60px;
+    z-index: -9;
+
+    @media (max-width: 1024px) {
+      background-size: 120px 120px;
+    }
+
+    @media (max-width: 768px) {
+      top: 125px;
+      left: 0;
+      width: 60px;
+      background-position: right;
+    }
+  }
+
+  .m-planet-blue {
+    @include absolute-background(205px, 205px, 0, auto, no-repeat);
+
+    background-image: url(../img/planet-blue.svg);
+    top: 160px;
+    right: 70px;
+    z-index: -8;
+
+    @media (max-width: 1024px) {
+      background-size: 120px 120px;
+    }
+
+    @media (max-width: 768px) {
+      top: 115px;
+      right: 0;
+      width: 70px;
+    }
+  }
+
   .m-planet-pink {
     @include absolute-background(138px, 138px, 0, auto, no-repeat);
 
@@ -37,6 +84,17 @@
     top: 720px;
     left: 100px;
     z-index: -7;
+
+    @media (max-width: 1024px) {
+      background-size: 100px 100px;
+    }
+
+    @media (max-width: 768px) {
+      top: 740px;
+      left: 0;
+      width: 43px;
+      background-position: right;
+    }
   }
 
   .m-spaceship {
@@ -44,11 +102,23 @@
 
     background-image: url(../img/spaceship.svg);
     top: 730px;
-    right: 60px;
+    right: 100px;
     z-index: -6;
     @include transform(scaleX(-1));
     filter: FlipH;
     -ms-filter: "FlipH";
+
+    @media (max-width: 1024px) {
+      background-size: 128px 170px;
+    }
+
+    @media (max-width: 768px) {
+      top: 730px;
+      right: 0;
+      width: 80px;
+      background-size: 128px 170px;
+      background-position: right;
+    }
   }
 
   .sub-section-summary {

@@ -38,6 +38,30 @@
     background-image: url(../img/planet-purple-dark.svg);
     left: 0px;
     top: -40px;
+
+    @media (max-width: 1024px) {
+      left: auto;
+      right: 0;
+      top: -100px;
+    }
+
+    @media (max-width: 768px) {
+      left: 0;
+      width: 83px;
+      background-size: 130px 130px;
+      background-position: right;
+    }
+  }
+
+  .m-planet-purple-dark {
+    background-image: url(../img/planet-purple-dark.svg);
+    left: 0;
+    width: 63px;
+    height: 120px;
+    top: -70px;
+    background-size: 130px 130px;
+    background-position: right;
+    position: absolute;
   }
 
   .planet-pink-dark {

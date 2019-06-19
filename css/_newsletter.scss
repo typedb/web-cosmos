@@ -108,6 +108,34 @@
     position: relative;
   }
 
+  .m-planet-pink {
+    width: 70px;
+    height: 110px;
+
+    background: url(../img/planet-pink-medium.svg) no-repeat;
+    background-position: left;
+    background-size: 100px 100px;
+
+    top: 20px;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+  }
+
+  .m-spaceship {
+    width: 90px;
+    height: 190px;
+
+    background: url(../img/spaceship.svg) no-repeat;
+    background-position: right;
+    background-size: 129px 190px;
+
+    top: 20px;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+  }
+
   .planet-pink {
     @include absolute-background(138px, 138px, 0, auto, no-repeat);
 

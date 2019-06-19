@@ -25,6 +25,50 @@
       .section-intro .futuristic-city {
         background-image: url(../img/mobile-futuristic-city.svg);
         background-size: contain; } }
+  .section-intro .m-planet-blue,
+  .section-intro .m-planet-purple,
+  .section-intro .m-planet-pink,
+  .section-intro .m-spaceship {
+    background-position: center center; }
+  .section-intro .m-planet-purple {
+    width: 205px;
+    height: 205px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 0;
+    background-image: url(../img/planet-purple.svg);
+    top: 160px;
+    left: 60px;
+    z-index: -9; }
+    @media (max-width: 1024px) {
+      .section-intro .m-planet-purple {
+        background-size: 120px 120px; } }
+    @media (max-width: 768px) {
+      .section-intro .m-planet-purple {
+        top: 125px;
+        left: 0;
+        width: 60px;
+        background-position: right; } }
+  .section-intro .m-planet-blue {
+    width: 205px;
+    height: 205px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 0;
+    background-image: url(../img/planet-blue.svg);
+    top: 160px;
+    right: 70px;
+    z-index: -8; }
+    @media (max-width: 1024px) {
+      .section-intro .m-planet-blue {
+        background-size: 120px 120px; } }
+    @media (max-width: 768px) {
+      .section-intro .m-planet-blue {
+        top: 115px;
+        right: 0;
+        width: 70px; } }
   .section-intro .m-planet-pink {
     width: 138px;
     height: 138px;
@@ -36,6 +80,15 @@
     top: 720px;
     left: 100px;
     z-index: -7; }
+    @media (max-width: 1024px) {
+      .section-intro .m-planet-pink {
+        background-size: 100px 100px; } }
+    @media (max-width: 768px) {
+      .section-intro .m-planet-pink {
+        top: 740px;
+        left: 0;
+        width: 43px;
+        background-position: right; } }
   .section-intro .m-spaceship {
     width: 129px;
     height: 190px;
@@ -45,7 +98,7 @@
     margin: 0px;
     background-image: url(../img/spaceship.svg);
     top: 730px;
-    right: 60px;
+    right: 100px;
     z-index: -6;
     transform: scaleX(-1);
     -moz-transform: scaleX(-1);
@@ -54,6 +107,16 @@
     -webkit-transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH"; }
+    @media (max-width: 1024px) {
+      .section-intro .m-spaceship {
+        background-size: 128px 170px; } }
+    @media (max-width: 768px) {
+      .section-intro .m-spaceship {
+        top: 730px;
+        right: 0;
+        width: 80px;
+        background-size: 128px 170px;
+        background-position: right; } }
   .section-intro .sub-section-summary {
     padding-top: 216px; }
     @media (max-width: 576px) {
@@ -179,6 +242,26 @@
     background-image: url(../img/planet-purple-dark.svg);
     left: 0px;
     top: -40px; }
+    @media (max-width: 1024px) {
+      .section-speakers .planet-purple-dark {
+        left: auto;
+        right: 0;
+        top: -100px; } }
+    @media (max-width: 768px) {
+      .section-speakers .planet-purple-dark {
+        left: 0;
+        width: 83px;
+        background-size: 130px 130px;
+        background-position: right; } }
+  .section-speakers .m-planet-purple-dark {
+    background-image: url(../img/planet-purple-dark.svg);
+    left: 0;
+    width: 63px;
+    height: 120px;
+    top: -70px;
+    background-size: 130px 130px;
+    background-position: right;
+    position: absolute; }
   .section-speakers .planet-pink-dark {
     background-image: url(../img/planet-pink-dark.svg);
     bottom: -20px;
@@ -388,6 +471,26 @@
           color: #e74c3c; }
   .section-newsletter .container {
     position: relative; }
+  .section-newsletter .m-planet-pink {
+    width: 70px;
+    height: 110px;
+    background: url(../img/planet-pink-medium.svg) no-repeat;
+    background-position: left;
+    background-size: 100px 100px;
+    top: 20px;
+    right: 0;
+    z-index: -1;
+    position: absolute; }
+  .section-newsletter .m-spaceship {
+    width: 90px;
+    height: 190px;
+    background: url(../img/spaceship.svg) no-repeat;
+    background-position: right;
+    background-size: 129px 190px;
+    top: 20px;
+    left: 0;
+    z-index: -1;
+    position: absolute; }
   .section-newsletter .planet-pink {
     width: 138px;
     height: 138px;

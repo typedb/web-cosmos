@@ -1,15 +1,12 @@
 .site-header {
   height: 90px;
+
   @include transition(background, 0.26s, ease-in-out);
 
   box-sizing: border-box;
 
-  * {
-    box-sizing: border-box;
-  }
-
   &.is-scrolling {
-    background: #190d47;
+    background: $color-bg-brand-dark;
   }
 
   &-logo {
@@ -30,17 +27,15 @@
       width: 94%;
       max-width: 620px;
 
-      li {
-        font-size: 18px;
-        flex-grow: 1;
-        padding: 8px;
+      a {
+        color: white;
+        line-height: 1;
 
-        a {
-          color: white;
-          line-height: 1;
+        position: relative;
+        white-space: nowrap;
 
-          position: relative;
-          white-space: nowrap;
+        li {
+          padding: 8px;
         }
       }
     }
@@ -49,10 +44,15 @@
   &-action {
     font-size: 18px;
     min-width: 150px;
+
+    .button {
+      height: 40px;
+      line-height: 42px;
+    }
   }
 
   &.mobile {
-    @media (max-width: 576px) {
+    @include phone-up-to {
       height: 70px;
 
       .site-header-logo a {
@@ -67,24 +67,34 @@
           width: 30px;
           height: 16px;
         }
+
         &-inner {
           width: 35px;
 
-          &:before, &:after {
+          &:before,
+          &:after {
             width: 35px;
           }
         }
       }
     }
 
-    .site-header-nav {
+    .site-header-nav,
+    .site-header-logo p,
+    .site-header-action {
       display: none !important;
+    }
+
+    &.expanded,
+    .site-header-inner,
+    .hamburger,
+    .site-header-nav .button {
+      display: block !important;
     }
 
     &.expanded {
       height: auto;
       background: #190d47;
-      display: block;
 
       .site-header-nav,
       ul {
@@ -92,13 +102,7 @@
       }
     }
 
-    .site-header-logo p,
-    .site-header-action {
-      display: none !important;
-    }
-
     .hamburger {
-      display: block !important;
       padding-right: 0;
     }
 
@@ -107,8 +111,7 @@
     }
 
     .site-header-inner {
-      display: block !important;
-      margin: 0 block;
+      margin: 0 auto;
       padding: 20px 25px 20px 25px;
     }
 
@@ -125,18 +128,16 @@
         padding-top: 40px;
 
         li {
-          border-top: 1px solid #281572;
+          border-top: 1px solid lighten($color-bg-brand-dark, 5%);
           padding: 15px 0;
 
           &:last-child {
-            border-bottom: 1px solid #281572;
+            border-bottom: 1px solid lighten($color-bg-brand-dark, 5%);
           }
         }
       }
 
       .button {
-        display: block !important;
-
         margin: 40px 0 20px 0;
 
         font-size: 1.2em;

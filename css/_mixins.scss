@@ -59,7 +59,7 @@
 }
 
 // media queries
-@mixin sm {
+@mixin phone-up-to {
   @media (max-width: 576px) { @content; }
 }
 @mixin md {

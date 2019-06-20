@@ -133,7 +133,7 @@
     }
 
     .grakn-logo-inline {
-      background-color: lighten($color-bg-brand, 5%);
+      background-color: lighten($color-bg-brand-light, 5%);
       @include border-radius(3px);
 
       padding: 5px;

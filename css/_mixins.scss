@@ -58,6 +58,21 @@
   -webkit-transform: $deg;
 }
 
+@mixin placeholder {
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+    @include opacity(1);
+  }
+}
+
 // media queries
 @mixin sm-up-to {
   @media (max-width: 576px) { @content; }

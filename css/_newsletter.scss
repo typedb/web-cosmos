@@ -12,6 +12,7 @@
   .wave {
     @include absolute-background(100%, 100%, 0, cover, no-repeat);
     background-image: url(../img/wave-newsletter.svg);
+
     background-position: top;
   }
 
@@ -21,19 +22,19 @@
   }
 
   form {
-    max-width: 100%;
     width: 550px;
+    max-width: 100%;
     height: 50px;
 
     padding: 0;
     position: relative;
 
     input {
-      height: 50px;
       width: calc(100% - 90px);
+      height: 50px;
 
-      background-color: #120a39;
-      border: 1px solid #bdb5ff;
+      background-color: $color-bg-brand-dark;
+      border: 1px solid $color-brand-secondary;
       border-right: none;
       @include border-radius(5px 0 0 5px);
       @include box-shadow(none);
@@ -44,27 +45,13 @@
       position: absolute;
       left: 0;
 
-      @media (max-width: 576px) {
+      @include sm-up-to {
         padding: 3px 10px;
         letter-spacing: 0;
       }
 
-      &::placeholder {
-        /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: #bdb5ff;
-        @include opacity(1);
-        font-size: $font-size-base * 1.25;
-      }
-
-      &:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
-        color: #bdb5ff;
-        font-size: $font-size-base * 1.25;
-      }
-
-      &::-ms-input-placeholder {
-        /* Microsoft Edge */
-        color: #bdb5ff;
+      @include placeholder {
+        color: $color-brand-secondary;
         font-size: $font-size-base * 1.25;
       }
     }
@@ -80,7 +67,7 @@
       right: 0;
 
       .spinner-border {
-        color: #240f61;
+        color: $color-text-on-brand;
         margin-top: 9px;
       }
     }
@@ -98,7 +85,7 @@
         text-align: left;
 
         &.error {
-          color: #e74c3c;
+          color: $color-text-error;
         }
       }
     }
@@ -109,31 +96,25 @@
   }
 
   .m-planet-pink {
-    width: 70px;
-    height: 110px;
+    @include absolute-background(70px, 110px, 0, 100px 100px, no-repeat);
 
-    background: url(../img/planet-pink-medium.svg) no-repeat;
+    background-image: url(../img/planet-pink-medium.svg);
     background-position: left;
-    background-size: 100px 100px;
 
     top: 20px;
     right: 0;
     z-index: -1;
-    position: absolute;
   }
 
   .m-spaceship {
-    width: 90px;
-    height: 190px;
+    @include absolute-background(90px, 190px, 0, 129px 190px, no-repeat);
 
-    background: url(../img/spaceship.svg) no-repeat;
+    background-image: url(../img/spaceship.svg);
     background-position: right;
-    background-size: 129px 190px;
 
     top: 20px;
     left: 0;
     z-index: -1;
-    position: absolute;
   }
 
   .planet-pink {
@@ -148,7 +129,7 @@
   }
 
   .spaceship {
-    @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+    @include absolute-background(160px, 190px, 0px, auto, no-repeat);
 
     background-image: url(../img/spaceship.svg);
     background-position: center center;

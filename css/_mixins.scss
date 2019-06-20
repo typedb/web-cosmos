@@ -70,9 +70,15 @@
 @mixin md-only {
   @media (min-width: 768px) { @content; }
 }
-@mixin lg {
-  @media (min-width: 992px) { @content; }
+
+@mixin lg-up-to {
+  @media (max-width: 1024px) { @content; }
 }
+
+@mixin lg-only {
+  @media (min-width: 1024px) { @content; }
+}
+
 @mixin xl {
   @media (min-width: 1200px) { @content; }
 }

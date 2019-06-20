@@ -1,7 +1,7 @@
 {{#> layouts/base title="Grakn Cosmos" url-prefix="" }}
 
 {{#*inline "head-block"}}
-    <link rel="stylesheet" href="css/indexPage.css">
+<link rel="stylesheet" href="css/indexPage.css">
 {{/inline}}
 
 {{#*inline "content-block"}}
@@ -154,87 +154,43 @@
 
 <div id="speakers" class="section-speakers">
     <div class="bg"></div>
-    <div class="stars d-none d-md-block"></div>
 
-    <div class="planet-purple-dark d-block d-md-none"></div>
+    <div class="stars
+                d-none d-md-block"></div>
 
+    <div class="planet-purple-dark
+                d-block d-md-none"></div>
 
     <div class="container
-                        text-center
-                        pt-12 pb-11">
+                text-center
+                pt-12 pb-11">
         <div class="mx-auto col-12 cl-md-8">
             <p class="h2 Geogrotesque-Rg">The Cosmos Voyagers</p>
             <div class="row py-8">
+                <!-- speakers-list-hidden is used as a guideline for determining the number of speakers that need to be loaded based on the screensize -->
                 <ul id="speakers-list-hidden" class="d-none" data-animate-in="up">
-                    <li>
-                        <a href="#" target="_blank">
-                            <div class="speaker-frame">
-                                <img src="img/speakers/speaker-1.png" alt="speaker 1" />
-                            </div>
-                            <span class="h5 Geogrotesque-Rg
-                                                    pt-2">Mike Linksvayer</span>
-                            <span class="h6 Titillium-Lt">Chief executive officer </span>
-                            <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
-                        </a>
-                    </li>
-                    <li class="d-none d-sm-block">
-                        <a href="#" target="_blank">
-                            <div class="speaker-frame">
-                                <img src="img/speakers/speaker-1.png" alt="speaker 1" />
-                            </div>
-                            <span class="h5 Geogrotesque-Rg
-                                                    pt-2">Mike Linksvayer</span>
-                            <span class="h6 Titillium-Lt">Chief executive officer </span>
-                            <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
-                        </a>
-                    </li>
-                    <li class="d-none d-md-block">
-                        <a href="#" target="_blank">
-                            <div class="speaker-frame">
-                                <img src="img/speakers/speaker-1.png" alt="speaker 1" />
-                            </div>
-                            <span class="h5 Geogrotesque-Rg
-                                                    pt-2">Mike Linksvayer</span>
-                            <span class="h6 Titillium-Lt">Chief executive officer </span>
-                            <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
-                        </a>
-                    </li>
-                    <li class="d-none d-lg-block">
-                        <a href="#" target="_blank">
-                            <div class="speaker-frame">
-                                <img src="img/speakers/speaker-1.png" alt="speaker 1" />
-                            </div>
-                            <span class="h5 Geogrotesque-Rg
-                                                    pt-2">Mike Linksvayer</span>
-                            <span class="h6 Titillium-Lt">Chief executive officer </span>
-                            <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
-                        </a>
-                    </li>
-                    <li class="d-none d-xl-block">
-                        <a href="#" target="_blank">
-                            <div class="speaker-frame">
-                                <img src="img/speakers/speaker-1.png" alt="speaker 1" />
-                            </div>
-                            <span class="h5 Geogrotesque-Rg
-                                                    pt-2">Mike Linksvayer</span>
-                            <span class="h6 Titillium-Lt">Chief executive officer </span>
-                            <span class="h6 Titillium-Lt" style="color: #BDB5FF">Github</span>
-                        </a>
-                    </li>
+                    <li></li>
+                    <li class="d-none d-sm-block"></li>
+                    <li class="d-none d-md-block"></li>
+                    <li class="d-none d-lg-block"></li>
+                    <li class="d-none d-xl-block"></li>
                 </ul>
 
                 <ul id="speakers-list" class="w-100 d-flex flex-wrap align-items-center justify-content-center"
                     data-animate-in="up">
+                    <!-- populated by js -->
                 </ul>
             </div>
             <a class="button
-                            h5" href="./speakers.html">
+                      h5" href="./speakers.html">
                 See All Speakers
             </a>
         </div>
 
-        <div class="planet-purple-dark d-none d-md-block"></div>
-        <div class="planet-pink-dark d-none d-lg-block"></div>
+        <div class="planet-purple-dark
+                    d-none d-md-block"></div>
+        <div class="planet-pink-dark
+                    d-none d-lg-block"></div>
     </div>
 </div>
 

@@ -6,25 +6,17 @@
     background: linear-gradient(180deg, rgba(11,7,67,1) 0%, rgba(10,9,38,1) 100%);
   }
 
-  .container {
-    position: relative;
-  }
-
-  .space {
-    @include absolute-background(100%, 1964px, 0px, cover, repeat);
-
-    background-image: url(../img/space-c.svg);
-
-    bottom: 0;
-    z-index: -2;
-  }
-
   .stars {
     @include absolute-background(100%, 760px, 50px, auto, repeat);
 
     background-image: url(../img/stars-speakers.svg);
     z-index: -1;
   }
+
+  .container {
+    position: relative;
+  }
+
 
   .planet-purple-dark,
   .planet-pink-dark {
@@ -36,32 +28,23 @@
 
   .planet-purple-dark {
     background-image: url(../img/planet-purple-dark.svg);
+
     left: 0px;
     top: -40px;
 
-    @media (max-width: 1024px) {
-      left: auto;
-      right: 0;
+    @include lg-up-to {
       top: -100px;
+      right: 0;
+      left: auto;
     }
 
-    @media (max-width: 768px) {
-      left: 0;
+    @include md-up-to {
       width: 83px;
-      background-size: 130px 130px;
-      background-position: right;
-    }
-  }
 
-  .m-planet-purple-dark {
-    background-image: url(../img/planet-purple-dark.svg);
-    left: 0;
-    width: 63px;
-    height: 120px;
-    top: -70px;
-    background-size: 130px 130px;
-    background-position: right;
-    position: absolute;
+      background-position: right;
+      background-size: 130px 130px;
+      left: 0;
+    }
   }
 
   .planet-pink-dark {
@@ -70,22 +53,36 @@
     right: 0px;
   }
 
+  .m-planet-purple-dark {
+    @include absolute-background(63px, 120px, 0px, 130px 130px, no-repeat);
+
+    background-image: url(../img/planet-purple-dark.svg);
+
+    background-position: right;
+    left: 0;
+    top: -70px;
+  }
+
   ul {
     li {
       width: 160px;
-      @media (max-width: 576px) {
+
+      @include sm-up-to {
         width: 180px;
       }
 
       display: list-item;
       margin-right: 60px;
 
+      .company {
+        color: $color-brand-secondary;
+      }
+
       .speaker-frame {
-        background-image: url(../img/speaker-frame.svg);
-        background-position: top center;
-        background-repeat: no-repeat;
+        background: url(../img/speaker-frame.svg) no-repeat;
         transition: all 0.2s ease-in-out;
 
+        background-position: top center;
         padding: 10px;
         margin-bottom: 30px;
 
@@ -97,7 +94,7 @@
           width: 140px;
           height: 140px;
 
-          @media (max-width: 576px) {
+          @include sm-up-to {
             width: 160px;
             height: 160px;
           }

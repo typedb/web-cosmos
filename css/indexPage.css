@@ -206,18 +206,6 @@
   .section-speakers .bg {
     background: #0b0743;
     background: linear-gradient(180deg, #0b0743 0%, #0a0926 100%); }
-  .section-speakers .container {
-    position: relative; }
-  .section-speakers .space {
-    width: 100%;
-    height: 1964px;
-    background-size: cover;
-    background-repeat: repeat;
-    position: absolute;
-    margin: 0px;
-    background-image: url(../img/space-c.svg);
-    bottom: 0;
-    z-index: -2; }
   .section-speakers .stars {
     width: calc(100% - (50px * 2));
     height: calc(760px - (50px * 2));
@@ -227,6 +215,8 @@
     margin: 50px;
     background-image: url(../img/stars-speakers.svg);
     z-index: -1; }
+  .section-speakers .container {
+    position: relative; }
   .section-speakers .planet-purple-dark,
   .section-speakers .planet-pink-dark {
     width: 160px;
@@ -243,28 +233,30 @@
     top: -40px; }
     @media (max-width: 1024px) {
       .section-speakers .planet-purple-dark {
-        left: auto;
+        top: -100px;
         right: 0;
-        top: -100px; } }
+        left: auto; } }
     @media (max-width: 768px) {
       .section-speakers .planet-purple-dark {
-        left: 0;
         width: 83px;
+        background-position: right;
         background-size: 130px 130px;
-        background-position: right; } }
-  .section-speakers .m-planet-purple-dark {
-    background-image: url(../img/planet-purple-dark.svg);
-    left: 0;
-    width: 63px;
-    height: 120px;
-    top: -70px;
-    background-size: 130px 130px;
-    background-position: right;
-    position: absolute; }
+        left: 0; } }
   .section-speakers .planet-pink-dark {
     background-image: url(../img/planet-pink-dark.svg);
     bottom: -20px;
     right: 0px; }
+  .section-speakers .m-planet-purple-dark {
+    width: 63px;
+    height: 120px;
+    background-size: 130px 130px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 0px;
+    background-image: url(../img/planet-purple-dark.svg);
+    background-position: right;
+    left: 0;
+    top: -70px; }
   .section-speakers ul li {
     width: 160px;
     display: list-item;
@@ -272,11 +264,12 @@
     @media (max-width: 576px) {
       .section-speakers ul li {
         width: 180px; } }
+    .section-speakers ul li .company {
+      color: #BDB5FF; }
     .section-speakers ul li .speaker-frame {
-      background-image: url(../img/speaker-frame.svg);
-      background-position: top center;
-      background-repeat: no-repeat;
+      background: url(../img/speaker-frame.svg) no-repeat;
       transition: all 0.2s ease-in-out;
+      background-position: top center;
       padding: 10px;
       margin-bottom: 30px; }
       .section-speakers ul li .speaker-frame:hover {

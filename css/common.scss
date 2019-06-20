@@ -79,13 +79,13 @@ ul {
 }
 
 a {
-  color: $color-brand;
+  color: $color-brand-primary;
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:visited {
-    color: $color-brand;
+    color: $color-brand-primary;
   }
 }
 
@@ -120,7 +120,7 @@ code {
    Generic styles
    ========================================================================== */
 .text-color-brand {
-  color: $color-brand;
+  color: $color-brand-primary;
 }
 
 /* ==========================================================================
@@ -299,7 +299,7 @@ button {
 .button {
   height: 50px;
 
-  background: $color-brand;
+  background: $color-brand-primary;
   @include border-radius(5px);
   color: $color-text-on-brand !important;
   cursor: pointer;
@@ -312,7 +312,7 @@ button {
   vertical-align: middle;
 
   &:hover {
-    background-color: darken($color-brand, 5%);
+    background-color: darken($color-brand-primary, 5%);
     text-decoration: none;
     bottom: 0;
   }

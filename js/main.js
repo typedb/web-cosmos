@@ -115,7 +115,7 @@ function generateSpeakerHtml(speaker) {
                 <p class="h5 Geogrotesque-Rg
                             pt-2">${fullName}</p>
                 <p class="h6 Titillium-Lt pt-1">${position}</p>
-                <p class="h6 Titillium-Lt pt-1" style="color: #BDB5FF">${company}</p>
+                <p class="company h6 Titillium-Lt pt-1">${company}</p>
             </a>
         </li>
     `;

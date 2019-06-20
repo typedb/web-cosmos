@@ -23,8 +23,7 @@
         background-size: contain; } }
     @media (max-width: 768px) {
       .section-intro .futuristic-city {
-        background-image: url(../img/mobile-futuristic-city.svg);
-        background-size: contain; } }
+        background-image: url(../img/mobile-futuristic-city.svg); } }
   .section-intro .m-planet-blue,
   .section-intro .m-planet-purple,
   .section-intro .m-planet-pink,
@@ -46,10 +45,10 @@
         background-size: 120px 120px; } }
     @media (max-width: 768px) {
       .section-intro .m-planet-purple {
-        top: 125px;
-        left: 0;
         width: 60px;
-        background-position: right; } }
+        background-position: right;
+        top: 125px;
+        left: 0; } }
   .section-intro .m-planet-blue {
     width: 205px;
     height: 205px;
@@ -66,10 +65,10 @@
         background-size: 120px 120px; } }
     @media (max-width: 768px) {
       .section-intro .m-planet-blue {
-        top: 115px;
-        right: 0;
         width: 70px;
-        background-position: left; } }
+        background-position: left;
+        top: 115px;
+        right: 0; } }
   .section-intro .m-planet-pink {
     width: 138px;
     height: 138px;
@@ -86,10 +85,10 @@
         background-size: 100px 100px; } }
     @media (max-width: 768px) {
       .section-intro .m-planet-pink {
-        top: 740px;
-        left: 0;
         width: 43px;
-        background-position: right; } }
+        background-position: right;
+        top: 740px;
+        left: 0; } }
   .section-intro .m-spaceship {
     width: 129px;
     height: 190px;
@@ -113,11 +112,10 @@
         background-size: 128px 170px; } }
     @media (max-width: 768px) {
       .section-intro .m-spaceship {
-        top: 730px;
-        right: 0;
         width: 80px;
-        background-size: 128px 170px;
-        background-position: right; } }
+        background-position: right;
+        top: 730px;
+        right: 0; } }
   .section-intro .sub-section-summary {
     padding-top: 216px; }
     @media (max-width: 576px) {

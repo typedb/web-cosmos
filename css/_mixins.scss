@@ -59,10 +59,15 @@
 }
 
 // media queries
-@mixin phone-up-to {
+@mixin sm-up-to {
   @media (max-width: 576px) { @content; }
 }
-@mixin md {
+
+@mixin md-up-to {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin md-only {
   @media (min-width: 768px) { @content; }
 }
 @mixin lg {

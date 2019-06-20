@@ -52,7 +52,7 @@
   }
 
   &.mobile {
-    @include phone-up-to {
+    @include sm-up-to {
       height: 70px;
 
       .site-header-logo a {

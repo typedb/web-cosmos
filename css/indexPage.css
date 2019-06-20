@@ -292,7 +292,6 @@
 
 .section-apply {
   width: 100%;
-  background-color: #0a0926;
   position: relative; }
   .section-apply .bg-wrapper {
     width: 100%;
@@ -322,9 +321,9 @@
     position: relative; }
     .section-apply .container .apply-content {
       width: 100%;
-      position: absolute;
       left: 0;
       top: 50%;
+      position: absolute;
       transform: translateY(-50%); }
     .section-apply .container .button {
       background-color: white;
@@ -332,7 +331,7 @@
     @media (max-width: 768px) {
       .section-apply .container {
         height: 400px; } }
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       .section-apply .container {
         height: 500px; } }
 

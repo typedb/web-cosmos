@@ -1,7 +1,7 @@
+$apply-bg-color: #2346e7;
+
 .section-apply {
   width: 100%;
-
-  background-color: rgba(10, 9, 38, 1);
 
   position: relative;
 
@@ -13,8 +13,10 @@
 
     .bg {
       @include absolute-background(100%, 100%, 0, cover, no-repeat);
+
       background-image: url(../img/galaxy.svg);
-      background-color: #2346e7;
+      background-color: $apply-bg-color;
+
       background-position: center center;
       z-index: 0;
     }
@@ -37,26 +39,28 @@
 
   .container {
     height: 600px;
+
     position: relative;
 
     .apply-content {
       width: 100%;
-      position: absolute;
+
       left: 0;
       top: 50%;
+      position: absolute;
       transform: translateY(-50%);
     }
 
     .button {
       background-color: white;
-      color: #2346e7 !important;
+      color: $apply-bg-color !important;
     }
 
-    @media (max-width: 768px) {
+    @include md-up-to {
       height: 400px;
     }
 
-    @media (max-width: 992px) {
+    @include lg-up-to {
       height: 500px;
     }
 

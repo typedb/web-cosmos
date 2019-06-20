@@ -11,7 +11,7 @@
   }
 
   .address {
-    color: #BDB5FF;
+    color: $color-brand-secondary;
     line-height: 35px;
   }
 
@@ -20,20 +20,12 @@
     background-image: url(../img/stars-venue.svg);
   }
 
-  .mobile-london {
-    width: 100%;
-    height: 310px;
-
-    background: url(../img/mobile-london.svg) no-repeat;
-    background-size: contain;
-
-    position: absolute;
-    right: 0;
-    top: 120px;
-  }
-
   img {
     padding-top: 10%;
+
+    @include md-up-to {
+      padding-top: 5%;
+    }
   }
 
   .venue-details {
@@ -41,7 +33,7 @@
   }
 
   .h2 {
-    @media (max-width: 576px) {
+    @include md-up-to {
       font-size: 21px;
       line-height: 25px;
     }

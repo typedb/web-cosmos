@@ -366,7 +366,7 @@
     background: #170c44;
     background: linear-gradient(180deg, #170c44 0%, #0f0538 100%); }
   .section-sponsors .stars {
-    height: calc(668px - 100px);
+    height: calc(668px - 50px);
     background-image: url(../img/stars-sponsors.svg); }
 
 .section-newsletter {

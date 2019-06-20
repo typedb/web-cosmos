@@ -198,7 +198,7 @@
     background: #0a0926;
     background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%); }
   .section-motives .stars {
-    height: calc(100% - 100px);
+    height: calc(100% - 50px);
     background-image: url(../img/stars-motives.svg); }
 
 .section-speakers {

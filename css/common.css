@@ -123,6 +123,7 @@ code {
       position: relative;
       white-space: nowrap; }
       .site-header-nav ul a li {
+        font-size: 1.25rem;
         padding: 8px; }
   .site-header-action {
     font-size: 18px;

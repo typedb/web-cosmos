@@ -94,6 +94,6 @@
   @media (min-width: 1024px) { @content; }
 }
 
-@mixin xl {
-  @media (min-width: 1200px) { @content; }
+@mixin xl-up-to {
+  @media (max-width: 1920px) { @content; }
 }

@@ -46,7 +46,7 @@
     left: 60px;
     z-index: -9;
 
-    @media (max-width: 1024px) {
+    @include lg-up-to {
       background-size: 120px 120px;
     }
 
@@ -68,7 +68,7 @@
     right: 70px;
     z-index: -8;
 
-    @media (max-width: 1024px) {
+    @include lg-up-to {
       background-size: 120px 120px;
     }
 
@@ -89,7 +89,7 @@
     left: 100px;
     z-index: -7;
 
-    @media (max-width: 1024px) {
+    @include lg-up-to {
       background-size: 100px 100px;
     }
 
@@ -113,7 +113,7 @@
     filter: FlipH;
     -ms-filter: "FlipH";
 
-    @media (max-width: 1024px) {
+    @include lg-up-to {
       background-size: 128px 170px;
     }
 

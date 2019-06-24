@@ -100,6 +100,7 @@ function loadSpeakers() {
         }
         $('#speakers-list').html(allSpeakersHtml);
         swapSpeakers(initialSpeakers);
+        speakerModal();
     }
 }
 
@@ -108,15 +109,13 @@ function generateSpeakerHtml(speaker) {
 
     return `
         <li data-speaker-id="${fullName}">
-            <a href="${profileUrl}" target="_blank">
-                <div class="speaker-frame">
-                    <img src="img/speakers/${pictureFile}" alt="speaker 1" />
-                </div>
-                <p class="h5 Geogrotesque-Rg
-                            pt-2">${fullName}</p>
-                <p class="h6 Titillium-Lt pt-1">${position}</p>
-                <p class="company h6 Titillium-Lt pt-1">${company}</p>
-            </a>
+            <div class="speaker-frame">
+                <img src="img/speakers/${pictureFile}" alt="speaker 1" />
+            </div>
+            <p class="h5 Geogrotesque-Rg
+                        pt-2">${fullName}</p>
+            <p class="h6 Titillium-Lt pt-1">${position}</p>
+            <p class="company h6 Titillium-Lt pt-1">${company}</p>
         </li>
     `;
 }

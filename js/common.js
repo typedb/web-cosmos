@@ -4,6 +4,8 @@ $(document).ready(function () {
     handleSubscription();
 
     mobileMenu();
+
+    speakerModal();
 });
 
 function header() {
@@ -79,4 +81,23 @@ function mobileMenu() {
             $('.site-header').removeClass('mobile');
         }
     }
+}
+
+function speakerModal() {
+    $('#speakers-list').on("click", "li", function () {
+        const selectedSpeaker = $(this).data('speaker-id');
+        populateSpeakerModal(selectedSpeaker);
+        $('#speaker-modal').addClass('is-open');
+        $('body').addClass('modal-is-open');
+    });
+
+    $('#speaker-modal-close').click(function () {
+        $('#speaker-modal').removeClass('is-open');
+        $('body').removeClass('modal-is-open');
+    });
+}
+
+function populateSpeakerModal(speakerFullName) {
+    const speaker = speakersList.filter(speaker => speaker.fullName === speakerFullName)[0];
+    const { fullName, position, company, twitter, github, bio, sessionTitle, sessionDescription } = speaker;
 }

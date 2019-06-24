@@ -209,6 +209,9 @@ code {
   html {
     font-size: 14px; } }
 
+body.modal-is-open {
+  overflow: hidden; }
+
 p {
   padding-left: 0 !important;
   padding-right: 0 !important; }
@@ -217,7 +220,7 @@ button {
   cursor: pointer; }
 
 .h1 {
-  line-height: 50px; }
+  line-height: 56px; }
 
 .h2, .h3 {
   line-height: 40px; }
@@ -230,6 +233,9 @@ button {
   @media (max-width: 576px) {
     .h4, .h5 {
       line-height: 25px; } }
+
+.h6 {
+  line-height: 25px; }
 
 *:focus {
   outline: none !important; }

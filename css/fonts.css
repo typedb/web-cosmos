@@ -121,7 +121,18 @@
   src: url("../fonts/titillium/TitilliumWeb-Light.ttf");
 }
 
+@font-face {
+  font-family: 'Titillium-ExLt';
+  src: url('../fonts/titillium/TitilliumWeb-ExtraLight.ttf');
+  font-weight: 200;
+}
+
 .Titillium-Lt {
   font-family: "Titillium-Lt";
   font-weight: 300;
+}
+
+.Titillium-ExLt {
+  font-family: "Titillium-ExLt";
+  font-weight: 200;
 }

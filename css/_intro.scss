@@ -192,7 +192,7 @@
     }
 
     .spaceship {
-      @include absolute-background(129px, 190px, 0px, auto, no-repeat);
+      @include absolute-background(160px, 190px, 0px, auto, no-repeat);
 
       background-image: url(../img/spaceship.svg);
 

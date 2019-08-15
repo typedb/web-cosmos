@@ -1,13 +1,37 @@
 $(document).ready(function () {
+    setSpeakersAndSessions();
+
     detectInView();
 
     scrollToSection();
-
-    loadSpeakers();
-    $(window).resize(() => {
-        loadSpeakers();
-    });
 });
+
+let speakers;
+let sessions;
+
+function setSpeakersAndSessions() {
+    $.get("https://sessionize.com/api/v2/pixtt19d/view/all", (response, status) => {
+        if (status === "success") {
+            const speakers = response.speakers;
+            const sessions = response.sessions;
+
+            const profilePictures = new Map();
+            const speakerProfilePics = speakers.map(speaker => ({ id: speaker.id, profilePicture: speaker.profilePicture }));
+            speakerProfilePics.forEach(speakerProfilePic => {
+                const image = new Image();
+                image.src = speakerProfilePic.profilePicture;
+                profilePictures.set(speakerProfilePic.id, image)
+            });
+
+            loadSpeakers(speakers, profilePictures);
+            $(window).resize(() => {
+                loadSpeakers(speakers, profilePictures);
+            });
+        } else {
+            console.error("Failed to fetch speakers and sessions data");
+        }
+    });
+}
 
 function detectInView() {
     const windowWidth = $(window).width();
@@ -83,9 +107,9 @@ function scrollToSection() {
     });
 }
 
-function loadSpeakers() {
+function loadSpeakers(allSpeakers, profilePictures) {
     if ($('#speakers-list').length) {
-        let allSpeakersHtml = "";
+        let speakersHtml = "";
         // number of speakers to load and display are determined by the
         // number if `li`s that are chosen to be displayed based on the
         // user's screen size
@@ -93,36 +117,47 @@ function loadSpeakers() {
             return $(this).css('display') != 'none';
         }).length;
 
-        const initialSpeakers = speakersList.slice(0, numOfSpeakers);
-        for (const speaker of initialSpeakers) {
-            generateSpeakerHtml(speaker);
-            allSpeakersHtml += generateSpeakerHtml(speaker);
+        const displayedSpeakers = allSpeakers.filter(speaker => speaker.fullName.indexOf('Enzo') === -1).slice(0, numOfSpeakers);
+        for (const speaker of displayedSpeakers) {
+            speakersHtml += generateSpeakerHtml(speaker, profilePictures.get(speaker.id));
         }
-        $('#speakers-list').html(allSpeakersHtml);
-        swapSpeakers(initialSpeakers);
-        speakerModal();
+        if (speakersHtml !== "") {
+            $('#speakers-list').html(speakersHtml);
+            swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
+            speakerModal();
+        }
     }
 }
 
-function generateSpeakerHtml(speaker) {
-    const { profileUrl, pictureFile, fullName, position, company } = speaker;
+function generateSpeakerHtml(speaker, profilePicture) {
+    const { id, fullName, questionAnswers, links } = speaker;
+
+    const companyQuestionId = 16062;
+    const company = questionAnswers.filter(qa => qa.questionId === companyQuestionId)[0].answerValue;
+    const companyUrl = links.filter(link => link.linkType === "Company_Website")[0].url;
+
+    const positionQuestionId = 16061;
+    const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;
+
 
     return `
-        <li data-speaker-id="${fullName}">
+        <li data-speaker-id="${id}">
             <div class="speaker-frame">
-                <img src="img/speakers/${pictureFile}" alt="speaker 1" />
+                <img src="${profilePicture.src}" />
             </div>
-            <p class="h5 Geogrotesque-Rg
-                        pt-2">${fullName}</p>
-            <p class="h6 Titillium-Lt pt-1">${position}</p>
-            <p class="company h6 Titillium-Lt pt-1">${company}</p>
+            <p class="h5 Titillium-Rg
+                        pt-2" style="font-size:18px;">${fullName}</p>
+            <p class="h6 Titillium-Lt pt-1" style="font-size: 14px;">
+                ${position},
+                <a href="${companyUrl}" class="company h6 Titillium-Lt pt-1" style="font-size: 14px;">${company}</a>
+            </p>
         </li>
     `;
 }
 
-async function swapSpeakers(initialSpeakers) {
-    const displayedSpeakers = initialSpeakers;
-    const hiddenSpeakers = speakersList.filter((i) => !initialSpeakers.includes(i));
+async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
+    const hiddenSpeakers = allSpeakers.filter((speaker) => !displayedSpeakers.includes(speaker) && speaker.fullName.indexOf('Enzo') === -1);
+
     const swappingIndexes = {
         5: [1, 4, 2, 5, 3],
         4: [1, 3, 2, 4],
@@ -130,28 +165,39 @@ async function swapSpeakers(initialSpeakers) {
         2: [1, 2],
         1: [1]
     };
-    const numOfSpeakers = displayedSpeakers.length;
+
     let shouldSwapSpeakers = true;
 
     $(window).resize(() => {
         shouldSwapSpeakers = false;
     });
 
+    await new Promise(done => setTimeout(() => done(), 3000));
+
     while (shouldSwapSpeakers) {
-        for (let i of swappingIndexes[numOfSpeakers]) {
+        for (let i of swappingIndexes[displayedSpeakers.length]) {
             if (shouldSwapSpeakers) {
-                const delay = 5 / numOfSpeakers * 1000;
+                const delay = 5 / displayedSpeakers.length * 2000;
                 await new Promise(done => setTimeout(() => done(), delay));
 
-                speakerToRemoveFullName = $('#speakers-list li:nth-child(' + i + ')').data("speaker-id");
-                $('#speakers-list li:nth-child(' + i + ')').fadeOut("slow", function () {
-                    const replacingSpeaker = $(generateSpeakerHtml(hiddenSpeakers[0])).hide();
-                    $(this).replaceWith(replacingSpeaker);
-                    replacingSpeaker.fadeIn("slow");
+                const speakerToHideEl = $('#speakers-list li:nth-child(' + i + ')')
+                const idOfSpeakerToHide = speakerToHideEl.data("speaker-id");
+                const speakerToHide = allSpeakers.find(speaker => speaker.id === idOfSpeakerToHide);
+
+                speakerToHideEl.fadeOut(600, () => {
+                    const nextSpeaker = hiddenSpeakers[0];
+                    const nextSpeakerEl = $(generateSpeakerHtml(nextSpeaker, profilePictures.get(nextSpeaker.id)));
+                    nextSpeakerEl.hide();
+
+                    speakerToHideEl.replaceWith(nextSpeakerEl);
+                    nextSpeakerEl.fadeIn(600, () => {
+                        displayedSpeakers[i - 1] = nextSpeaker;
+                        hiddenSpeakers.shift();
+                        hiddenSpeakers.push(speakerToHide);
+                    });
                 });
-                displayedSpeakers[i - 1] = hiddenSpeakers[0];
-                hiddenSpeakers.shift();
-                hiddenSpeakers.push(speakersList.filter(s => s.fullName === speakerToRemoveFullName)[0]);
+
+                await new Promise(done => setTimeout(() => done(), 600));
             }
         }
     }

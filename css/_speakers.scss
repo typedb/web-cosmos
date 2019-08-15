@@ -1,6 +1,10 @@
 .section-speakers {
   position: relative;
 
+  #speakers-list {
+    min-height: 307px;
+  }
+
   .bg {
     background: rgb(11,7,67);
     background: linear-gradient(180deg, rgba(11,7,67,1) 0%, rgba(10,9,38,1) 100%);

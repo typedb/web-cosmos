@@ -14,19 +14,17 @@
       margin-top: 10px;
       text-decoration: none;
     }
-    img {
+    .logo-cosmos {
       margin-top: -10px;
     }
-    span {
-      line-height: 68px;
+
+    .logo-type-cosmos {
+      margin-bottom: 8px;
     }
   }
 
   &-nav {
     ul {
-      width: 94%;
-      max-width: 620px;
-
       a {
         color: white;
         line-height: 1;
@@ -39,16 +37,11 @@
           padding: 8px;
         }
       }
-    }
-  }
 
-  &-action {
-    font-size: 18px;
-    min-width: 150px;
-
-    .button {
-      height: 40px;
-      line-height: 42px;
+      .button {
+        height: 40px;
+        line-height: 42px;
+      }
     }
   }
 
@@ -81,15 +74,13 @@
     }
 
     .site-header-nav,
-    .site-header-logo p,
-    .site-header-action {
+    .site-header-logo a .logo-type-cosmos {
       display: none !important;
     }
 
     &.expanded,
     .site-header-inner,
-    .hamburger,
-    .site-header-nav .button {
+    .hamburger {
       display: block !important;
     }
 
@@ -97,7 +88,6 @@
       height: auto;
       background: $color-bg-brand-dark;
 
-      .site-header-nav,
       ul {
         display: block !important;
       }

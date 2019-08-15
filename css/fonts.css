@@ -61,59 +61,6 @@
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/32dc85");
 
-/* Geogrotesque  */
-
-@font-face {
-  font-family: "Geogrotesque-Lt";
-  src: url("../fonts/geogrotesque/32DC85_1_0.eot");
-  src: url("../fonts/geogrotesque/32DC85_1_0.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/geogrotesque/32DC85_1_0.woff2") format("woff2"),
-    url("../fonts/geogrotesque/32DC85_1_0.woff") format("woff"),
-    url("../fonts/geogrotesque/32DC85_1_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Geogrotesque-Md";
-  src: url("../fonts/geogrotesque/32DC85_3_0.eot");
-  src: url("../fonts/geogrotesque/32DC85_3_0.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/geogrotesque/32DC85_3_0.woff2") format("woff2"),
-    url("../fonts/geogrotesque/32DC85_3_0.woff") format("woff"),
-    url("../fonts/geogrotesque/32DC85_3_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Geogrotesque-Rg";
-  src: url("../fonts/geogrotesque/32DC85_6_0.eot");
-  src: url("../fonts/geogrotesque/32DC85_6_0.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/geogrotesque/32DC85_6_0.woff2") format("woff2"),
-    url("../fonts/geogrotesque/32DC85_6_0.woff") format("woff"),
-    url("../fonts/geogrotesque/32DC85_6_0.ttf") format("truetype");
-}
-
-.Geogrotesque-Lt {
-  font-family: Geogrotesque-Lt;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.Geogrotesque-Rg {
-  font-family: Geogrotesque-Rg;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.Geogrotesque-Md {
-  font-family: Geogrotesque-Md;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.Geogrotesque-Bd {
-  font-family: Geogrotesque-Bd;
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Titillium  */
 
 @font-face {
@@ -126,6 +73,29 @@
   src: url('../fonts/titillium/TitilliumWeb-ExtraLight.ttf');
   font-weight: 200;
 }
+
+@font-face {
+  font-family: 'Titillium-Rg';
+  src: url('../fonts/titillium/TitilliumWeb-Regular.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Titillium-Md';
+  src: url('../fonts/titillium/TitilliumWeb-SemiBold.ttf');
+  font-weight: 600;
+}
+
+.Titillium-Md {
+  font-family: "Titillium-Md";
+  font-weight: 600;
+}
+
+.Titillium-Rg {
+  font-family: "Titillium-Rg";
+  font-weight: 400;
+}
+
 
 .Titillium-Lt {
   font-family: "Titillium-Lt";

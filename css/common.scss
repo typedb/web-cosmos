@@ -165,7 +165,7 @@ button {
 }
 
 .h2, .h3 {
-  line-height: 40px;
+  line-height: 1.56;
 
   @media (max-width: 576px) {
     line-height: 30px;
@@ -286,8 +286,7 @@ button {
 }
 
 .container {
-  // max-width: 1152px;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 94%;
   padding: 0;
 
@@ -314,7 +313,7 @@ button {
   @include border-radius(5px);
   color: $color-text-on-brand !important;
   cursor: pointer;
-  font-family: "Geogrotesque-Md";
+  font-family: "Titillium-Md";
   line-height: 50px;
   text-align: center;
 

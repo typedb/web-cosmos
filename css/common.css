@@ -110,27 +110,21 @@ code {
   .site-header-logo a {
     margin-top: 10px;
     text-decoration: none; }
-  .site-header-logo img {
+  .site-header-logo .logo-cosmos {
     margin-top: -10px; }
-  .site-header-logo span {
-    line-height: 68px; }
-  .site-header-nav ul {
-    width: 94%;
-    max-width: 620px; }
-    .site-header-nav ul a {
-      color: white;
-      line-height: 1;
-      position: relative;
-      white-space: nowrap; }
-      .site-header-nav ul a li {
-        font-size: 1.25rem;
-        padding: 8px; }
-  .site-header-action {
-    font-size: 18px;
-    min-width: 150px; }
-    .site-header-action .button {
-      height: 40px;
-      line-height: 42px; }
+  .site-header-logo .logo-type-cosmos {
+    margin-bottom: 8px; }
+  .site-header-nav ul a {
+    color: white;
+    line-height: 1;
+    position: relative;
+    white-space: nowrap; }
+    .site-header-nav ul a li {
+      font-size: 1.25rem;
+      padding: 8px; }
+  .site-header-nav ul .button {
+    height: 40px;
+    line-height: 42px; }
   @media (max-width: 576px) {
     .site-header.mobile {
       height: 70px; }
@@ -147,18 +141,15 @@ code {
           .site-header.mobile .hamburger-inner:before, .site-header.mobile .hamburger-inner:after {
             width: 35px; } }
   .site-header.mobile .site-header-nav,
-  .site-header.mobile .site-header-logo p,
-  .site-header.mobile .site-header-action {
+  .site-header.mobile .site-header-logo a .logo-type-cosmos {
     display: none !important; }
   .site-header.mobile.expanded,
   .site-header.mobile .site-header-inner,
-  .site-header.mobile .hamburger,
-  .site-header.mobile .site-header-nav .button {
+  .site-header.mobile .hamburger {
     display: block !important; }
   .site-header.mobile.expanded {
     height: auto;
     background: #190d47; }
-    .site-header.mobile.expanded .site-header-nav,
     .site-header.mobile.expanded ul {
       display: block !important; }
   .site-header.mobile .hamburger {
@@ -499,7 +490,7 @@ button {
   line-height: 56px; }
 
 .h2, .h3 {
-  line-height: 40px; }
+  line-height: 1.56; }
   @media (max-width: 576px) {
     .h2, .h3 {
       line-height: 30px; } }
@@ -677,7 +668,7 @@ button {
     -webkit-transform: none; }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   width: 94%;
   padding: 0; }
   .container:before {
@@ -698,7 +689,7 @@ button {
   -webkit-border-radius: 5px;
   color: #240F61 !important;
   cursor: pointer;
-  font-family: "Geogrotesque-Md";
+  font-family: "Titillium-Md";
   line-height: 50px;
   text-align: center;
   display: inline-block;

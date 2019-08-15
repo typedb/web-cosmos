@@ -4,6 +4,10 @@
     position: relative;
     z-index: 0;
 
+    .container {
+      width: 1080px;
+    }
+
     .bg {
       background: rgb(10, 9, 38);
       background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(11, 7, 67, 1) 100%);
@@ -12,5 +16,9 @@
     .stars {
       height: calc(100% - 50px);
       background-image: url(../img/stars-motives.svg);
+    }
+
+    .h5 {
+      width: 402px;
     }
   }

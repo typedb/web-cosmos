@@ -1,0 +1,24 @@
+{{#> layouts/empty title="Grakn Cosmos" url-prefix="" }}
+
+{{#*inline "head-block"}}
+    <link rel="stylesheet" href="css/404Page.css">
+{{/inline}}
+
+{{#*inline "content-block"}}
+    <a class="go-back-button button">Go Back</a>
+{{/inline}}
+
+{{#*inline "scripts-block"}}
+    <script>
+        $(document).ready(function () {
+            const randomNum = Math.ceil(Math.random() * 10);
+            if (randomNum <= 5) {
+                $('body').addClass('lost-in-space');
+            } else {
+                $('body').addClass('spaceship');
+            }
+        });
+    </script>
+{{/inline}}
+
+{{/layouts/empty}}

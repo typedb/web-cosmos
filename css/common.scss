@@ -2,7 +2,6 @@
 @import "./mixins";
 
 /*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
-
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -220,12 +219,12 @@ button {
 }
 
 .divider {
-  width: 100%;
+  width: 172px;
   height: 28px;
 
   background-image: url(../img/divider.svg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center right;
 
   margin: 0 auto;
 }

@@ -4,8 +4,6 @@ $(document).ready(function () {
     handleSubscription();
 
     mobileMenu();
-
-    speakerModal();
 });
 
 function header() {
@@ -83,10 +81,13 @@ function mobileMenu() {
     }
 }
 
-function speakerModal() {
+function speakerModal(speakers, profilePictures, sessions) {
     $('#speakers-list').on("click", "li", function () {
-        const selectedSpeaker = $(this).data('speaker-id');
-        populateSpeakerModal(selectedSpeaker);
+        const selectedSpeakerId = $(this).data('speaker-id');
+        const speaker = speakers.find(speaker => speaker.id === selectedSpeakerId);
+        const profilePicture = profilePictures.get(selectedSpeakerId);
+        const speakerSessions = sessions.filter(session => session.speakers.includes(speaker.id));
+        populateSpeakerModal(speaker, profilePicture, speakerSessions);
         $('#speaker-modal').addClass('is-open');
         $('body').addClass('modal-is-open');
     });
@@ -97,7 +98,78 @@ function speakerModal() {
     });
 }
 
-function populateSpeakerModal(speakerFullName) {
-    const speaker = speakersList.filter(speaker => speaker.fullName === speakerFullName)[0];
-    const { fullName, position, company, twitter, github, bio, sessionTitle, sessionDescription } = speaker;
+function populateSpeakerModal(speaker, profilePicture, sessions) {
+    const { fullName, questionAnswers, links, bio } = speaker;
+
+    const companyQuestionId = 16062;
+    const company = questionAnswers.filter(qa => qa.questionId === companyQuestionId)[0].answerValue;
+    const companyUrl = links.filter(link => link.linkType === "Company_Website")[0].url;
+
+    const positionQuestionId = 16061;
+    const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;
+
+    const socialLinks = links.filter(link => link.linkType != "COmpany_Website");
+    const socialLinksHtml = socialLinks.map(socialLink => {
+        let linkHtml =
+            `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center">
+                <div class="logo-wrapper"><img src="img/social/PLACEHOLDER_ICON" /></div>
+                <span class="h6 Titillium-Rg">PLACEHOLDER_TEXT</span>
+            </a>`;
+
+        switch (socialLink.linkType) {
+            case 'LinkedIn': {
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'linked-in.svg');
+                linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', fullName);
+                linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
+                break;
+            }
+            case 'Twitter': {
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'twitter.svg');
+                let text = socialLink.url;
+                text = text.replace('http://twitter.com/', '');
+                text = text.replace('https://twitter.com/', '');
+                text = text.replace('twitter.com/', '');
+                text = text.replace('www.twitter.com/', '');
+                text = "@" + text;
+                linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', text);
+                linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
+                break;
+            }
+            case 'Blog': {
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'linked-in.svg');
+                let text = socialLink.url;
+                text = text.replace('http://', '');
+                text = text.replace('https://', '');
+                text = text.replace('www.', '');
+                linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', text);
+                linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
+                break;
+            }
+            default:
+                return '';
+        }
+        return linkHtml;
+    }).join('');
+
+    const sessionsHtml = sessions.map(session => {
+        let sessionHtml = `
+            <div class="session">
+                <p id="session-title" class="session-title h5 Titillium-Lt pt-3">PLACEHOLDER_TITLE</p>
+                <p id="session-description" class="h6 Titillium-ExLt pt-3">PLACEHOLDER_DESCRIPTION</p>
+            </div>
+        `;
+        sessionHtml = sessionHtml.replace('PLACEHOLDER_TITLE', session.title);
+        sessionHtml = sessionHtml.replace('PLACEHOLDER_DESCRIPTION', session.description);
+        return sessionHtml;
+    }).join('');
+
+
+    $('#profilePicture').attr("src", profilePicture.src);
+    $('#fullname').html(fullName);
+    $('#position').html(position);
+    $('#company').html(company);
+    $('#company').attr("href", companyUrl);
+    $('#social-links').html(socialLinksHtml);
+    $('#bio').html(bio);
+    $('#sessions').html(sessionsHtml);
 }

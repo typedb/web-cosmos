@@ -57,8 +57,7 @@
             <div class="site-header-logo
                         d-inline position-relative" style="width: 35%">
                 <a href="./index.html" class="d-inline-block">
-                    <img class="logo-cosmos d-inline-block" src="img/logo-header.svg" alt="COSMOS" />
-                    <img class="logo-type-cosmos d-inline-block ml-2" src="img/logo-type-cosmos.svg" alt="COSMOS" width="216" />
+                    <img class="logo-cosmos d-inline-block" src="img/logo-cosmos-horizontal.svg" alt="COSMOS" />
                 </a>
             </div>
     
@@ -87,71 +86,37 @@
                     Get Tickets
                 </div>
             </nav>
-    
         </div>
     </header>
     <div id="speaker-modal" class="speaker-modal">
         <div class="stars"></div>
-        <div class="planet-purple"></div>
     
         <div id="speaker-modal-close" class="speaker-modal-close"></div>
         <div class="speaker-modal-content">
+            <div class="planet-purple"></div>
+    
             <div class="speaker-modal-sidebar
                         f-left">
                 <div class="planet-blue
                             d-none d-lg-block"></div>
                 <figure>
                     <img class="frame-img" src="img/speaker-frame-xl.svg" />
-                    <img class="speaker-img" src="img/speakers/speaker-1-lg.png" />
+                    <img id="profilePicture" class="speaker-img" src="" />
                 </figure>
     
             </div>
             <div class="speaker-modal-body
                         f-right">
-                <p id="fullname" class="h1 Titillium-Rg">Soroush Saffari</p>
-                <p id="positions" class="h5 Titillium-Lt
-                          pt-2">Software Engineer</p>
-                <p id="company" class="company
-                          h5 Titillium-Lt
-                          pt-2">Grakn Labs</p>
-                <div class="social-links
-                            mt-4">
-                    <a id="twitter-link" class="d-flex align-items-center" href="#">
-                        <div class="logo-wrapper"><img src="img/social/twitter.svg" /></div>
-                        <span id="twitter-username" class="h6 Titillium-Rg">@SaffariSoroush</span>
-                    </a>
-                    <a id="github-link" class="d-flex align-items-center mt-1" href="#">
-                        <div class="logo-wrapper"><img src="img/social/github.svg" /></div>
-                        <span id="github-username" class="h6 Titillium-Rg">@sorsaffari</span>
-                    </a>
+                <p id="fullname" class="h1 Titillium-Rg"></p>
+                <p id="position" class="h5 Titillium-Lt pt-2"></p>
+                <a id="company" href="" class="company h5 Titillium-Lt pt-2"></a>
+                <div id="social-links" class="social-links mt-4"></div>
+                <p id="bio" class="h6 Titillium-ExLt pt-4 pt-lg-5"></p>
+                <p class="h4 Titillium-Rg pt-4 pt-lg-5">SESSION</p>
+                <div id='sessions' class="sessionsWrapper">
+                    <p id="session-title" class="session-title h5 Titillium-Lt pt-3"></p>
+                    <p id="session-description" class="h6 Titillium-ExLt pt-3"></p>
                 </div>
-                <p id="bio" class="h6 Titillium-ExLt
-                          pt-4 pt-lg-5">
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                    quisquam est, qui dolorem ipsum quia dolor sit ametra incidunt.
-                </p>
-                <p class="h4 Titillium-Rg
-                          pt-4 pt-lg-5">
-                    SESSION
-                </p>
-                <p id="session-title" class="session
-                          h5 Titillium-Lt
-                          pt-3">
-                    Open source security: who’s responsible?
-                </p>
-                <p id="session-description" class="h6 Titillium-ExLt
-                          pt-3">
-                    No software is immune from vulnerabilities. We’ve seen some of the world’s largest companies
-                    crippled by them. With always-evolving open source software and growing dependencies within it,
-                    staying on top of security can feel like an impossible task. That’s why it’s vital for any organization
-                    to have the right people and products for the job.
-    
-                    No software is immune from vulnerabilities. We’ve seen some of the world’s largest companies
-                    crippled by them. With always-evolving open source software and growing dependencies within it,
-                    staying on top of security can feel like an impossible task. That’s why it’s vital for any organization
-                    to have the right people and products for the job.
-                </p>
             </div>
         </div>
     </div>
@@ -210,12 +175,9 @@
             <div class="container
                                 py-11">
                 <div class="section-newsletter-logo
-                                    mx-auto">
-                    <img class="w-100 h-100" src="img/logo-intro.svg" alt="COSMOS">
+                                    mx-auto mb-5">
+                    <img class="w-100 h-100" src="img/logo-cosmos-vertical.svg" alt="COSMOS">
                 </div>
-        
-                <p class="h3 Titillium-Rg text-uppercase
-                                py-4 mx-auto col-md-8">Grakn Cosmos</p>
         
                 <div id="mc_embed_signup" class="px-3">
                     <form
@@ -271,7 +233,7 @@
                     <span class="mr-2">with</span>
                     <img src="img/heart.svg" class="mr-2" alt="love">
                     <span class="mr-2">by</span>
-                    <img src="img/logo-graknai.svg" alt="Grakn Labs">
+                    <img src="img/logo-graknlabs-typeonly.svg" alt="Grakn Labs">
                 </a>
                 <div class="d-flex flex-justify-space-between align-items-center">
                     <div class="social-links
@@ -320,7 +282,7 @@
                 <span class="mr-2">with</span>
                 <img src="img/heart.svg" class="mr-2" alt="love">
                 <span class="mr-2">by</span>
-                <img src="img/logo-graknai.svg" alt="Grakn Labs">
+                <img src="img/logo-graknlabs-typeonly.svg" alt="Grakn Labs">
             </a>
         </div>
     </div>
@@ -348,7 +310,7 @@
     
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="js/vendor/retina.min.js"></script>
+    <script src="js/vendor/retina.js"></script>
     
     <script src="js/common.js"></script>
     

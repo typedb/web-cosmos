@@ -23,9 +23,9 @@ function setSpeakersAndSessions() {
                 profilePictures.set(speakerProfilePic.id, image)
             });
 
-            loadSpeakers(speakers, profilePictures);
+            loadSpeakers(speakers, profilePictures, sessions);
             $(window).resize(() => {
-                loadSpeakers(speakers, profilePictures);
+                loadSpeakers(speakers, profilePictures, sessions);
             });
         } else {
             console.error("Failed to fetch speakers and sessions data");
@@ -107,7 +107,7 @@ function scrollToSection() {
     });
 }
 
-function loadSpeakers(allSpeakers, profilePictures) {
+function loadSpeakers(allSpeakers, profilePictures, sessions) {
     if ($('#speakers-list').length) {
         let speakersHtml = "";
         // number of speakers to load and display are determined by the
@@ -124,7 +124,7 @@ function loadSpeakers(allSpeakers, profilePictures) {
         if (speakersHtml !== "") {
             $('#speakers-list').html(speakersHtml);
             swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
-            speakerModal();
+            speakerModal(allSpeakers, profilePictures, sessions);
         }
     }
 }
@@ -172,32 +172,34 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
         shouldSwapSpeakers = false;
     });
 
-    await new Promise(done => setTimeout(() => done(), 3000));
+    await new Promise(done => setTimeout(() => done(), 2000));
 
     while (shouldSwapSpeakers) {
         for (let i of swappingIndexes[displayedSpeakers.length]) {
+            // the window hasn't been resized yet
             if (shouldSwapSpeakers) {
-                const delay = 5 / displayedSpeakers.length * 2000;
-                await new Promise(done => setTimeout(() => done(), delay));
+                const swappingSpeed = 500;
+                const intervalDuration = 5 / displayedSpeakers.length * 500;
+                await new Promise(done => setTimeout(() => done(), intervalDuration));
 
                 const speakerToHideEl = $('#speakers-list li:nth-child(' + i + ')')
                 const idOfSpeakerToHide = speakerToHideEl.data("speaker-id");
                 const speakerToHide = allSpeakers.find(speaker => speaker.id === idOfSpeakerToHide);
 
-                speakerToHideEl.fadeOut(600, () => {
-                    const nextSpeaker = hiddenSpeakers[0];
-                    const nextSpeakerEl = $(generateSpeakerHtml(nextSpeaker, profilePictures.get(nextSpeaker.id)));
-                    nextSpeakerEl.hide();
+                const nextSpeaker = hiddenSpeakers[0];
+                const nextSpeakerEl = $(generateSpeakerHtml(nextSpeaker, profilePictures.get(nextSpeaker.id)));
+                nextSpeakerEl.hide();
 
+                speakerToHideEl.fadeOut(swappingSpeed, () => {
                     speakerToHideEl.replaceWith(nextSpeakerEl);
-                    nextSpeakerEl.fadeIn(600, () => {
-                        displayedSpeakers[i - 1] = nextSpeaker;
-                        hiddenSpeakers.shift();
-                        hiddenSpeakers.push(speakerToHide);
-                    });
+                    nextSpeakerEl.fadeIn(swappingSpeed);
                 });
 
-                await new Promise(done => setTimeout(() => done(), 600));
+                await new Promise(done => setTimeout(() => done(), swappingSpeed));
+
+                displayedSpeakers[i - 1] = nextSpeaker;
+                hiddenSpeakers.shift();
+                hiddenSpeakers.push(speakerToHide);
             }
         }
     }

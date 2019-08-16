@@ -211,46 +211,6 @@ code {
     z-index: -1; }
   .section-speakers .container {
     position: relative; }
-  .section-speakers .planet-purple-dark,
-  .section-speakers .planet-pink-dark {
-    width: 160px;
-    height: 160px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    margin: 0px;
-    background-position: center center;
-    z-index: 0; }
-  .section-speakers .planet-purple-dark {
-    background-image: url(../img/planet-purple-dark.svg);
-    left: 0px;
-    top: -40px; }
-    @media (max-width: 1024px) {
-      .section-speakers .planet-purple-dark {
-        top: -100px;
-        right: 0;
-        left: auto; } }
-    @media (max-width: 768px) {
-      .section-speakers .planet-purple-dark {
-        width: 83px;
-        background-position: right;
-        background-size: 130px 130px;
-        left: 0; } }
-  .section-speakers .planet-pink-dark {
-    background-image: url(../img/planet-pink-dark.svg);
-    bottom: -20px;
-    right: 0px; }
-  .section-speakers .m-planet-purple-dark {
-    width: 63px;
-    height: 120px;
-    background-size: 130px 130px;
-    background-repeat: no-repeat;
-    position: absolute;
-    margin: 0px;
-    background-image: url(../img/planet-purple-dark.svg);
-    background-position: right;
-    left: 0;
-    top: -70px; }
   .section-speakers ul li {
     width: 160px;
     cursor: pointer;
@@ -314,7 +274,7 @@ code {
     background-image: url(../img/planet-purple-dark.svg);
     background-position: center center;
     right: 130px;
-    top: 150px;
+    top: 90px;
     z-index: -8; }
     @media (max-width: 1024px) {
       .speaker-modal .planet-purple {
@@ -332,7 +292,7 @@ code {
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(26, 236, 167, 0.8);
     pointer-events: initial;
     transition: border 0.3s ease-in-out;
     -moz-transition: border 0.3s ease-in-out;
@@ -345,18 +305,18 @@ code {
     .speaker-modal-close:hover {
       cursor: pointer;
       opacity: 1;
-      border: 1px solid white; }
+      border: 1px solid #1aeca7; }
       .speaker-modal-close:hover:before, .speaker-modal-close:hover:after {
-        background: white; }
+        background: #1aeca7; }
     .speaker-modal-close:before, .speaker-modal-close:after {
       width: 20px;
       height: 1px;
-      background: rgba(255, 255, 255, 0.4);
-      content: '';
-      transition: background 0.3s ease-in-out;
-      -moz-transition: background 0.3s ease-in-out;
-      -webkit-transition: background 0.3s ease-in-out;
-      -o-transition: background 0.3s ease-in-out;
+      background: rgba(26, 236, 167, 0.8);
+      content: "";
+      transition: background 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out;
+      -webkit-transition: background 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out;
       display: block;
       position: absolute;
       top: 50%;
@@ -366,15 +326,51 @@ code {
     .speaker-modal-close:after {
       transform: translate3d(-50%, -50%, 0) rotate(-45deg); }
   .speaker-modal-content {
-    max-width: 100%;
+    max-width: 1400px;
     height: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative; }
+    .speaker-modal-content .planet-purple-dark {
+      width: 160px;
+      height: 160px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      margin: 0px;
+      background-image: url(../img/planet-purple-dark.svg);
+      background-position: center center;
+      left: 0px;
+      top: -40px;
+      z-index: 0; }
+      @media (max-width: 1024px) {
+        .speaker-modal-content .planet-purple-dark {
+          top: -100px;
+          right: 0;
+          left: auto; } }
+      @media (max-width: 768px) {
+        .speaker-modal-content .planet-purple-dark {
+          width: 83px;
+          background-position: right;
+          background-size: 130px 130px;
+          left: 0; } }
+    .speaker-modal-content .m-planet-purple-dark {
+      width: 63px;
+      height: 120px;
+      background-size: 130px 130px;
+      background-repeat: no-repeat;
+      position: absolute;
+      margin: 0px;
+      background-image: url(../img/planet-purple-dark.svg);
+      background-position: right;
+      left: 0;
+      top: -70px; }
     @media (max-width: 1024px) {
       .speaker-modal-content {
         overflow: scroll; } }
   .speaker-modal-sidebar {
     position: relative;
-    width: calc(40% - 200px);
+    width: calc(50% - 200px);
     min-width: 200px;
     float: left;
     padding: 100px; }
@@ -397,6 +393,8 @@ code {
       .speaker-modal-sidebar figure .frame-img {
         width: 100%;
         height: 100%;
+        max-width: 450px;
+        max-height: 450px;
         border-radius: 50%;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
@@ -408,6 +406,8 @@ code {
       .speaker-modal-sidebar figure .speaker-img {
         width: 90%;
         height: 90%;
+        max-width: 400px;
+        max-height: 400px;
         border-radius: 50%;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
@@ -447,24 +447,27 @@ code {
           height: 200px !important;
           margin-top: 12px !important; } }
   .speaker-modal-body {
-    width: calc(60% - 100px);
+    width: calc(50% - 100px);
     max-height: calc(100% - 240px);
     float: right;
     padding: 120px 100px 120px 0;
     overflow: scroll; }
-    .speaker-modal-body .company, .speaker-modal-body .session {
+    .speaker-modal-body .company,
+    .speaker-modal-body .session-title {
       color: #BDB5FF; }
     .speaker-modal-body .social-links a {
       color: white; }
       .speaker-modal-body .social-links a .logo-wrapper {
         width: 30px; }
+        .speaker-modal-body .social-links a .logo-wrapper img {
+          height: 16px; }
       .speaker-modal-body .social-links a span {
         line-height: 28px; }
     @media (max-width: 1024px) {
       .speaker-modal-body {
-        width: calc(100% - 60px);
+        width: calc(100% - 120px);
         max-height: calc(100%);
-        padding: 0 30px 30px 30px;
+        padding: 0 60px 60px 60px;
         float: none;
         overflow: hidden; } }
     @media (max-width: 576px) {
@@ -532,11 +535,11 @@ button {
     background-color: white !important; }
 
 .divider {
-  width: 100%;
+  width: 172px;
   height: 28px;
   background-image: url(../img/divider.svg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center right;
   margin: 0 auto; }
 
 *[data-animate-in="fade"] {

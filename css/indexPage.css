@@ -350,6 +350,8 @@
     overflow: hidden;
     margin: 0 auto;
     position: relative; }
+    .speaker-modal-content .cospeaker-note {
+      font-size: 16px; }
     .speaker-modal-content .planet-purple-dark {
       width: 160px;
       height: 160px;
@@ -516,9 +518,9 @@
       height: 10vw;
       position: absolute; }
       .section-apply .bg-wrapper svg.top-mask {
-        top: 0; }
+        top: -1px; }
       .section-apply .bg-wrapper svg.bottom-mask {
-        bottom: 0; }
+        bottom: -1px; }
   .section-apply .container {
     height: 600px;
     position: relative; }

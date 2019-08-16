@@ -1,37 +1,8 @@
 $(document).ready(function () {
-    setSpeakersAndSessions();
-
     detectInView();
 
     scrollToSection();
 });
-
-let speakers;
-let sessions;
-
-function setSpeakersAndSessions() {
-    $.get("https://sessionize.com/api/v2/pixtt19d/view/all", (response, status) => {
-        if (status === "success") {
-            const speakers = response.speakers;
-            const sessions = response.sessions;
-
-            const profilePictures = new Map();
-            const speakerProfilePics = speakers.map(speaker => ({ id: speaker.id, profilePicture: speaker.profilePicture }));
-            speakerProfilePics.forEach(speakerProfilePic => {
-                const image = new Image();
-                image.src = speakerProfilePic.profilePicture;
-                profilePictures.set(speakerProfilePic.id, image)
-            });
-
-            loadSpeakers(speakers, profilePictures, sessions);
-            $(window).resize(() => {
-                loadSpeakers(speakers, profilePictures, sessions);
-            });
-        } else {
-            console.error("Failed to fetch speakers and sessions data");
-        }
-    });
-}
 
 function detectInView() {
     const windowWidth = $(window).width();
@@ -124,7 +95,7 @@ function loadSpeakers(allSpeakers, profilePictures, sessions) {
         if (speakersHtml !== "") {
             $('#speakers-list').html(speakersHtml);
             swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
-            speakerModal(allSpeakers, profilePictures, sessions);
+            speakerModalHandler(allSpeakers, profilePictures, sessions);
         }
     }
 }

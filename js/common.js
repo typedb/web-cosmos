@@ -1,10 +1,53 @@
 $(document).ready(function () {
+    setSpeakersAndSessions();
+
     header();
 
     handleSubscription();
 
     mobileMenu();
 });
+
+function setSpeakersAndSessions() {
+    $.get("https://sessionize.com/api/v2/pixtt19d/view/all", (response, status) => {
+        if (status === "success") {
+            const speakers = response.speakers;
+            const sessions = response.sessions;
+
+            const profilePictures = new Map();
+            const speakerProfilePics = speakers.map(speaker => ({ id: speaker.id, profilePicture: speaker.profilePicture }));
+            speakerProfilePics.forEach(speakerProfilePic => {
+                const image = new Image();
+                image.src = speakerProfilePic.profilePicture;
+                profilePictures.set(speakerProfilePic.id, image)
+            });
+
+            loadSpeakers(speakers, profilePictures, sessions);
+            checkForSpeakerModal(speakers, profilePictures, sessions);
+
+            if (window.location.pathname === "/") {
+                $(window).resize(() => {
+                    loadSpeakers(speakers, profilePictures, sessions);
+                });
+            }
+        } else {
+            console.error("Failed to fetch speakers and sessions data");
+        }
+    });
+}
+
+function checkForSpeakerModal(speakers, profilePictures, sessions) {
+    const hash = decodeURI(window.location.hash.replace('#', ''));
+    const speakerToShow = speakers.find(speaker => speaker.fullName === hash);
+    if (speakerToShow) {
+        const profilePicture = profilePictures.get(speakerToShow.id);
+        const speakerSessions = sessions.filter(session => session.speakers.includes(speakerToShow.id));
+        populateSpeakerModal(speakerToShow, profilePicture, speakerSessions, speakers);
+        $('#speaker-modal').addClass('is-open');
+        $('body').addClass('modal-is-open');
+    }
+}
+
 
 function header() {
     $(window).on('scroll', function () {
@@ -81,24 +124,26 @@ function mobileMenu() {
     }
 }
 
-function speakerModal(speakers, profilePictures, sessions) {
+function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speakers-list').on("click", "li", function () {
         const selectedSpeakerId = $(this).data('speaker-id');
         const speaker = speakers.find(speaker => speaker.id === selectedSpeakerId);
         const profilePicture = profilePictures.get(selectedSpeakerId);
         const speakerSessions = sessions.filter(session => session.speakers.includes(speaker.id));
-        populateSpeakerModal(speaker, profilePicture, speakerSessions);
+        populateSpeakerModal(speaker, profilePicture, speakerSessions, speakers);
         $('#speaker-modal').addClass('is-open');
         $('body').addClass('modal-is-open');
+        window.location.hash = speaker.fullName;
     });
 
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
+        window.history.back();
     });
 }
 
-function populateSpeakerModal(speaker, profilePicture, sessions) {
+function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
     const { fullName, questionAnswers, links, bio } = speaker;
 
     const companyQuestionId = 16062;
@@ -151,6 +196,8 @@ function populateSpeakerModal(speaker, profilePicture, sessions) {
         return linkHtml;
     }).join('');
 
+    if (sessions.length > 1) { $('#session-title').html('SESSIONS'); }
+
     const sessionsHtml = sessions.map(session => {
         let sessionHtml = `
             <div class="session">
@@ -158,7 +205,25 @@ function populateSpeakerModal(speaker, profilePicture, sessions) {
                 <p id="session-description" class="h6 Titillium-ExLt pt-3">PLACEHOLDER_DESCRIPTION</p>
             </div>
         `;
-        sessionHtml = sessionHtml.replace('PLACEHOLDER_TITLE', session.title);
+        const coSpeakers = session.speakers.filter(coSpeakerId => speaker.id !== coSpeakerId);
+
+        let sessionTitle = session.title;
+        let coSpeakerNote;
+        if (coSpeakers.length) {
+            coSpeakerNote = "<span class='cospeaker-note'> (This is a joined session with ";
+            coSpeakers.forEach((coSpeakerId, index) => {
+                const coSpeaker = speakers.find(coSpeaker => coSpeaker.id === coSpeakerId);
+                coSpeakerNote += `<a class='speaker-link' href='#speaker-${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
+                if (index < coSpeakers.length - 3) {
+                    coSpeakerNote += ', ';
+                } else if (index < coSpeakers.length - 2) {
+                    coSpeakerNote += ' and ';
+                }
+            });
+            coSpeakerNote += ')';
+        }
+        sessionTitle += coSpeakerNote;
+        sessionHtml = sessionHtml.replace('PLACEHOLDER_TITLE', sessionTitle);
         sessionHtml = sessionHtml.replace('PLACEHOLDER_DESCRIPTION', session.description);
         return sessionHtml;
     }).join('');

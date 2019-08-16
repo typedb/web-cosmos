@@ -123,8 +123,9 @@ code {
       font-size: 1.25rem;
       padding: 8px; }
   .site-header-nav ul .button {
+    width: 130px;
     height: 40px;
-    line-height: 42px; }
+    line-height: 40px; }
   @media (max-width: 576px) {
     .site-header.mobile {
       height: 70px; }
@@ -331,6 +332,8 @@ code {
     overflow: hidden;
     margin: 0 auto;
     position: relative; }
+    .speaker-modal-content .cospeaker-note {
+      font-size: 16px; }
     .speaker-modal-content .planet-purple-dark {
       width: 160px;
       height: 160px;

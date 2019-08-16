@@ -28,11 +28,11 @@ $apply-bg-color: #2346e7;
       position: absolute;
 
       &.top-mask {
-        top: 0;
+        top: -1px;
       }
 
       &.bottom-mask {
-        bottom: 0;
+        bottom: -1px;
       }
     }
   }

@@ -183,6 +183,10 @@
     margin: 0 auto;
     position: relative;
 
+    .cospeaker-note {
+      font-size: 16px;
+    }
+
     .planet-purple-dark {
       @include absolute-background(160px, 160px, 0px, contain, no-repeat);
       background-image: url(../img/planet-purple-dark.svg);

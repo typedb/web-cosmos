@@ -136,6 +136,8 @@
     overflow: hidden;
     margin: 0 auto;
     position: relative; }
+    .speaker-modal-content .cospeaker-note {
+      font-size: 16px; }
     .speaker-modal-content .planet-purple-dark {
       width: 160px;
       height: 160px;

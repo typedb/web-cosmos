@@ -1,28 +1,3 @@
-$(document).ready(function () {
-    setSpeakersAndSessions();
-});
-
-function setSpeakersAndSessions() {
-    $.get("https://sessionize.com/api/v2/pixtt19d/view/all", (response, status) => {
-        if (status === "success") {
-            const speakers = response.speakers;
-            const sessions = response.sessions;
-
-            const profilePictures = new Map();
-            const speakerProfilePics = speakers.map(speaker => ({ id: speaker.id, profilePicture: speaker.profilePicture }));
-            speakerProfilePics.forEach(speakerProfilePic => {
-                const image = new Image();
-                image.src = speakerProfilePic.profilePicture;
-                profilePictures.set(speakerProfilePic.id, image)
-            });
-
-            loadSpeakers(speakers, profilePictures, sessions);
-        } else {
-            console.error("Failed to fetch speakers and sessions data");
-        }
-    });
-}
-
 function loadSpeakers(speakers, profilePictures, sessions) {
     let allSpeakersHtml = "";
 
@@ -31,7 +6,7 @@ function loadSpeakers(speakers, profilePictures, sessions) {
     }
     $('#speakers-list').html(allSpeakersHtml);
 
-    speakerModal(speakers, profilePictures, sessions);
+    speakerModalHandler(speakers, profilePictures, sessions);
 }
 
 function generateSpeakerHtml(speaker, profilePicture) {
@@ -45,7 +20,7 @@ function generateSpeakerHtml(speaker, profilePicture) {
     const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;
 
     return `
-        <li data-speaker-id="${id}">
+        <li class="speaker" data-speaker-id="${id}">
             <div class="speaker-frame">
                 <img src="${profilePicture.src}" />
             </div>

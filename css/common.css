@@ -1,3 +1,19 @@
+.Titillium-Lt {
+  font-family: "Titillium Web";
+  font-weight: 300; }
+
+.Titillium-ExLt {
+  font-family: "Titillium Web";
+  font-weight: 200; }
+
+.Titillium-Rg {
+  font-family: "Titillium Web";
+  font-weight: 400; }
+
+.Titillium-Md, .button {
+  font-family: "Titillium Web";
+  font-weight: 600; }
+
 /*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
@@ -125,9 +141,7 @@ code {
   .site-header-nav ul .button {
     width: 140px;
     height: 40px;
-    line-height: 40px;
-    font-family: 'Titillium-Rg';
-    font-weight: 600; }
+    line-height: 40px; }
   @media (max-width: 576px) {
     .site-header.mobile {
       height: 70px; }
@@ -705,7 +719,6 @@ button {
   -webkit-border-radius: 5px;
   color: #240F61 !important;
   cursor: pointer;
-  font-family: "Titillium-Md";
   line-height: 50px;
   text-align: center;
   display: inline-block;

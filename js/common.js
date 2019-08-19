@@ -61,7 +61,9 @@ function checkForSpeakerModal(speakers, profilePictures, sessions) {
 function header() {
     $(window).on('scroll', function () {
         scrollPosition = $(this).scrollTop();
-        if (scrollPosition >= 500) {
+        const introLogo = $('.section-intro-logoType');
+        introLogoBottomOffset = introLogo.outerHeight() + introLogo.offset().top;
+        if (scrollPosition >= introLogoBottomOffset) {
             $('.site-header').addClass('is-scrolling');
         } else {
             $('.site-header').removeClass('is-scrolling');

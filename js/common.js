@@ -134,7 +134,10 @@ function mobileMenu() {
 }
 
 function speakerModalHandler(speakers, profilePictures, sessions) {
-    $('#speakers-list').on("click", "li", function () {
+    $('#speakers-list').on("click", "li", function (e) {
+        if (e.target.tagName === 'A') { 
+            return;
+        } 
         const selectedSpeakerId = $(this).data('speaker-id');
         const speaker = speakers.find(speaker => speaker.id === selectedSpeakerId);
         const profilePicture = profilePictures.get(selectedSpeakerId);

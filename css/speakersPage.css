@@ -25,8 +25,14 @@
     @media (max-width: 576px) {
       .section-speakers ul li {
         width: 180px; } }
+    .section-speakers ul li .fullname {
+      font-size: 18px; }
+    .section-speakers ul li .position, .section-speakers ul li .company {
+      font-size: 14px; }
     .section-speakers ul li .company {
       color: #BDB5FF; }
+      .section-speakers ul li .company:hover {
+        text-decoration: underline; }
     .section-speakers ul li .speaker-frame {
       background: url(../img/speaker-frame.svg) no-repeat;
       transition: all 0.2s ease-in-out;

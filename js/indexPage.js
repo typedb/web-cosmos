@@ -112,14 +112,13 @@ function generateSpeakerHtml(speaker, profilePicture) {
 
 
     return `
-        <li data-speaker-id="${id}">
+        <li class="speaker" data-speaker-id="${id}">
             <div class="speaker-frame">
                 <img src="${profilePicture.src}" />
             </div>
-            <p class="h5 Titillium-Rg
-                        pt-2" style="font-size:18px;">${fullName}</p>
-            <p class="h6 Titillium-Lt pt-1" style="font-size: 14px;">${position}</p>
-            <a href="${companyUrl}" class="company h6 Titillium-Lt pt-1" style="font-size: 14px;">${company}</a>
+            <p class="fullname h5 Titillium-Rg pt-2">${fullName}</p>
+            <p class="position h6 Titillium-Lt pt-1">${position}</p>
+            <a href="${companyUrl}" target="_blank" class="company h6 Titillium-Lt pt-1">${company}</a>
         </li>
     `;
 }

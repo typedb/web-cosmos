@@ -35,9 +35,22 @@
       margin-right: 30px;
       margin-left: 30px;
 
+      .fullname {
+        font-size: 18px;
+      }
+
+      .position, .company {
+        font-size: 14px;
+      }
+
       .company {
         color: $color-brand-secondary;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
+      
 
       .speaker-frame {
         background: url(../img/speaker-frame.svg) no-repeat;

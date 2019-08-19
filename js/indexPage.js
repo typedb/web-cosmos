@@ -118,10 +118,8 @@ function generateSpeakerHtml(speaker, profilePicture) {
             </div>
             <p class="h5 Titillium-Rg
                         pt-2" style="font-size:18px;">${fullName}</p>
-            <p class="h6 Titillium-Lt pt-1" style="font-size: 14px;">
-                ${position},
-                <a href="${companyUrl}" class="company h6 Titillium-Lt pt-1" style="font-size: 14px;">${company}</a>
-            </p>
+            <p class="h6 Titillium-Lt pt-1" style="font-size: 14px;">${position}</p>
+            <a href="${companyUrl}" class="company h6 Titillium-Lt pt-1" style="font-size: 14px;">${company}</a>
         </li>
     `;
 }
@@ -150,7 +148,7 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
             // the window hasn't been resized yet
             if (shouldSwapSpeakers) {
                 const swappingSpeed = 500;
-                const intervalDuration = 5 / displayedSpeakers.length * 500;
+                const intervalDuration = 5 / displayedSpeakers.length * swappingSpeed;
                 await new Promise(done => setTimeout(() => done(), intervalDuration));
 
                 const speakerToHideEl = $('#speakers-list li:nth-child(' + i + ')')
@@ -166,8 +164,8 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
                     nextSpeakerEl.fadeIn(swappingSpeed);
                 });
 
-                await new Promise(done => setTimeout(() => done(), swappingSpeed));
-
+                await new Promise(done => setTimeout(() => done(), swappingSpeed * 2 ));
+                
                 displayedSpeakers[i - 1] = nextSpeaker;
                 hiddenSpeakers.shift();
                 hiddenSpeakers.push(speakerToHide);

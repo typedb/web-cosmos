@@ -542,6 +542,9 @@
 
 .section-venue {
   position: relative; }
+  .section-venue .container {
+    max-width: 1080px;
+    margin: 0 auto; }
   .section-venue .row {
     position: relative; }
   .section-venue .bg {
@@ -707,3 +710,5 @@
     top: 20px;
     left: 60px;
     z-index: -1; }
+
+/*# sourceMappingURL=indexPage.css.map */

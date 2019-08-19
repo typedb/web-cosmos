@@ -25,6 +25,15 @@ function setSpeakersAndSessions() {
             loadSpeakers(speakers, profilePictures, sessions);
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
+            window.onhashchange = function() {
+                if (window.location.hash === '') {
+                    $('#speaker-modal').removeClass('is-open');
+                    $('body').removeClass('modal-is-open');
+                } else {
+                    checkForSpeakerModal(speakers, profilePictures, sessions);            
+                }
+            }
+
             if (window.location.pathname === "/") {
                 $(window).resize(() => {
                     loadSpeakers(speakers, profilePictures, sessions);
@@ -139,19 +148,17 @@ function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
-        window.history.back();
+        window.location.hash = 'speakers';
     });
 }
 
 function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
-    const { fullName, questionAnswers, links, bio } = speaker;
+    const { fullName, links, bio, tagLine } = speaker;
 
-    const companyQuestionId = 16062;
-    const company = questionAnswers.filter(qa => qa.questionId === companyQuestionId)[0].answerValue;
+    const company = tagLine.split(' at ')[1];
+    const position = tagLine.split(' at ')[0];
+
     const companyUrl = links.filter(link => link.linkType === "Company_Website")[0].url;
-
-    const positionQuestionId = 16061;
-    const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;
 
     const socialLinks = links.filter(link => link.linkType != "COmpany_Website");
     const socialLinksHtml = socialLinks.map(socialLink => {
@@ -208,12 +215,12 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
         const coSpeakers = session.speakers.filter(coSpeakerId => speaker.id !== coSpeakerId);
 
         let sessionTitle = session.title;
-        let coSpeakerNote;
+        let coSpeakerNote = '';
         if (coSpeakers.length) {
             coSpeakerNote = "<span class='cospeaker-note'> (This is a joined session with ";
             coSpeakers.forEach((coSpeakerId, index) => {
                 const coSpeaker = speakers.find(coSpeaker => coSpeaker.id === coSpeakerId);
-                coSpeakerNote += `<a class='speaker-link' href='#speaker-${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
+                coSpeakerNote += `<a class='speaker-link' href='#${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
                 if (index < coSpeakers.length - 3) {
                     coSpeakerNote += ', ';
                 } else if (index < coSpeakers.length - 2) {

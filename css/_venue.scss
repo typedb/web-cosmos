@@ -1,6 +1,11 @@
 .section-venue {
   position: relative;
 
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
   .row {
     position: relative;
   }

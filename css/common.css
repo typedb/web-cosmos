@@ -125,7 +125,9 @@ code {
   .site-header-nav ul .button {
     width: 130px;
     height: 40px;
-    line-height: 40px; }
+    line-height: 40px;
+    font-family: 'Titillium-Rg';
+    font-weight: 600; }
   @media (max-width: 576px) {
     .site-header.mobile {
       height: 70px; }
@@ -850,3 +852,5 @@ button {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+/*# sourceMappingURL=common.css.map */

@@ -23,7 +23,7 @@
 
   ul {
     li {
-      width: 160px;
+      width: 190px;
 
       cursor: pointer;
 
@@ -36,11 +36,11 @@
       margin-left: 30px;
 
       .fullname {
-        font-size: 18px;
+        font-size: 1.25rem;
       }
 
       .position, .company {
-        font-size: 14px;
+        font-size: 1rem;
       }
 
       .company {
@@ -54,6 +54,7 @@
 
       .speaker-frame {
         background: url(../img/speaker-frame.svg) no-repeat;
+        background-size: 190px 190px;
         transition: all 0.2s ease-in-out;
 
         background-position: top center;
@@ -65,8 +66,8 @@
         }
 
         img {
-          width: 140px;
-          height: 140px;
+          width: 170px;
+          height: 170px;
 
           @include sm-up-to {
             width: 160px;

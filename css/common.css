@@ -702,6 +702,9 @@ button {
   max-width: 1200px;
   width: 94%;
   padding: 0; }
+  @media (max-width: 768px) {
+    .container {
+      width: 84%; } }
   .container:before {
     display: table;
     content: ""; }

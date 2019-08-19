@@ -290,6 +290,10 @@ button {
   width: 94%;
   padding: 0;
 
+  @include md-up-to {
+    width: 84%;
+  }
+
   &:before {
     display: table;
     content: "";

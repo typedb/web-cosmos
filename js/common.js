@@ -26,7 +26,9 @@ function setSpeakersAndSessions() {
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
             window.onhashchange = function() {
-                if (window.location.hash === '') {
+                const newHash = window.location.hash;
+                debugger;
+                if (newHash === '' || newHash === 'speakers') {
                     $('#speaker-modal').removeClass('is-open');
                     $('body').removeClass('modal-is-open');
                 } else {

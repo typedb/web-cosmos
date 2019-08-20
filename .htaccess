@@ -8,3 +8,4 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^$ ./index.html
 RewriteRule ^speakers$ ./speakers.html
 RewriteRule ^privacy-policy$ ./privacy-policy.html
+RewriteRule ^.*$ ./404.html

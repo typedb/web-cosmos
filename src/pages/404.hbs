@@ -1,24 +1,28 @@
 {{#> layouts/empty title="Grakn Cosmos" url-prefix="" }}
 
 {{#*inline "head-block"}}
-    <link rel="stylesheet" href="css/404Page.css">
+<link rel="stylesheet" href="css/404Page.css">
 {{/inline}}
 
 {{#*inline "content-block"}}
-    <a class="go-back-button button">Go Back</a>
+<div class='go-back-block'>
+    <p class="title Titillium-Md">404</p>
+    <p class="message h3 Titillium-Rg">You are in uncharted territory!</p>
+    <a class="button Titillium-Md" href="./">Go Back</a>
+</div>
 {{/inline}}
 
 {{#*inline "scripts-block"}}
-    <script>
-        $(document).ready(function () {
-            const randomNum = Math.ceil(Math.random() * 10);
-            if (randomNum <= 5) {
-                $('body').addClass('lost-in-space');
-            } else {
-                $('body').addClass('spaceship');
-            }
-        });
-    </script>
+<script>
+    $(document).ready(function () {
+        const randomNum = Math.ceil(Math.random() * 10);
+        if (randomNum <= 5) {
+            $('body').addClass('lost-in-space');
+        } else {
+            $('body').addClass('spaceship');
+        }
+    });
+</script>
 {{/inline}}
 
 {{/layouts/empty}}

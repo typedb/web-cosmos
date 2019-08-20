@@ -576,8 +576,7 @@
     padding-top: 5%; }
   @media (max-width: 768px) {
     .section-venue .h2 {
-      font-size: 21px;
-      line-height: 25px; } }
+      line-height: 1.5; } }
 
 .section-sponsors {
   position: relative; }

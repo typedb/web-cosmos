@@ -39,8 +39,7 @@
 
   .h2 {
     @include md-up-to {
-      font-size: 21px;
-      line-height: 25px;
+      line-height: 1.5;
     }
   }
 }

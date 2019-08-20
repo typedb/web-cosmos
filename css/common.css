@@ -283,7 +283,7 @@ code {
     box-sizing: content-box; }
   .speaker-modal .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain; }
   .speaker-modal .planet-purple {
@@ -702,7 +702,7 @@ button {
   padding: 0; }
   @media (max-width: 768px) {
     .container {
-      width: 84%; } }
+      width: 86%; } }
   .container:before {
     display: table;
     content: ""; }

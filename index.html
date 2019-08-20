@@ -35,8 +35,8 @@
     <meta name="msapplication-wide310x150logo" content="icons/icon310rect.png">
     <meta name="msapplication-TileColor" content="#190d47">
     
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400i,600i&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400i,600i&display=swap">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600&display=swap">
     
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.css">
@@ -61,7 +61,8 @@
             <div class="site-header-logo
                         d-inline position-relative" style="width: 55%">
                 <a href="./" class="d-inline-block">
-                    <img class="logo-cosmos d-inline-block" src="img/logos/logo-cosmos-horizontal.svg" alt="COSMOS" />
+                    <img class="logo-cosmos d-sm-inline-block d-none" src="img/logos/logo-cosmos-horizontal.svg" alt="COSMOS" />
+                    <img class="logo-cosmos d-inline-block d-sm-none" src="img/logos/logo-cosmos-icononly.svg" width="47" height="42" alt="COSMOS" />
                 </a>
             </div>
     
@@ -451,6 +452,8 @@
                                mx-auto col-12 cl-md-8" target="_blank" novalidate>
                         <input class="email d-none d-sm-block h5 Titillium-Lt" type="email" value="" name="EMAIL"  id="mce-EMAIL"
                             placeholder="Stay tuned with conference updates" required>
+                        <input class="email d-block d-sm-none h5 Titillium-Lt" type="email" value="" name="EMAIL" id="mce-EMAIL"
+                            placeholder="Stay tuned" required>
                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                         <div style="position: absolute; left: -5000px;" aria-hidden="true">
                             <input type="text" name="b_b27e8984466b0dc642a917ba5_3742a20dc0" tabindex="-1" value="">

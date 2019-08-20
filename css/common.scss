@@ -151,9 +151,6 @@ body {
 p {
   padding-left: 0 !important;
   padding-right: 0 !important;
-  // @include sm {
-  //   padding: 0 20px !important;
-  // }
 }
 
 button {
@@ -291,7 +288,7 @@ button {
   padding: 0;
 
   @include md-up-to {
-    width: 84%;
+    width: 86%;
   }
 
   &:before {

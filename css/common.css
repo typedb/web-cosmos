@@ -142,7 +142,7 @@ code {
     line-height: 40px; }
   @media (max-width: 576px) {
     .site-header.mobile {
-      height: 70px; }
+      height: 78px; }
       .site-header.mobile .hamburger {
         padding: 0; }
         .site-header.mobile .hamburger-box {

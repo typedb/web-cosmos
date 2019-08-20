@@ -176,19 +176,19 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
     const socialLinksHtml = socialLinks.map(socialLink => {
         let linkHtml =
             `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center">
-                <div class="logo-wrapper"><img src="img/social/PLACEHOLDER_ICON" /></div>
+                <div class="logo-wrapper"><img src="img/icons/PLACEHOLDER_ICON" /></div>
                 <span class="h6 Titillium-Rg">PLACEHOLDER_TEXT</span>
             </a>`;
 
         switch (socialLink.linkType) {
             case 'LinkedIn': {
-                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'linked-in.svg');
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'social-linked-in.svg');
                 linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', fullName);
                 linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
                 break;
             }
             case 'Twitter': {
-                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'twitter.svg');
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'social-twitter.svg');
                 let text = socialLink.url;
                 text = text.replace('http://twitter.com/', '');
                 text = text.replace('https://twitter.com/', '');
@@ -200,7 +200,7 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
                 break;
             }
             case 'Blog': {
-                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'linked-in.svg');
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'social-linked-in.svg');
                 let text = socialLink.url;
                 text = text.replace('http://', '');
                 text = text.replace('https://', '');

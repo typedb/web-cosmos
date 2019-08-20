@@ -13,7 +13,7 @@
   .stars {
     @include absolute-background(100%, 760px, 50px, auto, repeat);
 
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     z-index: -1;
   }
 
@@ -109,7 +109,7 @@
 
   .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain;
   }

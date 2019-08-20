@@ -12,7 +12,7 @@
     background-repeat: repeat;
     position: absolute;
     margin: 50px;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     z-index: -1; }
   .section-speakers .container {
     position: relative; }
@@ -71,7 +71,7 @@
     box-sizing: content-box; }
   .speaker-modal .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain; }
   .speaker-modal .planet-purple {
@@ -298,7 +298,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/wave-newsletter.svg);
+    background-image: url(../img/newsletter-wave.svg);
     background-position: top; }
   .section-newsletter-logo {
     width: 198px;
@@ -357,8 +357,9 @@
       top: 0;
       right: 0; }
       .section-newsletter form button .spinner-border {
+        display: block;
         color: #240F61;
-        margin-top: 9px; }
+        margin: 0 auto; }
     .section-newsletter form .form-messages {
       width: 100%;
       height: fit-content;

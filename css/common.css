@@ -224,7 +224,7 @@ code {
     background-repeat: repeat;
     position: absolute;
     margin: 50px;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     z-index: -1; }
   .section-speakers .container {
     position: relative; }

@@ -11,7 +11,7 @@
 
   .wave {
     @include absolute-background(100%, 100%, 0, cover, no-repeat);
-    background-image: url(../img/wave-newsletter.svg);
+    background-image: url(../img/newsletter-wave.svg);
 
     background-position: top;
   }
@@ -68,8 +68,9 @@
       right: 0;
 
       .spinner-border {
+        display: block;
         color: $color-text-on-brand;
-        margin-top: 9px;
+        margin: 0 auto;
       }
     }
 

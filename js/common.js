@@ -63,7 +63,7 @@ function header() {
     $(window).on('scroll', function () {
         scrollPosition = $(this).scrollTop();
         const introLogo = $('.section-intro-logoType');
-        if (introLogo) {
+        if (introLogo.length) {
             introLogoBottomOffset = introLogo.outerHeight() + introLogo.offset().top;
             if (scrollPosition >= introLogoBottomOffset) {
                 $('.site-header').addClass('is-scrolling');
@@ -82,23 +82,25 @@ function handleSubscription() {
     });
 }
 
-function subscribe($form) {
+function subscribe(form) {
+    // taking the first email because there is a second hidden email input
+    const data = form.serialize().split('&')[0];
     $.ajax({
-        type: $form.attr('method'),
-        url: $form.attr('action'),
-        data: $form.serialize(),
+        type: form.attr('method'),
+        url: form.attr('action'),
+        data,
         cache: false,
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         error: function (xhr, ajaxOptions, thrownError) { console.log(xhr.responseText); },
         success: function (data) {
             if (data.result != "success") {
-                $('#mce-success-response').hide();
-                $('#mce-error-response').html(data.msg.replace("0 -", "")).show();
+                $('#mce-success-response').removeClass('d-block').addClass('d-none');
+                $('#mce-error-response').html(data.msg.replace("0 -", "")).removeClass('d-none').addClass('d-block');
                 $('form button').html('Subscribe');
             } else {
-                $('#mce-error-response').hide();
-                $('#mce-success-response').html(data.msg).show();
+                $('#mce-error-response').removeClass('d-block').addClass('d-none');
+                $('#mce-success-response').html(data.msg).removeClass('d-none').addClass('d-block');
                 $('form button').html('Subscribe');
             }
         }

@@ -8,25 +8,25 @@
 
   .stars {
     height: calc(773px - 50px);
-    background-image: url(../img/stars-intro.svg);
+    background-image: url(../img/intro-stars.svg);
   }
 
   .futuristic-city {
     @include absolute-background(100%, 800px, 0, cover, no-repeat);
 
-    background-image: url(../img/futuristic-city.svg);
+    background-image: url(../img/intro-futuristic-city-lg.svg);
 
     background-position: center bottom;
     bottom: 0;
     z-index: -1;
 
     @media (max-width: 1480px) {
-      background-image: url(../img/tablet-futuristic-city.svg);
+      background-image: url(../img/intro-futuristic-city-md.svg);
       background-size: contain;
     }
 
     @include md-up-to {
-      background-image: url(../img/mobile-futuristic-city.svg);
+      background-image: url(../img/intro-futuristic-city-sm.svg);
     }
   }
 

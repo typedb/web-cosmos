@@ -5,7 +5,7 @@
     background: linear-gradient(180deg, #0a0926 0%, #28116b 35%, #00c8d8 100%); }
   .section-intro .stars {
     height: calc(773px - 50px);
-    background-image: url(../img/stars-intro.svg); }
+    background-image: url(../img/intro-stars.svg); }
   .section-intro .futuristic-city {
     width: 100%;
     height: 800px;
@@ -13,17 +13,17 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/futuristic-city.svg);
+    background-image: url(../img/intro-futuristic-city-lg.svg);
     background-position: center bottom;
     bottom: 0;
     z-index: -1; }
     @media (max-width: 1480px) {
       .section-intro .futuristic-city {
-        background-image: url(../img/tablet-futuristic-city.svg);
+        background-image: url(../img/intro-futuristic-city-md.svg);
         background-size: contain; } }
     @media (max-width: 768px) {
       .section-intro .futuristic-city {
-        background-image: url(../img/mobile-futuristic-city.svg); } }
+        background-image: url(../img/intro-futuristic-city-sm.svg); } }
   .section-intro .m-planet-blue,
   .section-intro .m-planet-purple,
   .section-intro .m-planet-pink,
@@ -204,7 +204,7 @@
     background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%); }
   .section-motives .stars {
     height: calc(100% - 50px);
-    background-image: url(../img/stars-motives.svg); }
+    background-image: url(../img/motives-stars.svg); }
   .section-motives .motive-text-block {
     padding-left: 80px; }
     @media (max-width: 768px) {
@@ -226,7 +226,7 @@
     background-repeat: repeat;
     position: absolute;
     margin: 50px;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     z-index: -1; }
   .section-speakers .container {
     position: relative; }
@@ -285,7 +285,7 @@
     box-sizing: content-box; }
   .speaker-modal .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/stars-speakers.svg);
+    background-image: url(../img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain; }
   .speaker-modal .planet-purple {
@@ -516,7 +516,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/galaxy.svg);
+      background-image: url(../img/apply-galaxy.svg);
       background-color: #2346e7;
       background-position: center center;
       z-index: 0; }
@@ -562,7 +562,7 @@
     line-height: 35px; }
   .section-venue .stars {
     height: calc(668px - 100px);
-    background-image: url(../img/stars-venue.svg); }
+    background-image: url(../img/venue-stars.svg); }
   .section-venue img {
     padding-top: 10%; }
     @media (max-width: 768px) {
@@ -582,7 +582,7 @@
     background: linear-gradient(180deg, #170c44 0%, #0f0538 100%); }
   .section-sponsors .stars {
     height: calc(668px - 50px);
-    background-image: url(../img/stars-sponsors.svg); }
+    background-image: url(../img/sponsors-stars.svg); }
 
 .section-newsletter {
   position: relative; }
@@ -596,7 +596,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/wave-newsletter.svg);
+    background-image: url(../img/newsletter-wave.svg);
     background-position: top; }
   .section-newsletter-logo {
     width: 198px;
@@ -655,8 +655,9 @@
       top: 0;
       right: 0; }
       .section-newsletter form button .spinner-border {
+        display: block;
         color: #240F61;
-        margin-top: 9px; }
+        margin: 0 auto; }
     .section-newsletter form .form-messages {
       width: 100%;
       height: fit-content;

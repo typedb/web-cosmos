@@ -27,14 +27,6 @@
 
   img {
     padding-top: 10%;
-
-    @include md-up-to {
-      padding-top: 5%;
-    }
-  }
-
-  .venue-details {
-    padding-top: 5%;
   }
 
   .h2 {

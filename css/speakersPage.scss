@@ -21,7 +21,7 @@ header {
 }
 
 #speakers-list {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -29,6 +29,7 @@ header {
   position: relative;
 
   .container {
+    max-width: 1250px;
     padding-top: 180px !important;
   }
 
@@ -119,7 +120,7 @@ header {
     margin-bottom: 60px;
 
     &:last-child {
-      margin-bottom: 60px !important;
+      margin: 0 30px 60px 30px !important;
     }
 
     .speaker-frame {

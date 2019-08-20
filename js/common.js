@@ -26,8 +26,7 @@ function setSpeakersAndSessions() {
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
             window.onhashchange = function() {
-                const newHash = window.location.hash;
-                debugger;
+                const newHash = window.location.hash.replace('#', '');
                 if (newHash === '' || newHash === 'speakers') {
                     $('#speaker-modal').removeClass('is-open');
                     $('body').removeClass('modal-is-open');
@@ -64,11 +63,13 @@ function header() {
     $(window).on('scroll', function () {
         scrollPosition = $(this).scrollTop();
         const introLogo = $('.section-intro-logoType');
-        introLogoBottomOffset = introLogo.outerHeight() + introLogo.offset().top;
-        if (scrollPosition >= introLogoBottomOffset) {
-            $('.site-header').addClass('is-scrolling');
-        } else {
-            $('.site-header').removeClass('is-scrolling');
+        if (introLogo) {
+            introLogoBottomOffset = introLogo.outerHeight() + introLogo.offset().top;
+            if (scrollPosition >= introLogoBottomOffset) {
+                $('.site-header').addClass('is-scrolling');
+            } else {
+                $('.site-header').removeClass('is-scrolling');
+            }
         }
     });
 }
@@ -155,7 +156,9 @@ function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
-        window.location.hash = 'speakers';
+        if ($('#speakers').length) {
+            window.location.hash = 'speakers';
+        }
     });
 }
 

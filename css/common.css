@@ -232,8 +232,8 @@ code {
     width: 190px;
     cursor: pointer;
     display: list-item;
-    margin-right: 30px;
-    margin-left: 30px; }
+    margin-right: 28px;
+    margin-left: 28px; }
     @media (max-width: 576px) {
       .section-speakers ul li {
         width: 180px; } }
@@ -265,8 +265,6 @@ code {
           .section-speakers ul li .speaker-frame img {
             width: 160px;
             height: 160px; } }
-    .section-speakers ul li:last-child {
-      margin: 0; }
     .section-speakers ul li a:hover {
       text-decoration: none; }
 

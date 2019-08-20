@@ -32,8 +32,8 @@
       }
 
       display: list-item;
-      margin-right: 30px;
-      margin-left: 30px;
+      margin-right: 28px;
+      margin-left: 28px;
 
       .fullname {
         font-size: 1.25rem;
@@ -78,10 +78,6 @@
 
           display: block;
         }
-      }
-
-      &:last-child {
-        margin: 0;
       }
 
       a:hover {

@@ -25,10 +25,6 @@
     background-image: url(../img/venue-stars.svg);
   }
 
-  img {
-    padding-top: 10%;
-  }
-
   .h2 {
     @include md-up-to {
       line-height: 1.5;

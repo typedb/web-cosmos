@@ -567,8 +567,6 @@
   .section-venue .stars {
     height: calc(668px - 100px);
     background-image: url(../img/venue-stars.svg); }
-  .section-venue img {
-    padding-top: 10%; }
   @media (max-width: 768px) {
     .section-venue .h2 {
       line-height: 1.5; } }

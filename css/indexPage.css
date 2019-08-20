@@ -191,9 +191,15 @@
   .section-intro .sub-section-description {
     height: 750px;
     max-width: 1050px; }
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
       .section-intro .sub-section-description {
-        height: 625px; } }
+        height: 650px; } }
+    @media (max-width: 335px) {
+      .section-intro .sub-section-description {
+        height: 680px; } }
+    @media (max-width: 300px) {
+      .section-intro .sub-section-description {
+        height: 700px; } }
     .section-intro .sub-section-description .h5 {
       letter-spacing: 0.69px; }
 
@@ -253,7 +259,7 @@
         text-decoration: underline; }
     .section-speakers ul li .speaker-frame {
       background: url(../img/speaker-frame.svg) no-repeat;
-      background-size: 190px 190px;
+      background-size: 180px 180px;
       transition: all 0.2s ease-in-out;
       background-position: top center;
       padding: 10px;

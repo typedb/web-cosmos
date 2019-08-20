@@ -212,10 +212,19 @@
     height: 750px;
     max-width: 1050px;
 
-    @include md-up-to {
-      height: 625px;
+    
+    @include sm-up-to {
+      height: 650px;
     }
 
+    @media (max-width: 335px) {
+      height: 680px;
+    }
+
+    @media (max-width: 300px) {
+      height: 700px;
+    }
+    
     .h5 {
       letter-spacing: 0.69px;
     }

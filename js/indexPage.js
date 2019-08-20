@@ -147,7 +147,7 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
             // the window hasn't been resized yet
             if (shouldSwapSpeakers) {
                 const swappingSpeed = 500;
-                const intervalDuration = 5 / displayedSpeakers.length * swappingSpeed;
+                const intervalDuration = 1 / displayedSpeakers.length * 1000;
                 await new Promise(done => setTimeout(() => done(), intervalDuration));
 
                 const speakerToHideEl = $('#speakers-list li:nth-child(' + i + ')')

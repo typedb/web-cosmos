@@ -23,6 +23,7 @@
         background-size: contain; } }
     @media (max-width: 768px) {
       .section-intro .futuristic-city {
+        height: 470px;
         background-image: url(../img/intro-futuristic-city-sm.svg); } }
   .section-intro .m-planet-blue,
   .section-intro .m-planet-purple,
@@ -190,6 +191,9 @@
   .section-intro .sub-section-description {
     height: 750px;
     max-width: 1050px; }
+    @media (max-width: 768px) {
+      .section-intro .sub-section-description {
+        height: 625px; } }
     .section-intro .sub-section-description .h5 {
       letter-spacing: 0.69px; }
 

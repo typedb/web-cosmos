@@ -158,6 +158,7 @@ function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
+        window.history.back();
         if ($('#speakers').length) {
             window.location.hash = 'speakers';
         }

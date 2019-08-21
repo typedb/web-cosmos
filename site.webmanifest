@@ -1,13 +1,18 @@
 {
-  "short_name": "Cosmos",
+  "short_name": "Grakn Cosmos",
   "name": "Grakn Cosmos",
   "icons": [{
-    "src": "icons/icon192.png",
+    "src": "icons/cosmos-192x192.png",
     "type": "image/png",
     "sizes": "192x192"
+  },
+  {
+    "src": "icons/cosmos-512x512.png",
+    "type": "image/png",
+    "sizes": "512x512"
   }],
   "start_url": "/?utm_source=homescreen",
   "display": "standalone",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "background_color": "#0B0929",
+  "theme_color": "#0B0929"
 }

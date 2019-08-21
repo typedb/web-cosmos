@@ -197,6 +197,10 @@
     margin: 0 auto;
     position: relative;
 
+    .description, .bio {
+      white-space: pre-line;
+    }
+
     .cospeaker-note {
       font-size: 16px;
     }

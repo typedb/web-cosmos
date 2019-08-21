@@ -271,7 +271,7 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
         let sessionHtml = `
             <div class="session">
                 <p id="session-title" class="session-title h5 Titillium-Lt pt-3">PLACEHOLDER_TITLE</p>
-                <p id="session-description" class="h6 Titillium-ExLt pt-3">PLACEHOLDER_DESCRIPTION</p>
+                <p id="session-description" class="description h6 Titillium-ExLt pt-3">PLACEHOLDER_DESCRIPTION</p>
             </div>
         `;
         const coSpeakers = session.speakers.filter(coSpeakerId => speaker.id !== coSpeakerId);

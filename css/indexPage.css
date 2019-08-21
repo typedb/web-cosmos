@@ -364,6 +364,8 @@
     overflow: hidden;
     margin: 0 auto;
     position: relative; }
+    .speaker-modal-content .description, .speaker-modal-content .bio {
+      white-space: pre-line; }
     .speaker-modal-content .cospeaker-note {
       font-size: 16px; }
     .speaker-modal-content .planet-purple-dark {

@@ -151,8 +151,8 @@
     @include transition(border, 0.3s, ease-in-out);
 
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 20px;
+    right: 20px;
     z-index: 1031;
 
     &:hover {

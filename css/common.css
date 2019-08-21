@@ -324,8 +324,8 @@ code {
     -webkit-transition: border 0.3s ease-in-out;
     -o-transition: border 0.3s ease-in-out;
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 20px;
+    right: 20px;
     z-index: 1031; }
     .speaker-modal-close:hover {
       cursor: pointer;

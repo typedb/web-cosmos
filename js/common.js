@@ -37,6 +37,7 @@ function setSpeakersAndSessions() {
 
             if (window.location.pathname === "/") {
                 $(window).resize(() => {
+                    if ($(window).width() == windowWidth) return;
                     loadSpeakers(speakers, profilePictures, sessions);
                 });
             }

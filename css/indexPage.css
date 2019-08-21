@@ -270,7 +270,9 @@
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         display: block; }
-        @media (max-width: 576px) {
+      @media (max-width: 576px) {
+        .section-speakers ul li .speaker-frame {
+          background-size: 180px 180px; }
           .section-speakers ul li .speaker-frame img {
             width: 160px;
             height: 160px; } }

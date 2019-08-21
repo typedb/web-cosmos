@@ -133,11 +133,11 @@ code {
 
 
 html {
-  @media (max-width: 576px) {
+  @include sm-up-to {
     font-size: 13px !important;
   }
 
-  @media (max-width: 768px) {
+  @include md-up-to {
     font-size: 14px;
   }
 }

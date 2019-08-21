@@ -138,7 +138,9 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
 
     let shouldSwapSpeakers = true;
 
+    const windowWidth = $(window).width();
     $(window).resize(() => {
+        if ($(window).width() == windowWidth) return;
         shouldSwapSpeakers = false;
     });
 

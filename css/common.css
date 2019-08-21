@@ -28,7 +28,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  -ms-overflow-style: none; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -502,6 +502,8 @@ code {
     @media (max-width: 576px) {
       .speaker-modal-body {
         max-height: calc(100% + 300px); } }
+  .speaker-modal .sessionsWrapper {
+    margin-bottom: 20px; }
 
 @media (max-width: 576px) {
   html {

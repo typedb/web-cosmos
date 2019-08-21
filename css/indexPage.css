@@ -509,6 +509,8 @@
     @media (max-width: 576px) {
       .speaker-modal-body {
         max-height: calc(100% + 300px); } }
+  .speaker-modal .sessionsWrapper {
+    margin-bottom: 20px; }
 
 .section-apply {
   width: 100%;

@@ -279,11 +279,12 @@
         line-height: 28px; }
     @media (max-width: 1024px) {
       .speaker-modal-body {
-        width: calc(100% - 120px);
+        width: 86%;
         max-height: calc(100%);
-        padding: 0 60px 60px 60px;
+        padding: 0;
         float: none;
-        overflow: hidden; } }
+        overflow: hidden;
+        margin: 0 auto; } }
     @media (max-width: 576px) {
       .speaker-modal-body {
         max-height: calc(100% + 300px); } }

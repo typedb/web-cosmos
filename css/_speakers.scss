@@ -374,11 +374,12 @@
     }
 
     @include lg-up-to {
-      width: calc(100% - 120px);
+      width: 86%;
       max-height: calc(100%);
-      padding: 0 60px 60px 60px;
+      padding: 0;
       float: none;
       overflow: hidden;
+      margin: 0 auto;
     }
 
     @include sm-up-to {

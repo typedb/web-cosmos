@@ -132,7 +132,7 @@ function mobileMenu() {
 
     function toggleMobileMenu() {
         const windowWidth = $(window).width();
-        if (windowWidth < 1210) {
+        if (windowWidth < 768) {
             $('.site-header').addClass('mobile');
         } else {
             $('.site-header').removeClass('mobile');
@@ -158,25 +158,63 @@ function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
-        window.history.back();
+        // window.history.back();
         if ($('#speakers').length) {
             window.location.hash = 'speakers';
+        } else {
+            // window.location.hash = window.location.href.split('#')[0];
+            window.history.pushState("", document.title, window.location.pathname);
         }
     });
 }
 
 function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
-    const { fullName, links, bio, tagLine } = speaker;
+    const { fullName, questionAnswers, bio, tagLine } = speaker;
 
     const company = tagLine.split(' at ')[1];
     const position = tagLine.split(' at ')[0];
 
-    const companyUrl = links.filter(link => link.linkType === "Company_Website")[0].url;
+    const socialLinks = [];
 
-    const socialLinks = links.filter(link => link.linkType != "COmpany_Website");
+    const companyUrlQuestionId = 16352;
+    let companyUrl = questionAnswers.find(aq => aq.questionId === companyUrlQuestionId);
+    if (companyUrl) companyUrl = companyUrl.answerValue
+
+    const twitterUrlQuestionId = 16350;
+    let twitterUrl = questionAnswers.find(aq => aq.questionId === twitterUrlQuestionId);
+    if (twitterUrl) {
+        twitterUrl = twitterUrl.answerValue;
+        socialLinks.push({
+            linkType: 'Twitter',
+            url: twitterUrl
+        });
+    }
+
+
+    const githubUrlQuestionId = 16349;
+    let githubUrl = questionAnswers.find(aq => aq.questionId === githubUrlQuestionId);
+    if (githubUrl) {
+        githubUrl = githubUrl.answerValue;
+        socialLinks.push({
+            linkType: 'Github',
+            url: githubUrl
+        });
+    }
+
+
+    const linkedinUrlQuestionId = 16351;
+    let linkedinUrl = questionAnswers.find(aq => aq.questionId === linkedinUrlQuestionId);
+    if (linkedinUrl) {
+        linkedinUrl = linkedinUrl.answerValue;
+        socialLinks.push({
+            linkType: 'LinkedIn',
+            url: linkedinUrl
+        });
+    }
+
     const socialLinksHtml = socialLinks.map(socialLink => {
         let linkHtml =
-            `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center">
+            `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center" target="_blank">
                 <div class="logo-wrapper"><img src="img/icons/PLACEHOLDER_ICON" /></div>
                 <span class="h6 Titillium-Rg">PLACEHOLDER_TEXT</span>
             </a>`;
@@ -196,6 +234,16 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
                 text = text.replace('twitter.com/', '');
                 text = text.replace('www.twitter.com/', '');
                 text = "@" + text;
+                linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', text);
+                linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
+                break;
+            }
+            case 'Github': {
+                linkHtml = linkHtml.replace('PLACEHOLDER_ICON', 'social-github.svg');
+                let text = socialLink.url;
+                text = text.replace('http://github.com/', '');
+                text = text.replace('https://github.com/', '');
+                text = text.replace('www.github', '');
                 linkHtml = linkHtml.replace('PLACEHOLDER_TEXT', text);
                 linkHtml = linkHtml.replace('PLACEHOLDER_ADDRESS', socialLink.url);
                 break;

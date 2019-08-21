@@ -13,8 +13,10 @@ function generateSpeakerHtml(speaker, profilePicture) {
     const { id, fullName, questionAnswers, links } = speaker;
 
     const companyQuestionId = 16062;
-    const company = questionAnswers.filter(qa => qa.questionId === companyQuestionId)[0].answerValue;
-    const companyUrl = links.filter(link => link.linkType === "Company_Website")[0].url;
+    const company = questionAnswers.find(qa => qa.questionId === companyQuestionId).answerValue;
+
+    const companyUrlQuestionId = 16352;
+    const companyUrl = questionAnswers.find(qa => qa.questionId === companyUrlQuestionId).answerValue;
 
     const positionQuestionId = 16061;
     const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;

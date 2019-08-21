@@ -310,7 +310,7 @@
     padding: 0;
     position: relative; }
     .section-newsletter form input {
-      width: calc(100% - 120px);
+      width: calc(100% - 140px);
       height: 50px;
       background-color: #190d47;
       border: 1px solid #BDB5FF;
@@ -329,6 +329,7 @@
       left: 0; }
       @media (max-width: 576px) {
         .section-newsletter form input {
+          width: calc(100% - 100px);
           padding: 3px 10px;
           letter-spacing: 0; } }
       .section-newsletter form input:-ms-input-placeholder {
@@ -356,6 +357,9 @@
       position: absolute;
       top: 0;
       right: 0; }
+      @media (max-width: 576px) {
+        .section-newsletter form button {
+          width: 100px; } }
       .section-newsletter form button .spinner-border {
         display: block;
         color: #240F61;

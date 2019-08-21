@@ -21,6 +21,8 @@
   }
 
   &-nav {
+    width: 610px;
+
     ul {
       a {
         color: white;
@@ -43,8 +45,14 @@
     }
   }
 
+  &-inner {
+    &:before {
+      content: none !important;
+    }
+  }
+
   &.mobile {
-    @include sm-up-to {
+    @include md-up-to {
       height: 78px;
 
       .hamburger {

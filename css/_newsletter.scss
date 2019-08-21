@@ -30,7 +30,7 @@
     position: relative;
 
     input {
-      width: calc(100% - 120px);
+      width: calc(100% - 140px);
       height: 50px;
 
       background-color: $color-bg-brand-dark;
@@ -47,6 +47,7 @@
       left: 0;
 
       @include sm-up-to {
+        width: calc(100% - 100px);
         padding: 3px 10px;
         letter-spacing: 0;
       }
@@ -62,6 +63,10 @@
       height: 50px;
 
       @include border-radius(0 5px 5px 0);
+
+      @include sm-up-to {
+        width: 100px;
+      }
 
       position: absolute;
       top: 0;

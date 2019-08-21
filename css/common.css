@@ -128,19 +128,23 @@ code {
     text-decoration: none; }
   .site-header-logo .logo-type-cosmos {
     margin-bottom: 8px; }
-  .site-header-nav ul a {
-    color: white;
-    line-height: 1;
-    position: relative;
-    white-space: nowrap; }
-    .site-header-nav ul a li {
-      font-size: 1.25rem;
-      padding: 8px; }
-  .site-header-nav ul .button {
-    width: 140px;
-    height: 40px;
-    line-height: 40px; }
-  @media (max-width: 576px) {
+  .site-header-nav {
+    width: 610px; }
+    .site-header-nav ul a {
+      color: white;
+      line-height: 1;
+      position: relative;
+      white-space: nowrap; }
+      .site-header-nav ul a li {
+        font-size: 1.25rem;
+        padding: 8px; }
+    .site-header-nav ul .button {
+      width: 140px;
+      height: 40px;
+      line-height: 40px; }
+  .site-header-inner:before {
+    content: none !important; }
+  @media (max-width: 768px) {
     .site-header.mobile {
       height: 78px; }
       .site-header.mobile .hamburger {

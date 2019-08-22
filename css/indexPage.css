@@ -287,7 +287,7 @@
   display: none;
   position: fixed;
   z-index: 1031;
-  overflow: hidden; }
+  overflow: scroll; }
   .speaker-modal.is-open {
     display: block; }
   .speaker-modal * {
@@ -332,8 +332,8 @@
     -webkit-transition: border 0.3s ease-in-out;
     -o-transition: border 0.3s ease-in-out;
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     z-index: 1031; }
     .speaker-modal-close:hover {
       cursor: pointer;
@@ -361,7 +361,6 @@
   .speaker-modal-content {
     max-width: 1400px;
     height: 100%;
-    overflow: hidden;
     margin: 0 auto;
     position: relative; }
     .speaker-modal-content .description, .speaker-modal-content .bio {
@@ -402,9 +401,6 @@
       background-position: right;
       left: 0;
       top: -70px; }
-    @media (max-width: 1024px) {
-      .speaker-modal-content {
-        overflow: scroll; } }
   .speaker-modal-sidebar {
     position: relative;
     width: calc(50% - 200px);
@@ -487,8 +483,7 @@
     width: calc(50% - 100px);
     max-height: calc(100% - 240px);
     float: right;
-    padding: 120px 100px 120px 0;
-    overflow: scroll; }
+    padding: 120px 100px 120px 0; }
     .speaker-modal-body .company,
     .speaker-modal-body .session-title {
       color: #BDB5FF; }
@@ -506,7 +501,6 @@
         max-height: calc(100%);
         padding: 0;
         float: none;
-        overflow: hidden;
         margin: 0 auto; } }
     @media (max-width: 576px) {
       .speaker-modal-body {

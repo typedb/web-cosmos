@@ -198,6 +198,9 @@ code {
 .large-footer,
 .small-footer {
   background: #090642; }
+  .large-footer .social-links a:last-child,
+  .small-footer .social-links a:last-child {
+    margin: 0; }
   .large-footer .container,
   .small-footer .container {
     border-top: 1px solid #451c9d; }

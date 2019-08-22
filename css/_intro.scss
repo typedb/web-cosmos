@@ -132,10 +132,13 @@
     padding-top: 216px;
 
     .h1 {
-      @include sm-up-to {
-        font-size: 1.75rem;
-        line-height: 1.5;
-      }
+      font-size: 2.5rem;
+      @include md-up-to { font-size: 2rem; }
+    }
+
+    .h2 {
+      font-size: 2rem;
+      @include md-up-to { font-size: 1.75rem; }
     }
 
     .grakn-logo-inline {

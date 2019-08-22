@@ -2,6 +2,10 @@
   position: relative; }
   .section-speakers #speakers-list {
     min-height: 307px; }
+    .section-speakers #speakers-list li:first-child {
+      margin-left: 0; }
+    .section-speakers #speakers-list li:last-child {
+      margin-right: 0; }
   .section-speakers .bg {
     background: #0b0743;
     background: linear-gradient(180deg, #0b0743 0%, #0a0926 100%); }

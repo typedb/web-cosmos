@@ -3,6 +3,9 @@
 
   #speakers-list {
     min-height: 307px;
+
+    li:first-child { margin-left: 0; }
+    li:last-child { margin-right: 0; }
   }
 
   .bg {

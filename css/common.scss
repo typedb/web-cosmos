@@ -272,6 +272,10 @@ button {
   width: 94%;
   padding: 0;
 
+  @include lg-up-to {
+    width: 89%;
+  }
+
   @include md-up-to {
     width: 86%;
   }

@@ -194,6 +194,8 @@
     margin: 0 auto;
     position: relative;
 
+    overflow-y: scroll;
+
     .description, .bio {
       white-space: pre-line;
     }

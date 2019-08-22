@@ -22,20 +22,25 @@ function setSpeakersAndSessions() {
                 profilePictures.set(speakerProfilePic.id, image)
             });
 
-            loadSpeakers(speakers, profilePictures, sessions);
+            const path = window.location.pathname;
+            const page = path.split("/").pop();
+
+            if (page === "index.html" || page === "") {
+                loadSpeakers(speakers, profilePictures, sessions);
+            }
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
-            window.onhashchange = function() {
+            window.onhashchange = function () {
                 const newHash = window.location.hash.replace('#', '');
                 if (newHash === '' || newHash === 'speakers') {
                     $('#speaker-modal').removeClass('is-open');
                     $('body').removeClass('modal-is-open');
                 } else {
-                    checkForSpeakerModal(speakers, profilePictures, sessions);            
+                    checkForSpeakerModal(speakers, profilePictures, sessions);
                 }
             }
 
-            if (window.location.pathname === "/") {
+            if (page === "index.html" || page === "") {
                 $(window).resize(() => {
                     if ($(window).width() == windowWidth) return;
                     loadSpeakers(speakers, profilePictures, sessions);
@@ -143,9 +148,9 @@ function mobileMenu() {
 
 function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speakers-list').on("click", "li", function (e) {
-        if (e.target.tagName === 'A') { 
+        if (e.target.tagName === 'A') {
             return;
-        } 
+        }
         const selectedSpeakerId = $(this).data('speaker-id');
         const speaker = speakers.find(speaker => speaker.id === selectedSpeakerId);
         const profilePicture = profilePictures.get(selectedSpeakerId);

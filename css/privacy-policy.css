@@ -17,6 +17,12 @@ header {
   .privacy-policy__container {
     padding-top: 50px;
     padding-bottom: 50px; }
+    .privacy-policy__container ol,
+    .privacy-policy__container ul {
+      margin-left: 40px !important;
+      margin-top: 20px !important; }
+    .privacy-policy__container ul {
+      list-style: disc !important; }
   .privacy-policy__header {
     font-size: 2rem;
     color: white;

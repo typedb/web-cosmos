@@ -72,7 +72,6 @@ video {
   *:before, *:after {
     box-sizing: 0; }
 
-ol,
 ul {
   list-style: none;
   margin: 0; }

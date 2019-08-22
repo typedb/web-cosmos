@@ -121,14 +121,20 @@
     padding-top: 216px; }
     .section-intro .sub-section-summary .h1 {
       font-size: 2.5rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         .section-intro .sub-section-summary .h1 {
           font-size: 2rem; } }
+      @media (max-width: 768px) {
+        .section-intro .sub-section-summary .h1 {
+          font-size: 1.75rem; } }
     .section-intro .sub-section-summary .h2 {
       font-size: 2rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         .section-intro .sub-section-summary .h2 {
           font-size: 1.75rem; } }
+      @media (max-width: 768px) {
+        .section-intro .sub-section-summary .h2 {
+          font-size: 1.5rem; } }
     .section-intro .sub-section-summary .grakn-logo-inline {
       background-color: #3c1888;
       border-radius: 3px;

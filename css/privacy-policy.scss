@@ -31,6 +31,16 @@ header {
   &__container {
     padding-top: 50px;
     padding-bottom: 50px;
+
+    ol,
+    ul {
+      margin-left: 40px !important;
+      margin-top: 20px !important;
+    }
+
+    ul {
+      list-style: disc !important;
+    }
   }
 
   &__header {

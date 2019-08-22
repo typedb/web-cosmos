@@ -18,7 +18,7 @@ header {
     padding-top: 50px;
     padding-bottom: 50px; }
   .privacy-policy__header {
-    font-size: 32px;
+    font-size: 2rem;
     color: white;
     display: block;
     font-weight: 600; }
@@ -26,13 +26,13 @@ header {
       .privacy-policy__header {
         font-size: 24px; } }
   .privacy-policy__text {
-    font-size: 16px;
+    font-size: 1rem;
     color: #f2f2f2;
     display: block;
     padding: 20px 0 40px 0; }
     @media screen and (max-width: 768px) {
       .privacy-policy__text {
-        font-size: 14px; } }
+        font-size: 0.85rem; } }
   .privacy-policy__link {
     display: block;
     line-height: 1.67; }
@@ -100,7 +100,7 @@ header {
         width: 60%; }
         @media screen and (max-width: 768px) {
           .support-page__splash__text__tag {
-            font-size: 14px;
+            font-size: 0.85rem;
             font-weight: 400;
             width: 100%; } }
       .support-page__splash__text__button {
@@ -149,7 +149,7 @@ header {
             font-size: 18px; } }
       .support-page__features__item__text {
         margin-top: 1rem;
-        font-size: 16px;
+        font-size: 1rem;
         color: #8c8f92;
         width: 90%;
         font-weight: 300; }
@@ -157,15 +157,15 @@ header {
           color: #7a68e8; }
         @media screen and (max-width: 768px) {
           .support-page__features__item__text {
-            font-size: 14px; } }
+            font-size: 0.85rem; } }
       .support-page__features__item__link {
         padding-top: 1.6rem;
         color: #7a68e8;
-        font-size: 16px; }
+        font-size: 1rem; }
         @media screen and (max-width: 768px) {
           .support-page__features__item__link {
             padding-top: 1rem;
-            font-size: 14px; } }
+            font-size: 0.85rem; } }
   .support-page__comparisson {
     position: relative; }
     .support-page__comparisson > img {
@@ -221,7 +221,7 @@ header {
           line-height: 50px;
           display: block;
           width: 100%;
-          font-size: 14px;
+          font-size: 0.85rem;
           background-color: white; }
           .support-page__comparisson__table__mobile__row__item--split {
             display: flex;
@@ -278,7 +278,7 @@ header {
           flex-grow: 1;
           text-align: center;
           padding: 0 1rem;
-          font-size: 16px;
+          font-size: 1rem;
           height: 50px;
           line-height: 50px;
           border-bottom: 1px solid #eceef7;

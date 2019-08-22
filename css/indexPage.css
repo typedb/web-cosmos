@@ -121,8 +121,8 @@
     padding-top: 216px; }
     @media (max-width: 576px) {
       .section-intro .sub-section-summary .h1 {
-        font-size: 25px;
-        line-height: 30px; } }
+        font-size: 1.75rem;
+        line-height: 1.5; } }
     .section-intro .sub-section-summary .grakn-logo-inline {
       background-color: #3c1888;
       border-radius: 3px;
@@ -367,7 +367,7 @@
     .speaker-modal-content .description, .speaker-modal-content .bio {
       white-space: pre-line; }
     .speaker-modal-content .cospeaker-note {
-      font-size: 16px; }
+      font-size: 1rem; }
     .speaker-modal-content .planet-purple-dark {
       width: 160px;
       height: 160px;
@@ -440,7 +440,7 @@
         margin-left: auto;
         margin-right: auto;
         position: absolute; }
-      .speaker-modal-sidebar figure .speaker-img {
+      .speaker-modal-sidebar figure .speaker-profile-picture {
         width: 90%;
         height: 90%;
         max-width: 400px;
@@ -465,7 +465,7 @@
         .speaker-modal-sidebar .frame-img {
           width: 345px !important;
           height: 345px !important; }
-        .speaker-modal-sidebar .speaker-img {
+        .speaker-modal-sidebar .speaker-profile-picture {
           width: 300px !important;
           height: 300px !important;
           margin-top: 25px !important; } }
@@ -479,7 +479,7 @@
         .speaker-modal-sidebar .frame-img {
           width: 225px !important;
           height: 225px !important; }
-        .speaker-modal-sidebar .speaker-img {
+        .speaker-modal-sidebar .speaker-profile-picture {
           width: 200px !important;
           height: 200px !important;
           margin-top: 12px !important; } }
@@ -675,7 +675,7 @@
       position: absolute;
       top: 50px; }
       .section-newsletter form .form-messages .response {
-        font-size: 14px;
+        font-size: 0.85rem;
         text-align: left; }
         .section-newsletter form .form-messages .response.error {
           color: #e74c3c; }

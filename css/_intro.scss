@@ -133,8 +133,8 @@
 
     .h1 {
       @include sm-up-to {
-        font-size: 25px;
-        line-height: 30px;
+        font-size: 1.75rem;
+        line-height: 1.5;
       }
     }
 

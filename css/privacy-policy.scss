@@ -34,7 +34,7 @@ header {
   }
 
   &__header {
-    font-size: 32px;
+    font-size: 2rem;
     color: white;
     display: block;
     font-weight: 600;
@@ -44,12 +44,12 @@ header {
   }
 
   &__text {
-    font-size: 16px;
+    font-size: 1rem;
     color: darken(white, 5%);
     display: block;
     padding: 20px 0 40px 0;
     @media screen and (max-width: $smallScreen) {
-      font-size: 14px;
+      font-size: 0.85rem;
     }
   }
 
@@ -141,7 +141,7 @@ $tablePurple:#796de3;
         line-height: 1.7;
         width: 60%;
         @media screen and (max-width: $smallScreen) {
-          font-size: 14px;
+          font-size: 0.85rem;
           font-weight: 400;
           width: 100%;
         }
@@ -202,7 +202,7 @@ $tablePurple:#796de3;
       }
       &__text {
         margin-top: 1rem;
-        font-size: 16px;
+        font-size: 1rem;
         color: $textLight;
         width: 90%;
         font-weight: 300;
@@ -210,16 +210,16 @@ $tablePurple:#796de3;
           color: $textPurple;
         }
         @media screen and (max-width: $smallScreen) {
-          font-size: 14px;
+          font-size: 0.85rem;
         }
       }
       &__link {
         padding-top: 1.6rem;
         color: $textPurple;
-        font-size: 16px;
+        font-size: 1rem;
         @media screen and (max-width: $smallScreen) {
           padding-top: 1rem;
-          font-size: 14px;
+          font-size: 0.85rem;
         }
       }
     }
@@ -287,7 +287,7 @@ $tablePurple:#796de3;
           line-height: 50px;
           display: block;
           width: 100%;
-          font-size: 14px;
+          font-size: 0.85rem;
           background-color: white;
           &--split {
             display: flex;
@@ -357,7 +357,7 @@ $tablePurple:#796de3;
           flex-grow: 1;
           text-align: center;
           padding: 0 1rem;
-          font-size: 16px;
+          font-size: 1rem;
           height: 50px;
           line-height: 50px;
           border-bottom: 1px solid $tableLightBorder;

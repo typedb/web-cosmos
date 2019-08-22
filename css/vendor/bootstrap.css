@@ -26,6 +26,10 @@
 .col-xxl-12, .col-xxl, .col-xxl-auto {
   padding: 0 !important; }
 
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important; }
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

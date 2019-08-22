@@ -276,10 +276,12 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
         `;
         const coSpeakers = session.speakers.filter(coSpeakerId => speaker.id !== coSpeakerId);
 
-        let sessionTitle = session.title;
+        const sessionTitle = session.title;
+
+        let sessionDescription = session.description;
         let coSpeakerNote = '';
         if (coSpeakers.length) {
-            coSpeakerNote = "<span class='cospeaker-note'> (This is a joined session with ";
+            coSpeakerNote = "<br /><br /><span class='cospeaker-note'> This is a joined session with ";
             coSpeakers.forEach((coSpeakerId, index) => {
                 const coSpeaker = speakers.find(coSpeaker => coSpeaker.id === coSpeakerId);
                 coSpeakerNote += `<a class='speaker-link' href='#${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
@@ -289,11 +291,11 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
                     coSpeakerNote += ' and ';
                 }
             });
-            coSpeakerNote += ')';
+            coSpeakerNote += '.';
         }
-        sessionTitle += coSpeakerNote;
+        sessionDescription += coSpeakerNote;
         sessionHtml = sessionHtml.replace('PLACEHOLDER_TITLE', sessionTitle);
-        sessionHtml = sessionHtml.replace('PLACEHOLDER_DESCRIPTION', session.description);
+        sessionHtml = sessionHtml.replace('PLACEHOLDER_DESCRIPTION', sessionDescription);
         return sessionHtml;
     }).join('');
 

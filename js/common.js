@@ -42,6 +42,7 @@ function setSpeakersAndSessions() {
 
             if (page === "index.html" || page === "") {
                 $(window).resize(() => {
+                    const windowWidth = $(window).width();
                     if ($(window).width() == windowWidth) return;
                     loadSpeakers(speakers, profilePictures, sessions);
                 });

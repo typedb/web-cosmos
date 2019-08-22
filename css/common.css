@@ -248,8 +248,6 @@ code {
         width: 180px; } }
     .section-speakers ul li .fullname {
       font-size: 1.25rem; }
-    .section-speakers ul li .position, .section-speakers ul li .company {
-      font-size: 1rem; }
     .section-speakers ul li .company {
       color: #BDB5FF; }
       .section-speakers ul li .company:hover {
@@ -508,9 +506,6 @@ code {
   .speaker-modal .sessionsWrapper {
     margin-bottom: 20px; }
 
-@media (max-width: 576px) {
-  html {
-    font-size: 12px !important; } }
 @media (max-width: 768px) {
   html {
     font-size: 14px; } }

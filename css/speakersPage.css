@@ -31,8 +31,6 @@
         width: 180px; } }
     .section-speakers ul li .fullname {
       font-size: 1.25rem; }
-    .section-speakers ul li .position, .section-speakers ul li .company {
-      font-size: 1rem; }
     .section-speakers ul li .company {
       color: #BDB5FF; }
       .section-speakers ul li .company:hover {

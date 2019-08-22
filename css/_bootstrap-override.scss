@@ -57,7 +57,8 @@ $sizes: map-merge(
 }
 
 $grid-breakpoints: (
-  xs: 0,
+  xxs: 0,
+  xs: 320,
   sm: 600px,
   md: 768px,
   lg: 1024px,

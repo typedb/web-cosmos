@@ -35,8 +35,8 @@
       }
 
       display: list-item;
-      margin-right: 28px;
-      margin-left: 28px;
+      margin-right: 22px;
+      margin-left: 22px;
 
       .fullname {
         font-size: 1.25rem;
@@ -100,7 +100,6 @@
   display: none;
   position: fixed;
   z-index: 1031;
-  overflow: scroll;
 
   &.is-open {
     display: block;
@@ -348,6 +347,14 @@
 
     float: right;
     padding: 120px 100px 120px 0;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+
+    &::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+    }
 
     .company,
     .session-title {

@@ -1,0 +1,16 @@
+{
+  "name": "cosmos-website",
+  "version": "1.0.0",
+  "description": "The website of Grakn Cosmos 2020",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/gulp html"
+  },
+  "author": "cosmos@grakn.ai",
+  "license": "ISC"
+}

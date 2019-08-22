@@ -25,9 +25,7 @@ function setSpeakersAndSessions() {
             const path = window.location.pathname;
             const page = path.split("/").pop();
 
-            if (page === "index.html" || page === "") {
-                loadSpeakers(speakers, profilePictures, sessions);
-            }
+            loadSpeakers(speakers, profilePictures, sessions);
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
             window.onhashchange = function () {
@@ -40,13 +38,11 @@ function setSpeakersAndSessions() {
                 }
             }
 
-            if (page === "index.html" || page === "") {
-                $(window).resize(() => {
-                    const windowWidth = $(window).width();
-                    if ($(window).width() == windowWidth) return;
-                    loadSpeakers(speakers, profilePictures, sessions);
-                });
-            }
+            $(window).resize(() => {
+                const windowWidth = $(window).width();
+                if ($(window).width() == windowWidth) return;
+                loadSpeakers(speakers, profilePictures, sessions);
+            });
         } else {
             console.error("Failed to fetch speakers and sessions data");
         }

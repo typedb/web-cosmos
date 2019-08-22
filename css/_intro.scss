@@ -133,12 +133,14 @@
 
     .h1 {
       font-size: 2.5rem;
-      @include md-up-to { font-size: 2rem; }
+      @include lg-up-to { font-size: 2rem; }
+      @include md-up-to { font-size: 1.75rem; }
     }
 
     .h2 {
       font-size: 2rem;
-      @include md-up-to { font-size: 1.75rem; }
+      @include lg-up-to { font-size: 1.75rem; }
+      @include md-up-to { font-size: 1.5rem; }
     }
 
     .grakn-logo-inline {
@@ -146,10 +148,6 @@
       @include border-radius(3px);
 
       padding: 5px;
-
-      // @include sm-up-to {
-      //   width: 80px;
-      // }
     }
 
     .container {

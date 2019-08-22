@@ -59,7 +59,7 @@ function scrollToSection() {
         var trigger = $(this).attr('data-scroll-to'),
             target = $("#" + trigger),
             ss = 1000, //scroll speed
-            o = 0; // offset
+            o = $('.site-header').outerHeight(); // offset
 
         $('body').removeClass('menu-is-open');
 

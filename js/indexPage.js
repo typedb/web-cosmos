@@ -119,6 +119,12 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
 
     await new Promise(done => setTimeout(() => done(), 2000));
 
+    const debug = {
+        displayed: 0,
+        hidden: 0,
+        count: 0,
+    };
+
     while (shouldSwapSpeakers) {
         for (let i of swappingIndexes[displayedSpeakers.length]) {
             // the window hasn't been resized yet
@@ -146,6 +152,12 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
                 displayedSpeakers[i - 1] = nextSpeaker;
                 hiddenSpeakers.shift();
                 hiddenSpeakers.push(speakerToHide);
+                debug.displayed = displayedSpeakers.length;
+                debug.hidden = hiddenSpeakers.length;
+                debug.count += 1;
+                if (debug.displayed + debug.hidden !== allSpeakers.length) {
+                    debugger;
+                }
             }
         }
     }

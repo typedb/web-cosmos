@@ -338,7 +338,7 @@ function loadSpeakerCompanyLogo(speaker) {
             companyLogo.height = newHeight;
             companyLogo.style = `margin-top: ${(TARGET_HEIGHT - newHeight)/2}px;`;
 
-            $(`.speaker[data-speaker-id='${id}'`).find('.company-logo').html(companyLogo);
+            $(`.speaker[data-speaker-id='${id}']`).find('.company-logo').html(companyLogo);
 
             clearInterval(companyLogoPoll);
         }

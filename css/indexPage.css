@@ -498,7 +498,6 @@
     max-height: calc(100% - 240px);
     float: right;
     padding: 120px 100px 120px 0;
-    overflow-y: scroll;
     scrollbar-width: none;
     /* Firefox */
     -ms-overflow-style: none;

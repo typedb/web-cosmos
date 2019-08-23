@@ -41,8 +41,12 @@
         font-size: 1.25rem;
       }
 
-      .company-logo img {
-        margin: 10px auto;
+      .company-logo {
+        margin-top: 20px;
+        display: inline-block;
+        img {
+          margin: 0 auto;
+        }
       }
 
       &:hover {

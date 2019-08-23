@@ -159,11 +159,9 @@ function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speaker-modal-close').click(function () {
         $('#speaker-modal').removeClass('is-open');
         $('body').removeClass('modal-is-open');
-        // window.history.back();
         if ($('#speakers').length) {
             window.location.hash = 'speakers';
         } else {
-            // window.location.hash = window.location.href.split('#')[0];
             window.history.pushState("", document.title, window.location.pathname);
         }
     });
@@ -338,6 +336,7 @@ function loadSpeakerCompanyLogo(speaker) {
 
             companyLogo.width = newWidth;
             companyLogo.height = newHeight;
+            companyLogo.style = `margin-top: ${(TARGET_HEIGHT - newHeight)/2}px;`;
 
             $(`.speaker[data-speaker-id='${id}'`).find('.company-logo').html(companyLogo);
 

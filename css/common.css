@@ -246,8 +246,11 @@ code {
         width: 180px; } }
     .section-speakers ul li .fullname {
       font-size: 1.25rem; }
-    .section-speakers ul li .company-logo img {
-      margin: 10px auto; }
+    .section-speakers ul li .company-logo {
+      margin-top: 20px;
+      display: inline-block; }
+      .section-speakers ul li .company-logo img {
+        margin: 0 auto; }
     .section-speakers ul li:hover .speaker-frame {
       transform: scale(1.2); }
     .section-speakers ul li .speaker-frame {

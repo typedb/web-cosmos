@@ -253,7 +253,7 @@
     position: relative; }
   .section-speakers ul li {
     width: 190px;
-    min-height: 350px;
+    height: 350px;
     cursor: pointer;
     display: list-item;
     margin-right: 22px;

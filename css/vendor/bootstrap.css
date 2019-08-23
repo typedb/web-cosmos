@@ -10,6 +10,9 @@
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0 !important; }
 
+.w-xs-50 {
+  width: 50% !important; }
+
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10,
 .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4,
 .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11,
@@ -6607,6 +6610,9 @@ button.bg-dark:focus {
 .w-25 {
   width: 25% !important; }
 
+.w-33 {
+  width: 33% !important; }
+
 .w-40 {
   width: 40% !important; }
 
@@ -6630,6 +6636,9 @@ button.bg-dark:focus {
 
 .h-25 {
   height: 25% !important; }
+
+.h-33 {
+  height: 33% !important; }
 
 .h-40 {
   height: 40% !important; }
@@ -14711,6 +14720,9 @@ a.text-dark:hover, a.text-dark:focus {
 .w-25 {
   width: 25% !important; }
 
+.w-33 {
+  width: 33% !important; }
+
 .w-40 {
   width: 40% !important; }
 
@@ -14734,6 +14746,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .h-25 {
   height: 25% !important; }
+
+.h-33 {
+  height: 33% !important; }
 
 .h-40 {
   height: 40% !important; }
@@ -14760,6 +14775,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-xs-25 {
     width: 25% !important; }
 
+  .w-xs-33 {
+    width: 33% !important; }
+
   .w-xs-40 {
     width: 40% !important; }
 
@@ -14783,6 +14801,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-xs-25 {
     height: 25% !important; }
+
+  .h-xs-33 {
+    height: 33% !important; }
 
   .h-xs-40 {
     height: 40% !important; }
@@ -14808,6 +14829,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-sm-25 {
     width: 25% !important; }
 
+  .w-sm-33 {
+    width: 33% !important; }
+
   .w-sm-40 {
     width: 40% !important; }
 
@@ -14831,6 +14855,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-sm-25 {
     height: 25% !important; }
+
+  .h-sm-33 {
+    height: 33% !important; }
 
   .h-sm-40 {
     height: 40% !important; }
@@ -14856,6 +14883,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-md-25 {
     width: 25% !important; }
 
+  .w-md-33 {
+    width: 33% !important; }
+
   .w-md-40 {
     width: 40% !important; }
 
@@ -14879,6 +14909,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-md-25 {
     height: 25% !important; }
+
+  .h-md-33 {
+    height: 33% !important; }
 
   .h-md-40 {
     height: 40% !important; }
@@ -14904,6 +14937,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-lg-25 {
     width: 25% !important; }
 
+  .w-lg-33 {
+    width: 33% !important; }
+
   .w-lg-40 {
     width: 40% !important; }
 
@@ -14927,6 +14963,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-lg-25 {
     height: 25% !important; }
+
+  .h-lg-33 {
+    height: 33% !important; }
 
   .h-lg-40 {
     height: 40% !important; }
@@ -14952,6 +14991,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-lgc-25 {
     width: 25% !important; }
 
+  .w-lgc-33 {
+    width: 33% !important; }
+
   .w-lgc-40 {
     width: 40% !important; }
 
@@ -14975,6 +15017,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-lgc-25 {
     height: 25% !important; }
+
+  .h-lgc-33 {
+    height: 33% !important; }
 
   .h-lgc-40 {
     height: 40% !important; }
@@ -15000,6 +15045,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-xl-25 {
     width: 25% !important; }
 
+  .w-xl-33 {
+    width: 33% !important; }
+
   .w-xl-40 {
     width: 40% !important; }
 
@@ -15023,6 +15071,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-xl-25 {
     height: 25% !important; }
+
+  .h-xl-33 {
+    height: 33% !important; }
 
   .h-xl-40 {
     height: 40% !important; }
@@ -15048,6 +15099,9 @@ a.text-dark:hover, a.text-dark:focus {
   .w-xxl-25 {
     width: 25% !important; }
 
+  .w-xxl-33 {
+    width: 33% !important; }
+
   .w-xxl-40 {
     width: 40% !important; }
 
@@ -15071,6 +15125,9 @@ a.text-dark:hover, a.text-dark:focus {
 
   .h-xxl-25 {
     height: 25% !important; }
+
+  .h-xxl-33 {
+    height: 33% !important; }
 
   .h-xxl-40 {
     height: 40% !important; }

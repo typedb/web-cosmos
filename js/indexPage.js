@@ -2,6 +2,8 @@ $(document).ready(function () {
     detectInView();
 
     scrollToSection();
+
+    loadPartners();
 });
 
 function detectInView() {
@@ -155,10 +157,95 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
                 debug.displayed = displayedSpeakers.length;
                 debug.hidden = hiddenSpeakers.length;
                 debug.count += 1;
-                if (debug.displayed + debug.hidden !== allSpeakers.length) {
-                    debugger;
-                }
             }
         }
+    }
+}
+
+function loadPartners() {
+    const partners = [{
+        "image": "taxfix.png",
+        "url": "https://taxfix.de"
+    },
+    {
+        "image": "icelab.png",
+        "url": "http://icelab.uk"
+    },
+    {
+        "image": "sourcepp.png",
+        "url": "https://sourceplusplus.com"
+    },
+    {
+        "image": "ariwonto.png",
+        "url": "https://ariwonto.com"
+    },
+    {
+        "image": "mauna.png",
+        "url": "https://www.mauna.ai"
+    },
+    {
+        "image": "deutschetelekom.png",
+        "url": "https://www.telekom.com"
+    },
+    {
+        "image": "austincapitaldata.png",
+        "url": "https://capitaldata.github.io"
+    },
+    {
+        "image": "google.png",
+        "url": "https://cloud.google.com"
+    },
+    {
+        "image": "augmentedthinking.png",
+        "url": "https://www.augmented-thinking.ai"
+    },
+    {
+        "image": "tno.png",
+        "url": "https://www.tno.nl"
+    },
+    {
+        "image": "yooi.png",
+        "url": "https://www.yooi.com"
+    },
+    {
+        "image": "infosys.png",
+        "url": "https://www.infosys.com"
+    },
+    {
+        "image": "astrazeneca.png",
+        "url": "https://www.astrazeneca.co.uk"
+    },
+    {
+        "image": "opencti.png",
+        "url": "https://www.opencti.io"
+    },
+    {
+        "image": "aresgenetics.png",
+        "url": "https://www.ares-genetics.com"
+    },
+    {
+        "image": "ustglobal.png",
+        "url": "https://ust-global.com"
+    },
+    {
+        "image": "dunnhumby.png",
+        "url": "https://www.dunnhumby.com"
+    },
+    {
+        "image": "rasa.png",
+        "url": "https://rasa.com"
+    }
+    ];
+
+    for (partner of partners) {
+        partnerHtml = `
+            <div class="partner-logo w-sm-33 w-lg-25 w-lgc-20 p-8 p-xs-3 p-sm-6 p-md-4 p-lgc-6">
+                <a href="${partner.url}" target="_blank">
+                    <img class="mx-auto" src="./img/companies/${partner.image}" />
+                </a>
+            </div>
+        `;
+
+        $('#partners-list').append(partnerHtml);
     }
 }

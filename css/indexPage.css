@@ -534,8 +534,6 @@
 .section-apply {
   width: 100%;
   position: relative; }
-  .section-apply .container {
-    max-width: 700px; }
   .section-apply .bg-wrapper {
     width: 100%;
     height: 100%;
@@ -560,6 +558,7 @@
       .section-apply .bg-wrapper svg.bottom-mask {
         bottom: -1px; }
   .section-apply .container {
+    max-width: 700px;
     height: 600px;
     position: relative; }
     .section-apply .container .apply-content {
@@ -606,6 +605,14 @@
   .section-sponsors .stars {
     height: calc(668px - 50px);
     background-image: url(../img/sponsors-stars.svg); }
+  @media (min-width: 375px) {
+    .section-sponsors .partner-logo {
+      width: 50%;
+      padding: 1.5rem !important; } }
+  @media (max-width: 320px) {
+    .section-sponsors .partner-logo {
+      width: 100%;
+      padding: 2rem 4rem; } }
 
 .section-newsletter {
   position: relative; }

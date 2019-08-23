@@ -143,7 +143,16 @@
     height: 100%;
     margin: 0 auto;
     position: relative;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */ }
+    .speaker-modal-content::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0; }
     .speaker-modal-content .description, .speaker-modal-content .bio {
       white-space: pre-line; }
     .speaker-modal-content .cospeaker-note {
@@ -264,15 +273,7 @@
     width: calc(50% - 100px);
     max-height: calc(100% - 240px);
     float: right;
-    padding: 120px 100px 120px 0;
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE 10+ */ }
-    .speaker-modal-body::-webkit-scrollbar {
-      /* WebKit */
-      width: 0;
-      height: 0; }
+    padding: 120px 100px 120px 0; }
     .speaker-modal-body .company,
     .speaker-modal-body .session-title {
       color: #BDB5FF; }

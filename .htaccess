@@ -13,4 +13,4 @@ RewriteRule ^$ ./index.html
 RewriteRule ^speakers$ ./speakers.html
 RewriteRule ^privacy-policy$ ./privacy-policy.html
 RewriteRule ^code-of-conduct$ ./code-of-conduct.html
-RewriteRule ^terms ./terms.html
+RewriteRule ^terms$ ./terms.html

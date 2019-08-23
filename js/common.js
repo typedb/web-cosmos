@@ -22,9 +22,6 @@ function setSpeakersAndSessions() {
                 profilePictures.set(speakerProfilePic.id, image)
             });
 
-            const path = window.location.pathname;
-            const page = path.split("/").pop();
-
             loadSpeakers(speakers, profilePictures, sessions);
             checkForSpeakerModal(speakers, profilePictures, sessions);
 
@@ -38,9 +35,10 @@ function setSpeakersAndSessions() {
                 }
             }
 
+            const windowWidth = $(window).width();
             $(window).resize(() => {
-                const windowWidth = $(window).width();
                 if ($(window).width() == windowWidth) return;
+                $('#speakers-list').html("");
                 loadSpeakers(speakers, profilePictures, sessions);
             });
         } else {
@@ -145,7 +143,7 @@ function mobileMenu() {
 
 function speakerModalHandler(speakers, profilePictures, sessions) {
     $('#speakers-list').on("click", "li", function (e) {
-        if (e.target.tagName === 'A') {
+        if (e.target.tagName === 'A' || $(e.target).parent()[0].tagName === 'A') {
             return;
         }
         const selectedSpeakerId = $(this).data('speaker-id');
@@ -310,4 +308,61 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
     $('#social-links').html(socialLinksHtml);
     $('#bio').html(bio);
     $('#sessions').html(sessionsHtml);
+}
+
+function loadSpeakerCompanyLogo(speaker) {
+    const { id, questionAnswers } = speaker;
+
+    const companyLogoQuestionId = 16298;
+    const companyLogoFileName = questionAnswers.find(qa => qa.questionId === companyLogoQuestionId).answerValue;
+
+    const TARGET_WIDTH = 150;
+    const TARGET_HEIGHT = 42;
+
+    const companyLogo = new Image();
+    companyLogo.src = './img/companies/' + companyLogoFileName;
+
+    const companyLogoPoll = setInterval(function () {
+        if (companyLogo.naturalWidth) {
+            const originalWidth = companyLogo.naturalWidth;
+            const originalHeight = companyLogo.naturalHeight;
+            let newHeight = originalHeight * TARGET_WIDTH / originalWidth;
+            let newWidth;
+
+            if (newHeight > TARGET_HEIGHT) {
+                newWidth = TARGET_WIDTH * TARGET_HEIGHT / newHeight;
+                newHeight = TARGET_HEIGHT;
+            } else {
+                newWidth = TARGET_WIDTH;
+            }
+
+            companyLogo.width = newWidth;
+            companyLogo.height = newHeight;
+
+            $(`.speaker[data-speaker-id='${id}'`).find('.company-logo').html(companyLogo);
+
+            clearInterval(companyLogoPoll);
+        }
+    }, 10);
+}
+
+function generateSpeakerHtml(speaker, profilePicture) {
+    const { id, fullName, questionAnswers } = speaker;
+
+    const companyUrlQuestionId = 16352;
+    const companyUrl = questionAnswers.find(qa => qa.questionId === companyUrlQuestionId).answerValue;
+
+    const positionQuestionId = 16061;
+    const position = questionAnswers.find(qa => qa.questionId === positionQuestionId).answerValue;
+
+    return `
+        <li class="speaker" data-speaker-id="${id}">
+            <div class="speaker-frame">
+                <img class="profile-picture" src="${profilePicture.src}" />
+            </div>
+            <p class="fullname h5 Titillium-Rg pt-2">${fullName}</p>
+            <p class="position h6 Titillium-Lt pt-1">${position}</p>
+            <a href="${companyUrl}" target="_blank" class="company-logo"></a>
+        </li>
+    `;
 }

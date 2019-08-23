@@ -80,7 +80,6 @@ function scrollToSection() {
 
 function loadSpeakers(allSpeakers, profilePictures, sessions) {
     if ($('#speakers-list').length) {
-        let speakersHtml = "";
         // number of speakers to load and display are determined by the
         // number if `li`s that are chosen to be displayed based on the
         // user's screen size
@@ -88,45 +87,19 @@ function loadSpeakers(allSpeakers, profilePictures, sessions) {
             return $(this).css('display') != 'none';
         }).length;
 
-        const displayedSpeakers = allSpeakers.filter(speaker => speaker.fullName.indexOf('Enzo') === -1).slice(0, numOfSpeakers);
+        const displayedSpeakers = allSpeakers.slice(0, numOfSpeakers);
         for (const speaker of displayedSpeakers) {
-            speakersHtml += generateSpeakerHtml(speaker, profilePictures.get(speaker.id));
+            $('#speakers-list').append(generateSpeakerHtml(speaker, profilePictures.get(speaker.id)));
+            loadSpeakerCompanyLogo(speaker);
         }
-        if (speakersHtml !== "") {
-            $('#speakers-list').html(speakersHtml);
-            swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
-            speakerModalHandler(allSpeakers, profilePictures, sessions);
-        }
+
+        swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
+        speakerModalHandler(allSpeakers, profilePictures, sessions);
     }
 }
 
-function generateSpeakerHtml(speaker, profilePicture) {
-    const { id, fullName, questionAnswers, links } = speaker;
-
-    const companyQuestionId = 16062;
-    const company = questionAnswers.find(qa => qa.questionId === companyQuestionId).answerValue;
-
-    const companyUrlQuestionId = 16352;
-    const companyUrl = questionAnswers.find(qa => qa.questionId === companyUrlQuestionId).answerValue;
-
-    const positionQuestionId = 16061;
-    const position = questionAnswers.filter(qa => qa.questionId === positionQuestionId)[0].answerValue;
-
-
-    return `
-        <li class="speaker" data-speaker-id="${id}">
-            <div class="speaker-frame">
-                <img src="${profilePicture.src}" />
-            </div>
-            <p class="fullname h5 Titillium-Rg pt-2">${fullName}</p>
-            <p class="position h6 Titillium-Lt pt-1">${position}</p>
-            <a href="${companyUrl}" target="_blank" class="company h6 Titillium-Lt pt-1">${company}</a>
-        </li>
-    `;
-}
-
 async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
-    const hiddenSpeakers = allSpeakers.filter((speaker) => !displayedSpeakers.includes(speaker) && speaker.fullName.indexOf('Enzo') === -1);
+    const hiddenSpeakers = allSpeakers.filter((speaker) => !displayedSpeakers.includes(speaker));
 
     const swappingIndexes = {
         5: [1, 4, 2, 5, 3],
@@ -164,11 +137,12 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
 
                 speakerToHideEl.fadeOut(swappingSpeed, () => {
                     speakerToHideEl.replaceWith(nextSpeakerEl);
+                    loadSpeakerCompanyLogo(nextSpeaker);
                     nextSpeakerEl.fadeIn(swappingSpeed);
                 });
 
-                await new Promise(done => setTimeout(() => done(), swappingSpeed * 2 ));
-                
+                await new Promise(done => setTimeout(() => done(), swappingSpeed * 2));
+
                 displayedSpeakers[i - 1] = nextSpeaker;
                 hiddenSpeakers.shift();
                 hiddenSpeakers.push(speakerToHide);

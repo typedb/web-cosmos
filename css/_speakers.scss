@@ -2,8 +2,6 @@
   position: relative;
 
   #speakers-list {
-    min-height: 307px;
-
     li:first-child { margin-left: 0; }
     li:last-child { margin-right: 0; }
   }
@@ -27,6 +25,7 @@
   ul {
     li {
       width: 190px;
+      min-height: 350px;
 
       cursor: pointer;
 
@@ -42,11 +41,13 @@
         font-size: 1.25rem;
       }
 
-      .company {
-        color: $color-brand-secondary;
+      .company-logo img {
+        margin: 10px auto;
+      }
 
-        &:hover {
-          text-decoration: underline;
+      &:hover {
+        .speaker-frame {
+          transform: scale(1.2);
         }
       }
       
@@ -60,11 +61,7 @@
         padding: 10px;
         margin-bottom: 30px;
 
-        &:hover {
-          transform: scale(1.2);
-        }
-
-        img {
+        img.profile-picture {
           width: 170px;
           height: 170px;
 
@@ -76,7 +73,7 @@
         @include sm-up-to {
           background-size: 180px 180px;
           
-          img {
+          img.profile-picture {
             width: 160px;
             height: 160px;
           }

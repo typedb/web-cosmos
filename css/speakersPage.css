@@ -1,11 +1,9 @@
 .section-speakers {
   position: relative; }
-  .section-speakers #speakers-list {
-    min-height: 307px; }
-    .section-speakers #speakers-list li:first-child {
-      margin-left: 0; }
-    .section-speakers #speakers-list li:last-child {
-      margin-right: 0; }
+  .section-speakers #speakers-list li:first-child {
+    margin-left: 0; }
+  .section-speakers #speakers-list li:last-child {
+    margin-right: 0; }
   .section-speakers .bg {
     background: #0b0743;
     background: linear-gradient(180deg, #0b0743 0%, #0a0926 100%); }
@@ -22,6 +20,7 @@
     position: relative; }
   .section-speakers ul li {
     width: 190px;
+    min-height: 350px;
     cursor: pointer;
     display: list-item;
     margin-right: 22px;
@@ -31,10 +30,10 @@
         width: 180px; } }
     .section-speakers ul li .fullname {
       font-size: 1.25rem; }
-    .section-speakers ul li .company {
-      color: #BDB5FF; }
-      .section-speakers ul li .company:hover {
-        text-decoration: underline; }
+    .section-speakers ul li .company-logo img {
+      margin: 10px auto; }
+    .section-speakers ul li:hover .speaker-frame {
+      transform: scale(1.2); }
     .section-speakers ul li .speaker-frame {
       background: url(../img/speaker-frame.svg) no-repeat;
       background-size: 190px 190px;
@@ -42,9 +41,7 @@
       background-position: top center;
       padding: 10px;
       margin-bottom: 30px; }
-      .section-speakers ul li .speaker-frame:hover {
-        transform: scale(1.2); }
-      .section-speakers ul li .speaker-frame img {
+      .section-speakers ul li .speaker-frame img.profile-picture {
         width: 170px;
         height: 170px;
         border-radius: 50%;
@@ -54,7 +51,7 @@
       @media (max-width: 576px) {
         .section-speakers ul li .speaker-frame {
           background-size: 180px 180px; }
-          .section-speakers ul li .speaker-frame img {
+          .section-speakers ul li .speaker-frame img.profile-picture {
             width: 160px;
             height: 160px; } }
     .section-speakers ul li a:hover {
@@ -541,7 +538,7 @@ header {
       margin: 0 30px 60px 30px !important; }
     .section-speakers li .speaker-frame {
       background: url(../img/speaker-frame-lg.svg) no-repeat !important; }
-    .section-speakers li img {
+    .section-speakers li img.profile-picture {
       width: 170px !important;
       height: 170px !important; }
   .section-speakers .stars {

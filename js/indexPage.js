@@ -234,6 +234,10 @@ function loadPartners() {
     {
         "image": "rasa.png",
         "url": "https://rasa.com"
+    },
+    {
+        "image": "cisco.png",
+        "url": "https://cisco.com"
     }
     ];
 

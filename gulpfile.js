@@ -81,6 +81,12 @@ function copyJsVendors() {
   return src("src/assets/js/vendor/**/*").pipe(dest("./dist/js/vendor/"));
 }
 
+function copyCssVendors() {
+  return src("src/assets/scss/vendor/hamburger.css").pipe(
+    dest("./dist/css/vendor/hamburger.css")
+  );
+}
+
 function watchTask() {
   watch(
     [paths.hbs.watch, paths.scss.watch, paths.js.watch],
@@ -96,7 +102,8 @@ exports.default = series(
     copyFonts,
     copyImages,
     copyIcons,
-    copyJsVendors
+    copyJsVendors,
+    copyCssVendors
   ),
   watchTask
 );

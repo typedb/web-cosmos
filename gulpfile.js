@@ -16,9 +16,9 @@ const paths = {
     watch: "src/**/*.hbs"
   },
   scss: {
-    src: "src/assets/scss/**/*.scss",
+    src: "src/assets/scss/*.scss",
     dest: "dist/css",
-    watch: "src/assets/scss/**/*.scss"
+    watch: "src/assets/scss/*.scss"
   },
   js: {
     src: "src/assets/js/**/*.js",
@@ -82,28 +82,26 @@ function copyJsVendors() {
 }
 
 function copyCssVendors() {
-  return src("src/assets/scss/vendor/hamburger.css").pipe(
-    dest("./dist/css/vendor")
-  );
+  return src("src/assets/scss/vendor/*.css").pipe(dest("./dist/css/vendor"));
 }
 
-function watchTask() {
+function watchAll() {
   watch(
     [paths.hbs.watch, paths.scss.watch, paths.js.watch],
     parallel(hbsToHtml, scssToCss, minifyJs)
   );
 }
 
-exports.default = series(
-  parallel(
-    hbsToHtml,
-    scssToCss,
-    minifyJs,
-    copyFonts,
-    copyImages,
-    copyIcons,
-    copyJsVendors,
-    copyCssVendors
-  ),
-  watchTask
+const buildAll = parallel(
+  hbsToHtml,
+  scssToCss,
+  minifyJs,
+  copyFonts,
+  copyImages,
+  copyIcons,
+  copyJsVendors,
+  copyCssVendors
 );
+
+task("build", buildAll);
+task("watch", series(buildAll, watchAll));

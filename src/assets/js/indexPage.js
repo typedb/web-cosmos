@@ -241,6 +241,10 @@ function loadPartners() {
     {
       image: "cisco.png",
       url: "https://cisco.com"
+    },
+    {
+      image: "icarcnr.png",
+      url: "https://www.icar.cnr.it/en/"
     }
   ];
 

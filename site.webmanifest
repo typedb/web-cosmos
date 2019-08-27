@@ -1,16 +1,18 @@
 {
   "short_name": "Grakn Cosmos",
   "name": "Grakn Cosmos",
-  "icons": [{
-    "src": "icons/cosmos-192x192.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  },
-  {
-    "src": "icons/cosmos-512x512.png",
-    "type": "image/png",
-    "sizes": "512x512"
-  }],
+  "icons": [
+    {
+      "src": "/dist/icons/cosmos-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/dist/icons/cosmos-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
   "start_url": "/?utm_source=homescreen",
   "display": "standalone",
   "background_color": "#0B0929",

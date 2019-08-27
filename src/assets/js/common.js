@@ -384,7 +384,7 @@ function loadSpeakerCompanyLogo(speaker) {
   const TARGET_HEIGHT = 42;
 
   const companyLogo = new Image();
-  companyLogo.src = "./img/companies/" + companyLogoFileName;
+  companyLogo.src = "/dist/img/companies/" + companyLogoFileName;
 
   const companyLogoPoll = setInterval(function() {
     if (companyLogo.naturalWidth) {

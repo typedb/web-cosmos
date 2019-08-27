@@ -14,7 +14,7 @@
     background-repeat: repeat;
     position: absolute;
     margin: 50px;
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     z-index: -1; }
   .section-speakers .container {
     position: relative; }
@@ -38,7 +38,7 @@
     .section-speakers ul li:hover .speaker-frame {
       transform: scale(1.2); }
     .section-speakers ul li .speaker-frame {
-      background: url(../img/speaker-frame.svg) no-repeat;
+      background: url(/dist/img/speaker-frame.svg) no-repeat;
       background-size: 190px 190px;
       transition: all 0.2s ease-in-out;
       background-position: top center;
@@ -74,7 +74,7 @@
     box-sizing: content-box; }
   .speaker-modal .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain; }
   .speaker-modal .planet-purple {
@@ -84,7 +84,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
     background-position: center center;
     right: 130px;
     top: 90px;
@@ -153,7 +153,8 @@
       /* WebKit */
       width: 0;
       height: 0; }
-    .speaker-modal-content .description, .speaker-modal-content .bio {
+    .speaker-modal-content .description,
+    .speaker-modal-content .bio {
       white-space: pre-line; }
     .speaker-modal-content .cospeaker-note {
       font-size: 1rem; }
@@ -164,7 +165,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0px;
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
       background-position: center center;
       left: 0px;
       top: -40px;
@@ -187,7 +188,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0px;
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
       background-position: right;
       left: 0;
       top: -70px; }
@@ -204,7 +205,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/planet-blue-dark.svg);
+      background-image: url(/dist/img/planet-blue-dark.svg);
       background-position: center center;
       left: 10px;
       bottom: -25%;
@@ -310,7 +311,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/newsletter-wave.svg);
+    background-image: url(/dist/img/newsletter-wave.svg);
     background-position: top; }
   .section-newsletter-logo {
     width: 198px;
@@ -396,7 +397,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-pink-medium.svg);
+    background-image: url(/dist/img/planet-pink-medium.svg);
     background-position: left;
     top: 20px;
     right: 0;
@@ -408,7 +409,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/spaceship.svg);
+    background-image: url(/dist/img/spaceship.svg);
     background-position: right;
     top: 20px;
     left: 0;
@@ -420,7 +421,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-pink-medium.svg);
+    background-image: url(/dist/img/planet-pink-medium.svg);
     background-position: center center;
     bottom: 100px;
     right: 40px;
@@ -432,7 +433,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0px;
-    background-image: url(../img/spaceship.svg);
+    background-image: url(/dist/img/spaceship.svg);
     background-position: center center;
     top: 20px;
     left: 60px;
@@ -442,7 +443,7 @@ main {
   padding-top: 70px; }
   main:before {
     background-color: #190d47;
-    content: '';
+    content: "";
     width: 100%;
     height: 90px;
     position: absolute;
@@ -475,7 +476,7 @@ header {
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-blue-dark.svg);
+    background-image: url(/dist/img/planet-blue-dark.svg);
     left: -210px;
     top: 410px;
     z-index: -8; }
@@ -486,7 +487,7 @@ header {
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
     right: -190px;
     top: 70px;
     z-index: -9; }
@@ -497,7 +498,7 @@ header {
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-blue-dark.svg);
+    background-image: url(/dist/img/planet-blue-dark.svg);
     left: 100px;
     top: 60px;
     z-index: -8; }
@@ -518,7 +519,7 @@ header {
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
     right: 100px;
     top: 30px;
     z-index: -9; }
@@ -540,7 +541,7 @@ header {
     .section-speakers li:last-child {
       margin: 0 30px 60px 30px !important; }
     .section-speakers li .speaker-frame {
-      background: url(../img/speaker-frame-lg.svg) no-repeat !important; }
+      background: url(/dist/img/speaker-frame-lg.svg) no-repeat !important; }
     .section-speakers li img.profile-picture {
       width: 170px !important;
       height: 170px !important; }

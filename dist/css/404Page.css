@@ -17,9 +17,9 @@ body {
       width: 120px;
       margin-top: 20px; }
   body.lost-in-space {
-    background-image: url(../img/404-lost-in-space-lg.svg);
+    background-image: url(/dist/img/404-lost-in-space-lg.svg);
     background-position: right bottom;
-    background-color: #0B0929;
+    background-color: #0b0929;
     background-size: contain;
     background-repeat: no-repeat; }
     body.lost-in-space .go-back-block {
@@ -29,18 +29,18 @@ body {
         top: 30px; } }
     @media (max-width: 576px) {
       body.lost-in-space {
-        background-image: url(../img/404-lost-in-space-sm.svg); }
+        background-image: url(/dist/img/404-lost-in-space-sm.svg); }
         body.lost-in-space .go-back-block {
           top: calc(50% - 150px); } }
   body.spaceship {
-    background-image: url(../img/404-spaceship-lg.svg);
+    background-image: url(/dist/img/404-spaceship-lg.svg);
     background-position: center;
-    background-color: #0B0929;
+    background-color: #0b0929;
     background-size: contain;
     background-repeat: no-repeat; }
     @media (max-width: 768px) {
       body.spaceship {
-        background-image: url(../img/404-spaceship-md.svg); } }
+        background-image: url(/dist/img/404-spaceship-md.svg); } }
     body.spaceship .go-back-block {
       bottom: 130px; }
 

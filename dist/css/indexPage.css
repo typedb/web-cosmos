@@ -5,7 +5,7 @@
     background: linear-gradient(180deg, #0a0926 0%, #28116b 35%, #00c8d8 100%); }
   .section-intro .stars {
     height: calc(773px - 50px);
-    background-image: url(../img/intro-stars.svg); }
+    background-image: url(/dist/img/intro-stars.svg); }
   .section-intro .futuristic-city {
     width: 100%;
     height: 800px;
@@ -13,18 +13,18 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/intro-futuristic-city-lg.svg);
+    background-image: url(/dist/img/intro-futuristic-city-lg.svg);
     background-position: center bottom;
     bottom: 0;
     z-index: -1; }
     @media (max-width: 1480px) {
       .section-intro .futuristic-city {
-        background-image: url(../img/intro-futuristic-city-md.svg);
+        background-image: url(/dist/img/intro-futuristic-city-md.svg);
         background-size: contain; } }
     @media (max-width: 768px) {
       .section-intro .futuristic-city {
         height: 470px;
-        background-image: url(../img/intro-futuristic-city-sm.svg); } }
+        background-image: url(/dist/img/intro-futuristic-city-sm.svg); } }
   .section-intro .m-planet-blue,
   .section-intro .m-planet-purple,
   .section-intro .m-planet-pink,
@@ -37,7 +37,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-purple.svg);
+    background-image: url(/dist/img/planet-purple.svg);
     top: 160px;
     left: 60px;
     z-index: -9; }
@@ -57,7 +57,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-blue.svg);
+    background-image: url(/dist/img/planet-blue.svg);
     top: 160px;
     right: 70px;
     z-index: -8; }
@@ -77,7 +77,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-pink.svg);
+    background-image: url(/dist/img/planet-pink.svg);
     top: 720px;
     left: 100px;
     z-index: -7; }
@@ -97,7 +97,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0px;
-    background-image: url(../img/spaceship.svg);
+    background-image: url(/dist/img/spaceship.svg);
     top: 730px;
     right: 100px;
     z-index: -6;
@@ -155,7 +155,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/planet-blue.svg);
+      background-image: url(/dist/img/planet-blue.svg);
       right: 0;
       top: -90px;
       z-index: -8; }
@@ -166,7 +166,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/planet-purple.svg);
+      background-image: url(/dist/img/planet-purple.svg);
       top: -60px;
       z-index: -9; }
     .section-intro .sub-section-summary .planet-pink {
@@ -176,7 +176,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/planet-pink.svg);
+      background-image: url(/dist/img/planet-pink.svg);
       top: 330px;
       left: 100px;
       z-index: -7; }
@@ -190,7 +190,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0px;
-      background-image: url(../img/spaceship.svg);
+      background-image: url(/dist/img/spaceship.svg);
       top: 300px;
       right: 60px;
       z-index: -6; }
@@ -223,7 +223,7 @@
     background: linear-gradient(180deg, #0a0926 0%, #0b0743 100%); }
   .section-motives .stars {
     height: calc(100% - 50px);
-    background-image: url(../img/motives-stars.svg); }
+    background-image: url(/dist/img/motives-stars.svg); }
   .section-motives .motive-text-block {
     padding: 0 40px; }
     @media (max-width: 768px) {
@@ -247,7 +247,7 @@
     background-repeat: repeat;
     position: absolute;
     margin: 50px;
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     z-index: -1; }
   .section-speakers .container {
     position: relative; }
@@ -271,7 +271,7 @@
     .section-speakers ul li:hover .speaker-frame {
       transform: scale(1.2); }
     .section-speakers ul li .speaker-frame {
-      background: url(../img/speaker-frame.svg) no-repeat;
+      background: url(/dist/img/speaker-frame.svg) no-repeat;
       background-size: 190px 190px;
       transition: all 0.2s ease-in-out;
       background-position: top center;
@@ -307,7 +307,7 @@
     box-sizing: content-box; }
   .speaker-modal .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain; }
   .speaker-modal .planet-purple {
@@ -317,7 +317,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
     background-position: center center;
     right: 130px;
     top: 90px;
@@ -386,7 +386,8 @@
       /* WebKit */
       width: 0;
       height: 0; }
-    .speaker-modal-content .description, .speaker-modal-content .bio {
+    .speaker-modal-content .description,
+    .speaker-modal-content .bio {
       white-space: pre-line; }
     .speaker-modal-content .cospeaker-note {
       font-size: 1rem; }
@@ -397,7 +398,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0px;
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
       background-position: center center;
       left: 0px;
       top: -40px;
@@ -420,7 +421,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0px;
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
       background-position: right;
       left: 0;
       top: -70px; }
@@ -437,7 +438,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/planet-blue-dark.svg);
+      background-image: url(/dist/img/planet-blue-dark.svg);
       background-position: center center;
       left: 10px;
       bottom: -25%;
@@ -545,7 +546,7 @@
       background-repeat: no-repeat;
       position: absolute;
       margin: 0;
-      background-image: url(../img/apply-galaxy.svg);
+      background-image: url(/dist/img/apply-galaxy.svg);
       background-color: #2346e7;
       background-position: center center;
       z-index: 0; }
@@ -592,7 +593,7 @@
     line-height: 35px; }
   .section-venue .stars {
     height: calc(668px - 100px);
-    background-image: url(../img/venue-stars.svg); }
+    background-image: url(/dist/img/venue-stars.svg); }
   @media (max-width: 768px) {
     .section-venue .h2 {
       line-height: 1.5; } }
@@ -604,7 +605,7 @@
     background: linear-gradient(180deg, #170c44 0%, #0f0538 100%); }
   .section-sponsors .stars {
     height: calc(668px - 50px);
-    background-image: url(../img/sponsors-stars.svg); }
+    background-image: url(/dist/img/sponsors-stars.svg); }
   @media (min-width: 375px) {
     .section-sponsors .partner-logo {
       width: 50%;
@@ -626,7 +627,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/newsletter-wave.svg);
+    background-image: url(/dist/img/newsletter-wave.svg);
     background-position: top; }
   .section-newsletter-logo {
     width: 198px;
@@ -712,7 +713,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-pink-medium.svg);
+    background-image: url(/dist/img/planet-pink-medium.svg);
     background-position: left;
     top: 20px;
     right: 0;
@@ -724,7 +725,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/spaceship.svg);
+    background-image: url(/dist/img/spaceship.svg);
     background-position: right;
     top: 20px;
     left: 0;
@@ -736,7 +737,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0;
-    background-image: url(../img/planet-pink-medium.svg);
+    background-image: url(/dist/img/planet-pink-medium.svg);
     background-position: center center;
     bottom: 100px;
     right: 40px;
@@ -748,7 +749,7 @@
     background-repeat: no-repeat;
     position: absolute;
     margin: 0px;
-    background-image: url(../img/spaceship.svg);
+    background-image: url(/dist/img/spaceship.svg);
     background-position: center center;
     top: 20px;
     left: 60px;

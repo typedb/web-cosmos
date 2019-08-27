@@ -1,29 +1,29 @@
 .section-motives {
-    width: 100%;
+  width: 100%;
 
-    position: relative;
-    z-index: 0;
+  position: relative;
+  z-index: 0;
 
-    .container {
-      max-width: 1080px;
-    }
+  .container {
+    max-width: 1080px;
+  }
 
-    .bg {
-      background: rgb(10, 9, 38);
-      background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(11, 7, 67, 1) 100%);
-    }
+  .bg {
+    background: rgb(10, 9, 38);
+    background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(11, 7, 67, 1) 100%);
+  }
 
-    .stars {
-      height: calc(100% - 50px);
-      background-image: url(../img/motives-stars.svg);
-    }
+  .stars {
+    height: calc(100% - 50px);
+    background-image: url(/dist/img/motives-stars.svg);
+  }
 
-    .motive-text-block {
-      padding: 0 40px;
+  .motive-text-block {
+    padding: 0 40px;
 
-      @include md-up-to {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    @include md-up-to {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
+}

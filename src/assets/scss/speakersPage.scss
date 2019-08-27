@@ -8,7 +8,7 @@ main {
 
   &:before {
     background-color: #190d47;
-    content: '';
+    content: "";
     width: 100%;
     height: 90px;
     position: absolute;
@@ -48,7 +48,7 @@ header {
   .planet-blue {
     @include absolute-background(205px, 205px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-blue-dark.svg);
+    background-image: url(/dist/img/planet-blue-dark.svg);
 
     left: -210px;
     top: 410px;
@@ -58,7 +58,7 @@ header {
   .planet-purple {
     @include absolute-background(238px, 172px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
 
     right: -190px;
     top: 70px;
@@ -68,7 +68,7 @@ header {
   .m-planet-blue {
     @include absolute-background(205px, 205px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-blue-dark.svg);
+    background-image: url(/dist/img/planet-blue-dark.svg);
 
     left: 100px;
     top: 60px;
@@ -91,7 +91,7 @@ header {
   .m-planet-purple {
     @include absolute-background(238px, 172px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
 
     right: 100px;
     top: 30px;
@@ -124,7 +124,7 @@ header {
     }
 
     .speaker-frame {
-      background: url(../img/speaker-frame-lg.svg) no-repeat !important;
+      background: url(/dist/img/speaker-frame-lg.svg) no-repeat !important;
     }
 
     img.profile-picture {

@@ -8,11 +8,10 @@
 
   .stars {
     height: calc(668px - 50px);
-    background-image: url(../img/sponsors-stars.svg);
+    background-image: url(/dist/img/sponsors-stars.svg);
   }
 
   .partner-logo {
-
     @media (min-width: 375px) {
       width: 50%;
       padding: 1.5rem !important;

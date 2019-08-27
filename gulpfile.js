@@ -18,7 +18,7 @@ const paths = {
   scss: {
     src: "src/assets/scss/**/*.scss",
     dest: "dist/css",
-    watch: "src/assets/css/**/*.scss"
+    watch: "src/assets/scss/**/*.scss"
   },
   js: {
     src: "src/assets/js/**/*.js",

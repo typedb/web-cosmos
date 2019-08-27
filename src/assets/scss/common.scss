@@ -131,7 +131,6 @@ code {
 @import "./footer";
 @import "./speakers";
 
-
 html {
   @include md-up-to {
     font-size: 14px;
@@ -153,7 +152,12 @@ button {
   cursor: pointer;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   line-height: 1.5;
 
   @include sm-up-to {
@@ -200,7 +204,7 @@ button {
   width: 172px;
   height: 28px;
 
-  background-image: url(../img/divider.svg);
+  background-image: url(/dist/img/divider.svg);
   background-repeat: no-repeat;
   background-position: center right;
 
@@ -286,7 +290,6 @@ button {
     overflow: hidden;
   }
 }
-
 
 .button {
   height: 50px;

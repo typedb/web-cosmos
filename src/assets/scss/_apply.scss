@@ -14,7 +14,7 @@ $apply-bg-color: #2346e7;
     .bg {
       @include absolute-background(100%, 100%, 0, cover, no-repeat);
 
-      background-image: url(../img/apply-galaxy.svg);
+      background-image: url(/dist/img/apply-galaxy.svg);
       background-color: $apply-bg-color;
 
       background-position: center center;

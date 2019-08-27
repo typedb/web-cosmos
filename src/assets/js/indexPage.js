@@ -248,7 +248,7 @@ function loadPartners() {
     partnerHtml = `
             <div class="partner-logo w-sm-33 w-lg-25 w-lgc-20 p-8 p-xs-3 p-sm-6 p-md-4 p-lgc-6">
                 <a href="${partner.url}" target="_blank">
-                    <img class="mx-auto" src="./img/companies/${partner.image}" />
+                    <img class="mx-auto" src="./dist/img/companies/${partner.image}" />
                 </a>
             </div>
         `;

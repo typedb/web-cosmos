@@ -2,8 +2,12 @@
   position: relative;
 
   #speakers-list {
-    li:first-child { margin-left: 0; }
-    li:last-child { margin-right: 0; }
+    li:first-child {
+      margin-left: 0;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
   }
 
   .bg {
@@ -14,7 +18,7 @@
   .stars {
     @include absolute-background(100%, 760px, 50px, auto, repeat);
 
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     z-index: -1;
   }
 
@@ -54,10 +58,9 @@
           transform: scale(1.2);
         }
       }
-      
 
       .speaker-frame {
-        background: url(../img/speaker-frame.svg) no-repeat;
+        background: url(/dist/img/speaker-frame.svg) no-repeat;
         background-size: 190px 190px;
         transition: all 0.2s ease-in-out;
 
@@ -76,7 +79,7 @@
 
         @include sm-up-to {
           background-size: 180px 180px;
-          
+
           img.profile-picture {
             width: 160px;
             height: 160px;
@@ -112,7 +115,7 @@
 
   .stars {
     height: calc(100% - (100px)) !important;
-    background-image: url(../img/speakers-stars.svg);
+    background-image: url(/dist/img/speakers-stars.svg);
     background-repeat: repeat;
     background-size: contain;
   }
@@ -120,7 +123,7 @@
   .planet-purple {
     @include absolute-background(205px, 205px, 0, auto, no-repeat);
 
-    background-image: url(../img/planet-purple-dark.svg);
+    background-image: url(/dist/img/planet-purple-dark.svg);
     background-position: center center;
 
     right: 130px;
@@ -198,14 +201,16 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
+    -ms-overflow-style: none; /* IE 10+ */
 
-    &::-webkit-scrollbar { /* WebKit */
+    &::-webkit-scrollbar {
+      /* WebKit */
       width: 0;
       height: 0;
     }
 
-    .description, .bio {
+    .description,
+    .bio {
       white-space: pre-line;
     }
 
@@ -215,7 +220,7 @@
 
     .planet-purple-dark {
       @include absolute-background(160px, 160px, 0px, contain, no-repeat);
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
       background-position: center center;
 
       left: 0px;
@@ -241,7 +246,7 @@
     .m-planet-purple-dark {
       @include absolute-background(63px, 120px, 0px, 130px 130px, no-repeat);
 
-      background-image: url(../img/planet-purple-dark.svg);
+      background-image: url(/dist/img/planet-purple-dark.svg);
 
       background-position: right;
       left: 0;
@@ -261,7 +266,7 @@
     .planet-blue {
       @include absolute-background(205px, 205px, 0, auto, no-repeat);
 
-      background-image: url(../img/planet-blue-dark.svg);
+      background-image: url(/dist/img/planet-blue-dark.svg);
       background-position: center center;
 
       left: 10px;
@@ -371,7 +376,9 @@
         .logo-wrapper {
           width: 30px;
 
-          img { height: 16px; }
+          img {
+            height: 16px;
+          }
         }
 
         span {

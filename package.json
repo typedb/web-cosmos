@@ -2,8 +2,18 @@
   "name": "cosmos-website",
   "version": "1.0.0",
   "description": "The website of Grakn Cosmos 2020",
-  "main": "gulpfile.js",
-  "devDependencies": {
+  "main": "index.js",
+  "author": "cosmos@grakn.ai",
+  "license": "ISC",
+  "scripts": {
+    "start:dev": "npm run build && NODE_ENV=development node index.js && npm run watch",
+    "start:production": "npm run build && NODE_ENV=production NODE_PATH=./ node index.js",
+    "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build",
+    "watch": "./node_modules/.bin/gulp watch"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-static": "^0.7.11",
     "gulp": "^4.0.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.6.1",
@@ -11,18 +21,6 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.2.0"
-  },
-  "scripts": {
-    "start:dev": "npm run build && NODE_ENV=development node index.js && npm run watch",
-    "start:production": "npm run build && NODE_ENV=production NODE_PATH=./ node index.js",
-    "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build",
-    "watch": "./node_modules/.bin/gulp watch"
-  },
-  "author": "cosmos@grakn.ai",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "node-static": "^0.7.11"
   },
   "engine": {
     "nodes": ">=11.15.0",

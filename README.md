@@ -8,7 +8,7 @@
 ### Develop
 
 - `npm install`
-- `npm run start:local`
+- `npm run start:dev`
 
 ### Deploy
 

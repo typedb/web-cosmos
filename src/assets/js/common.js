@@ -260,7 +260,7 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
   const socialLinksHtml = socialLinks
     .map(socialLink => {
       let linkHtml = `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center" target="_blank">
-                <div class="logo-wrapper"><img src="img/icons/PLACEHOLDER_ICON" /></div>
+                <div class="logo-wrapper"><img src="/dist/img/icons/PLACEHOLDER_ICON" /></div>
                 <span class="h6 Titillium-Rg">PLACEHOLDER_TEXT</span>
             </a>`;
 

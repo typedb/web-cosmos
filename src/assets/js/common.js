@@ -216,10 +216,14 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
   const socialLinks = [];
 
   const companyUrlQuestionId = 16352;
-  let companyUrl = questionAnswers.find(
+  const companyUrl = questionAnswers.find(
     aq => aq.questionId === companyUrlQuestionId
-  );
-  if (companyUrl) companyUrl = companyUrl.answerValue;
+  ).answerValue;
+
+  const companyLogoQuestionId = 16298;
+  const companyLogoFileName = questionAnswers.find(
+    qa => qa.questionId === companyLogoQuestionId
+  ).answerValue;
 
   const twitterUrlQuestionId = 16350;
   let twitterUrl = questionAnswers.find(
@@ -259,9 +263,9 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
 
   const socialLinksHtml = socialLinks
     .map(socialLink => {
-      let linkHtml = `<a href="PLACEHOLDER_ADDRESS" class="d-flex align-items-center" target="_blank">
+      let linkHtml = `
+            <a href="PLACEHOLDER_ADDRESS" target="_blank">
                 <div class="logo-wrapper"><img src="/dist/img/icons/PLACEHOLDER_ICON" /></div>
-                <span class="h6 Titillium-Rg">PLACEHOLDER_TEXT</span>
             </a>`;
 
       switch (socialLink.linkType) {
@@ -270,30 +274,14 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
             "PLACEHOLDER_ICON",
             "social-linked-in.svg"
           );
-          linkHtml = linkHtml.replace("PLACEHOLDER_TEXT", fullName);
-          linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", socialLink.url);
           break;
         }
         case "Twitter": {
           linkHtml = linkHtml.replace("PLACEHOLDER_ICON", "social-twitter.svg");
-          let text = socialLink.url;
-          text = text.replace("http://twitter.com/", "");
-          text = text.replace("https://twitter.com/", "");
-          text = text.replace("twitter.com/", "");
-          text = text.replace("www.twitter.com/", "");
-          text = "@" + text;
-          linkHtml = linkHtml.replace("PLACEHOLDER_TEXT", text);
-          linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", socialLink.url);
           break;
         }
         case "Github": {
           linkHtml = linkHtml.replace("PLACEHOLDER_ICON", "social-github.svg");
-          let text = socialLink.url;
-          text = text.replace("http://github.com/", "");
-          text = text.replace("https://github.com/", "");
-          text = text.replace("www.github", "");
-          linkHtml = linkHtml.replace("PLACEHOLDER_TEXT", text);
-          linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", socialLink.url);
           break;
         }
         case "Blog": {
@@ -301,17 +289,12 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
             "PLACEHOLDER_ICON",
             "social-linked-in.svg"
           );
-          let text = socialLink.url;
-          text = text.replace("http://", "");
-          text = text.replace("https://", "");
-          text = text.replace("www.", "");
-          linkHtml = linkHtml.replace("PLACEHOLDER_TEXT", text);
-          linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", socialLink.url);
           break;
         }
         default:
           return "";
       }
+      linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", socialLink.url);
       return linkHtml;
     })
     .join("");
@@ -365,8 +348,8 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
   $("#profilePicture").attr("src", profilePicture.src);
   $("#fullname").html(fullName);
   $("#position").html(position);
-  $("#company").html(company);
   $("#company").attr("href", companyUrl);
+  $("#company img").attr("src", `/dist/img/companies/${companyLogoFileName}`);
   $("#social-links").html(socialLinksHtml);
   $("#bio").html(bio);
   $("#sessions").html(sessionsHtml);

@@ -508,15 +508,19 @@
     max-height: calc(100% - 240px);
     float: right;
     padding: 120px 100px 120px 0; }
-    .speaker-modal-body .company,
+    .speaker-modal-body .company img {
+      height: 42px; }
     .speaker-modal-body .session-title {
       color: #BDB5FF; }
     .speaker-modal-body .social-links a {
-      color: white; }
-      .speaker-modal-body .social-links a .logo-wrapper {
-        width: 30px; }
-        .speaker-modal-body .social-links a .logo-wrapper img {
-          height: 16px; }
+      color: white;
+      margin: 0 10px; }
+      .speaker-modal-body .social-links a:first-child {
+        margin-left: 0; }
+      .speaker-modal-body .social-links a:last-child {
+        margin-right: 0; }
+      .speaker-modal-body .social-links a .logo-wrapper img {
+        height: 23px; }
       .speaker-modal-body .social-links a span {
         line-height: 28px; }
     @media (max-width: 1024px) {

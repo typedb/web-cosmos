@@ -3,12 +3,12 @@
   "name": "Grakn Cosmos",
   "icons": [
     {
-      "src": "/dist/icons/cosmos-192x192.png",
+      "src": "/icons/cosmos-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/dist/icons/cosmos-512x512.png",
+      "src": "/icons/cosmos-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

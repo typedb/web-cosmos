@@ -11,7 +11,7 @@
 
   .wave {
     @include absolute-background(100%, 100%, 0, cover, no-repeat);
-    background-image: url(/dist/img/newsletter-wave.svg);
+    background-image: url(/img/newsletter-wave.svg);
 
     background-position: top;
   }
@@ -105,7 +105,7 @@
   .m-planet-pink {
     @include absolute-background(70px, 110px, 0, 100px 100px, no-repeat);
 
-    background-image: url(/dist/img/planet-pink-medium.svg);
+    background-image: url(/img/planet-pink-medium.svg);
     background-position: left;
 
     top: 20px;
@@ -116,7 +116,7 @@
   .m-spaceship {
     @include absolute-background(90px, 190px, 0, 129px 190px, no-repeat);
 
-    background-image: url(/dist/img/spaceship.svg);
+    background-image: url(/img/spaceship.svg);
     background-position: right;
 
     top: 20px;
@@ -127,7 +127,7 @@
   .planet-pink {
     @include absolute-background(138px, 138px, 0, auto, no-repeat);
 
-    background-image: url(/dist/img/planet-pink-medium.svg);
+    background-image: url(/img/planet-pink-medium.svg);
     background-position: center center;
 
     bottom: 100px;
@@ -138,7 +138,7 @@
   .spaceship {
     @include absolute-background(160px, 190px, 0px, auto, no-repeat);
 
-    background-image: url(/dist/img/spaceship.svg);
+    background-image: url(/img/spaceship.svg);
     background-position: center center;
 
     top: 20px;

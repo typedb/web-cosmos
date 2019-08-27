@@ -13,9 +13,15 @@
     "gulp-terser": "^1.2.0"
   },
   "scripts": {
-    "start": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp watch",
-    "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build"
+    "start:dev": "npm run build && NODE_ENV=development node index.js && npm run watch",
+    "start:production": "npm run build && NODE_ENV=production NODE_PATH=./ node index.js",
+    "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build",
+    "watch": "./node_modules/.bin/gulp watch"
   },
   "author": "cosmos@grakn.ai",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-static": "^0.7.11"
+  }
 }

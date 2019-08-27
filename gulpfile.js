@@ -85,6 +85,18 @@ function copyCssVendors() {
   return src("src/assets/scss/vendor/*.css").pipe(dest("./dist/css/vendor"));
 }
 
+function copyBrowserConfig() {
+  return src("browserconfig.xml").pipe(dest("./dist/"));
+}
+
+function copyManifest() {
+  return src("site.webmanifest").pipe(dest("./dist/"));
+}
+
+function copyRobot() {
+  return src("robot.txt").pipe(dest("./dist/"));
+}
+
 function watchAll() {
   watch(
     [paths.hbs.watch, paths.scss.watch, paths.js.watch],
@@ -100,8 +112,11 @@ const buildAll = parallel(
   copyImages,
   copyIcons,
   copyJsVendors,
-  copyCssVendors
+  copyCssVendors,
+  copyBrowserConfig,
+  copyManifest,
+  copyRobot
 );
 
 task("build", buildAll);
-task("watch", series(buildAll, watchAll));
+task("watch", watchAll);

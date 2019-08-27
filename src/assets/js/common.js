@@ -265,7 +265,7 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
     .map(socialLink => {
       let linkHtml = `
             <a href="PLACEHOLDER_ADDRESS" target="_blank">
-                <div class="logo-wrapper"><img src="/dist/img/icons/PLACEHOLDER_ICON" /></div>
+                <div class="logo-wrapper"><img src="/img/icons/PLACEHOLDER_ICON" /></div>
             </a>`;
 
       switch (socialLink.linkType) {
@@ -349,7 +349,7 @@ function populateSpeakerModal(speaker, profilePicture, sessions, speakers) {
   $("#fullname").html(fullName);
   $("#position").html(position);
   $("#company").attr("href", companyUrl);
-  $("#company img").attr("src", `/dist/img/companies/${companyLogoFileName}`);
+  $("#company img").attr("src", `/img/companies/${companyLogoFileName}`);
   $("#social-links").html(socialLinksHtml);
   $("#bio").html(bio);
   $("#sessions").html(sessionsHtml);
@@ -367,7 +367,7 @@ function loadSpeakerCompanyLogo(speaker) {
   const TARGET_HEIGHT = 42;
 
   const companyLogo = new Image();
-  companyLogo.src = "/dist/img/companies/" + companyLogoFileName;
+  companyLogo.src = "/img/companies/" + companyLogoFileName;
 
   const companyLogoPoll = setInterval(function() {
     if (companyLogo.naturalWidth) {

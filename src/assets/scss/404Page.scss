@@ -29,7 +29,7 @@ body {
   }
 
   &.lost-in-space {
-    background-image: url(/dist/img/404-lost-in-space-lg.svg);
+    background-image: url(/img/404-lost-in-space-lg.svg);
     background-position: right bottom;
     background-color: #0b0929;
     background-size: contain;
@@ -46,7 +46,7 @@ body {
     }
 
     @include sm-up-to {
-      background-image: url(/dist/img/404-lost-in-space-sm.svg);
+      background-image: url(/img/404-lost-in-space-sm.svg);
 
       .go-back-block {
         top: calc(50% - 150px);
@@ -55,14 +55,14 @@ body {
   }
 
   &.spaceship {
-    background-image: url(/dist/img/404-spaceship-lg.svg);
+    background-image: url(/img/404-spaceship-lg.svg);
     background-position: center;
     background-color: #0b0929;
     background-size: contain;
     background-repeat: no-repeat;
 
     @include md-up-to {
-      background-image: url(/dist/img/404-spaceship-md.svg);
+      background-image: url(/img/404-spaceship-md.svg);
     }
 
     .go-back-block {

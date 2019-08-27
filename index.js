@@ -49,6 +49,11 @@ app.get("/privacy-policy", function(req, res) {
   res.sendFile(privacyPath);
 });
 
+const notFoundPath = path.join(__dirname, "/dist/404.html");
+app.get("*", function(req, res) {
+  res.sendFile(notFoundPath);
+});
+
 var server = app.listen(process.env.PORT || 3000, function() {
   var port = server.address().port;
   console.log("Server started at http://localhost:%s", port);

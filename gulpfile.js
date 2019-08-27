@@ -94,7 +94,7 @@ function copyManifest() {
 }
 
 function copyRobot() {
-  return src("robot.txt").pipe(dest("./dist/"));
+  return src("robots.txt").pipe(dest("./dist/"));
 }
 
 function watchAll() {

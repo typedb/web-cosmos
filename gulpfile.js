@@ -83,7 +83,7 @@ function copyJsVendors() {
 
 function copyCssVendors() {
   return src("src/assets/scss/vendor/hamburger.css").pipe(
-    dest("./dist/css/vendor/hamburger.css")
+    dest("./dist/css/vendor")
   );
 }
 

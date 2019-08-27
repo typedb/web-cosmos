@@ -5,12 +5,12 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
  
-ErrorDocument 403 /404.html
-ErrorDocument 404 /404.html
-ErrorDocument 500 /404.html
+ErrorDocument 403 /dist/404.html
+ErrorDocument 404 /dist/404.html
+ErrorDocument 500 /dist/404.html
 
-RewriteRule ^$ ./index.html
-RewriteRule ^speakers$ ./speakers.html
-RewriteRule ^privacy-policy$ ./privacy-policy.html
-RewriteRule ^code-of-conduct$ ./code-of-conduct.html
-RewriteRule ^terms$ ./terms.html
+RewriteRule ^$ ./dist/index.html
+RewriteRule ^speakers$ ./dist/speakers.html
+RewriteRule ^privacy-policy$ ./dist/privacy-policy.html
+RewriteRule ^code-of-conduct$ ./dist/code-of-conduct.html
+RewriteRule ^terms$ ./dist/terms.html

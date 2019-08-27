@@ -1,0 +1,576 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <title>
+        Grakn Cosmos
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Grakn Cosmos: The Universe of Orderly Systems">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta property="og:title" content="Grakn Cosmos: The Universe of Orderly Systems">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://grakncosmos.com/img/banners/grakn-cosmos-og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1910">
+    <meta property="og:image:height" content="1000">
+    
+    <meta property="og:url" content="https://grakncosmos.com">
+    <meta property="og:site_name" content="Grakn Cosmos: The Universe of Orderly Systems">
+    <meta property="og:description" content="The universal conference of technologies built using Grakn">
+    <meta property="og:email" content="cosmos@grakn.ai">
+    <meta name="theme-color" content="#998efc">
+    
+    <meta name="twitter:card" content="The universal conference of technologies built using Grakn" />
+    <meta name="twitter:site" content="@graknlabs" />
+    <meta name="twitter:creator" content="@graknlabs" />
+    
+    
+    <!-- iOS/Android -->
+    <meta name="apple-mobile-web-app-title" content="Grakn Cosmos">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/cosmos-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/cosmos-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icons/cosmos-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/cosmos-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/icons/cosmos-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/cosmos-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="/icons/cosmos-152x152.png">
+    
+    <!-- Windows 8 metro/pinning -->
+    <meta name="application-name" content="Grakn Cosmos">
+    <meta name="msapplication-tooltip" content="The universal conference of technologies built using Grakn">
+    <meta name="msapplication-TileColor" content="#0B0929">
+    <!-- "msapplication-TileImage" is only used in Windows 8.0 and should be a 144×144 transparent PNG -->
+    <meta name="msapplication-TileImage" content="/icons/cosmos-144x144-transparent.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/png" size="64x64" href="icons/favicon.png">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600&display=swap">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="css/vendor/hamburger.css">
+    <link rel="stylesheet" href="css/common.css?v=6">
+    
+
+<link rel="stylesheet" href="css/indexPage.css?v=6">
+</head>
+
+<body>
+    <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <header class="site-header
+                   w-100 position-fixed fixed-top fixed-left d-none" role="banner">
+        <div class="site-header-inner
+                    container container-wide
+                    h-100 d-flex align-items-center justify-content-between">
+            <div class="site-header-logo
+                        d-inline position-relative">
+                <a href="./" class="d-inline-block">
+                    <img class="logo-cosmos d-lg-inline-block d-none" src="img/logos/logo-cosmos-horizontal.svg" alt="COSMOS" />
+                    <img class="logo-cosmos d-inline-block d-lg-none" src="img/logos/logo-cosmos-icononly.svg" width="47" height="42" alt="COSMOS" />
+                </a>
+            </div>
+    
+            <button class="hamburger hamburger--collapse
+                           float-right d-none" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+    
+            <nav class="site-header-nav
+                        align-items-center justify-content-center" role="navigation">
+                <ul class="text-center Titillium-Rg
+                           d-flex align-items-center justify-content-between mx-0 my-auto">
+                    <a href="./speakers"><li class="h6">Speakers</li></a>
+                    <a href="#apply" data-scroll-to="apply"><li class="h6">Apply</li></a>
+                    <a href="#venue" data-scroll-to="venue"><li class="h6">Venue</li></a>
+                    <a href="#partners" data-scroll-to="partners"><li class="h6">Partners</li></a>
+                    <li class="action">
+                        <div id="eventbrite-widget-modal-trigger-58504110369" class="button h5">
+                            Get Tickets
+                        </div>
+                    </li>
+                </ul>
+                <div id="eventbrite-widget-modal-trigger-58504110369" class="button d-none">
+                    Get Tickets
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="speaker-modal" class="speaker-modal">
+        <div class="stars"></div>
+    
+        <div id="speaker-modal-close" class="speaker-modal-close"></div>
+        <div class="speaker-modal-content">
+            <div class="planet-purple"></div>
+    
+            <div class="speaker-modal-sidebar
+                        f-left">
+                <div class="planet-blue
+                            d-none d-lg-block"></div>
+                <figure>
+                    <img class="frame-img" src="img/speaker-frame-xl.svg" />
+                    <img id="profilePicture" class="speaker-profile-picture" src="" />
+                </figure>
+                <img id="companyLogo" class="speaker-company-logo" src="" />
+            </div>
+            <div class="speaker-modal-body
+                        f-right">
+                <p id="fullname" class="h1 Titillium-Rg"></p>
+                <p id="position" class="h5 Titillium-Lt pt-2"></p>
+                <a id="company" href="" target="_blank" class="company h5 Titillium-Lt pt-2"></a>
+                <div id="social-links" class="social-links mt-4"></div>
+                <p id="bio" class="bio h6 Titillium-ExLt pt-4 pt-lg-5"></p>
+                <p id="session-title" class="h4 Titillium-Rg pt-4 pt-lg-5">SESSION</p>
+                <div id='sessions' class="sessionsWrapper">
+                    <p id="session-title" class="session-title h5 Titillium-Lt pt-3"></p>
+                    <p id="session-description a" class="description h6 Titillium-ExLt pt-3"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main aria-label="Content" role="main">
+        <div id="intro" class="section-intro a">
+            <div class="bg"></div>
+            <div class="stars d-none d-md-block"></div>
+        
+            <div class="m-planet-blue d-block d-lgc-none"></div>
+            <div class="m-planet-purple d-block d-lgc-none"></div>
+            <div class="m-planet-pink d-block d-lgc-none"></div>
+            <div class="m-spaceship d-block d-lgc-none"></div>
+        
+            <div class="futuristic-city"></div>
+        
+            <div class="sub-section-summary
+                        container-full
+                        text-center
+                        position-relative">
+                <div class="container
+                            text-center">
+                    <div class="section-intro-logo
+                                mx-auto mb-8 mb-md-6">
+                        <img class="section-intro-logoType
+                                    mx-auto" src="img/logos/logo-cosmos-icononly.svg" alt="COSMOS">
+                    </div>
+        
+                    <p class="title h1 Titillium-Rg
+                              mx-auto mb-5 mb-md-3">Grakn Cosmos: The Universe<br class="d-sm-none d-block" /> of Orderly
+                        Systems</p>
+        
+                    <p class="h5 Titillium-Lt
+                              mx-auto mb-4">
+                        Welcome to the universal conference<br class="d-sm-none d-block" /> of technologies built using <a
+                            href="https://grakn.ai" target="_blank">Grakn</a>
+                    </p>
+        
+                    <p class="h2 Titillium-Rg text-color-brand
+                              mt-10 mb-4">6-7th of February 2020</p>
+        
+                    <p class="h5 Titillium-Lt
+                              mb-4">
+                        Kensington Conference and Events Centre
+                        <span class="d-none d-sm-inline px-1"> | </span>
+                        <br class="d-block d-sm-none" />
+                        London, United Kingdom
+                    </p>
+        
+                    <div id="eventbrite-widget-modal-trigger-58504110369" style="width: 197px" class="button
+                                                                                 h5
+                                                                                 px-7 mt-2">
+                        Get Tickets
+                    </div>
+        
+                    <div class="planet-blue d-none d-lgc-block"></div>
+                    <div class="planet-purple d-none d-lgc-block"></div>
+                    <div class="planet-pink d-none d-lgc-block"></div>
+                    <div class="spaceship d-none d-lgc-block"></div>
+                </div>
+            </div>
+        
+            <div class="divider pb-10 pt-11"></div>
+        
+            <div class="sub-section-description
+                        container
+                        text-center">
+                <p class="h2 Titillium-Rg text-center">
+                    What is Grakn Cosmos?
+                </p>
+        
+                <p class="h5 Titillium-Lt
+                          mt-6">
+                    The "cosmos" is the universe viewed as a complex and orderly system, as opposed to chaos.
+                    <a href="https://grakn.ai" target="_blank"><code
+                            class="text-nowrap c-pointer">Grakn isa database;</code></a>
+                    one that empowers complex systems to be more intelligent through logic, reasoning, and
+                    knowledge
+                    engineering.
+                    The universe of all systems built on Grakn is the universe of orderly systems -- the
+                    Grakn
+                    Cosmos.
+                </p>
+        
+                <p class="h5 Titillium-Lt
+                          mt-6">
+                    By landing on this page, you are either part of the Grakn Cosmos, or have just found it.
+                    In either case, we hope you are excited for what the future holds.
+                </p>
+        
+                <p class="h5 Titillium-Lt
+                          mt-6">
+                    Welcome, to Grakn Cosmos.
+                </p>
+            </div>
+        </div>
+        
+        <div id="motives" class="section-motives">
+            <div class="bg"></div>
+            <div class="stars
+                        d-none d-md-block"></div>
+            <div class="container
+                        py-11">
+                <div class="mx-auto col-12">
+                    <p class="h2 Titillium-Rg text-center" data-animate-in="fade">
+                        The conference of people changing<br class="d-lg-none d-sm-block d-none" /> the universe with Grakn
+                    </p>
+                    <div class="row pt-12 pt-md-6 align-items-center" data-animate-in="right">
+                        <img class="w-100 w-md-50" src="img/motive-pioneers.svg" />
+                        <div class="motive-text-block w-100 w-md-50 text-center text-md-left">
+                            <p class="h3 Titillium-Rg">Meet the pioneers.</p>
+                            <p class="h5 Titillium-Lt
+                                      pt-2">
+                                Meet the people behind the @username: the inventors, the innovators and the rule
+                                breakers.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="row pt-12 pt-md-6 flex-sm-row-reverse align-items-center" data-animate-in="left">
+                        <img class="w-100 w-md-50" src="img/motive-future.svg" />
+                        <div class="motive-text-block w-100 w-md-50
+                                    text-center text-md-left">
+                            <p class="h3 Titillium-Rg">Look to the future.</p>
+                            <p class="h5 Titillium-Lt
+                                      pt-2">
+                                Explore the applications of knowledge engineering pushing the boundary of intelligent
+                                systems.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="row pt-12 pt-md-6 align-items-center" data-animate-in="right">
+                        <img class="w-100 w-md-50" src="img/motive-inspired.svg" />
+                        <div class="motive-text-block w-100 w-md-50 text-center text-md-left">
+                            <p class="h3 Titillium-Rg">Be inspired.</p>
+                            <p class="h5 Titillium-Lt
+                                      pt-2">
+                                Empower yourself with the wisdom, ideas, and technology to build a better future.
+                                Together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="divider"></div>
+        </div>
+        
+        
+        <div id="speakers" class="section-speakers">
+            <div class="bg"></div>
+        
+            <div class="stars
+                        d-none d-md-block"></div>
+        
+            <div class="planet-purple-dark
+                        d-block d-md-none"></div>
+        
+            <div class="container
+                        text-center
+                        pt-12 pb-11">
+                <div class="mx-auto col-12">
+                    <p class="h2 Titillium-Rg">The Cosmos Voyagers</p>
+                    <div class="row py-8">
+                        <!-- speakers-list-hidden is used as a guideline for determining the number of speakers that need to be loaded based on the screensize -->
+                        <ul id="speakers-list-hidden" class="d-none" data-animate-in="up">
+                            <li></li>
+                            <li class="d-none d-sm-block"></li>
+                            <li class="d-none d-md-block"></li>
+                            <li class="d-none d-lg-block"></li>
+                            <li class="d-none d-xl-block"></li>
+                        </ul>
+        
+                        <ul id="speakers-home-list" class="w-100 d-flex flex-wrap align-items-top justify-content-center"
+                            data-animate-in="up">
+                            <!-- populated by js -->
+                        </ul>
+                    </div>
+                    <a class="button
+                              h5" href="./speakers">
+                        See All Speakers
+                    </a>
+                </div>
+        
+                <div class="planet-purple-dark
+                            d-none d-md-block"></div>
+                <div class="planet-pink-dark
+                            d-none d-lg-block"></div>
+            </div>
+        </div>
+        
+        <div id="apply" class="section-apply">
+            <div class="bg-wrapper">
+                <div class="bg"></div>
+                <svg class="top-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon fill="#0a0926" points="0, 0, 100, 50, 100 0" />
+                </svg>
+                <svg class="bottom-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon fill="#0a0926" points="0, 50, 100, 100, 0, 100" />
+                </svg>
+            </div>
+            <div class="container
+                        text-center">
+                <div class="apply-content">
+                    <p class="h2 Titillium-Rg">Bring your Grakn story</p>
+                    <p class="h5 Titillium-Lt mt-6" style="line-height: 30px;">
+                        Share your story of knowledge engineering with the community.
+                        Share your challenges, your solutions, your innovations, and your lessons.
+                        Let us celebrate your achievements with you and tell the universe about it.
+                    </p>
+                    <div class="mt-6">
+                        <a class="button h5 px-4" href="https://sessionize.com/grakncosmos" target="_blank">
+                            Apply to Speak
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="venue" class="section-venue">
+            <div class="bg"></div>
+            <div class="stars
+                d-none d-md-block"></div>
+        
+            <div class="container
+                        pt-0 pb-4">
+                <div class="mx-auto col-12">
+                    <img class="w-100 pt-8" src="img/venue-london.svg" data-animate-in="fade" />
+        
+                    <div class="venue-details
+                                w-100 mb-13 pt-8
+                                text-center">
+                        <p class="h2 Titillium-Rg
+                                    pt-0">
+                            Kensington Conference <br class="d-sm-none d-block" />and Events Centre
+                        </p>
+                        <p class="address
+                                    h4 Titillium-Lt
+                                    pt-4">
+                            Kensington Town Hall, Hornton St<br />
+                            London W8 7NX, United Kingdom
+                        </p>
+                        <a class="button
+                                    h5
+                                    px-7 mt-8 mx-lg-auto" href="https://goo.gl/maps/W1Mffr2qJZGH6ENM9" target="_blank">
+                            View Map
+                        </a>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+        
+        <div id="partners" class="section-sponsors">
+            <div class="bg"></div>
+            <div class="stars d-none d-md-block"></div>
+        
+            <div class="container
+                        text-center
+                        py-11">
+                <div class="mx-auto col-12">
+                    <p class="h2 Titillium-Rg">Sponsors and<br class="d-sm-none d-block" /> Community Partners</p>
+                    <p class="h5 Titillium-Lt
+                              mt-4">
+                        Meet the organisations that make Grakn Cosmos possible.<br class="d-none d-md-block" />
+                        If you'd like to learn more about sponsorships,
+                        <a href="mailto:cosmos@grakn.ai?Subject=Grakn%20Cosmos%20Sponsorships">contact us</a>.
+                    </p>
+                    <div id="partners-list" class="row pt-7 d-flex align-items-center">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="divider"></div>
+        
+        </div>
+        
+        <div class="section-newsletter
+                            text-center
+                            position-relative">
+            <div class="wave d-none d-sm-block"></div>
+            <div class="bg"></div>
+        
+            <div class="m-spaceship d-block d-md-none"></div>
+            <div class="m-planet-pink d-block d-md-none"></div>
+        
+            <div class="container
+                                py-11">
+                <div class="section-newsletter-logo
+                                    mx-auto mb-5">
+                    <img class="w-100 h-100" src="img/logos/logo-cosmos-vertical.svg" alt="COSMOS">
+                </div>
+        
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://grakn.us8.list-manage.com/subscribe/post-json?u=b27e8984466b0dc642a917ba5&amp;id=3f1ff0278f&c=?"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                        class="validate
+                               mx-auto col-12 cl-md-8" target="_blank" novalidate>
+                        <input class="email d-none d-sm-block h5 Titillium-Lt" type="email" value="" name="EMAIL"  id="mce-EMAIL"
+                            placeholder="Stay tuned with conference updates" required>
+                        <input class="email d-block d-sm-none h5 Titillium-Lt" type="email" value="" name="EMAIL" id="mce-EMAIL"
+                            placeholder="Stay tuned" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_b27e8984466b0dc642a917ba5_3f1ff0278f" tabindex="-1" value="">
+                        </div>
+                        <button class="button
+                                       h5" type="submit" id="mc-embedded-subscribe">Subscribe</button>
+        
+                        <div id="mce-responses" class="form-messages clear">
+                            <div class="response error
+                                        d-none
+                                        Titillium-Lt" id="mce-error-response"></div>
+                            <div class="response success
+                                        d-none
+                                        Titillium-Lt" id="mce-success-response"></div>
+                        </div>
+                    </form>
+                </div>
+        
+                <div class="spaceship d-none d-md-block"></div>
+                <div class="planet-pink d-none d-md-block"></div>
+            </div>
+        </div>
+    </main>
+    <div class="large-footer
+                d-none d-md-block">
+        <div class="container
+                    py-4">
+            <div class="footer-top-line
+                        h6 Titillium-Lt
+                        pb-4 d-flex flex-wrap align-items-center justify-content-begin flex-row-reverse">
+                <a href="mailto:cosmos@grakn.ai" target="_top">cosmos@grakn.ai</a>
+                <a href="./terms" target="_blank">Terms</a>
+                <a href="./code-of-conduct" target="_blank">Code of Conduct</a>
+            </div>
+            <div class="footer-bottom-line
+                        d-flex justify-content-between align-items-center">
+                <a class="by-grakn
+                          d-flex flex-items-center flex-justify-center" href="https://grakn.ai" target="_blank">
+                    <img src="img/icons/code.svg" class="mr-2" alt="coded">
+                    <span class="mr-2">with</span>
+                    <img src="img/icons/heart.svg" class="mr-2" alt="love">
+                    <span class="mr-2">by</span>
+                    <img src="img/logos/logo-graknlabs-typeonly.svg" alt="Grakn Labs" width="100">
+                </a>
+                <div class="d-flex flex-justify-space-between align-items-center">
+                    <div class="social-links
+                                h6 Titillium-Lt
+                                d-flex flex-wrap align-items-center justify-content-begin flex-row-reverse pr-4">
+                        <a href="https://www.linkedin.com/groups/13657731/" target="_blank"><img
+                                src="img/icons/social-linked-in.svg" /></a>
+                        <a href="https://www.linkedin.com/groups/13657731/" target="_blank"><img
+                                src="img/icons/social-facebook.svg" /></a>
+                        <a href="https://twitter.com/graknlabs" target="_blank"><img
+                                src="img/icons/social-twitter.svg" /></a>
+                        <a href="https://grakn.ai/slack" target="_blank"><img src="img/icons/social-slack.svg" /></a>
+                        <a href="https://github.com/graknlabs" target="_blank"><img src="img/icons/social-github.svg" /></a>
+                    </div>
+                    <div class="h6 Titillium-Lt">
+                        <p class="m-0">
+                            <a class="m-0" href="./privacy-policy">Privacy Policy</a>
+                            / &copy; 2019 Grakn Labs Ltd
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="small-footer d-block d-md-none">
+        <div class="container">
+            <div class="social-links
+                        h6 Titillium-Lt
+                        d-flex flex-wrap align-items-center justify-content-between flex-row-reverse pt-6 mx-auto"
+                style="width: 250px">
+                <a href="https://www.linkedin.com/groups/13657731/" target="_blank"><img
+                        src="img/icons/social-linked-in.svg" /></a>
+                <a href="https://www.linkedin.com/groups/13657731/" target="_blank"><img
+                        src="img/icons/social-facebook.svg" /></a>
+                <a href="https://twitter.com/graknlabs" target="_blank"><img src="img/icons/social-twitter.svg" /></a>
+                <a href="https://grakn.ai/slack" target="_blank"><img src="img/icons/social-slack.svg" /></a>
+                <a href="https://github.com/graknlabs" target="_blank"><img src="img/icons/social-github.svg" /></a>
+            </div>
+            <div class="h6 Titillium-Lt text-center
+                        pt-6 mx-auto">
+                <p class="m-0">
+                    <a class="m-0" href="./privacy-policy">Privacy Policy</a>
+                    / &copy; 2019 Grakn Labs Ltd
+                </p>
+            </div>
+            <a class="by-grakn
+                      d-flex flex-items-center flex-justify-center flex-grow-1 mx-auto py-6" href="https://grakn.ai"
+                target="_blank" style="width: 208px">
+                <img src="img/icons/code.svg" class="mr-2" alt="coded">
+                <span class="mr-2">with</span>
+                <img src="img/icons/heart.svg" class="mr-2" alt="love">
+                <span class="mr-2">by</span>
+                <img src="img/logos/logo-graknlabs-typeonly.svg" alt="Grakn Labs" width="100">
+            </a>
+        </div>
+    </div>
+    <!-- Noscript content for added SEO -->
+    <noscript><a href="https://www.eventbrite.com/e/grakn-cosmos-2019-tickets-58504110369" rel="noopener noreferrer"
+            target="_blank"></noscript>
+    
+    <noscript></a>Buy Tickets on Eventbrite</noscript>
+    
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+    
+    <script type="text/javascript">
+        var exampleCallback = function () {
+            console.log('Order complete!');
+        };
+    
+        window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '58504110369',
+            modal: true,
+            modalTriggerElementId: 'eventbrite-widget-modal-trigger-58504110369',
+            onOrderComplete: exampleCallback
+        });
+    </script>
+    
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    
+    <script src="js/scripts.js?v=6"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72414051-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-72414051-3');
+    </script></body>
+
+</html>

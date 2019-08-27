@@ -180,7 +180,7 @@ function mobileMenu() {
 }
 
 function speakerModalHandler(speakers, profilePictures, sessions) {
-  $("#speakers-list").on("click", "li", function(e) {
+  $("#speakers-all-list, #speakers-home-list").on("click", "li", function(e) {
     if (e.target.tagName === "A" || $(e.target).parent()[0].tagName === "A") {
       return;
     }

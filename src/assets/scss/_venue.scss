@@ -30,4 +30,15 @@
       line-height: 1.5;
     }
   }
+
+  .venue-london-sm {
+    position: absolute;
+    right: 0;
+  }
+
+  .venue-details {
+    @media (max-width: 600px) {
+      margin-top: 80%;
+    }
+  }
 }

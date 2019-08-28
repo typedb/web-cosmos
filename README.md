@@ -7,8 +7,9 @@
 
 ### Develop
 
-- `npm install`
-- `npm run start:dev`
+- Install dependencies: `npm install`
+- Start the web-server and Gulp watch for file changes: `npm run start:dev`
+- Stop the web-server and the Gulp watch: `npm run stop`
 
 ### Deploy
 

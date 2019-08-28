@@ -6,10 +6,11 @@
   "author": "cosmos@grakn.ai",
   "license": "ISC",
   "scripts": {
-    "start:dev": "npm run build && NODE_ENV=development node index.js && npm run watch",
+    "start:dev": "{ npm run watch & NODE_ENV=development node index.js & }",
     "start:production": "npm run build && NODE_ENV=production NODE_PATH=./ node index.js",
     "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build",
-    "watch": "./node_modules/.bin/gulp watch"
+    "watch": "./node_modules/.bin/gulp watch --silent",
+    "stop": " pkill node & pkill gulp"
   },
   "dependencies": {
     "express": "^4.17.1",

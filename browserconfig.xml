@@ -1,11 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
-  <msapplication>
-    <tile>
-      <square70x70logo src="/icons/cosmos-128x128.png"/>
-      <square150x150logo src="/icons/cosmos-270x270.png"/>
-      <square310x310logo src="/icons/cosmos-558×558.png"/>
-      <wide310x150logo src="/icons/cosmos-558×270.png"/>
-      <TileColor>#0B0929</TileColor>
-    </tile>
-  </msapplication>
+    <msapplication>
+        <tile>
+            <square150x150logo src="/icons/mstile-150x150.png"/>
+            <TileColor>#0b0929</TileColor>
+        </tile>
+    </msapplication>
 </browserconfig>

@@ -55,14 +55,24 @@ function scssToCss() {
 }
 
 function minifyJs() {
+  return (
+    src([
+      paths.js.src,
+      "!" + "src/vendor/jquery-3.3.1.min.js",
+      "!" + "src/vendor/modernizr-3.7.1.min.js"
+    ])
+      .pipe(terser())
+      .pipe(concat("scripts.js"))
+      .pipe(dest(paths.js.dest))
+  );
+}
+
+function copyDevJs() {
   return src([
     paths.js.src,
     "!" + "src/vendor/jquery-3.3.1.min.js",
     "!" + "src/vendor/modernizr-3.7.1.min.js"
-  ])
-    .pipe(terser())
-    .pipe(concat("scripts.js"))
-    .pipe(dest(paths.js.dest));
+  ]).pipe(dest(paths.js.dest));
 }
 
 function copyFonts() {
@@ -107,7 +117,7 @@ function watchAll() {
 const buildAll = parallel(
   hbsToHtml,
   scssToCss,
-  minifyJs,
+  // minifyJs,
   copyFonts,
   copyImages,
   copyIcons,
@@ -118,5 +128,9 @@ const buildAll = parallel(
   copyRobot
 );
 
-task("build", buildAll);
+const buildProd = parallel(buildAll, minifyJs);
+const buildDev = parallel(buildAll, copyDevJs);
+
+task("build:dev", buildDev);
+task("build:prod", buildProd);
 task("watch", watchAll);

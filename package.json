@@ -6,9 +6,10 @@
   "author": "cosmos@grakn.ai",
   "license": "ISC",
   "scripts": {
-    "start:dev": "{ npm run watch & NODE_ENV=development node index.js & }",
-    "start:production": "npm run build && NODE_ENV=production NODE_PATH=./ node index.js",
-    "build": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build",
+    "start:dev": "{ npm run build:dev && npm run watch & NODE_ENV=development node index.js & }",
+    "start:prod": "npm run build:prod && NODE_ENV=production NODE_PATH=./ node index.js",
+    "build:dev": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:dev",
+    "build:prod": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:prod",
     "watch": "./node_modules/.bin/gulp watch --silent",
     "stop": " pkill node & pkill gulp"
   },

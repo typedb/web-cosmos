@@ -1,12 +1,21 @@
-$(document).ready(function() {
-  detectInView();
+$(document).ready(async function() {
+  const { speakers, sessions } = await getData();
 
+  loadHomeSpeakers(speakers);
+  loadPartners();
+
+  detectInView();
   scrollToSection();
 
-  loadPartners();
+  // common
+  checkForSpeakerModal(speakers, sessions);
+  setSpeakerModalHandlers(speakers, sessions);
+  handleHeaderOnScroll();
+  handleSubscription();
+  handleMobileMenu();
 });
 
-function detectInView() {
+const detectInView = () => {
   const windowWidth = $(window).width();
 
   if (windowWidth > 500) {
@@ -55,9 +64,9 @@ function detectInView() {
   } else {
     $("[data-animate-in]").removeAttr("data-animate-in");
   }
-}
+};
 
-function scrollToSection() {
+const scrollToSection = () => {
   $("*[data-scroll-to]").on("click touchstart:not(touchmove)", function() {
     var trigger = $(this).attr("data-scroll-to"),
       target = $("#" + trigger),
@@ -81,29 +90,21 @@ function scrollToSection() {
       ss
     );
   });
-}
+};
 
-function loadHomeSpeakers(allSpeakers, profilePictures, sessions) {
+const loadHomeSpeakers = (speakers) => {
   // number of speakers to load and display are determined by the
-  // number if `li`s that are chosen to be displayed based on the
-  // user's screen size
-  const numOfSpeakers = $("#speakers-list-hidden li").filter(function() {
-    return $(this).css("display") != "none";
-  }).length;
-
-  const displayedSpeakers = allSpeakers.slice(0, numOfSpeakers);
+  // number of `li`s that are displayed based on the screen size
+  const numOfSpeakers = $("#speakers-list-hidden li").filter(function(){ return $(this).css("display") != "none" } ).length;
+  const displayedSpeakers = speakers.slice(0, numOfSpeakers);
   for (const speaker of displayedSpeakers) {
-    $("#speakers-home-list").append(
-      generateSpeakerHtml(speaker, profilePictures.get(speaker.id))
-    );
+    $("#speakers-home-list").append(generateSpeakerHtml(speaker));
     loadSpeakerCompanyLogo(speaker);
   }
+  swapSpeakers(displayedSpeakers, speakers);
+};
 
-  swapSpeakers(displayedSpeakers, allSpeakers, profilePictures);
-  speakerModalHandler(allSpeakers, profilePictures, sessions);
-}
-
-async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
+const swapSpeakers = async(displayedSpeakers, allSpeakers) => {
   const hiddenSpeakers = allSpeakers.filter(
     speaker => !displayedSpeakers.includes(speaker)
   );
@@ -144,7 +145,7 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
 
         const nextSpeaker = hiddenSpeakers[0];
         const nextSpeakerEl = $(
-          generateSpeakerHtml(nextSpeaker, profilePictures.get(nextSpeaker.id))
+          generateSpeakerHtml(nextSpeaker)
         );
         nextSpeakerEl.hide();
 
@@ -164,7 +165,7 @@ async function swapSpeakers(displayedSpeakers, allSpeakers, profilePictures) {
   }
 }
 
-function loadPartners() {
+const loadPartners = () => {
   const partners = [
     {
       image: "taxfix.png",
@@ -259,4 +260,4 @@ function loadPartners() {
 
     $("#partners-list").append(partnerHtml);
   }
-}
+};

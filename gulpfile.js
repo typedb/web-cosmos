@@ -110,14 +110,13 @@ function copyRobot() {
 function watchAll() {
   watch(
     [paths.hbs.watch, paths.scss.watch, paths.js.watch],
-    parallel(hbsToHtml, scssToCss, minifyJs)
+    parallel(hbsToHtml, scssToCss, copyDevJs)
   );
 }
 
 const buildAll = parallel(
   hbsToHtml,
   scssToCss,
-  // minifyJs,
   copyFonts,
   copyImages,
   copyIcons,

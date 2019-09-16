@@ -7,6 +7,14 @@ $(document).ready(async function() {
   detectInView();
   scrollToSection();
 
+  const windowWidth = $(window).width();
+  $(window).resize(() => {
+    if ($(window).width() == windowWidth) return; // ignore vertical resize
+    // number of spearkers to show and the swapping behaviour is dependent on the screen size
+    // therefore we call the loadHomeSpeakers again
+    loadHomeSpeakers(speakers, sessions);
+  });
+
   // common
   handleSpeakerModalRequest(speakers, sessions);
   setSpeakerModalHandlers(speakers, sessions);
@@ -92,10 +100,13 @@ const scrollToSection = () => {
   });
 };
 
-const loadHomeSpeakers = (speakers) => {
+const loadHomeSpeakers = speakers => {
+  $("#speakers-home-list").html("");
   // number of speakers to load and display are determined by the
   // number of `li`s that are displayed based on the screen size
-  const numOfSpeakers = $("#speakers-list-hidden li").filter(function(){ return $(this).css("display") != "none" } ).length;
+  const numOfSpeakers = $("#speakers-list-hidden li").filter(function() {
+    return $(this).css("display") != "none";
+  }).length;
   const displayedSpeakers = speakers.slice(0, numOfSpeakers);
   for (const speaker of displayedSpeakers) {
     $("#speakers-home-list").append(generateSpeakerHtml(speaker));
@@ -104,7 +115,7 @@ const loadHomeSpeakers = (speakers) => {
   swapSpeakers(displayedSpeakers, speakers);
 };
 
-const swapSpeakers = async(displayedSpeakers, allSpeakers) => {
+const swapSpeakers = async (displayedSpeakers, allSpeakers) => {
   const hiddenSpeakers = allSpeakers.filter(
     speaker => !displayedSpeakers.includes(speaker)
   );
@@ -144,9 +155,7 @@ const swapSpeakers = async(displayedSpeakers, allSpeakers) => {
         );
 
         const nextSpeaker = hiddenSpeakers[0];
-        const nextSpeakerEl = $(
-          generateSpeakerHtml(nextSpeaker)
-        );
+        const nextSpeakerEl = $(generateSpeakerHtml(nextSpeaker));
         nextSpeakerEl.hide();
 
         speakerToHideEl.fadeOut(swappingSpeed, () => {
@@ -163,7 +172,7 @@ const swapSpeakers = async(displayedSpeakers, allSpeakers) => {
       }
     }
   }
-}
+};
 
 const loadPartners = () => {
   const partners = [

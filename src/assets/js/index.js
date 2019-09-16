@@ -8,7 +8,7 @@ $(document).ready(async function() {
   scrollToSection();
 
   // common
-  checkForSpeakerModal(speakers, sessions);
+  handleSpeakerModalRequest(speakers, sessions);
   setSpeakerModalHandlers(speakers, sessions);
   handleHeaderOnScroll();
   handleSubscription();

@@ -96,7 +96,7 @@ const handleMobileMenu = () => {
   $("header").attr("style", "display: block !important");
 };
 
-const checkForSpeakerModal = (speakers, sessions) => {
+const showSpeakerModal = (speakers, sessions) => {
   const hash = decodeURI(window.location.hash.replace("#", ""));
   const speakerToShow = speakers.find(speaker => speaker.fullName === hash);
   if (speakerToShow) {
@@ -108,6 +108,20 @@ const checkForSpeakerModal = (speakers, sessions) => {
     $("body").addClass("modal-is-open");
   }
 };
+
+const handleSpeakerModalRequest = (speakers, sessions) => {
+  showSpeakerModal(speakers, sessions);
+
+  window.onhashchange = () => {
+    const newHash = window.location.hash.replace("#", "");
+    if (newHash === "" || newHash === "speakers") {
+      $("#speaker-modal").removeClass("is-open");
+      $("body").removeClass("modal-is-open");
+    } else {
+      showSpeakerModal(speakers, sessions);
+    }
+  };
+}
 
 const setSpeakerModalHandlers = (speakers, sessions) => {
   $("#speakers-all-list, #speakers-home-list").on("click", "li", function (e) {

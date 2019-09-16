@@ -9,7 +9,6 @@ function requireHTTPS(req, res, next) {
     req.get("x-forwarded-proto") !== "https" &&
     process.env.NODE_ENV === "production"
   ) {
-    console.log("wtffff");
     return res.redirect("https://" + req.get("host") + req.url);
   }
   next();
@@ -33,6 +32,12 @@ const speakersPath = path.join(__dirname, "/dist/speakers.html");
 app.get("/speakers", function(req, res) {
   res.sendFile(speakersPath);
 });
+
+const sessionsPath = path.join(__dirname, "/dist/sessions.html");
+app.get("/sessions", function(req, res) {
+  res.sendFile(sessionsPath);
+});
+
 
 const termsPath = path.join(__dirname, "/dist/terms.html");
 app.get("/terms", function(req, res) {

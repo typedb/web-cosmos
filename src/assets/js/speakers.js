@@ -4,7 +4,7 @@ $(document).ready(async function() {
   setSpeakerModalHandlers(speakers, sessions);
   
   // common
-  checkForSpeakerModal(speakers, sessions);
+  handleSpeakerModalRequest(speakers, sessions);
   setSpeakerModalHandlers(speakers, sessions);
   handleHeaderOnScroll();
   handleSubscription();

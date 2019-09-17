@@ -29,11 +29,6 @@ app.get("/", function(req, res) {
   res.sendFile(homePath);
 });
 
-const sessionsPath = path.join(__dirname, "/dist/sessions.html");
-app.get("/sessions", function(req, res) {
-  res.sendFile(sessionsPath);
-});
-
 const speakersPath = path.join(__dirname, "/dist/speakers.html");
 app.get("/speakers", function(req, res) {
   res.sendFile(speakersPath);

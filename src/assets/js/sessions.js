@@ -170,10 +170,10 @@ const loadSessions = (sessions, speakers) => {
       const speakerContainers = $(this).children(".speaker-container");
       for (const speakerContainer of speakerContainers) {
         await new Promise(done => setTimeout(() => done(), 2000));
-        speakerContainers.removeClass("d-flex").addClass("d-none");
+        speakerContainers.removeClass("d-lg-flex").addClass("d-none");
         $(speakerContainer)
           .removeClass("d-none")
-          .addClass("d-flex");
+          .addClass("d-lg-flex");
       }
     }
   });
@@ -182,33 +182,35 @@ const loadSessions = (sessions, speakers) => {
 const generateSessionItem = (session, speakers, searchableText) => {
   const sessionTags = session.tags;
   let sessionItemHtml = `
-    <div class="sessions-list-item d-flex align-items-center justify-content-between" data-has-multi-speakers="${speakers.length >
+    <div class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length >
       1}" data-num-selected-tags="${sessionTags.length}">`;
   for (const [index, speaker] of speakers.entries()) {
     sessionItemHtml += `
         <div class="speaker-container ${
-          index === 0 ? "d-flex" : "d-none"
-        } align-items-center">
+          index === 0 ? "d-lg-flex" : "d-none"
+        } align-items-center flex-1">
           <div class="speaker-frame">
-            <img src="${speaker.profileImg.src}" />
+            <img src="${speaker.profileImg.src}" class="mx-auto mx-lg-0" />
           </div>
           <p class="h6 Titillium-Rg">${speaker.fullName}</p>
         </div>
     `;
   }
   sessionItemHtml += `
-        <p class="title h6 Titillium-Rg flex-grow-1">${session.title}</p>
-        <div class="tags-container h6 Titillium-Rg d-flex align-items-center">
+        <div class="session-details-container d-lg-flex flex-1 justify-content-between">
+          <p class="title h6 Titillium-Rg flex-1">${session.title}</p>
+          <div class="tags-container h6 Titillium-Rg d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end flex-1">
   `;
 
   for (sessionTag of sessionTags) {
     const tagColor = tags.find(tag => tag.name === sessionTag).color;
     sessionItemHtml += `
-        <div class="tag tag--${tagColor} selected">${sessionTag}</div>
+            <div class="tag tag--${tagColor} selected mt-2 mt-lg-0">${sessionTag}</div>
     `;
   }
 
   sessionItemHtml += `
+        </div>
       </div>
       <div class="searchable-text" style="display: none">
         ${searchableText}

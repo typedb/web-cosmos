@@ -34,6 +34,12 @@ header {
 }
 
 .page-sessions {
+
+  .container {
+    @include lg-up-to {
+      width: 94%;
+    }
+  }
   .sessions-header {
     background: linear-gradient(180deg, #0a0926 0%, #0a0632 100%);
 
@@ -392,14 +398,18 @@ header {
     #unselect-tags-btn {
       width: 130px;
       height: 40px;
+
+      border: 1px solid #FF5B5B;
+      color: #FF5B5B !important;
       line-height: 38px;
+
     }
   }
 
   .sessions-list {
     background: linear-gradient(180deg, #090631 0.95%, #100638 100%);
 
-    .searchbox {
+    input.searchbox {
       height: 40px;
       width: 100%;
 
@@ -407,14 +417,19 @@ header {
       @include border-radius(5px);
       @include box-shadow(0 0 3px 0 rgba(36,49,76,0.09));
       border: 1px solid #7C66D3;
-      color: #7C66D3;
+      color: $color-brand-secondary;
 
       margin-bottom: 15px;
       padding: 5px 15px;
+
+      @include placeholder {
+        color: #7C66D3;
+        font-size: $font-size-base * 1;
+      }
     }
 
     &-item {
-      height: 100px;
+      height: auto;
       width: 100%;
 
       background-color: #130d37;
@@ -424,9 +439,9 @@ header {
 
       &:last-child { margin-bottom: 0; }
 
+      $speaker-container-width: 280px;
       .speaker-container {
-        width: 300px;
-        padding: 20px;
+        width: $speaker-container-width;
 
         .speaker-frame {
           background: url(/img/speaker-frame.svg) no-repeat;
@@ -446,124 +461,172 @@ header {
         }
       }
 
-      .title {
-        text-align: left;
-      }
+      .session-details-container {
+        width: calc(100% - #{$speaker-container-width});
 
-      .tags-container {
-        .tag {
-          height: 30px;
-
-          @include border-radius(3px);
-          border-width: 1px;
-          border-style: solid;
+        .title {
           text-align: left;
+          margin-right: 20px !important;
+        }
 
-          padding: 2px 15px 3px 15px;
-          margin-right: 10px;
+        .tags-container {
+          .tag {
+            height: 30px;
+  
+            @include border-radius(3px);
+            border-width: 1px;
+            border-style: solid;
+            line-height: 30px;
+            text-align: left;
+  
+            padding: 0 15px;
+            margin-right: 10px;
 
-          &--green-a {
-            color: $color-tag-green-a;
-            border-color: $color-tag-green-a;
-            &.selected {
-              background-color: $color-tag-green-a;
+            &:last-child { margin-right: 20px; }
+  
+            &--green-a {
+              color: $color-tag-green-a;
+              border-color: $color-tag-green-a;
+              &.selected {
+                background-color: $color-tag-green-a;
+              }
             }
-          }
-
-          &--green-b {
-            color: $color-tag-green-b;
-            border-color: $color-tag-green-b;
-            &.selected {
-              background-color: $color-tag-green-b;
+  
+            &--green-b {
+              color: $color-tag-green-b;
+              border-color: $color-tag-green-b;
+              &.selected {
+                background-color: $color-tag-green-b;
+              }
             }
-          }
-
-          &--pink-a {
-            color: $color-tag-pink-a;
-            border-color: $color-tag-pink-a;
-            &.selected {
-              background-color: $color-tag-pink-a;
+  
+            &--pink-a {
+              color: $color-tag-pink-a;
+              border-color: $color-tag-pink-a;
+              &.selected {
+                background-color: $color-tag-pink-a;
+              }
             }
-          }
-          
-          &--pink-b {
-            color: $color-tag-pink-b;
-            border-color: $color-tag-pink-b;
-            &.selected {
-              background-color: $color-tag-pink-b;
+            
+            &--pink-b {
+              color: $color-tag-pink-b;
+              border-color: $color-tag-pink-b;
+              &.selected {
+                background-color: $color-tag-pink-b;
+              }
             }
-          }
-
-          &--orange-a {
-            color: $color-tag-orange-a;
-            border-color: $color-tag-orange-a;
-            &.selected {
-              background-color: $color-tag-orange-a;
+  
+            &--orange-a {
+              color: $color-tag-orange-a;
+              border-color: $color-tag-orange-a;
+              &.selected {
+                background-color: $color-tag-orange-a;
+              }
             }
-          }
-
-          &--orange-b {
-            color: $color-tag-orange-b;
-            border-color: $color-tag-orange-b;
-            &.selected {
-              background-color: $color-tag-orange-b;
+  
+            &--orange-b {
+              color: $color-tag-orange-b;
+              border-color: $color-tag-orange-b;
+              &.selected {
+                background-color: $color-tag-orange-b;
+              }
             }
-          }
-
-          &--blue-a {
-            color: $color-tag-blue-a;
-            border-color: $color-tag-blue-a;
-            &.selected {
-              background-color: $color-tag-blue-a;
+  
+            &--blue-a {
+              color: $color-tag-blue-a;
+              border-color: $color-tag-blue-a;
+              &.selected {
+                background-color: $color-tag-blue-a;
+              }
             }
-          }
-
-          &--blue-b {
-            color: $color-tag-blue-b;
-            border-color: $color-tag-blue-b;
-            &.selected {
-              background-color: $color-tag-blue-b;
+  
+            &--blue-b {
+              color: $color-tag-blue-b;
+              border-color: $color-tag-blue-b;
+              &.selected {
+                background-color: $color-tag-blue-b;
+              }
             }
-          }
-
-          &--blue-c {
-            color: $color-tag-blue-c;
-            border-color: $color-tag-blue-c;
-            &.selected {
-              background-color: $color-tag-blue-c;
+  
+            &--blue-c {
+              color: $color-tag-blue-c;
+              border-color: $color-tag-blue-c;
+              &.selected {
+                background-color: $color-tag-blue-c;
+              }
             }
-          }
-
-          &--blue-d {
-            color: $color-tag-blue-d;
-            border-color: $color-tag-blue-d;
-            &.selected {
-              background-color: $color-tag-blue-d;
+  
+            &--blue-d {
+              color: $color-tag-blue-d;
+              border-color: $color-tag-blue-d;
+              &.selected {
+                background-color: $color-tag-blue-d;
+              }
             }
-          }
-
-          &--yellow {
-            color: $color-tag-yellow;
-            border-color: $color-tag-yellow;
-            &.selected {
-              background-color: $color-tag-yellow;
+  
+            &--yellow {
+              color: $color-tag-yellow;
+              border-color: $color-tag-yellow;
+              &.selected {
+                background-color: $color-tag-yellow;
+              }
             }
-          }
-
-          &--purple {
-            color: $color-tag-purple;
-            border-color: $color-tag-purple;
-            &.selected {
-              background-color: $color-tag-purple;
+  
+            &--purple {
+              color: $color-tag-purple;
+              border-color: $color-tag-purple;
+              &.selected {
+                background-color: $color-tag-purple;
+              }
             }
-          }
-
-          &.selected {
-            border-color: #0a0926;
-            color: #0a0926;
+  
+            &.selected {
+              border-color: #0a0926;
+              color: #0a0926;
+            }
           }
         }
       }
+
+
+    }
+  }
+}
+
+@include lg-up-to {
+  .sessions-list {
+    .speaker-container {
+      width: 180px !important;
+    }
+
+    .session-details-container {
+      width: calc(100% - 180px) !important;
+    }
+  }
+}
+
+@include md-up-to {
+  .sessions-list {
+    .speaker-container {
+      width: 140px !important;
+    }
+
+    .session-details-container {
+      width: calc(100% - 140px) !important;
+    }
+  }
+}
+
+@include sm-up-to {
+  .page-sessions {
+    .container {
+      width: 100% !important;
+      padding: 0 16px;
+    }
+  }
+  .sessions-header {
+    .tags-container .tag-button {
+      width: 150px !important;
     }
   }
 }

@@ -14,6 +14,7 @@ $color-tag-blue-c: #1b9cfc;
 $color-tag-blue-d: #3dc1d3;
 $color-tag-yellow: #f8efba;
 $color-tag-purple: #bc6fff;
+$color-text-dark: #0a0926;
 
 main {
   padding-top: 70px;
@@ -41,7 +42,7 @@ header {
     }
   }
   .sessions-header {
-    background: linear-gradient(180deg, #0a0926 0%, #0a0632 100%);
+    background: linear-gradient(180deg, $color-text-dark 0%, #0a0632 100%);
 
     .tag-button {
       $tag-button-height: 30px;
@@ -80,7 +81,7 @@ header {
       }
 
       .tag-tooltip {
-        background-color: #0a0926;
+        background-color: $color-text-dark;
         border-width: 1px;
         border-style: solid;
         font-size: 0.75rem;
@@ -112,7 +113,7 @@ header {
         }
 
         &:after {
-          border-bottom: 8px solid #0a0926;
+          border-bottom: 8px solid $color-text-dark;
           top: -15px;
         }
       }
@@ -382,15 +383,15 @@ header {
       }
 
       &.selected {
-        border-color: #0a0926;
+        border-color: $color-text-dark;
         span {
-          color: #0a0926;
+          color: $color-text-dark;
         }
         .tooltip-container {
-          border-color: #0a0926;
+          border-color: $color-text-dark;
 
           .icon {
-            color: #0a0926;
+            color: $color-text-dark;
           }
         }
       }
@@ -582,8 +583,8 @@ header {
             }
   
             &.selected {
-              border-color: #0a0926;
-              color: #0a0926;
+              border-color: $color-text-dark;
+              color: $color-text-dark;
             }
           }
         }

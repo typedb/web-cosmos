@@ -8,7 +8,80 @@ const getData = async () => {
   speakers = formatSpeakers(speakers);
 
   const levels = categories.filter(cat => cat.groupTitle === "Level");
-  const tags = categories.filter(cat => cat.groupTitle === "Tags");
+  const tags = [
+    {
+      name: "#analytics",
+      color: "green-a",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#devtools",
+      color: "pink-a",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#expertsystem",
+      color: "blue-a",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#finance",
+      color: "yellow",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#grakndev",
+      color: "blue-b",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#iot",
+      color: "orange-a",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#lifescience",
+      color: "orange-b",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#ml",
+      color: "blue-b",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#nlp",
+      color: "pink-b",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#robotics",
+      color: "blue-c",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#security",
+      color: "purple",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    },
+    {
+      name: "#telecom",
+      color: "blue-d",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+    }
+  ];
   
   return {
     speakers,

@@ -52,10 +52,11 @@ header {
       @include border-radius(3px);
       border-width: 1px;
       border-style: solid;
+      line-height: 27px;
       text-align: left;
       cursor: pointer;
 
-      padding: 2px 15px 3px 15px;
+      padding: 0 15px;
       display: inline;
       position: relative;
       margin: 10px;
@@ -476,7 +477,7 @@ header {
             @include border-radius(3px);
             border-width: 1px;
             border-style: solid;
-            line-height: 30px;
+            line-height: 27px;
             text-align: left;
   
             padding: 0 15px;

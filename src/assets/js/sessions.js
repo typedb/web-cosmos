@@ -5,6 +5,8 @@ $(document).ready(async function() {
 
   loadSessions(sessions, speakers, tags);
   setSessionsListHandlers();
+
+  respondToParams();
   
   handleModalRequest(speakers, sessions);
   window.onhashchange = () => { handleModalRequest(speakers, sessions); };
@@ -23,7 +25,7 @@ const loadTags = tags => {
 const generateTagButton = tag => {
   const { name, color, description } = tag;
   return `
-    <div class='tag-button tag-button--${color} selected'>
+    <div class='tag-button tag-button--${color}'>
         <span class="tag h6 Titillium-Rg">${name}</span>
         <div class="tooltip-container">
             <div class='icon icon-info' />
@@ -33,25 +35,71 @@ const generateTagButton = tag => {
     `;
 };
 
+const respondToParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has('tags')) {
+    const selectedTags = urlParams.get('tags').split(',');
+    console.log(selectedTags);
+    
+    selectedTags.forEach(tag => {
+      $(`.tag-button .tag:contains(${tag})`).trigger('click');
+    });
+  }
+
+  if (urlParams.has('searched')) {
+    const searchedValue = urlParams.get('searched');
+    $("#sessions-list-searchbox").val(searchedValue).trigger('keyup');
+  }
+}
+
 const toggleTagSelection = tag => { $(tag).toggleClass("selected").trigger("tag-selection-changed"); };
 const showTagTooltop = container => { $(container).siblings(".tag-tooltip").show(); };
 const hideTagTooltop = container => { $(container).siblings(".tag-tooltip").hide(); };
 const unselectAllTags = () => { $(".tag-button").removeClass("selected").trigger("tag-selection-changed"); };
 
-const showSessionTagsAsSelection = (tagName) => { $(`.sessions-list-item .tag:contains(${tagName})`).addClass("selected").trigger("session-item-tag-selection-changed"); };
-const showSessionTagsAsUnselection = (tagName) => { $(`.sessions-list-item .tag:contains(${tagName})`).removeClass("selected").trigger("session-item-tag-selection-changed"); }
+const updateTagsInParams = async (tagName) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('tags')) {
+    const selectedTagsRaw = urlParams.get('tags');
+    const selectedTags = selectedTagsRaw.split(',');
+    if (!selectedTags.includes(tagName)) {
+      selectedTags.push(tagName);
+    }
+    urlParams.set("tags", selectedTags.join(','));
+  } else {
+    urlParams.set("tags", tagName);
+  }
+  
+  const originalUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  const newUrl = originalUrl + "?" + urlParams.toString();
+  window.history.pushState({ path: newUrl }, '', newUrl);
+}
+
+const showSessionTagsAsSelected = (tagName) => {
+  updateTagsInParams(tagName);
+  $(`.sessions-list-item .tag:contains(${tagName})`).addClass("selected").trigger("session-item-tag-selection-changed"); 
+};
+const showSessionTagsAsUnselected = (tagName) => { $(`.sessions-list-item .tag:contains(${tagName})`).removeClass("selected").trigger("session-item-tag-selection-changed"); }
 
 const setTagsHandlers = () => {
   $(".tag-button").on("click", function() { toggleTagSelection(this); });
   $(".tooltip-container").on("mouseover", function() { showTagTooltop(this); });
   $(".tooltip-container").on("mouseleave", function() { hideTagTooltop(this); });
-  $("#unselect-tags-btn").on("click", () => { unselectAllTags(); });
+  $("#unselect-tags-btn.active").on("click", () => { unselectAllTags(); });
 
   $(".tag-button").on("tag-selection-changed", function() {
     const isTagSelected = $(this).hasClass("selected");
     const tagName = $(this).find(".tag").html();
-    isTagSelected ? showSessionTagsAsSelection(tagName) : showSessionTagsAsUnselection(tagName);
+    isTagSelected ? showSessionTagsAsSelected(tagName) : showSessionTagsAsUnselected(tagName);
     $("#sessions-list").trigger("tags-changed");
+
+    const noTagsSelected = $('.tag-button.selected').length === 0;
+    if (noTagsSelected) {
+      $('#unselect-tags-btn').removeClass('active');
+    } else {
+      $('#unselect-tags-btn').addClass('active');
+    }
   });
 };
 
@@ -76,9 +124,8 @@ const loadSessions = (sessions, speakers) => {
 };
 
 const generateSessionItem = (session, speakers, searchableText) => {
-  const sessionTags = session.tags;
   let sessionItemHtml = `
-    <a href="#session-${session.title}" class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="${sessionTags.length}">`;
+    <a href="#session-${session.title}" class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="0">`;
   
   // show the first speaker and hide the ones after
   // in loadSessions, we swap them in intervals
@@ -100,7 +147,7 @@ const generateSessionItem = (session, speakers, searchableText) => {
           <div class="tags-container h6 Titillium-Rg d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end flex-1">
   `;
 
-  sessionItemHtml += session.tags.map(tag => `<div class="tag tag--${tag.color} selected mt-2 mt-lg-0">${tag.name}</div>`).join('');
+  sessionItemHtml += session.tags.map(tag => `<div class="tag tag--${tag.color} mt-2 mt-lg-0">${tag.name}</div>`).join('');
 
   sessionItemHtml += `
         </div>
@@ -140,6 +187,14 @@ const getSearchableText = (session, speakers) => {
 const hideUnSearchedSessions = () => { $(".sessions-list-item[data-search-count='0']").removeClass("d-flex").addClass("d-none"); };
 const showSearchedSessions = () => { $(".sessions-list-item:not([data-search-count='0'])").addClass("d-flex").removeClass("d-none"); };
 
+const updateSrarchedInParams = (searchedValue) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  urlParams.set('searched', searchedValue);
+  const originalUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  const newUrl = originalUrl + "?" + urlParams.toString();
+  window.history.pushState({ path: newUrl }, '', newUrl);
+};
+
 const setSessionsListHandlers = () => {
   $(".sessions-list-item .tag").on("session-item-tag-selection-changed", function() {
       const container = $(this).parents(".sessions-list-item");
@@ -161,7 +216,7 @@ const setSessionsListHandlers = () => {
 
   $("#sessions-list-searchbox").on("keyup", function() {
     const searchValue = $(this).val();
-
+    
     if (searchValue !== "") {
       $(".sessions-list-item").each(function() {
         const searchableText = $(this).find(".searchable-text").html();
@@ -176,10 +231,11 @@ const setSessionsListHandlers = () => {
         "#sessions-list",
         ".sessions-list-item",
         "desc"
-      );
-    }
-
+        );
+      }
+      
     setTimeout(() => {
+      updateSrarchedInParams(searchValue);
       hideUnSearchedSessions();
       showSearchedSessions();
       sortChildrenBy(

@@ -1,11 +1,11 @@
 $(document).ready(async function() {
   const { speakers, sessions } = await getData();
   loadAllSpeakers(speakers);
-  setSpeakerModalHandlers(speakers, sessions);
   
   // common
-  handleSpeakerModalRequest(speakers, sessions);
-  setSpeakerModalHandlers(speakers, sessions);
+  handleModalRequest(speakers, sessions);
+  window.onhashchange = () => { handleModalRequest(speakers, sessions); };
+  setModalHandlers();
   handleHeaderOnScroll();
   handleSubscription();
   handleMobileMenu();

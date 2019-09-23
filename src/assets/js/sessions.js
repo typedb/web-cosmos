@@ -5,7 +5,10 @@ $(document).ready(async function() {
 
   loadSessions(sessions, speakers, tags);
   setSessionsListHandlers();
-
+  
+  handleModalRequest(speakers, sessions);
+  window.onhashchange = () => { handleModalRequest(speakers, sessions); };
+  setModalHandlers();
   handleHeaderOnScroll();
   handleSubscription();
   handleMobileMenu();
@@ -52,11 +55,11 @@ const setTagsHandlers = () => {
   });
 };
 
-const loadSessions = (sessions, speakers, tags) => {
+const loadSessions = (sessions, speakers) => {
   for (const session of sessions) {
     const sessionSpeakers = speakers.filter(speaker => session.speakers.includes(speaker.id));
-    const searchableText = getSearchableText(session, sessionSpeakers, tags);
-    $("#sessions-list").append(generateSessionItem(session, sessionSpeakers, searchableText, tags));
+    const searchableText = getSearchableText(session, sessionSpeakers);
+    $("#sessions-list").append(generateSessionItem(session, sessionSpeakers, searchableText));
   }
 
   // handle swapping of speaker for sessions with multiple speakers
@@ -72,10 +75,10 @@ const loadSessions = (sessions, speakers, tags) => {
   });
 };
 
-const generateSessionItem = (session, speakers, searchableText, tags) => {
+const generateSessionItem = (session, speakers, searchableText) => {
   const sessionTags = session.tags;
   let sessionItemHtml = `
-    <div class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="${sessionTags.length}">`;
+    <a href="#session-${session.title}" class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="${sessionTags.length}">`;
   
   // show the first speaker and hide the ones after
   // in loadSessions, we swap them in intervals
@@ -97,12 +100,7 @@ const generateSessionItem = (session, speakers, searchableText, tags) => {
           <div class="tags-container h6 Titillium-Rg d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end flex-1">
   `;
 
-  for (sessionTag of sessionTags) {
-    const tagColor = tags.find(tag => tag.name === sessionTag).color;
-    sessionItemHtml += `
-            <div class="tag tag--${tagColor} selected mt-2 mt-lg-0">${sessionTag}</div>
-    `;
-  }
+  sessionItemHtml += session.tags.map(tag => `<div class="tag tag--${tag.color} selected mt-2 mt-lg-0">${tag.name}</div>`).join('');
 
   sessionItemHtml += `
         </div>
@@ -110,14 +108,14 @@ const generateSessionItem = (session, speakers, searchableText, tags) => {
       <div class="searchable-text" style="display: none">
         ${searchableText}
       </div>
-    </div>`;
+    </a>`;
 
   return sessionItemHtml;
 };
 
 // concatenate all text relating to a session in 
 // which keywords provided by the user are search 
-const getSearchableText = (session, speakers, tags) => {
+const getSearchableText = (session, speakers) => {
   let searchableText = "";
   for (const speaker of speakers) {
     const { fullName, bio, company: { title: companyTitle } } = speaker;
@@ -131,9 +129,9 @@ const getSearchableText = (session, speakers, tags) => {
   searchableText += title + " ";
   searchableText += description + " ";
 
-  for (const sessionTag of session.tags) {
-    searchableText += sessionTag + " ";
-    searchableText += tags.find(tag => tag.name === sessionTag).description + " ";
+  for (const tag of session.tags) {
+    searchableText += tag.name + " ";
+    searchableText += tag.description + " ";
   }
 
   return searchableText;

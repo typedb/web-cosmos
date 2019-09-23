@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixins";
+
 @import "./newsletter";
 
 $color-tag-green-a: #55e6c1;
@@ -411,6 +412,11 @@ header {
   .sessions-list {
     background: linear-gradient(180deg, #090631 0.95%, #100638 100%);
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     input.searchbox {
       height: 40px;
       width: 100%;
@@ -473,124 +479,10 @@ header {
 
         .tags-container {
           .tag {
-            height: 30px;
-  
-            @include border-radius(3px);
-            border-width: 1px;
-            border-style: solid;
-            line-height: 27px;
-            text-align: left;
-  
-            padding: 0 15px;
-            margin-right: 10px;
-
-            &:last-child { margin-right: 20px; }
-  
-            &--green-a {
-              color: $color-tag-green-a;
-              border-color: $color-tag-green-a;
-              &.selected {
-                background-color: $color-tag-green-a;
-              }
-            }
-  
-            &--green-b {
-              color: $color-tag-green-b;
-              border-color: $color-tag-green-b;
-              &.selected {
-                background-color: $color-tag-green-b;
-              }
-            }
-  
-            &--pink-a {
-              color: $color-tag-pink-a;
-              border-color: $color-tag-pink-a;
-              &.selected {
-                background-color: $color-tag-pink-a;
-              }
-            }
-            
-            &--pink-b {
-              color: $color-tag-pink-b;
-              border-color: $color-tag-pink-b;
-              &.selected {
-                background-color: $color-tag-pink-b;
-              }
-            }
-  
-            &--orange-a {
-              color: $color-tag-orange-a;
-              border-color: $color-tag-orange-a;
-              &.selected {
-                background-color: $color-tag-orange-a;
-              }
-            }
-  
-            &--orange-b {
-              color: $color-tag-orange-b;
-              border-color: $color-tag-orange-b;
-              &.selected {
-                background-color: $color-tag-orange-b;
-              }
-            }
-  
-            &--blue-a {
-              color: $color-tag-blue-a;
-              border-color: $color-tag-blue-a;
-              &.selected {
-                background-color: $color-tag-blue-a;
-              }
-            }
-  
-            &--blue-b {
-              color: $color-tag-blue-b;
-              border-color: $color-tag-blue-b;
-              &.selected {
-                background-color: $color-tag-blue-b;
-              }
-            }
-  
-            &--blue-c {
-              color: $color-tag-blue-c;
-              border-color: $color-tag-blue-c;
-              &.selected {
-                background-color: $color-tag-blue-c;
-              }
-            }
-  
-            &--blue-d {
-              color: $color-tag-blue-d;
-              border-color: $color-tag-blue-d;
-              &.selected {
-                background-color: $color-tag-blue-d;
-              }
-            }
-  
-            &--yellow {
-              color: $color-tag-yellow;
-              border-color: $color-tag-yellow;
-              &.selected {
-                background-color: $color-tag-yellow;
-              }
-            }
-  
-            &--purple {
-              color: $color-tag-purple;
-              border-color: $color-tag-purple;
-              &.selected {
-                background-color: $color-tag-purple;
-              }
-            }
-  
-            &.selected {
-              border-color: $color-text-dark;
-              color: $color-text-dark;
-            }
+            @include tag;
           }
         }
       }
-
-
     }
   }
 }

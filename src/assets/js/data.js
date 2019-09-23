@@ -2,12 +2,8 @@ const getData = async () => {
   let { speakers, sessions, categories } = await $.get(
     "https://sessionize.com/api/v2/pixtt19d/view/all"
   );
+  console.log(sessions);
   
-  categories = formatCategories(categories);
-  sessions = formatSessions(sessions, categories);
-  speakers = formatSpeakers(speakers);
-
-  const levels = categories.filter(cat => cat.groupTitle === "Level");
   const tags = [
     {
       name: "#analytics",
@@ -82,6 +78,12 @@ const getData = async () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
     }
   ];
+
+  categories = formatCategories(categories);
+  sessions = formatSessions(sessions, categories, tags);
+  speakers = formatSpeakers(speakers);
+
+  const levels = categories.filter(cat => cat.groupTitle === "Level");
   
   return {
     speakers,
@@ -104,7 +106,7 @@ const formatCategories = categories => {
     .reduce(collect, []);
 };
 
-const formatSessions = (sessions, categories) => {
+const formatSessions = (sessions, categories, tags) => {
   return sessions.map(session => {
     const {
       id,
@@ -117,12 +119,12 @@ const formatSessions = (sessions, categories) => {
     } = session;
 
     let level = "";
-    const tags = [];
+    const sessionTags = [];
     if (categoryItems) {
       categoryItems.forEach(catItemId => {
         const catItem = categories.find(cat => cat.id === catItemId);
         if (catItem.groupTitle === "Level") level = catItem.name;
-        if (catItem.groupTitle === "Tags") tags.push(catItem.name);
+        if (catItem.groupTitle === "Tags") sessionTags.push(tags.find(tag => tag.name === catItem.name));
       });
     }
 
@@ -133,7 +135,7 @@ const formatSessions = (sessions, categories) => {
       title,
       description,
       level,
-      tags,
+      tags: sessionTags,
       speakers,
       hasMultipleSpeakers,
       // apart from start and end time, we also need the day
@@ -152,7 +154,8 @@ const formatSpeakers = speakers => {
       bio,
       fullName,
       questionAnswers,
-      profilePicture
+      profilePicture,
+      sessions,
     } = speaker;
 
     const profileImg = new Image();
@@ -210,7 +213,8 @@ const formatSpeakers = speakers => {
         twitter: twitterUrl,
         github: githubUrl,
         linkedin: linkedinUrl
-      }
+      },
+      sessions
     };
   });
 };

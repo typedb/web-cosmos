@@ -3,7 +3,7 @@ const getData = async () => {
     "https://sessionize.com/api/v2/pixtt19d/view/all"
   );
   console.log(sessions);
-  
+
   const tags = [
     {
       name: "#analytics",
@@ -81,10 +81,11 @@ const getData = async () => {
 
   categories = formatCategories(categories);
   sessions = formatSessions(sessions, categories, tags);
+  console.log(sessions);
   speakers = formatSpeakers(speakers);
 
   const levels = categories.filter(cat => cat.groupTitle === "Level");
-  
+
   return {
     speakers,
     sessions,
@@ -114,6 +115,7 @@ const formatSessions = (sessions, categories, tags) => {
       description,
       startsAt,
       endsAt,
+      roomId,
       speakers,
       categoryItems
     } = session;
@@ -124,11 +126,35 @@ const formatSessions = (sessions, categories, tags) => {
       categoryItems.forEach(catItemId => {
         const catItem = categories.find(cat => cat.id === catItemId);
         if (catItem.groupTitle === "Level") level = catItem.name;
-        if (catItem.groupTitle === "Tags") sessionTags.push(tags.find(tag => tag.name === catItem.name));
+        if (catItem.groupTitle === "Tags")
+          sessionTags.push(tags.find(tag => tag.name === catItem.name));
       });
     }
 
     const hasMultipleSpeakers = speakers.length > 1;
+
+    function pad(num, size) {
+      var s = num + "";
+      while (s.length < size) s = "0" + s;
+      return s;
+    }
+
+    const startDate = new Date(startsAt);
+    let startTime = pad(startDate.getHours() % 12 || 12, 2);
+    startTime += ':';
+    startTime += pad(startDate.getMinutes(), 2);
+    startTime += startDate.getHours() >= 12 ? ' pm' : ' am';
+
+    const day = startDate.getDay() === 4 ? 1 : 2;
+
+    let room = "";
+    if (roomId === 8354) {
+      room = "Great Hall";
+    } else if (roomId === 8355) {
+      room = "Small Hall";
+    } else if (roomId === 8356) {
+      room = "Council Chamber";
+    }
 
     return {
       id,
@@ -138,10 +164,9 @@ const formatSessions = (sessions, categories, tags) => {
       tags: sessionTags,
       speakers,
       hasMultipleSpeakers,
-      // apart from start and end time, we also need the day
-      // on which the session takes place i.e. Day 1 or Day 2
-      startsAt,
-      endsAt
+      day,
+      startTime,
+      room
     };
   });
 };
@@ -155,7 +180,7 @@ const formatSpeakers = speakers => {
       fullName,
       questionAnswers,
       profilePicture,
-      sessions,
+      sessions
     } = speaker;
 
     const profileImg = new Image();

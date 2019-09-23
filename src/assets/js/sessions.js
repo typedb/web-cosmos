@@ -137,7 +137,7 @@ const getSearchableText = (session, speakers) => {
   return searchableText;
 };
 
-const hideUnSearchedSessions = () => { $(".sessions-list-item[data-search-count='0'").removeClass("d-flex").addClass("d-none"); };
+const hideUnSearchedSessions = () => { $(".sessions-list-item[data-search-count='0']").removeClass("d-flex").addClass("d-none"); };
 const showSearchedSessions = () => { $(".sessions-list-item:not([data-search-count='0'])").addClass("d-flex").removeClass("d-none"); };
 
 const setSessionsListHandlers = () => {

@@ -2,7 +2,14 @@
 
 #session-modal {
 
-  .custom-modal-body { position: relative }
+  .custom-modal-body { 
+    position: relative;
+    
+    @include lg-up-to {
+      padding: 150px 0 0 0;
+      // margin: 0 auto;
+    }
+  }
 
   .planet-blue {
     @include absolute-background(245px, 245px, 0, auto, no-repeat);
@@ -10,24 +17,28 @@
     background-image: url(/img/planet-blue-dark.svg);
     background-position: center center;
 
-    right: 130px;
+    right: 0px;
     top: 90px;
     z-index: -8;
 
     @include lg-up-to {
-      top: 530px;
-      right: 30px;
+      background-size: 185px 185px;
     }
 
-    @include sm-up-to {
-      width: 120px;
-      background-size: 120px 120px;
-      top: 350px;
+    @include md-up-to {
+      display: none;
     }
   }
 
   #title {
     width: calc(100% - 245px);
+    @include md-up-to {
+      width: 100%;
+    }
+  }
+
+  #day, #time {
+    width: 100px;
   }
 
   #tags {
@@ -35,6 +46,10 @@
       @include tag;
       line-height: 29px;
     }
+  }
+
+  #description {
+    white-space: pre-line;
   }
 
   #speakers {

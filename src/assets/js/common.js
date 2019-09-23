@@ -246,7 +246,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
 
 const populateSessionModal = (session, speakers) => {
   console.log(speakers);
-  const { title, description } = session;
+  const { title, description, day, startTime, room } = session;
   
   let sessionTagsHtml = '';
   for (const tag of session.tags) {
@@ -256,7 +256,7 @@ const populateSessionModal = (session, speakers) => {
   let speakersHtml = '';
   for (const speaker of speakers) {
     speakersHtml += `
-    <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4">
+    <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4 mb-4 mb-md-0">
       <div class="speaker-frame">
         <img src="${speaker.profileImg.src}" />
       </div>
@@ -269,6 +269,10 @@ const populateSessionModal = (session, speakers) => {
   }
 
   $('#title').html(title);
+  $('#day').html(`Day ${day}`);
+  $('#date').html(day === 1 ? '6 February 2020' : '7 February 2020');
+  $('#time').html(startTime);
+  $('#room').html(room);
   $('#tags').html(sessionTagsHtml);
   $('#description').html(description);
   $('#speakers').html(speakersHtml);

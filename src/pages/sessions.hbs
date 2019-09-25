@@ -21,7 +21,12 @@
 
     <div class="sessions-list pb-10">
         <div class="container text-center">
-            <input id="sessions-list-searchbox" class="searchbox" type="text" placeholder="Search sessions" />
+            <div class="searchbox-container">
+                <input id="sessions-list-searchbox" class="searchbox Titillium-Rg" type="text" placeholder="Search sessions" />
+                <div class="searchbox-clear-btn">
+                    
+                </div>
+            </div>
             <div id="sessions-list"></div>
         </div>
     </div>
@@ -33,6 +38,7 @@
 {{/inline}}
 
 {{#*inline "scripts-block"}}
+<script src="/js/vendor/fuse.min.js?v=8"></script>
 <script src="/js/sessions.js?v=8"></script>
 {{/inline}}
 

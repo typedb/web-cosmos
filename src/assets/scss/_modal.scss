@@ -4,6 +4,7 @@
 
   background: rgb(10, 9, 38);
   background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(16, 6, 56, 1) 100%);
+  overflow-y: scroll;
 
   display: none;
   position: fixed;
@@ -74,8 +75,11 @@
   }
 
   &-content {
+    min-height: calc(100% - 220px);
     max-width: 1400px;
-    height: 100%;
+    width: 86%;
+
+    border-bottom: 1px solid #4446B6;
 
     margin: 0 auto;
     position: relative;
@@ -92,41 +96,78 @@
     }
   }
 
-  &-sidebar {
-    position: relative;
-
-    width: calc(50% - 200px);
-    min-width: 200px;
-
-    float: left;
-    padding: 100px;
-  }
-
   &-body {
-    width: calc(50% - 100px);
-
-    max-height: calc(100% - 240px);
-
-    float: right;
-    padding: 120px 100px 120px 0;
-
-    &--no-sidebar {
-      width: 960px;
-      padding-left: 0;
-      float: none;
-      margin: 0 auto;
-    }
+    padding-top: 120px;
+    padding-bottom: 40px;
 
     @include lg-up-to {
-      width: 86%;
-      max-height: calc(100%);
-      padding: 0;
-      float: none;
       margin: 0 auto;
     }
 
     @include sm-up-to {
       max-height: calc(100% + 300px);
+    }
+  }
+
+  &-footer {
+    height: 200px;
+    width: 100%;
+
+    background: url(/img/modal-footer-bg.svg) no-repeat;
+    background-size: cover;
+
+    margin-top: 20px;
+    position: relative;
+
+    @media (max-width: 1370px) {
+      background-size: contain;
+    }
+
+    @include sm-up-to {
+      background-size: cover;
+    }
+
+    .spaceship {
+      @include absolute-background(103px, 136px, 0px, 103px 136px, no-repeat);
+
+      background-image: url(/img/spaceship.svg);
+      background-position: center center;
+
+      bottom: 30px;
+      left: 60px;
+      z-index: 0;
+    }
+
+    .planet-pink {
+      @include absolute-background(111px, 111px, 0, 111px 111px, no-repeat);
+
+      background-image: url(/img/planet-pink-medium.svg);
+      background-position: center center;
+
+      bottom: 45px;
+      right: 52px;
+      z-index: 0;
+
+      @include sm-up-to {
+        height: 65px;
+        width: 65px;
+
+        background-size: 65px 65px;
+
+        bottom: none;
+        top: 23px !important;
+        right: 20px !important;
+      }
+    }
+
+    img {
+      height: 107px;
+      width: 142px;
+
+      margin: 0 auto;
+      position: absolute;
+      top: calc(50% - 53px);
+      left: calc(50% - 71px);
     }
   }
 }

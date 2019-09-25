@@ -40,7 +40,6 @@ const respondToParams = () => {
 
   if (urlParams.has('tags')) {
     const selectedTags = urlParams.get('tags').split(',');
-    console.log(selectedTags);
     
     selectedTags.forEach(tag => {
       $(`.tag-button .tag:contains(${tag})`).trigger('click');
@@ -53,12 +52,7 @@ const respondToParams = () => {
   }
 }
 
-const toggleTagSelection = tag => { $(tag).toggleClass("selected").trigger("tag-selection-changed"); };
-const showTagTooltop = container => { $(container).siblings(".tag-tooltip").show(); };
-const hideTagTooltop = container => { $(container).siblings(".tag-tooltip").hide(); };
-const unselectAllTags = () => { $(".tag-button").removeClass("selected").trigger("tag-selection-changed"); };
-
-const updateTagsInParams = async (tagName) => {
+const updateTagsInParams = (tagName) => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has('tags')) {
     const selectedTagsRaw = urlParams.get('tags');
@@ -76,6 +70,22 @@ const updateTagsInParams = async (tagName) => {
   window.history.pushState({ path: newUrl }, '', newUrl);
 }
 
+const clearTagsInParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  urlParams.set("tags", '');
+  const originalUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  const newUrl = originalUrl + "?" + urlParams.toString();
+  window.history.pushState({ path: newUrl }, '', newUrl);
+};
+
+const toggleTagSelection = tag => { $(tag).toggleClass("selected").trigger("tag-selection-changed"); };
+const showTagTooltop = container => { $(container).siblings(".tag-tooltip").show(); };
+const hideTagTooltop = container => { $(container).siblings(".tag-tooltip").hide(); };
+const unselectAllTags = () => { 
+  $(".tag-button").removeClass("selected").trigger("tag-selection-changed");
+  clearTagsInParams();
+};
+
 const showSessionTagsAsSelected = (tagName) => {
   updateTagsInParams(tagName);
   $(`.sessions-list-item .tag:contains(${tagName})`).addClass("selected").trigger("session-item-tag-selection-changed"); 
@@ -86,7 +96,7 @@ const setTagsHandlers = () => {
   $(".tag-button").on("click", function() { toggleTagSelection(this); });
   $(".tooltip-container").on("mouseover", function() { showTagTooltop(this); });
   $(".tooltip-container").on("mouseleave", function() { hideTagTooltop(this); });
-  $("#unselect-tags-btn.active").on("click", () => { unselectAllTags(); });
+  $("#unselect-tags-btn").on("click", (e) => { if ($(e.target).hasClass('active')) unselectAllTags(); });
 
   $(".tag-button").on("tag-selection-changed", function() {
     const isTagSelected = $(this).hasClass("selected");
@@ -125,7 +135,7 @@ const loadSessions = (sessions, speakers) => {
 
 const generateSessionItem = (session, speakers, searchableText) => {
   let sessionItemHtml = `
-    <a href="#session-${session.title}" class="sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="0">`;
+    <div data-hash="#session-${session.title}" class="opens-modal sessions-list-item d-flex align-items-center p-3" data-has-multi-speakers="${speakers.length > 1}" data-num-selected-tags="0">`;
   
   // show the first speaker and hide the ones after
   // in loadSessions, we swap them in intervals
@@ -155,7 +165,7 @@ const generateSessionItem = (session, speakers, searchableText) => {
       <div class="searchable-text" style="display: none">
         ${searchableText}
       </div>
-    </a>`;
+    </div>`;
 
   return sessionItemHtml;
 };
@@ -218,6 +228,7 @@ const setSessionsListHandlers = () => {
     const searchValue = $(this).val();
     
     if (searchValue !== "") {
+      
       $(".sessions-list-item").each(function() {
         const searchableText = $(this).find(".searchable-text").html();
         const searchRegExp = new RegExp(searchValue, "gi");

@@ -2,7 +2,6 @@ const getData = async () => {
   let { speakers, sessions, categories } = await $.get(
     "https://sessionize.com/api/v2/pixtt19d/view/all"
   );
-  console.log(sessions);
 
   const tags = [
     {
@@ -80,9 +79,8 @@ const getData = async () => {
   ];
 
   categories = formatCategories(categories);
-  sessions = formatSessions(sessions, categories, tags);
-  console.log(sessions);
   speakers = formatSpeakers(speakers);
+  sessions = formatSessions(sessions, categories, tags, speakers);
 
   const levels = categories.filter(cat => cat.groupTitle === "Level");
 
@@ -107,16 +105,15 @@ const formatCategories = categories => {
     .reduce(collect, []);
 };
 
-const formatSessions = (sessions, categories, tags) => {
+const formatSessions = (sessions, categories, tags, speakers) => {
   return sessions.map(session => {
     const {
       id,
       title,
       description,
       startsAt,
-      endsAt,
       roomId,
-      speakers,
+      speakers: speakerIds,
       categoryItems
     } = session;
 
@@ -131,13 +128,11 @@ const formatSessions = (sessions, categories, tags) => {
       });
     }
 
-    const hasMultipleSpeakers = speakers.length > 1;
-
-    function pad(num, size) {
+    const pad = (num, size) => {
       var s = num + "";
       while (s.length < size) s = "0" + s;
       return s;
-    }
+    };
 
     const startDate = new Date(startsAt);
     let startTime = pad(startDate.getHours() % 12 || 12, 2);
@@ -156,14 +151,16 @@ const formatSessions = (sessions, categories, tags) => {
       room = "Council Chamber";
     }
 
+    const speakerDetails = speakers.filter(speaker => speakerIds.includes(speaker.id));
+
     return {
       id,
       title,
       description,
       level,
       tags: sessionTags,
-      speakers,
-      hasMultipleSpeakers,
+      speakers: speakerIds,
+      speakerDetails,
       day,
       startTime,
       room

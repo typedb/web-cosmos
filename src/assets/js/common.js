@@ -109,7 +109,7 @@ const showSpeakerModal = (speakers, sessions) => {
 };
 
 const showSessionModal = (sessions, speakers) => {
-  const sessionTitle = decodeURI(window.location.hash.replace("#session-", ""));
+  const sessionTitle = decodeURI(window.location.hash.replace("#session-", "").split('?')[0]);
   const sessionToShow = sessions.find(session => session.title === sessionTitle);
 
   if (sessionToShow) {
@@ -148,6 +148,10 @@ const setModalHandlers = (speakers, sessions) => {
     } else {
       window.history.pushState("", document.title, window.location.pathname);
     }
+  });
+
+  $('.opens-modal').click(function () {
+    window.location.hash = $(this).data('hash');
   });
 };
 
@@ -245,12 +249,12 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
 };
 
 const populateSessionModal = (session, speakers) => {
-  console.log(speakers);
-  const { title, description, day, startTime, room } = session;
+  const { title, description, day, startTime, room, level } = session;
   
-  let sessionTagsHtml = '';
+  let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white">${level}</div>`;
+  
   for (const tag of session.tags) {
-    sessionTagsHtml += `<div class="tag tag--${tag.color}">${tag.name}</div>`;
+    sessionTagsHtml += `<div class="Titillium-Rg tag tag--${tag.color}">${tag.name}</div>`;
   }
 
   let speakersHtml = '';

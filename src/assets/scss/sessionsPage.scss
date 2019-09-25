@@ -402,9 +402,16 @@ header {
       width: 130px;
       height: 40px;
 
-      border: 1px solid #FF5B5B;
-      color: #FF5B5B !important;
+      border: 1px solid #7C66D3;
+      color: #7C66D3 !important;
       line-height: 38px;
+      cursor: not-allowed;
+
+      &.active {
+        background-color: #7C66D3 !important;
+        color: #0A0927 !important;
+        cursor: pointer;
+      }
 
     }
   }
@@ -417,22 +424,34 @@ header {
       text-decoration: none;
     }
 
-    input.searchbox {
-      height: 40px;
-      width: 100%;
+    .searchbox-container {
+      position: relative;
 
-      background: none;
-      @include border-radius(5px);
-      @include box-shadow(0 0 3px 0 rgba(36,49,76,0.09));
-      border: 1px solid #7C66D3;
-      color: $color-brand-secondary;
+      input.searchbox {
+        height: 40px;
+        width: 100%;
+  
+        background: none;
+        @include border-radius(5px);
+        @include box-shadow(0 0 3px 0 rgba(36,49,76,0.09));
+        border: 1px solid #7C66D3;
+        color: $color-brand-secondary;
+  
+        margin-bottom: 15px;
+        padding: 5px 15px;
+  
+        @include placeholder {
+          color: #7C66D3;
+          font-size: $font-size-base * 1;
+        }
+      }
 
-      margin-bottom: 15px;
-      padding: 5px 15px;
-
-      @include placeholder {
-        color: #7C66D3;
-        font-size: $font-size-base * 1;
+      .searchbox-clear-btn {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
 

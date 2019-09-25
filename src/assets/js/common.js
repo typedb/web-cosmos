@@ -143,7 +143,7 @@ const setModalHandlers = (speakers, sessions) => {
   $(".custom-modal-close").click(function() {
     $(".custom-modal").removeClass("is-open");
     $("body").removeClass("modal-is-open");
-    if ($("#speakers").length) {
+    if ($("#page-home #speakers").length) {
       window.location.hash = "speakers";
     } else {
       window.history.pushState("", document.title, window.location.pathname);

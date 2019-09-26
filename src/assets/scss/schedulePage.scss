@@ -208,6 +208,11 @@ header {
 								max-height: 3.9em;
 							}
 						}
+
+						.speaker-name {
+							display: inline-block;
+							float: left;
+						}
 					}
 					
 					.room {

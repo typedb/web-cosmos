@@ -202,7 +202,7 @@ const updateSrarchedInParams = (searchedValue) => {
   urlParams.set('searched', searchedValue);
   const originalUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
   const newUrl = originalUrl + "?" + urlParams.toString();
-  window.history.pushState({ path: newUrl }, '', newUrl);
+  window.history.pushState({ path: newUrl }, '', newUrl + window.location.hash);  
 };
 
 const setSessionsListHandlers = () => {

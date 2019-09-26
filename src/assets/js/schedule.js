@@ -1,28 +1,28 @@
 $(document).ready(async function() {
-  // const { tags, sessions, speakers } = await getData();
-  // loadTags(tags);
-  // setTagsHandlers();
-
-  // loadSessions(sessions, speakers, tags);
-  // setSessionsListHandlers();
-
-  // respondToParams();
-
-  // handleModalRequest(speakers, sessions);
-  // window.onhashchange = () => { handleModalRequest(speakers, sessions); };
-  const { sessions } = await getData();
+  const { sessions, speakers } = await getData();
   const scheduleData = getScheduleData(sessions);
   loadSchedule(scheduleData, 1);
   truncateSessionTitles();
 
   $(".day-switcher-option").on("click", function() {
     $(".day-switcher-option").removeClass("selected");
-    $(this).toggleClass("selected");
+		$(this).toggleClass("selected");
 
     const selectedDay = $(this).data("value");
-    loadSchedule(scheduleData, parseInt(selectedDay));
-  });
+		
+		const urlParams = new URLSearchParams(window.location.search);
+		urlParams.set('day', selectedDay);
+		const originalUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+		const newUrl = originalUrl + "?" + urlParams.toString();
+		window.history.pushState({ path: newUrl }, '', newUrl + window.location.hash);
 
+    loadSchedule(scheduleData, parseInt(selectedDay));
+	});
+	
+	respondToParams();
+
+	handleModalRequest(speakers, sessions);
+  window.onhashchange = () => { handleModalRequest(speakers, sessions); };
   setModalHandlers();
   handleHeaderOnScroll();
   handleSubscription();
@@ -33,8 +33,16 @@ const truncateSessionTitles = () => {
   Array.prototype.slice
     .call(document.getElementsByClassName("clamped-session-title"))
     .forEach(x => $clamp(x, { clamp: 3 }));
-  // $clamp(document.getElementsByClassName('clamped-session-title'), { clamp: 3 })
 };
+
+const respondToParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has('day')) {
+		const selectedDay = urlParams.get('day');
+		$(`.day-switcher-option[data-value=${selectedDay}]`).trigger('click');
+  }
+}
 
 const getScheduleData = sessions => {
   const scheduleData = {
@@ -155,15 +163,15 @@ const generateScheduleSession = data => {
   };
 
   return `
-		<div class="session d-flex align-items-center border-left-color-${
+		<div class="opens-modal session d-flex align-items-center border-left-color-${
       roomClassMap[room]
-    } ${isKeynote ? "is-keynote" : ""}">
-			<div class="speaker-frame flex-1">
+    } ${isKeynote ? "is-keynote" : ""}" data-hash="#session-${title}">
+			<div class="speaker-frame flex-">
 				<img src="${profileImg.src}" class="mx-auto mx-lg-0" />
 			</div>
 			<div class="details">
 				<p class="title clamped-session-title h6 Titillium-Rg text-left">${title}</p>
-				<p class="h6 Titillium-Rg text-color-brand text-left">${fullName}</p>
+				<p class="speaker-name opens-modal h6 Titillium-Rg text-color-brand text-left" data-hash="#speaker-${fullName}">${fullName}</p>
 			</div>
 			<p class="room d-block d-sm-none color-${roomClassMap[room]}">${room}</p>
 		</div>

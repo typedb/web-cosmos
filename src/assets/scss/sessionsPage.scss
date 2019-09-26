@@ -15,7 +15,6 @@ $color-tag-blue-c: #1b9cfc;
 $color-tag-blue-d: #3dc1d3;
 $color-tag-yellow: #f8efba;
 $color-tag-purple: #bc6fff;
-$color-text-dark: #0a0926;
 
 main {
   padding-top: 70px;
@@ -36,7 +35,6 @@ header {
 }
 
 .page-sessions {
-
   .container {
     @include lg-up-to {
       width: 94%;

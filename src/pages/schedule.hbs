@@ -1,0 +1,44 @@
+{{#> layouts/base title="Cosmos | Schedule" url-prefix="./"}}
+
+{{#*inline "head-block"}}
+<link rel="stylesheet" href="/css/schedulePage.css?v=8">
+{{/inline}}
+
+{{#*inline "content-block"}}
+
+<div class="page-schedule">
+    <div class="schedule-header container text-center pt-10 pb-3">
+        <div class="mx-auto col-12 cl-md-10">
+            <div class="day-switcher d-flex">
+                <div class="day-switcher-option day-one selected" data-value="1">
+                    <p class="day h4 Titillium-Md">Day 1</p>
+                    <p class="date h5 Titillium-Rg">Thursday, 6 February 2020</p>
+                </div>
+                <div class="day-switcher-option day-two" data-value="2">
+                    <p class="day h4 Titillium-Md">Day 2</p>
+                    <p class="date h5 Titillium-Rg">Friday, 7 February 2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="schedule-container container text-center pb-10">
+        <div class="schedule-content-header d-none d-lg-flex justify-content-around">
+            <p class="great-hall h4 Titillium-Rg">Great Hall</p>
+            <p class="small-hall h4 Titillium-Rg">Small Hall</p>
+            <p class="council-chamber h4 Titillium-Rg">Council Chamber</p>
+        </div>
+        <div class="schedule-content"></div>
+    </div>
+</div>
+
+
+{{> includes/newsletter }}
+
+{{/inline}}
+
+{{#*inline "scripts-block"}}
+<script src="/js/schedule.js?v=8"></script>
+{{/inline}}
+
+{{/layouts/base}}

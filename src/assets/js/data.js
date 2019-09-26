@@ -8,75 +8,76 @@ const getData = async () => {
       name: "#analytics",
       color: "green-a",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Deriving insights directly from data, via any number of analytical methodologies"
     },
     {
       name: "#devtools",
       color: "pink-a",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Tools built on Grakn specifically to help software developers"
     },
     {
       name: "#expertsystem",
       color: "blue-a",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Expert Systems aim to answer user questions with embedded expertise"
     },
     {
       name: "#finance",
       color: "yellow",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Applications of Knowledge Graphs for the finance sector"
     },
     {
       name: "#grakndev",
       color: "blue-b",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Stories of the development of Grakn itself, its infrastructure and research"
     },
     {
       name: "#iot",
       color: "orange-a",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Applications of Knowledge Graphs for the Internet of Things"
     },
     {
       name: "#lifescience",
       color: "orange-b",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Modelling, ingesting and analysing data from the Life Sciences"
     },
     {
       name: "#ml",
       color: "blue-b",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Machine Learning in the age of Knowledges Graphs"
     },
     {
       name: "#nlp",
       color: "pink-b",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Natural Language Processing"
     },
     {
       name: "#robotics",
       color: "blue-c",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "How the Knowledge Graph is empowering the cutting edge of robotics research"
     },
     {
       name: "#security",
       color: "purple",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Network modelling and how this can be used to counter and anticipate threats"
     },
     {
       name: "#telecom",
       color: "blue-d",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus ante mattis tellus mattis convallis. Morbi ultricies dolor ut nisi."
+        "Applications of the Knowledge Graph to the telecommunications sector"
     }
   ];
+  
 
   categories = formatCategories(categories);
   speakers = formatSpeakers(speakers);
@@ -114,8 +115,14 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       startsAt,
       roomId,
       speakers: speakerIds,
-      categoryItems
+      categoryItems,
+      questionAnswers
     } = session;
+
+    const keynoteQId = 17054;
+    const isKeynoteAnswer = questionAnswers.find(qa => qa.questionId === keynoteQId);
+    
+    const isKeynote = isKeynoteAnswer ? true : false;
 
     let level = "";
     const sessionTags = [];
@@ -163,7 +170,8 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       speakerDetails,
       day,
       startTime,
-      room
+      room,
+      isKeynote
     };
   });
 };

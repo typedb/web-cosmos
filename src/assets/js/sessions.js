@@ -7,6 +7,9 @@ $(document).ready(async function() {
   setSessionsListHandlers();
 
   respondToParams();
+
+  $('.menu-item').removeClass('selected');
+  $('#menu-item-sessions').addClass('selected');
   
   handleModalRequest(speakers, sessions);
   window.onhashchange = () => { handleModalRequest(speakers, sessions); };

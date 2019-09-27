@@ -2,6 +2,9 @@ $(document).ready(async function() {
   const { speakers, sessions } = await getData();
   loadAllSpeakers(speakers);
   
+  $('.menu-item').removeClass('selected');
+  $('#menu-item-speakers').addClass('selected');
+
   // common
   handleModalRequest(speakers, sessions);
   window.onhashchange = () => { handleModalRequest(speakers, sessions); };

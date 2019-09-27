@@ -1,3 +1,7 @@
+$(document).ready(async function() {
+  
+});
+
 const handleHeaderOnScroll = () => {
   $(window).on("scroll", function() {
     scrollPosition = $(this).scrollTop();

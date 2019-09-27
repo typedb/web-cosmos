@@ -1,3 +1,7 @@
+$(document).ready(async function() {
+  
+});
+
 const handleHeaderOnScroll = () => {
   $(window).on("scroll", function() {
     scrollPosition = $(this).scrollTop();
@@ -97,60 +101,61 @@ const handleMobileMenu = () => {
 };
 
 const showSpeakerModal = (speakers, sessions) => {
-  const hash = decodeURI(window.location.hash.replace("#", ""));
-  const speakerToShow = speakers.find(speaker => speaker.fullName === hash);
+  const speakerName = decodeURI(window.location.hash.replace("#speaker-", ""));
+  const speakerToShow = speakers.find(speaker => speaker.fullName === speakerName);
   if (speakerToShow) {
-    const speakerSessions = sessions.filter(session =>
-      session.speakers.includes(speakerToShow.id)
-    );
+    $('.custom-modal.is-open').removeClass('is-open');
+    const speakerSessions = sessions.filter(session => session.speakers.includes(speakerToShow.id));
     populateSpeakerModal(speakerToShow, speakerSessions, speakers);
     $("#speaker-modal").addClass("is-open");
     $("body").addClass("modal-is-open");
   }
 };
 
-const handleSpeakerModalRequest = (speakers, sessions) => {
-  showSpeakerModal(speakers, sessions);
+const showSessionModal = (sessions, speakers) => {
+  const sessionTitle = decodeURI(window.location.hash.replace("#session-", "").split('?')[0]);
+  const sessionToShow = sessions.find(session => session.title === sessionTitle);
 
-  window.onhashchange = () => {
-    const newHash = window.location.hash.replace("#", "");
-    if (newHash === "" || newHash === "speakers") {
+  if (sessionToShow) {
+    $('.custom-modal.is-open').removeClass('is-open');
+    const sessionSpeakers = speakers.filter(speaker => speaker.sessions.includes(Number(sessionToShow.id)));
+    populateSessionModal(sessionToShow, sessionSpeakers);
+    $("#session-modal").addClass("is-open");
+    $("body").addClass("modal-is-open");
+  }
+};
+
+const handleModalRequest = (speakers, sessions) => {
+  const newHash = window.location.hash.replace("#", "");
+  const modalType = newHash.split('-')[0];
+
+  switch (modalType) {
+    case "speaker":
+      showSpeakerModal(speakers, sessions);
+      break;
+    case "session":
+      showSessionModal(sessions, speakers);
+      break;
+    default:
       $("#speaker-modal").removeClass("is-open");
       $("body").removeClass("modal-is-open");
-    } else {
-      showSpeakerModal(speakers, sessions);
-    }
-  };
+      break;
+  }
 }
 
-const setSpeakerModalHandlers = (speakers, sessions) => {
-  $("#speakers-all-list, #speakers-home-list").on("click", "li", function (e) {
-    // clicking a hyperlink does not open speaker modal but the link that's been clicked
-    if (e.target.tagName === "A" || $(e.target).parent()[0].tagName === "A")
-      return;
-
-    const selectedSpeakerId = $(this).data("speaker-id");
-    const speaker = speakers.find(speaker => speaker.id === selectedSpeakerId);
-
-    const speakerSessions = sessions.filter(session =>
-      session.speakers.includes(speaker.id)
-    );
-
-    populateSpeakerModal(speaker, speakerSessions, speakers);
-
-    $("#speaker-modal").addClass("is-open");
-    $("body").addClass("modal-is-open");
-    window.location.hash = speaker.fullName;
-  });
-
-  $("#speaker-modal-close").click(function() {
-    $("#speaker-modal").removeClass("is-open");
+const setModalHandlers = (speakers, sessions) => {
+  $(".custom-modal-close").click(function() {
+    $(".custom-modal").removeClass("is-open");
     $("body").removeClass("modal-is-open");
-    if ($("#speakers").length) {
+    if ($("#page-home #speakers").length) {
       window.location.hash = "speakers";
     } else {
       window.history.pushState("", document.title, window.location.pathname);
     }
+  });
+
+  $('.opens-modal').click(function () {
+    window.location.hash = $(this).data('hash');
   });
 };
 
@@ -217,12 +222,10 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
       let coSpeakerNote = "";
       if (coSpeakers.length) {
         coSpeakerNote =
-          "<br /><br /><span class='cospeaker-note'> This is a joined session with ";
+          "<br /><br /><span class='cospeaker-note'> This is a joint session with ";
         coSpeakers.forEach((coSpeakerId, index) => {
-          const coSpeaker = speakers.find(
-            coSpeaker => coSpeaker.id === coSpeakerId
-          );
-          coSpeakerNote += `<a class='speaker-link' href='#${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
+          const coSpeaker = speakers.find(coSpeaker => coSpeaker.id === coSpeakerId);
+          coSpeakerNote += `<a class='speaker-link' href='#speaker-${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
           if (index < coSpeakers.length - 3) {
             coSpeakerNote += ", ";
           } else if (index < coSpeakers.length - 2) {
@@ -247,6 +250,40 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
   $("#bio").html(bio);
   $("#sessions").html(sessionsHtml);
 
+};
+
+const populateSessionModal = (session, speakers) => {
+  const { title, description, day, startTime, room, level } = session;
+  
+  let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white">${level}</div>`;
+  
+  for (const tag of session.tags) {
+    sessionTagsHtml += `<div class="Titillium-Rg tag tag--${tag.color}">${tag.name}</div>`;
+  }
+
+  let speakersHtml = '';
+  for (const speaker of speakers) {
+    speakersHtml += `
+    <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4 mb-4 mb-md-0">
+      <div class="speaker-frame">
+        <img src="${speaker.profileImg.src}" />
+      </div>
+      <div class="speaker-details">
+        <p class="h5 Titillium-Rg">${speaker.fullName}</p>
+        <p class="h6 Titillium-Rg">${speaker.position.short}</p>
+      </div>
+    </a>
+    `
+  }
+
+  $('#title').html(title);
+  $('#day').html(`Day ${day}`);
+  $('#date').html(day === 1 ? '6 February 2020' : '7 February 2020');
+  $('#time').html(startTime);
+  $('#room').html(room);
+  $('#tags').html(sessionTagsHtml);
+  $('#description').html(description);
+  $('#speakers').html(speakersHtml);
 };
 
 const loadSpeakerCompanyLogo = speaker => {
@@ -299,12 +336,14 @@ const generateSpeakerHtml = speaker => {
 
   return `
         <li class="speaker" data-speaker-id="${id}">
+          <a href="#speaker-${fullName}">
             <div class="speaker-frame">
                 <img class="profile-picture" src="${profileImg.src}" />
             </div>
             <p class="fullname h5 Titillium-Rg pt-2">${fullName}</p>
             <p class="position h6 Titillium-Lt pt-1">${shortPosition}</p>
             <a href="${companyUrl}" target="_blank" class="company-logo"></a>
+          </a>
         </li>
     `;
 };

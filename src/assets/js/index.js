@@ -15,9 +15,9 @@ $(document).ready(async function() {
     loadHomeSpeakers(speakers, sessions);
   });
 
-  // common
-  handleSpeakerModalRequest(speakers, sessions);
-  setSpeakerModalHandlers(speakers, sessions);
+  handleModalRequest(speakers, sessions);
+  window.onhashchange = () => { handleModalRequest(speakers, sessions); };
+  setModalHandlers();
   handleHeaderOnScroll();
   handleSubscription();
   handleMobileMenu();

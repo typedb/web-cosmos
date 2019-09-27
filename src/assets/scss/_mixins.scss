@@ -75,25 +75,170 @@
 
 // media queries
 @mixin sm-up-to {
-  @media (max-width: 576px) { @content; }
+  @media (max-width: 576px) {
+    @content;
+  }
 }
 
 @mixin md-up-to {
-  @media (max-width: 768px) { @content; }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin md-only {
-  @media (min-width: 768px) { @content; }
+  @media (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin lg-up-to {
-  @media (max-width: 1024px) { @content; }
+  @media (max-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin lg-only {
-  @media (min-width: 1024px) { @content; }
+  @media (min-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin xl-up-to {
-  @media (max-width: 1920px) { @content; }
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+
+@mixin tag {
+  $color-tag-green-a: #55e6c1;
+  $color-tag-green-b: #9aecdb;
+  $color-tag-pink-a: #fd72a2;
+  $color-tag-pink-b: #ffa9e8;
+  $color-tag-orange-a: #f97f51;
+  $color-tag-orange-b: #eab543;
+  $color-tag-blue-a: #74b9ff;
+  $color-tag-blue-b: #25ccf7;
+  $color-tag-blue-c: #1b9cfc;
+  $color-tag-blue-d: #3dc1d3;
+  $color-tag-yellow: #f8efba;
+  $color-tag-purple: #bc6fff;
+  $color-text-dark: #0a0926;
+
+  height: 30px;
+
+  @include border-radius(5px);
+  border-width: 1px;
+  border-style: solid;
+  line-height: 27px;
+  text-align: left;
+
+  padding: 0 15px;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &--green-a {
+    color: $color-tag-green-a;
+    border-color: $color-tag-green-a;
+    &.selected {
+      background-color: $color-tag-green-a;
+    }
+  }
+
+  &--green-b {
+    color: $color-tag-green-b;
+    border-color: $color-tag-green-b;
+    &.selected {
+      background-color: $color-tag-green-b;
+    }
+  }
+
+  &--pink-a {
+    color: $color-tag-pink-a;
+    border-color: $color-tag-pink-a;
+    &.selected {
+      background-color: $color-tag-pink-a;
+    }
+  }
+
+  &--pink-b {
+    color: $color-tag-pink-b;
+    border-color: $color-tag-pink-b;
+    &.selected {
+      background-color: $color-tag-pink-b;
+    }
+  }
+
+  &--orange-a {
+    color: $color-tag-orange-a;
+    border-color: $color-tag-orange-a;
+    &.selected {
+      background-color: $color-tag-orange-a;
+    }
+  }
+
+  &--orange-b {
+    color: $color-tag-orange-b;
+    border-color: $color-tag-orange-b;
+    &.selected {
+      background-color: $color-tag-orange-b;
+    }
+  }
+
+  &--blue-a {
+    color: $color-tag-blue-a;
+    border-color: $color-tag-blue-a;
+    &.selected {
+      background-color: $color-tag-blue-a;
+    }
+  }
+
+  &--blue-b {
+    color: $color-tag-blue-b;
+    border-color: $color-tag-blue-b;
+    &.selected {
+      background-color: $color-tag-blue-b;
+    }
+  }
+
+  &--blue-c {
+    color: $color-tag-blue-c;
+    border-color: $color-tag-blue-c;
+    &.selected {
+      background-color: $color-tag-blue-c;
+    }
+  }
+
+  &--blue-d {
+    color: $color-tag-blue-d;
+    border-color: $color-tag-blue-d;
+    &.selected {
+      background-color: $color-tag-blue-d;
+    }
+  }
+
+  &--yellow {
+    color: $color-tag-yellow;
+    border-color: $color-tag-yellow;
+    &.selected {
+      background-color: $color-tag-yellow;
+    }
+  }
+
+  &--purple {
+    color: $color-tag-purple;
+    border-color: $color-tag-purple;
+    &.selected {
+      background-color: $color-tag-purple;
+    }
+  }
+
+  &.selected {
+    border-color: $color-text-dark;
+    color: $color-text-dark;
+  }
 }

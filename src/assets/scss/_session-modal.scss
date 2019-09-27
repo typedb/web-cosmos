@@ -1,0 +1,76 @@
+@import "./modal";
+
+#session-modal {
+
+  .custom-modal-body { 
+    position: relative;
+
+    padding-left: 0;
+    margin: 0 auto;
+    
+    @include lg-up-to {
+      padding: 150px 0 40px 0;
+    }
+  }
+
+  .planet-blue {
+    @include absolute-background(245px, 245px, 0, auto, no-repeat);
+
+    background-image: url(/img/planet-blue-dark.svg);
+    background-position: center center;
+
+    right: 0px;
+    top: 90px;
+    z-index: -8;
+
+    @include lg-up-to {
+      background-size: 185px 185px;
+    }
+
+    @include md-up-to {
+      display: none;
+    }
+  }
+
+  #title {
+    width: calc(100% - 245px);
+    @include md-up-to {
+      width: 100%;
+    }
+  }
+
+  #day, #time {
+    width: 100px;
+  }
+
+  #tags {
+    .tag {
+      @include tag;
+      line-height: 29px;
+    }
+  }
+
+  #description {
+    white-space: pre-line;
+  }
+
+  #speakers {
+    a { color: inherit; text-decoration: none; }
+    .speaker-frame {
+      background: url(/img/speaker-frame.svg) no-repeat;
+      background-size: 60px 60px;
+      transition: all 0.2s ease-in-out;
+
+      background-position: top center;
+      padding: 5px;
+      margin-right: 10px;
+
+      img {
+        height: 50px;
+        width: 50px;
+        @include border-radius(50%);
+        display: block;
+      }
+    }
+  }
+}

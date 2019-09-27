@@ -1,6 +1,15 @@
 @import "./variables";
 @import "./mixins";
 @import "./fonts";
+@import "./icons";
+
+@import "./speaker-modal";
+@import "./session-modal";
+
+
+.tooltipster-base {
+  position: absolute;
+}
 
 /*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -310,6 +319,13 @@ button {
     background-color: darken($color-brand-primary, 5%);
     text-decoration: none;
     bottom: 0;
+  }
+
+  &.button-outlines {
+    background: transparent !important;
+    border: 1px solid $color-brand-primary;
+    color: $color-brand-primary !important;
+    font-weight: 400 !important;
   }
 }
 

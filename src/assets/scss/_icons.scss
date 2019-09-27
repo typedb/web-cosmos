@@ -1,0 +1,46 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before {
+  content: "\e907";
+}
+.icon-info:before {
+  content: "\e908";
+}
+.icon-menu:before {
+  content: "\e909";
+}
+.icon-blog:before {
+  content: "\e900";
+}
+.icon-facebook-footer:before {
+  content: "\e901";
+}
+.icon-git-hub:before {
+  content: "\e902";
+}
+.icon-lin-footer:before {
+  content: "\e903";
+}
+.icon-slack-footer:before {
+  content: "\e904";
+}
+.icon-twitter-footer:before {
+  content: "\e905";
+}
+.icon-twitter:before {
+  content: "\e906";
+}

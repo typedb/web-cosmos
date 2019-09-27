@@ -2,14 +2,88 @@ const getData = async () => {
   let { speakers, sessions, categories } = await $.get(
     "https://sessionize.com/api/v2/pixtt19d/view/all"
   );
-  
+
+  const tags = [
+    {
+      name: "#analytics",
+      color: "green-a",
+      description:
+        "Deriving insights from a Knowledge Graph, via any number of methodologies"
+    },
+    {
+      name: "#devtools",
+      color: "pink-a",
+      description:
+        "Tools built with Grakn specifically to help software developers"
+    },
+    {
+      name: "#expertsystem",
+      color: "blue-a",
+      description:
+        "Expert Systems aim to answer user questions with embedded expertise"
+    },
+    {
+      name: "#finance",
+      color: "yellow",
+      description:
+        "Applications of the Knowledge Graph in the finance sector"
+    },
+    {
+      name: "#grakndev",
+      color: "blue-b",
+      description:
+        "Stories of the development of Grakn itself, its infrastructure and research"
+    },
+    {
+      name: "#iot",
+      color: "orange-a",
+      description:
+        "Applications of the Knowledge Graph for the Internet of Things"
+    },
+    {
+      name: "#lifescience",
+      color: "orange-b",
+      description:
+        "Modelling, ingesting and analysing data from the Life Sciences"
+    },
+    {
+      name: "#ml",
+      color: "blue-b",
+      description:
+        "New approaches for Machine Learning in the age of Knowledge Graphs"
+    },
+    {
+      name: "#nlp",
+      color: "pink-b",
+      description:
+        "Augmenting or utilising Natural Language Processing with Knowledge Graphs"
+    },
+    {
+      name: "#robotics",
+      color: "blue-c",
+      description:
+        "How the Knowledge Graph is empowering the cutting edge of robotics research"
+    },
+    {
+      name: "#security",
+      color: "purple",
+      description:
+        "Network modelling and how this can be used to counter and anticipate threats"
+    },
+    {
+      name: "#telecom",
+      color: "blue-d",
+      description:
+        "Applications of the Knowledge Graph in the telecommunications sector"
+    }
+  ];  
+
   categories = formatCategories(categories);
-  sessions = formatSessions(sessions, categories);
   speakers = formatSpeakers(speakers);
+  sessions = formatSessions(sessions, categories, tags, speakers);
 
   const levels = categories.filter(cat => cat.groupTitle === "Level");
-  const tags = categories.filter(cat => cat.groupTitle === "Tags");
-  
+
   return {
     speakers,
     sessions,
@@ -31,42 +105,65 @@ const formatCategories = categories => {
     .reduce(collect, []);
 };
 
-const formatSessions = (sessions, categories) => {
+const formatSessions = (sessions, categories, tags, speakers) => {
   return sessions.map(session => {
     const {
       id,
       title,
       description,
       startsAt,
-      endsAt,
-      speakers,
+      roomId,
+      speakers: speakerIds,
       categoryItems
     } = session;
 
     let level = "";
-    const tags = [];
+    const sessionTags = [];
     if (categoryItems) {
       categoryItems.forEach(catItemId => {
         const catItem = categories.find(cat => cat.id === catItemId);
         if (catItem.groupTitle === "Level") level = catItem.name;
-        if (catItem.groupTitle === "Tags") tags.push(catItem.name);
+        if (catItem.groupTitle === "Tags")
+          sessionTags.push(tags.find(tag => tag.name === catItem.name));
       });
     }
 
-    const hasMultipleSpeakers = speakers.length > 1;
+    const pad = (num, size) => {
+      var s = num + "";
+      while (s.length < size) s = "0" + s;
+      return s;
+    };
+
+    const startDate = new Date(startsAt);
+    let startTime = pad(startDate.getHours() % 12 || 12, 2);
+    startTime += ':';
+    startTime += pad(startDate.getMinutes(), 2);
+    startTime += startDate.getHours() >= 12 ? ' pm' : ' am';
+
+    const day = startDate.getDay() === 4 ? 1 : 2;
+
+    let room = "";
+    if (roomId === 8354) {
+      room = "Great Hall";
+    } else if (roomId === 8355) {
+      room = "Small Hall";
+    } else if (roomId === 8356) {
+      room = "Council Chamber";
+    }
+
+    const speakerDetails = speakers.filter(speaker => speakerIds.includes(speaker.id));
 
     return {
       id,
       title,
       description,
       level,
-      tags,
-      speakers,
-      hasMultipleSpeakers,
-      // apart from start and end time, we also need the day
-      // on which the session takes place i.e. Day 1 or Day 2
-      startsAt,
-      endsAt
+      tags: sessionTags,
+      speakers: speakerIds,
+      speakerDetails,
+      day,
+      startTime,
+      room
     };
   });
 };
@@ -79,7 +176,8 @@ const formatSpeakers = speakers => {
       bio,
       fullName,
       questionAnswers,
-      profilePicture
+      profilePicture,
+      sessions
     } = speaker;
 
     const profileImg = new Image();
@@ -137,7 +235,8 @@ const formatSpeakers = speakers => {
         twitter: twitterUrl,
         github: githubUrl,
         linkedin: linkedinUrl
-      }
+      },
+      sessions
     };
   });
 };

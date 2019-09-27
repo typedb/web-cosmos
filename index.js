@@ -22,6 +22,7 @@ app.use("/css", express.static(__dirname + "/dist/css"));
 app.use("/js", express.static(__dirname + "/dist/js"));
 app.use("/img", express.static(__dirname + "/dist/img"));
 app.use("/icons", express.static(__dirname + "/dist/icons"));
+app.use("/fonts", express.static(__dirname + "/dist/fonts"));
 
 const homePath = path.join(__dirname, "/dist/index.html");
 app.get("/", function(req, res) {

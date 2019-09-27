@@ -1,0 +1,546 @@
+@import "./variables";
+@import "./mixins";
+
+@import "./newsletter";
+
+$color-tag-green-a: #55e6c1;
+$color-tag-green-b: #9aecdb;
+$color-tag-pink-a: #fd72a2;
+$color-tag-pink-b: #ffa9e8;
+$color-tag-orange-a: #f97f51;
+$color-tag-orange-b: #eab543;
+$color-tag-blue-a: #74b9ff;
+$color-tag-blue-b: #25ccf7;
+$color-tag-blue-c: #1b9cfc;
+$color-tag-blue-d: #3dc1d3;
+$color-tag-yellow: #f8efba;
+$color-tag-purple: #bc6fff;
+$color-text-dark: #0a0926;
+
+main {
+  padding-top: 70px;
+
+  &:before {
+    background-color: #190d47;
+    content: "";
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+header {
+  background-color: #190d47 !important;
+  display: block !important;
+}
+
+.page-sessions {
+
+  .container {
+    @include lg-up-to {
+      width: 94%;
+    }
+  }
+  .sessions-header {
+    background: linear-gradient(180deg, $color-text-dark 0%, #0a0632 100%);
+
+    .tag-button {
+      $tag-button-height: 30px;
+      $tag-button-width: 176px;
+      height: $tag-button-height;
+      width: $tag-button-width;
+
+      @include border-radius(5px);
+      border-width: 1px;
+      border-style: solid;
+      line-height: 27px;
+      text-align: left;
+      cursor: pointer;
+
+      padding: 0 15px;
+      display: inline;
+      position: relative;
+      margin: 10px;
+
+      .tooltip-container {
+        height: 100%;
+        width: 35px;
+
+        border-left-width: 1px;
+        border-left-style: solid;
+
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .icon {
+          width: 15px;
+          margin: 6px auto;
+        }
+      }
+
+      .tag-tooltip {
+        background-color: $color-text-dark;
+        border-width: 1px;
+        border-style: solid;
+        font-size: 0.75rem;
+        line-height: 1.375rem;
+        @include border-radius(5px);
+        position: absolute;
+        top: $tag-button-height + 10;
+        left: 0;
+        padding: 0.75rem;
+        display: none;
+        z-index: 9999;
+
+        &:before,
+        &:after {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          right: 10px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid transparent;
+        }
+
+        &:before {
+          border-bottom-width: 8px;
+          border-bottom-style: solid;
+          top: -17px;
+        }
+
+        &:after {
+          border-bottom: 8px solid $color-text-dark;
+          top: -15px;
+        }
+      }
+
+      &--green-a {
+        span {
+          color: $color-tag-green-a;
+        }
+        border-color: $color-tag-green-a;
+        .tooltip-container {
+          border-color: $color-tag-green-a;
+          .icon {
+            color: $color-tag-green-a;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-green-a;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-green-a;
+          &:before {
+            border-bottom-color: $color-tag-green-a;
+          }
+        }
+      }
+
+      &--green-b {
+        span {
+          color: $color-tag-green-b;
+        }
+        border-color: $color-tag-green-b;
+        .tooltip-container {
+          border-color: $color-tag-green-b;
+          .icon {
+            color: $color-tag-green-b;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-green-b;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-green-b;
+          &:before {
+            border-bottom-color: $color-tag-green-b;
+          }
+        }
+      }
+
+      &--pink-a {
+        span {
+          color: $color-tag-pink-a;
+        }
+        border-color: $color-tag-pink-a;
+        .tooltip-container {
+          border-color: $color-tag-pink-a;
+          .icon {
+            color: $color-tag-pink-a;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-pink-a;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-pink-a;
+          &:before {
+            border-bottom-color: $color-tag-pink-a;
+          }
+        }
+      }
+
+      &--pink-b {
+        span {
+          color: $color-tag-pink-b;
+        }
+        border-color: $color-tag-pink-b;
+        .tooltip-container {
+          border-color: $color-tag-pink-b;
+          .icon {
+            color: $color-tag-pink-b;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-pink-b;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-pink-b;
+          &:before {
+            border-bottom-color: $color-tag-pink-b;
+          }
+        }
+      }
+
+      &--orange-a {
+        span {
+          color: $color-tag-orange-a;
+        }
+        border-color: $color-tag-orange-a;
+        .tooltip-container {
+          border-color: $color-tag-orange-a;
+          .icon {
+            color: $color-tag-orange-a;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-orange-a;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-orange-a;
+          &:before {
+            border-bottom-color: $color-tag-orange-a;
+          }
+        }
+      }
+
+      &--orange-b {
+        span {
+          color: $color-tag-orange-b;
+        }
+        border-color: $color-tag-orange-b;
+        .tooltip-container {
+          border-color: $color-tag-orange-b;
+          .icon {
+            color: $color-tag-orange-b;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-orange-b;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-orange-b;
+          &:before {
+            border-bottom-color: $color-tag-orange-b;
+          }
+        }
+      }
+
+      &--blue-a {
+        span {
+          color: $color-tag-blue-a;
+        }
+        border-color: $color-tag-blue-a;
+        .tooltip-container {
+          border-color: $color-tag-blue-a;
+          .icon {
+            color: $color-tag-blue-a;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-blue-a;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-blue-a;
+          &:before {
+            border-bottom-color: $color-tag-blue-a;
+          }
+        }
+      }
+
+      &--blue-b {
+        span {
+          color: $color-tag-blue-b;
+        }
+        border-color: $color-tag-blue-b;
+        .tooltip-container {
+          border-color: $color-tag-blue-b;
+          .icon {
+            color: $color-tag-blue-b;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-blue-b;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-blue-b;
+          &:before {
+            border-bottom-color: $color-tag-blue-b;
+          }
+        }
+      }
+
+      &--blue-c {
+        span {
+          color: $color-tag-blue-c;
+        }
+        border-color: $color-tag-blue-c;
+        .tooltip-container {
+          border-color: $color-tag-blue-c;
+          .icon {
+            color: $color-tag-blue-c;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-blue-c;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-blue-c;
+          &:before {
+            border-bottom-color: $color-tag-blue-c;
+          }
+        }
+      }
+
+      &--blue-d {
+        span {
+          color: $color-tag-blue-d;
+        }
+        border-color: $color-tag-blue-d;
+        .tooltip-container {
+          border-color: $color-tag-blue-d;
+          .icon {
+            color: $color-tag-blue-d;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-blue-d;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-blue-d;
+          &:before {
+            border-bottom-color: $color-tag-blue-d;
+          }
+        }
+      }
+
+      &--yellow {
+        span {
+          color: $color-tag-yellow;
+        }
+        border-color: $color-tag-yellow;
+        .tooltip-container {
+          border-color: $color-tag-yellow;
+          .icon {
+            color: $color-tag-yellow;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-yellow;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-yellow;
+          &:before {
+            border-bottom-color: $color-tag-yellow;
+          }
+        }
+      }
+
+      &--purple {
+        span {
+          color: $color-tag-purple;
+        }
+        border-color: $color-tag-purple;
+        .tooltip-container {
+          border-color: $color-tag-purple;
+          .icon {
+            color: $color-tag-purple;
+          }
+        }
+        &.selected {
+          background-color: $color-tag-purple;
+        }
+        .tag-tooltip {
+          border-color: $color-tag-purple;
+          &:before {
+            border-bottom-color: $color-tag-purple;
+          }
+        }
+      }
+
+      &.selected {
+        border-color: $color-text-dark;
+        span {
+          color: $color-text-dark;
+        }
+        .tooltip-container {
+          border-color: $color-text-dark;
+
+          .icon {
+            color: $color-text-dark;
+          }
+        }
+      }
+    }
+
+    #unselect-tags-btn {
+      width: 130px;
+      height: 40px;
+
+      border: 1px solid #7C66D3;
+      color: #7C66D3 !important;
+      line-height: 38px;
+      cursor: not-allowed;
+
+      &.active {
+        background-color: #7C66D3 !important;
+        color: #0A0927 !important;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  .sessions-list {
+    background: linear-gradient(180deg, #090631 0.95%, #100638 100%);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .searchbox-container {
+      position: relative;
+
+      input.searchbox {
+        height: 40px;
+        width: 100%;
+  
+        background: none;
+        @include border-radius(5px);
+        @include box-shadow(0 0 3px 0 rgba(36,49,76,0.09));
+        border: 1px solid #7C66D3;
+        color: $color-brand-secondary;
+  
+        margin-bottom: 15px;
+        padding: 5px 15px;
+  
+        @include placeholder {
+          color: #7C66D3;
+          font-size: $font-size-base * 1;
+        }
+      }
+
+      .searchbox-clear-btn {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &-item {
+      height: auto;
+      width: 100%;
+
+      background-color: #130d37;
+      @include box-shadow(0 8px 12px 0 #0f0939);
+      cursor: pointer;
+
+      margin-bottom: 10px;
+
+      &:last-child { margin-bottom: 0; }
+
+      $speaker-container-width: 280px;
+      .speaker-container {
+        width: $speaker-container-width;
+
+        .speaker-frame {
+          background: url(/img/speaker-frame.svg) no-repeat;
+          background-size: 60px 60px;
+          transition: all 0.2s ease-in-out;
+
+          background-position: top center;
+          padding: 5px;
+          margin-right: 10px;
+
+          img {
+            height: 50px;
+            width: 50px;
+            @include border-radius(50%);
+            display: block;
+          }
+        }
+      }
+
+      .session-details-container {
+        width: calc(100% - #{$speaker-container-width});
+
+        .title {
+          text-align: left;
+          margin-right: 20px !important;
+        }
+
+        .tags-container {
+          .tag {
+            @include tag;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include lg-up-to {
+  .sessions-list {
+    .speaker-container {
+      width: 180px !important;
+    }
+
+    .session-details-container {
+      width: calc(100% - 180px) !important;
+    }
+  }
+}
+
+@include md-up-to {
+  .sessions-list {
+    .speaker-container {
+      width: 140px !important;
+    }
+
+    .session-details-container {
+      width: calc(100% - 140px) !important;
+    }
+  }
+}
+
+@include sm-up-to {
+  .page-sessions {
+    .container {
+      width: 100% !important;
+      padding: 0 16px;
+    }
+  }
+  .sessions-header {
+    .tags-container .tag-button {
+      width: 150px !important;
+    }
+  }
+}

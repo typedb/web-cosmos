@@ -21,7 +21,7 @@
   }
 
   &-nav {
-    width: 610px;
+    width: 710px;
 
     ul {
       a {
@@ -30,6 +30,13 @@
 
         position: relative;
         white-space: nowrap;
+
+        &.selected {
+          text-decoration: none;
+          li {
+            color: $color-brand-primary
+          }
+        }
 
         li {
           font-size: 1.25rem;

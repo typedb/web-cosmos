@@ -1,0 +1,223 @@
+@import "./modal";
+
+#speaker-modal {
+  .planet-purple {
+    @include absolute-background(205px, 205px, 0, auto, no-repeat);
+
+    background-image: url(/img/planet-purple-dark.svg);
+    background-position: center center;
+
+    right: 130px;
+    top: 90px;
+    z-index: -8;
+
+    @include lg-up-to {
+      top: 530px;
+      right: 30px;
+    }
+
+    @include sm-up-to {
+      width: 120px;
+      background-size: 120px 120px;
+      top: 350px;
+    }
+  }
+
+  .planet-blue {
+    @include absolute-background(205px, 205px, 0, auto, no-repeat);
+
+    background-image: url(/img/planet-blue-dark.svg);
+    background-position: center center;
+
+    left: 10px;
+    top: 50%;
+    z-index: -8;
+  }
+
+  .custom-modal-content {
+    .description,
+    .bio {
+      white-space: pre-line;
+    }
+
+    .cospeaker-note {
+      font-size: 1rem;
+    }
+
+    .planet-purple-dark {
+      @include absolute-background(160px, 160px, 0px, contain, no-repeat);
+      background-image: url(/img/planet-purple-dark.svg);
+      background-position: center center;
+
+      left: 0px;
+      top: -40px;
+
+      z-index: 0;
+
+      @include lg-up-to {
+        top: -100px;
+        right: 0;
+        left: auto;
+      }
+
+      @include md-up-to {
+        width: 83px;
+
+        background-position: right;
+        background-size: 130px 130px;
+        left: 0;
+      }
+    }
+
+    .m-planet-purple-dark {
+      @include absolute-background(63px, 120px, 0px, 130px 130px, no-repeat);
+
+      background-image: url(/img/planet-purple-dark.svg);
+
+      background-position: right;
+      left: 0;
+      top: -70px;
+    }
+  }
+
+  .custom-modal-sidebar {
+    position: relative;
+
+    width: calc(50% - 100px);
+    min-width: 200px;
+
+    float: left;
+    padding-top: 100px;
+    padding-right: 100px;
+
+    figure {
+      width: 100%;
+
+      padding-bottom: 100%;
+      position: relative;
+
+      .frame-img {
+        width: 100%;
+        height: 100%;
+        max-width: 460px;
+        max-height: 460px;
+
+        @include border-radius(50%);
+
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+      }
+
+      .speaker-profile-picture {
+        width: 90%;
+        height: 90%;
+
+        max-width: 400px;
+        max-height: 400px;
+
+        @include border-radius(50%);
+
+        left: 0;
+        right: 0;
+        margin: 5% auto;
+        position: absolute;
+      }
+    }
+
+    @include lg-up-to {
+      width: calc(100% - 160px);
+      padding: 80px;
+      float: none;
+
+      figure {
+        height: 345px;
+        padding-bottom: 0 !important;
+      }
+
+      .frame-img {
+        width: 345px !important;
+        height: 345px !important;
+      }
+
+      .speaker-profile-picture {
+        width: 300px !important;
+        height: 300px !important;
+        margin-top: 25px !important;
+      }
+    }
+
+    @include sm-up-to {
+      width: calc(100% - 80px);
+      padding: 60px 40px 30px 40px;
+
+      figure {
+        height: 245px;
+        padding-bottom: 0 !important;
+      }
+
+      .frame-img {
+        width: 225px !important;
+        height: 225px !important;
+      }
+
+      .speaker-profile-picture {
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 12px !important;
+      }
+    }
+  }
+
+  .custom-modal-body {
+    width: 50%;
+
+    @include lg-up-to {
+      width: 100%;
+      max-height: 100%;
+      padding: 0;
+      float: none;
+      margin: 0 auto;
+    }
+
+    .company {
+      img {
+        height: 42px;
+      }
+    }
+    .session-title {
+      color: $color-brand-secondary;
+    }
+
+    .social-links {
+      a {
+        color: white;
+        margin: 0 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .logo-wrapper {
+          img {
+            height: 23px;
+          }
+        }
+
+        span {
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  .sessionsWrapper {
+    margin-bottom: 60px;
+  }
+}

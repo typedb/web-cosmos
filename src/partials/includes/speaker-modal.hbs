@@ -1,35 +1,35 @@
-<div id="speaker-modal" class="speaker-modal">
+<div id="speaker-modal" class="custom-modal">
     <div class="stars"></div>
 
-    <div id="speaker-modal-close" class="speaker-modal-close"></div>
-    <div class="speaker-modal-content">
+    <div id="speaker-modal-close" class="custom-modal-close"></div>
+    <div class="custom-modal-content">
         <div class="planet-purple"></div>
+        <div class="planet-blue d-none d-lg-block"></div>
 
-        <div class="speaker-modal-sidebar
-                    f-left">
-            <div class="planet-blue
-                        d-none d-lg-block"></div>
-            <figure>
-                <img class="frame-img" src="/img/speaker-frame-xl.svg" />
-                <img id="profilePicture" class="speaker-profile-picture" src="" />
-            </figure>
-        </div>
-        <div class="speaker-modal-body
-                    f-right">
-            <p id="fullname" class="h1 Titillium-Rg text-center text-lg-left"></p>
-            <p id="position" class="h5 Titillium-Lt pt-3 text-center text-lg-left"></p>
-            <a id="company" href="" target="_blank" class="company h5 Titillium-Lt pt-3 d-block">
-                <img class="speaker-company-logo mx-auto mx-lg-0" src="" />
-            </a>
-            <div id="social-links"
-                class="social-links pt-4 d-flex align-items-center justify-content-center justify-content-lg-start">
+        <div class="d-block d-lg-flex">
+            <div class="custom-modal-sidebar">
+                <figure>
+                    <img class="frame-img" src="/img/speaker-frame-xl.svg" />
+                    <img id="profilePicture" class="speaker-profile-picture" src="" />
+                </figure>
             </div>
-            <p id="bio" class="bio h6 Titillium-ExLt pt-4 pt-lg-5"></p>
-            <p id="session-title" class="h4 Titillium-Rg pt-4 pt-lg-5">SESSION</p>
-            <div id='sessions' class="sessionsWrapper">
-                <p id="session-title" class="session-title h5 Titillium-Lt pt-3"></p>
-                <p id="session-description a" class="description h6 Titillium-ExLt pt-3"></p>
+            <div class="custom-modal-body">
+                <p id="fullname" class="h1 Titillium-Rg text-center text-lg-left"></p>
+                <p id="position" class="h5 Titillium-Lt pt-3 text-center text-lg-left"></p>
+                <a id="company" href="" target="_blank" class="company h5 Titillium-Lt pt-3 d-block">
+                    <img class="speaker-company-logo mx-auto mx-lg-0" src="" />
+                </a>
+                <div id="social-links"
+                    class="social-links pt-4 d-flex align-items-center justify-content-center justify-content-lg-start">
+                </div>
+                <p id="bio" class="bio h6 Titillium-ExLt pt-4 pt-lg-5"></p>
+                <p id="session-title" class="h4 Titillium-Rg pt-4 pt-lg-5">SESSION</p>
+                <div id='sessions' class="sessionsWrapper">
+                    <p id="session-title" class="session-title h5 Titillium-Lt pt-3"></p>
+                    <p id="session-description" class="description h6 Titillium-ExLt pt-3"></p>
+                </div>
             </div>
         </div>
     </div>
+    {{> includes/modal-footer }}
 </div>

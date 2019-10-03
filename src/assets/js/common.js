@@ -196,7 +196,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
         default:
           linkHtml = "";
       }
-      linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", url);
+      linkHtml = linkHtml.replace("PLACEHOLDER_ADDRESS", url.answerValue);
       socialLinksHtml += linkHtml;
     }
   }
@@ -245,7 +245,9 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
   $("#fullname").html(fullName);
   $("#position").html(positionLong);
   $("#company").attr("href", companyUrl);
-  $("#company img").attr("src", `/img/companies/${companyLogoFileName}`);
+  if (companyLogoFileName.length) {
+    $("#company img").attr("src", `/img/companies/${companyLogoFileName}`);
+  }
   $("#social-links").html(socialLinksHtml);
   $("#bio").html(bio);
   $("#sessions").html(sessionsHtml);

@@ -200,20 +200,21 @@ const formatSpeakers = speakers => {
     const positionLong = tagLine.split(" at ")[0];
 
     const companyLogoQId = 16298;
-    const companyLogoFileName = questionAnswers.find(
+    const companyLogoFileNameQA = questionAnswers.find(
       qa => qa.questionId === companyLogoQId
-    ).answerValue;
+    );
+    const companyLogoFileName = companyLogoFileNameQA ? companyLogoFileNameQA.answerValue : "";
 
     const twitterUrlQId = 16350;
-    let twitterUrl = questionAnswers.find(
+    const twitterUrl = questionAnswers.find(
       qa => qa.questionId === twitterUrlQId
     );
 
     const githubUrlQId = 16349;
-    let githubUrl = questionAnswers.find(qa => qa.questionId === githubUrlQId);
+    const githubUrl = questionAnswers.find(qa => qa.questionId === githubUrlQId);
 
     const linkedinUrlQId = 16351;
-    let linkedinUrl = questionAnswers.find(
+    const linkedinUrl = questionAnswers.find(
       qa => qa.questionId === linkedinUrlQId
     );
 

@@ -1,17 +1,22 @@
-## The Website of Grakn Cosmos 2020
+# web-cosmos
 
-### Dependenceis
+> The website of Grakn Cosmos 2020
 
-- `node`
-- `npm`
+## Build Setup
 
-### Develop
+``` bash
+# install dependencies
+$ yarn install
 
-- Install dependencies: `npm install`
-- Start the web-server and Gulp watch for file changes: `npm run start:dev`
-- Stop the web-server and the Gulp watch: `npm run stop`
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-### Deploy
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-- [Staging](https://grakn-web-cosmos-staging.herokuapp.com): push to `develop`
-- [Production](https://grakncosmos.com): push to `master`
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

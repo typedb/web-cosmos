@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="195px" viewBox="0 0 1024 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="47.0917195%" x2="49.1798706%" y2="51.0642742%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.023176">
+        <g id="newsletter-tablet" transform="translate(0.000000, -184.000000)" fill="url(#linearGradient-1)">
+            <g id="bg">
+                <path d="M4.54747351e-13,188.241699 C69.0494195,173.481526 182.728565,199.853003 254.336389,231.92953 C345.540813,272.784301 345.540813,318.52732 530.709413,325.219267 C715.878013,331.911214 785.799212,223.181044 949.298149,253.380147 C976.570924,258.417571 1002.13821,265.880291 1024,275.810181 L1024,431 C569.337891,431 227.331055,431 4.54747351e-13,431 L4.54747351e-13,188.241699 Z" transform="translate(512.000000, 307.518156) scale(-1, 1) translate(-512.000000, -307.518156) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

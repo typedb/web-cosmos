@@ -1,0 +1,35 @@
+@mixin border-radius($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($value) {
+  box-shadow: $value;
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+}
+
+@mixin placeholder {
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+    @include opacity(1);
+  }
+}
+
+@mixin opacity($opacity: 0.5) {
+  $ieOpacity: $opacity * 100;
+  opacity: $opacity;
+  -moz-opacity: $opacity;
+  -webkit-opacity: $opacity;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=#{$ieOpacity}); /* IE 8 */
+  filter: alpha(opacity = #{$ieOpacity}); /* IE 5-7 */
+}

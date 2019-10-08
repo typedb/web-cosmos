@@ -1,0 +1,45 @@
+$buttonHeight: 50px;
+.button {
+  height: $buttonHeight;
+
+  background-color: color("primary");
+  @include border-radius(5px);
+  color: color("dark");
+  cursor: pointer;
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-size: font-size("smaller");
+  line-height: $buttonHeight;
+  text-align: center;
+
+  display: inline-block;
+  padding: 0 1rem;
+
+  &:hover {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &--outlined {
+    background-color: transparent;
+    font-weight: 400;
+  }
+
+  &--primary {
+    background-color: color("primary");
+
+    &:hover {
+      background-color: color("primary.hover");
+    }
+
+    &:active {
+      background-color: color("primary.active");
+    }
+
+    &--outlined {
+      border: 1px solid color("primary");
+      color: color("primary");
+    }
+  }
+}

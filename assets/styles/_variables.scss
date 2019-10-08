@@ -1,0 +1,76 @@
+$colors: (
+  "primary": #05e9a8,
+  "primary.hover": #31ffbb,
+  "primary.active": #07b27a,
+  "secondary": #7c66d3,
+  "danger": #e74c3c,
+  "dark": #0b0929
+);
+
+// Desktop
+$font-size-base: 1rem;
+
+$font-sizes: (
+  "smallest": $font-size-base,
+  "smaller": $font-size-base * 1.25,
+  "small": $font-size-base * 1.5,
+  "large": $font-size-base * 1.75,
+  "larger": $font-size-base * 2,
+  "largest": $font-size-base * 2.5
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5
+  ),
+  5: (
+    $spacer * 2
+  ),
+  6: (
+    $spacer * 2.75
+  ),
+  7: (
+    $spacer * 3.5
+  ),
+  8: (
+    $spacer * 4.25
+  ),
+  9: (
+    $spacer * 5
+  ),
+  10: (
+    $spacer * 6
+  ),
+  11: (
+    $spacer * 7
+  ),
+  12: (
+    $spacer * 8
+  ),
+  13: (
+    $spacer * 9
+  ),
+  14: (
+    $spacer * 10
+  ),
+  15: (
+    $spacer * 11
+  )
+);

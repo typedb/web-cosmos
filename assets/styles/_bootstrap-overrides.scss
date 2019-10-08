@@ -1,0 +1,32 @@
+.container {
+  min-height: auto !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1200px;
+  width: 94%;
+
+  @media (max-width: map-get($grid-breakpoints, "lg")) {
+    width: 86%;
+    max-width: none;
+  }
+}
+
+html {
+  font-size: unset;
+}

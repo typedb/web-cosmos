@@ -1,0 +1,15 @@
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function font-size($key) {
+  @return map-get($font-sizes, $key);
+}
+
+@function grid-breakpoint($key) {
+  @return map-get($grid-breakpoints, $key);
+}
+
+@function spacer($key) {
+  @return map-get($spacers, $key);
+}

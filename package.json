@@ -1,31 +1,51 @@
 {
-  "name": "cosmos-website",
+  "name": "web-cosmos",
   "version": "1.0.0",
   "description": "The website of Grakn Cosmos 2020",
-  "main": "index.js",
-  "author": "cosmos@grakn.ai",
-  "license": "ISC",
+  "author": "Grakn Labs",
+  "private": true,
   "scripts": {
-    "start:dev": " npm run build:dev && { npm run watch & NODE_ENV=development node index.js & }",
-    "start:prod": "npm run build:prod && NODE_ENV=production NODE_PATH=./ node index.js",
-    "build:dev": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:dev",
-    "build:prod": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:prod",
-    "watch": "./node_modules/.bin/gulp watch --silent",
-    "stop": " pkill node & pkill gulp"
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/nodemon server/index.ts --watch server",
+    "build": "./node_modules/.bin/nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.ts",
+    "generate": "./node_modules/.bin/nuxt generate",
+    "lint": "./node_modules/.bin/eslint --ext .ts,.js,.vue . --ignore-path .gitignore .",
+    "fix": "./node_modules/.bin/eslint --ext .ts,.js,.vue . --ignore-path .gitignore . --fix",
+    "test": "jest"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "node-static": "^0.7.11",
-    "gulp": "^4.0.2",
-    "gulp-compile-handlebars": "^0.6.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^1.2.0"
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "bootstrap": "4",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "form-serialize": "^0.7.2",
+    "nuxt": "^2.0.0",
+    "nuxt-webfontloader": "^1.1.0"
   },
-  "engine": {
-    "nodes": ">=11.15.0",
-    "npm": ">=6.7.0"
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.2.10",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config-typescript": "^0.1.3",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@types/express": "^4.17.1",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "jest": "^24.1.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.18.2",
+    "sass-loader": "^8.0.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
+    "vue-jest": "^4.0.0-0"
   }
 }

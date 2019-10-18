@@ -211,7 +211,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
 
       let sessionHtml = `
             <div class="session">
-                <p id="session-title" class="session-title h5 Titillium-Lt pt-3">PLACEHOLDER_TITLE</p>
+                <a href='#session-${title}' id="session-title" class="session-title h5 Titillium-Lt pt-3" >PLACEHOLDER_TITLE</a>
                 <p id="session-description" class="description h6 Titillium-ExLt pt-3">PLACEHOLDER_DESCRIPTION</p>
             </div>
         `;

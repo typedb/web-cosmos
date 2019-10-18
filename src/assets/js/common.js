@@ -127,6 +127,12 @@ const showSessionModal = (sessions, speakers) => {
 
 const handleModalRequest = (speakers, sessions) => {
   const newHash = window.location.hash.replace("#", "");
+
+  if (newHash === "get-tickets") {
+    $("#eventbrite-widget-modal-trigger-58504110369").trigger("click");
+    return;
+  }
+
   const modalType = newHash.split('-')[0];
 
   switch (modalType) {

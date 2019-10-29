@@ -217,10 +217,6 @@ const loadPartners = () => {
       url: "https://www.tno.nl"
     },
     {
-      image: "yooi.png",
-      url: "https://www.yooi.com"
-    },
-    {
       image: "infosys.png",
       url: "https://www.infosys.com"
     },

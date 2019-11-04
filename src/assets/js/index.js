@@ -251,6 +251,10 @@ const loadPartners = () => {
     {
       image: "icarcnr.png",
       url: "https://www.icar.cnr.it/en/"
+    },
+    {
+      image: "6point6.png",
+      url: "https://6point6.co.uk/"
     }
   ];
 

@@ -327,6 +327,13 @@ button {
     color: $color-brand-primary !important;
     font-weight: 400 !important;
   }
+
+  &.disabled {
+    opacity: 0.5;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }
 
 /* ==========================================================================

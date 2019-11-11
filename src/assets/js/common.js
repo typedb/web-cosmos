@@ -1,5 +1,7 @@
 $(document).ready(async function() {
-  
+  $('.button.disabled').bind('click', function (event) {
+    event.preventDefault();
+  });
 });
 
 const handleHeaderOnScroll = () => {

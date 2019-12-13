@@ -55,6 +55,25 @@ app.get("/privacy-policy", function(req, res) {
   res.sendFile(privacyPath);
 });
 
+// promo pages
+
+const enterprisePromoPath = path.join(__dirname, "/dist/promo-enterprise.html");
+app.get("/promo/enterprise", function(req, res) {
+  res.sendFile(enterprisePromoPath);
+});
+
+// const studentPromoPath = path.join(__dirname, "/dist/promo-student.html");
+// app.get("/promo/student", function(req, res) {
+//   res.sendFile(studentPromoPath);
+// });
+
+// const communityPromoPath = path.join(__dirname, "/dist/promo-community.html");
+// app.get("/promo/community", function(req, res) {
+//   res.sendFile(communityPromoPath);
+// });
+
+// end of promo pages
+
 const notFoundPath = path.join(__dirname, "/dist/404.html");
 app.get("*", function(req, res) {
   res.sendFile(notFoundPath);

@@ -4,6 +4,11 @@
   .bg {
     background: rgb(23, 12, 68);
     background: linear-gradient(180deg, rgba(23, 12, 68, 1) 0%, rgba(15, 5, 56, 1) 100%);
+
+    &.promo {
+      background: rgb(23, 12, 68);
+      background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(9, 6, 66, 1) 100%);
+    }
   }
 
   .stars {

@@ -1,0 +1,136 @@
+@import "./variables";
+@import "./vendor/functions";
+@import "./vendor/variables";
+@import "./mixins";
+
+@import "./intro";
+@import "./sponsors";
+
+.promo-page {
+  height: 100%;
+  position: relative;
+
+  .bg {
+    background: rgb(10, 9, 38);
+    background: linear-gradient(180deg, rgba(10, 9, 38, 1) 0%, rgba(16, 6, 56, 1) 100%);
+  }
+
+  #speakers-home-list {
+    li {
+      height: 300px;
+    }
+  }
+
+  .section-registration {
+    width: 100%;
+
+    .type-option {
+      width: 50%;
+      border: 1px solid $color-brand-primary;
+      background-color: $color-brand-primary;
+      cursor: pointer;
+      
+      &:first-child {
+        @include border-radius(5px 0 0 0);
+      }
+      
+      &:last-child {
+        @include border-radius(0 5px 0 0);
+      }
+      
+      p {
+        color: $color-bg-brand-dark;
+        text-align: center;
+      }
+
+      &.selected {
+        // background-color: $color-brand-primary;
+        background-color: #100836;
+        border-bottom: none;
+
+        p {
+          color: $color-brand-primary;
+        }
+      }
+    }
+
+    .registration-content {
+      width: 100%;
+      background-color: #100836;
+      border: 1px solid $color-brand-primary;
+      border-top: none;
+      @include border-radius(0 0 5px 5px);
+      padding: 30px;
+    }
+  }
+}
+
+form.promo {
+  input, select {
+    border: 1px solid red;
+    width: 100%;
+    height: 50px;
+
+    background-color: $color-bg-brand-dark;
+    border: 1px solid $color-brand-secondary;
+    @include border-radius(5px 5px 5px 5px);
+    @include box-shadow(none);
+    outline: none;
+    letter-spacing: 1px;
+    line-height: 50px;
+
+    padding: 5px 20px;
+
+    @include sm-up-to {
+      padding: 3px 10px;
+      letter-spacing: 0;
+    }
+
+    @include placeholder {
+      color: $color-brand-secondary;
+      font-size: $font-size-base * 1;
+    }
+  }
+
+  .select-container {
+    position: relative;
+    .select-open-indicator {
+      width: 25px;
+      height: 38px;
+      
+      position: absolute;
+      right: 0;
+      top: 14px;
+      
+      &::after {
+        font-size: 0.75em;
+        pointer-events: none;
+        color: $color-brand-secondary;
+        content: '▼';
+      }
+    }
+
+  }
+
+  select {
+    appearance: none;
+
+    &:invalid, [disabled] {
+      color: $color-brand-secondary;
+    }
+
+    option {
+      color: #fff;
+    }
+  }
+
+  label.error {
+      color: $color-text-error;
+      text-align: left;
+      margin-top: 5px;
+  }
+
+  .button[type="submit"] {
+    width: 100%;
+  }
+}

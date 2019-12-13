@@ -20,7 +20,7 @@ const handleHeaderOnScroll = () => {
 };
 
 const handleSubscription = () => {
-  $("form button").bind("click", function (event) {
+  $("form.newsletter button").bind("click", function (event) {
     const subscribe = (form) => {
       // taking the first email because there is a second hidden email input
       const data = form.serialize().split("&")[0];
@@ -347,12 +347,12 @@ const generateSpeakerHtml = speaker => {
   return `
         <li class="speaker" data-speaker-id="${id}">
           <a href="#speaker-${fullName}">
-            <div class="speaker-frame">
+            <div class="speaker-frame mb-2 mb-md-4">
                 <img class="profile-picture" src="${profileImg.src}" />
             </div>
             <p class="fullname h5 Titillium-Rg pt-2">${fullName}</p>
             <p class="position h6 Titillium-Lt pt-1">${shortPosition}</p>
-            <a href="${companyUrl}" target="_blank" class="company-logo"></a>
+            <a href="${companyUrl}" target="_blank" class="company-logo mt-2 mt-md-4"></a>
           </a>
         </li>
     `;

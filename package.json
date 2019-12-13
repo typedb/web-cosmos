@@ -10,7 +10,7 @@
     "start:prod": "npm run build:prod && NODE_ENV=production NODE_PATH=./ node index.js",
     "build:dev": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:dev",
     "build:prod": "mkdir -p dist && rm -rf dist/* && ./node_modules/.bin/gulp build:prod",
-    "watch": "./node_modules/.bin/gulp watch --silent",
+    "watch": "./node_modules/.bin/gulp watch",
     "stop": " pkill node & pkill gulp"
   },
   "dependencies": {

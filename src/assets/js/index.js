@@ -259,13 +259,21 @@ const loadPartners = () => {
   ];
 
   for (partner of partners) {
-    partnerHtml = `
-            <div class="partner-logo w-sm-33 w-lg-25 w-lgc-20 p-8 p-xs-3 p-sm-6 p-md-4 p-lgc-6">
-                <a href="${partner.url}" target="_blank">
-                    <img class="mx-auto" src="/img/companies/${partner.image}" />
-                </a>
-            </div>
-        `;
+    if (window.location.href.indexOf('/promo') > -1) {
+      partnerHtml = `
+      <div class="partner-logo w-sm-33 w-lg-25 w-lgc-20 p-8 p-xs-3 p-sm-6 p-md-4 p-lgc-6">
+          <img class="mx-auto" src="/img/companies/${partner.image}" />
+      </div>
+  `;
+    } else {
+      partnerHtml = `
+              <div class="partner-logo w-sm-33 w-lg-25 w-lgc-20 p-8 p-xs-3 p-sm-6 p-md-4 p-lgc-6">
+                  <a href="${partner.url}" target="_blank">
+                      <img class="mx-auto" src="/img/companies/${partner.image}" />
+                  </a>
+              </div>
+          `;
+    }
 
     $("#partners-list").append(partnerHtml);
   }

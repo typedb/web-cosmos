@@ -62,6 +62,11 @@ app.get("/promo/enterprise", function(req, res) {
   res.sendFile(enterprisePromoPath);
 });
 
+const thankyouPath = path.join(__dirname, "/dist/thank-you.html");
+app.get("/thankyou", function(req, res) {
+  res.sendFile(thankyouPath);
+});
+
 // const studentPromoPath = path.join(__dirname, "/dist/promo-student.html");
 // app.get("/promo/student", function(req, res) {
 //   res.sendFile(studentPromoPath);

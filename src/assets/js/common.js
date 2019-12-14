@@ -2,6 +2,14 @@ $(document).ready(async function() {
   $('.button.disabled').bind('click', function (event) {
     event.preventDefault();
   });
+
+  if(localStorage.getItem("user-has-accepted-cookies") == null) {
+    $(".cookie-banner").show();
+    $(".cookie-banner .button-close").click(function() {
+      localStorage.setItem("user-has-accepted-cookies", "true");
+      $(".cookie-banner").hide();
+    });
+  }
 });
 
 const handleHeaderOnScroll = () => {

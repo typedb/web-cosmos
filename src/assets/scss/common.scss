@@ -503,3 +503,40 @@ button {
     page-break-after: avoid;
   }
 }
+
+
+.cookie-banner {
+  background: rgba(47, 53, 67, 0.89) !important;
+  bottom: 0;
+  display: none;
+  font-family: 'Titillium Web' !important;
+  font-size: 16px;
+  min-height: 70px !important;
+  position: fixed !important;
+  width: 100vw;
+  text-align: left !important;
+  z-index: 20000;
+
+  span.cookie-message {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    padding: 25px 30px;
+    vertical-align: middle;
+    width: calc(100% - 100px) !important;
+  }
+
+  .button-close {
+    background: transparent !important;
+    border: 1px solid white !important;
+    border-radius: 7px !important;
+    color: white !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    vertical-align: middle;
+    width: 80px !important;
+  }
+}

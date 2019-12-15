@@ -57,14 +57,14 @@ app.get("/privacy-policy", function(req, res) {
 
 // promo pages
 
-const enterprisePromoPath = path.join(__dirname, "/dist/promo-enterprise.html");
-app.get("/promo/enterprise", function(req, res) {
-  res.sendFile(enterprisePromoPath);
-});
-
 const thankyouPath = path.join(__dirname, "/dist/thank-you.html");
 app.get("/thankyou", function(req, res) {
   res.sendFile(thankyouPath);
+});
+
+const enterprisePromoPath = path.join(__dirname, "/dist/promo-enterprise.html");
+app.get("/promo/enterprise", function(req, res) {
+  res.sendFile(enterprisePromoPath);
 });
 
 const studentPromoPath = path.join(__dirname, "/dist/promo-student.html");
@@ -76,6 +76,10 @@ app.get("/promo/student", function(req, res) {
 // app.get("/promo/community", function(req, res) {
 //   res.sendFile(communityPromoPath);
 // });
+
+app.post("/thankyou", function(req, res) {
+  res.redirect("/thankyou?source=" + req.query.source);
+});
 
 // end of promo pages
 

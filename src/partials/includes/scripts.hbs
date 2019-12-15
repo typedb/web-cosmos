@@ -11,13 +11,15 @@
         console.log('Order complete!');
     };
 
-    window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: '58504110369',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-58504110369',
-        onOrderComplete: exampleCallback
-    });
+    if (window.location.href.indexOf('/promo') === -1) {
+        window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '58504110369',
+            modal: true,
+            modalTriggerElementId: 'eventbrite-widget-modal-trigger-58504110369',
+            onOrderComplete: exampleCallback
+        });
+    }
 </script>
 
 <script src="/js/vendor/modernizr-3.7.1.min.js"></script>

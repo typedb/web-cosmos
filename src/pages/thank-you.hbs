@@ -17,7 +17,7 @@
     $(document).ready(function () {
         $('body').addClass('spaceship');
 
-        const source = new URL(window.location.href).searchParams.get('form-source');
+        const source = new URL(window.location.href).searchParams.get('source');
         
         if (source === "student-success") {
             $('#title').html("Check your inbox for your free ticket!");

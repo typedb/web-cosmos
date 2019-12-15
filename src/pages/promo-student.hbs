@@ -140,9 +140,10 @@
             </div>
             <div class="registration-content form-tab p-3 pm-md-4" id="form-tab">
                 <p class="h4 Titillium-Rg text-color-brand mb-4">Student tickets are 100% free.</p>
-                <form name="registration" class="promo" action="/thankyou" method="get">
-                    <input type="hidden" name="cosmos-discount-code" id="cosmos-discount-code" />
-                    <input type="hidden" name="form-source" id="form-source" value="student-success" />
+                <form name="student-registration" class="promo students" action="/thankyou" method="post">
+                    <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;" tabindex="-1">
+                        <input type="text" name="cosmosstudentdiscount" id="cosmosstudentdiscount" />
+                    </div>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" />
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="mt-4" />
                     <input type="email" name="email" id="email" placeholder="Email" class="mt-4" />
@@ -151,11 +152,11 @@
                         <div class="select-open-indicator mt-4"></div>
                         <select name="fieldofstudy" class="mt-4" required>
                             <option value="" disabled selected>Field of Study</option>
-                            <option value="lifesciences">Computer Sience</option>
-                            <option value="martech">Bioinformatics</option>
-                            <option value="robotics">Data Science</option>
-                            <option value="defence">Machine Learning</option>
-                            <option value="finance">Robotics</option>
+                            <option value="computer sience">Computer Sience</option>
+                            <option value="bioinformatics">Bioinformatics</option>
+                            <option value="data science">Data Science</option>
+                            <option value="machine learning">Machine Learning</option>
+                            <option value="robotics">Robotics</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -191,7 +192,7 @@
             "Medium needs 'edu'."
         );
 
-        $("form[name='registration']").validate({
+        $("form[name='student-registration']").validate({
             rules: {
                 firstname: "required",
                 email: {
@@ -217,12 +218,18 @@
             submitHandler: async function (form) {
                 const resp = await $.get("/generate-discount-code");
                 if (resp.status === 200) {
-                    $('#cosmos-discount-code').val(resp.code);
+                    $(form).attr('action', `${$(form).attr('action')}?source=student-success`);
+                    $('#cosmosstudentdiscount').val(resp.code);
+                    debugger;
                 } else {
-                    $('#form-source').val("student-failure");
+                    $(form).attr('action', `${$(form).attr('action')}?source=student-failure`);
                 }
                 form.submit();
             }
+        });
+
+        $("form[name='student-registration']").on('submit', function(e) {
+            e.preventDefault();
         });
     });
 </script>

@@ -220,7 +220,6 @@
                 if (resp.status === 200) {
                     $(form).attr('action', `${$(form).attr('action')}?source=student-success`);
                     $('#cosmosstudentdiscount').val(resp.code);
-                    debugger;
                 } else {
                     $(form).attr('action', `${$(form).attr('action')}?source=student-failure`);
                 }

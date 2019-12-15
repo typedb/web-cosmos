@@ -101,6 +101,16 @@ const scrollToSection = () => {
 };
 
 const loadHomeSpeakers = speakers => {
+  if (window.location.href.indexOf("/promo")) {
+    const hari = speakers.find(s => s.fullName === "Hari Radhakrishnan");
+    const paul = speakers.find(s => s.fullName === "Paul Agapow");
+    const alexander = speakers.find(s => s.fullName === "Alexander De Leon");
+    const joris = speakers.find(s => s.fullName === "Joris Sijs");
+    const topPromoSpeakers = [hari, paul, alexander, joris];
+    const restOfSpeakers = speakers.filter(s => !topPromoSpeakers.map(ts => ts.fullName).some(tsName => tsName === s.fullName));
+    speakers = [...topPromoSpeakers, ...restOfSpeakers]
+  }
+
   $("#speakers-home-list").html("");
   // number of speakers to load and display are determined by the
   // number of `li`s that are displayed based on the screen size

@@ -1,0 +1,231 @@
+{{#> layouts/promo title="Cosmos | Enterprise Promo" url-prefix="" }}
+
+{{#*inline "head-block"}}
+<link rel="stylesheet" href="/css/promoPage.css?v=9">
+{{/inline}}
+
+{{#*inline "content-block"}}
+<div class="promo-page">
+    <div class="bg"></div>
+    <div id="intro" class="section-intro a">
+        <div class="stars d-none d-md-block"></div>
+
+        <div class="sub-section-summary
+                    container-full
+                    text-center
+                    position-relative pt-7 pt-md-12">
+            <div class="container
+                        text-center">
+                <div class="section-intro-logo
+                            mx-auto mb-8 mb-md-6">
+                    <a style="display: block; cursor: pointer; width: 280px" class="d-block my-0 mx-auto" href="/">
+                        <img src="/img/logos/logo-cosmos-horizontal.svg" style="width: 100%" />
+                    </a>
+                </div>
+                <p class="title h1 Titillium-Rg
+                        mx-auto mb-3" style="max-width: 800px">
+                    London's 1st look at the future of AI in the connected decade.
+                </p>
+
+                <p class="h2 Titillium-Rg text-color-brand mt-4">6-7th of February 2020</p>
+                <p class="h5 Titillium-Lt mt-2">
+                    London, United Kingdom
+                </p>
+
+                <a class="register-btn button h5 px-7 mt-5" href="#registration">
+                    Register Now
+                </a>
+                <p class="h6 Titillium-Rg mb-5 mt-2">Student tickets are 100% free</p>
+
+                <p class="title h4 Titillium-Rg
+                        mx-auto mb-3" style="max-width: 600px">
+                    Join 40+ technical leaders, builders and innovators who will be sharing their current applications
+                    and vision.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="speakers" class="section-speakers">
+        <div class="stars
+                    d-none d-md-block"></div>
+
+        <div class="container
+                    text-center">
+            <div class="mx-auto col-12">
+                <div class="row py-6">
+                    <!-- speakers-list-hidden is used as a guideline for determining the number of speakers that need to be loaded based on the screensize -->
+                    <ul id="speakers-list-hidden" class="d-none" data-animate-in="up">
+                        <li></li>
+                        <li class="d-none d-sm-block"></li>
+                        <li class="d-none d-md-block"></li>
+                        <li class="d-none d-lg-block"></li>
+                        <li class="d-none d-xl-block"></li>
+                    </ul>
+
+                    <ul id="speakers-home-list" class="w-100 d-flex flex-wrap align-items-top justify-content-center"
+                        data-animate-in="up">
+                        <!-- populated by js -->
+                    </ul>
+                </div>
+            </div>
+            <div class="divider py-5 py-md-10"></div>
+        </div>
+    </div>
+
+    <div id="values" class="sections-values">
+        <div class="container
+                    text-center">
+            <div class="mx-auto col-12">
+                <div class="row py-6">
+                    <div class="col-11 col-md-4 pr-0 pr-md-4 pb-8 pb-md-0 mx-auto">
+                        <p class="h3 Titillium-Rg pb-3 text-color-brand" style="font-size: 1.65rem">
+                            Be Inspired
+                        </p>
+                        <p class="h5 Titillium-Rg">
+                            Explore research opportunities and get a peek into projects happening around the world.
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-4 pr-0 pr-md-4 pb-8 pb-md-0 mx-auto">
+                        <p class="h3 Titillium-Rg pb-3 text-color-brand" style="font-size: 1.65rem">
+                            Peer into the Future
+                        </p>
+                        <p class="h5 Titillium-Rg">
+                            Explore the applications of Knowledge Engineering, pushing the boundary of intelligent
+                            systems.
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-4 mx-auto">
+                        <p class="h3 Titillium-Rg pb-3 text-color-brand" style="font-size: 1.65rem">
+                            Turn Conversation into Action
+                        </p>
+                        <p class="h5 Titillium-Rg">
+                            Network with partner organisations, speakers and attendees looking to hire; empower yourself
+                            and others by sharing wisdom, ideas, and the technology to build a better future, together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider py-5 py-md-10"></div>
+        </div>
+    </div>
+
+    <div id="partners" class="section-sponsors">
+        <div class="stars d-none d-md-block"></div>
+
+        <div class="container
+                    text-center pt-6">
+            <div class="mx-auto col-12">
+                <p class="h4 Titillium-Rg mx-auto" style="max-width: 800px;">
+                    Some of the organisations sharing how they think about Machine Learning, NLP, Blockchain, Robotics,
+                    Knowledge Engineering and more.
+                    <br />
+                    <a href="#registration">Don't miss it. Save your spot!</a>
+                </p>
+                <div id="partners-list" class="row pt-7 d-flex align-items-center">
+                </div>
+            </div>
+        </div>
+
+        <div class="divider py-5 py-md-10"></div>
+    </div>
+
+    <div id="registration" class="section-registration single-tab pt-4 pb-7 mx-auto" style="max-width: 750px;">
+        <div class="container">
+            <div class="registration-type-switch d-flex">
+                <div class="type-option selected p-3 h5 Titillium-Md" data-target="form-tab">
+                    Register Now
+                </div>
+            </div>
+            <div class="registration-content form-tab p-3 pm-md-4" id="form-tab">
+                <p class="h4 Titillium-Rg text-color-brand mb-4">Student tickets are 100% free.</p>
+                <form name="registration" class="promo" action="/thankyou" method="get">
+                    <input type="hidden" name="cosmos-discount-code" id="cosmos-discount-code" />
+                    <input type="hidden" name="form-source" id="form-source" value="student-success" />
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" />
+                    <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="mt-4" />
+                    <input type="email" name="email" id="email" placeholder="Email" class="mt-4" />
+                    <input type="text" name="university" id="university" placeholder="University" class="mt-4" />
+                    <div class="select-container">
+                        <div class="select-open-indicator mt-4"></div>
+                        <select name="fieldofstudy" class="mt-4" required>
+                            <option value="" disabled selected>Field of Study</option>
+                            <option value="lifesciences">Computer Sience</option>
+                            <option value="martech">Bioinformatics</option>
+                            <option value="robotics">Data Science</option>
+                            <option value="defence">Machine Learning</option>
+                            <option value="finance">Robotics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button class="button h5 mt-4" type="submit">Save your Spot</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/inline}}
+
+{{#*inline "scripts-block"}}
+<script src="/js/index.js?v=9"></script>
+<script src="/js/vendor/jquery-validation.js"></script>
+<script>
+    $(document).ready(async function () {
+        $('.type-option').click(function (e) {
+            let selectedTab = $(e.target);
+            $('.type-option').removeClass('selected');
+            selectedTab.addClass('selected');
+
+            $('.registration-content').hide();
+            const selectedTabContent = $(`#${selectedTab.data('target')}`);
+            selectedTabContent.show();
+        });
+
+        $.validator.addMethod(
+            "studentEmail",
+            function (value, element) {
+                var re = new RegExp('.*\.edu$');
+                return this.optional(element) || re.test(value);
+            },
+            "Medium needs 'edu'."
+        );
+
+        $("form[name='registration']").validate({
+            rules: {
+                firstname: "required",
+                email: {
+                    required: true,
+                    email: true,
+                    studentEmail: true,
+                },
+                university: {
+                    required: true
+                },
+                fieldofstudy: {
+                    required: true
+                }
+            },
+
+            messages: {
+                firstname: "What do we call you?",
+                email: "Communication needs a medium with edu.",
+                university: "We just want to get to know you better.",
+                fieldofstudy: "We just want to get to know you better."
+            },
+
+            submitHandler: async function (form) {
+                const resp = await $.get("/generate-discount-code");
+                if (resp.status === 200) {
+                    $('#cosmos-discount-code').val(resp.code);
+                } else {
+                    $('#form-source').val("student-failure");
+                }
+                form.submit();
+            }
+        });
+    });
+</script>
+{{/inline}}
+
+{{/layouts/promo}}

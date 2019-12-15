@@ -1,6 +1,7 @@
-var express = require("express");
-var app = express();
-var path = require("path");
+const express = require("express");
+const app = express();
+const path = require("path");
+const axios = require("axios");
 
 function requireHTTPS(req, res, next) {
   // The 'x-forwarded-proto' check is for Heroku
@@ -39,7 +40,6 @@ app.get("/sessions", function(req, res) {
   res.sendFile(sessionsPath);
 });
 
-
 const termsPath = path.join(__dirname, "/dist/terms.html");
 app.get("/terms", function(req, res) {
   res.sendFile(termsPath);
@@ -67,10 +67,10 @@ app.get("/thankyou", function(req, res) {
   res.sendFile(thankyouPath);
 });
 
-// const studentPromoPath = path.join(__dirname, "/dist/promo-student.html");
-// app.get("/promo/student", function(req, res) {
-//   res.sendFile(studentPromoPath);
-// });
+const studentPromoPath = path.join(__dirname, "/dist/promo-student.html");
+app.get("/promo/student", function(req, res) {
+  res.sendFile(studentPromoPath);
+});
 
 // const communityPromoPath = path.join(__dirname, "/dist/promo-community.html");
 // app.get("/promo/community", function(req, res) {
@@ -78,6 +78,52 @@ app.get("/thankyou", function(req, res) {
 // });
 
 // end of promo pages
+
+// eventbrite endpoints
+app.get("/generate-discount-code", async function(req, res) {
+  const token = process.env.TOKEN_EVENTBRITE;
+  try {
+    const ebResp = await axios.post(
+      "https://www.eventbriteapi.com/v3/organizations/296913036651/discounts/",
+      {
+        discount: {
+          type: "access",
+          code: makeCode(10),
+          event_id: "58504110369",
+          quantity_available: 1,
+          percent_off: 100
+        }
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    );
+    const code = ebResp.data.code;
+    res.json({
+      status: 200,
+      code
+    });
+  } catch (err) {
+    console.log(err.response);
+    res.json({
+      status: err.response.status
+    });
+  }
+});
+// end of eventbrite endpoints
+
+function makeCode(length) {
+  let result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 
 const notFoundPath = path.join(__dirname, "/dist/404.html");
 app.get("*", function(req, res) {

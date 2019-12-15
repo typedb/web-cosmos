@@ -14,15 +14,16 @@
     "stop": " pkill node & pkill gulp"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
-    "node-static": "^0.7.11",
     "gulp": "^4.0.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^1.2.0"
+    "gulp-terser": "^1.2.0",
+    "node-static": "^0.7.11"
   },
   "engine": {
     "nodes": ">=11.15.0",

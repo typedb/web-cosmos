@@ -142,15 +142,15 @@
                 <p class="h4 Titillium-Rg text-color-brand mb-4">Student tickets are 100% free.</p>
                 <form name="student-registration" class="promo students" action="/thankyou" method="post">
                     <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;" tabindex="-1">
-                        <input type="text" name="cosmosstudentdiscount" id="cosmosstudentdiscount" />
+                        <input type="text" name="cosmos_2020_discount" id="cosmos_2020_discount" />
                     </div>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" />
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="mt-4" />
                     <input type="email" name="email" id="email" placeholder="Email" class="mt-4" />
-                    <input type="text" name="university" id="university" placeholder="University" class="mt-4" />
+                    <input type="text" name="school" id="school" placeholder="University" class="mt-4" />
                     <div class="select-container">
                         <div class="select-open-indicator mt-4"></div>
-                        <select name="fieldofstudy" class="mt-4" required>
+                        <select name="field_of_study" class="mt-4" required>
                             <option value="" disabled selected>Field of Study</option>
                             <option value="computer sience">Computer Sience</option>
                             <option value="bioinformatics">Bioinformatics</option>
@@ -200,10 +200,10 @@
                     email: true,
                     //studentEmail: true,
                 },
-                university: {
+                school: {
                     required: true
                 },
-                fieldofstudy: {
+                field_of_study: {
                     required: true
                 }
             },
@@ -211,8 +211,8 @@
             messages: {
                 firstname: "What do we call you?",
                 email: "Communication needs a medium with edu.",
-                university: "We just want to get to know you better.",
-                fieldofstudy: "We just want to get to know you better."
+                school: "We just want to get to know you better.",
+                field_of_study: "We just want to get to know you better."
             },
 
             submitHandler: async function (form) {

@@ -142,7 +142,7 @@
                 <p class="h4 Titillium-Rg text-color-brand mb-4">Student tickets are 100% free.</p>
                 <form name="student-registration" class="promo students" action="/thankyou" method="post">
                     <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;" tabindex="-1">
-                        <input type="text" name="cosmos_2020_discount" id="cosmosstudentdiscount" />
+                        <input type="text" name="cosmosstudentdiscount" id="cosmosstudentdiscount" />
                     </div>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" />
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="mt-4" />
@@ -160,7 +160,7 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <button class="button h5 mt-4" type="submit">Save your Spot</button>
+                    <input class="button h5 mt-4" type="submit" value="Save your Spot"/>
                 </form>
             </div>
         </div>
@@ -197,7 +197,7 @@
                 firstname: "required",
                 email: {
                     required: true,
-                    email: true,
+                    email: true
                     //studentEmail: true,
                 },
                 school: {

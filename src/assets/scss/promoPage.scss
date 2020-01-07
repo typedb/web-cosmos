@@ -191,6 +191,12 @@ form.promo {
 
   .button[type="submit"] {
     width: 100%;
+    
+    .spinner-border {
+      display: block;
+      color: $color-text-on-brand;
+      margin: 0 auto;
+    }
   }
 }
 

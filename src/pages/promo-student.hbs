@@ -140,17 +140,17 @@
             </div>
             <div class="registration-content form-tab p-3 pm-md-4" id="form-tab">
                 <p class="h4 Titillium-Rg text-color-brand mb-4">Student tickets are 100% free.</p>
-                <form name="student-registration" class="promo students" action="/thankyou" method="post">
-                    <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;" tabindex="-1">
-                        <input type="text" name="cosmosstudentdiscount" id="cosmosstudentdiscount" />
-                    </div>
+                <form name="student-registration" class="promo students">
+                    <label for="amex" style="display:none">AMEX</label>
+                    <input type="hidden" name="amex" required="" value="" id="amex">
+                    <input type="hidden" name="cosmos_2020_discount" id="cosmos_2020_discount" />
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" />
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="mt-4" />
                     <input type="email" name="email" id="email" placeholder="Email" class="mt-4" />
                     <input type="text" name="school" id="school" placeholder="University" class="mt-4" />
                     <div class="select-container">
                         <div class="select-open-indicator mt-4"></div>
-                        <select name="field_of_study" class="mt-4" required>
+                        <select name="field_of_study" id="field_of_study" class="mt-4" required>
                             <option value="" disabled selected>Field of Study</option>
                             <option value="computer sience">Computer Sience</option>
                             <option value="bioinformatics">Bioinformatics</option>
@@ -160,7 +160,7 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <input class="button h5 mt-4" type="submit" value="Save your Spot"/>
+                    <button class="button h5 mt-4" type="submit">Save your Spot</button>
                 </form>
             </div>
         </div>
@@ -216,18 +216,66 @@
             },
 
             submitHandler: async function (form) {
+                $(form).find('button').html(
+                    '<div class="spinner-border spinner-border-sm" role="status"></div>'
+                );
+                let fields = [
+                    {
+                        "name": "firstname",
+                        "value": $(form).find('#firstname').val()
+                    },
+                    {
+                        "name": "lastname",
+                        "value": $(form).find('#lastname').val()
+                    },
+                    {
+                        "name": "email",
+                        "value": $(form).find('#email').val()
+                    },
+                    {
+                        "name": "school",
+                        "value": $(form).find('#school').val()
+                    },
+                    {
+                        "name": "field_of_study",
+                        "value": $(form).find('#field_of_study').val()
+                    }
+                ];
+
                 const resp = await $.get("/generate-discount-code");
+                let isSuccessfull = false;
                 if (resp.status === 200) {
-                    $(form).attr('action', `${$(form).attr('action')}?source=student-success`);
-                    $('#cosmosstudentdiscount').val(resp.code);
-                } else {
-                    $(form).attr('action', `${$(form).attr('action')}?source=student-failure`);
+                    fields.push({ "name": "cosmos_2020_discount", "value": resp.code });
+                    isSuccessfull = true;
                 }
-                form.submit();
+
+                $.ajax({
+                    url: "https://api.hsforms.com/submissions/v3/integration/submit/4332244/17d359ab-4711-4a71-be6f-b7999b7acc72",
+                    type: 'post',
+                    data: JSON.stringify({ fields }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (isSuccessfull) {
+                            window.location.href = '/thankyou?source=student-success';
+                        } else {
+                            window.location.href = '/thankyou?source=student-failure';
+                        }
+                    },
+                    error: function (data) {
+                        if (data.responseJSON.hasOwnProperty('errors') && data.responseJSON.errors[0].message.indexOf("Error in 'fields.") > -1) {
+                            const errorMsg = data.responseJSON.errors[0].message.split('. ')[1];
+                            $(form).find('button').after(`<label class="error" for="firstname">${errorMsg}</label>`);
+                            $(form).find('button').html('Save your Spot');
+                        }
+                    }
+                });
             }
         });
 
-        $("form[name='student-registration']").on('submit', function(e) {
+        $("form[name='student-registration']").on('submit', function (e) {
             e.preventDefault();
         });
     });

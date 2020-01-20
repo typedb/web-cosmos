@@ -40,6 +40,11 @@ app.get("/sessions", function(req, res) {
   res.sendFile(sessionsPath);
 });
 
+const schedulePath = path.join(__dirname, "/dist/schedule.html");
+app.get("/schedule", function(req, res) {
+  res.sendFile(schedulePath);
+});
+
 const termsPath = path.join(__dirname, "/dist/terms.html");
 app.get("/terms", function(req, res) {
   res.sendFile(termsPath);

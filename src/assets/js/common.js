@@ -123,7 +123,7 @@ const showSpeakerModal = (speakers, sessions) => {
 };
 
 const showSessionModal = (sessions, speakers) => {
-  const sessionTitle = decodeURI(window.location.hash.replace("#session-", "").split('?')[0]);
+  const sessionTitle = decodeURI(window.location.hash.replace("#session-", ""));
   const sessionToShow = sessions.find(session => session.title === sessionTitle);
 
   if (sessionToShow) {
@@ -170,8 +170,15 @@ const setModalHandlers = (speakers, sessions) => {
     }
   });
 
-  $('.opens-modal').click(function () {
-    window.location.hash = $(this).data('hash');
+  $('body').on("click", ".opens-modal", function (e) {
+    const clickedEl = $(e.target);
+    let targetHash;
+    if (clickedEl.hasClass('opens-modal')) {
+      targetHash = clickedEl.data('hash');
+    } else {      
+      targetHash = clickedEl.parents('.opens-modal').data('hash');
+    }
+    window.location.hash = targetHash;
   });
 };
 

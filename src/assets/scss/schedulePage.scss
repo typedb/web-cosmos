@@ -1,0 +1,255 @@
+@import "./variables";
+@import "./mixins";
+
+@import "./newsletter";
+
+$color-room-great-hall: #ff4095;
+$color-room-small-hall: #ffbf00;
+$color-room-council-chamber: #00e0ff;
+
+main {
+  padding-top: 70px;
+
+  &:before {
+    background-color: #190d47;
+    content: "";
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+header {
+  background-color: #190d47 !important;
+  display: block !important;
+}
+
+.page-schedule {
+  background: linear-gradient(180deg, #0a0926 0%, #100638 100%);
+
+  .schedule-header {
+		width: 700px;
+		margin: 0 auto;
+
+		@include md-up-to {
+			width: 94%;
+		}
+
+		@include sm-up-to {
+			width: 86%;
+		}
+
+    .day-switcher {
+      width: 100%;
+			margin-left: 70px;			
+
+			@include lg-up-to {
+				margin-left: 0;
+			}
+
+      .day-one,
+      .day-two {
+        width: 50%;
+
+        border: 1px solid $color-brand-primary;
+        cursor: pointer;
+
+        padding-top: 5px;
+
+        p {
+          color: $color-brand-primary;
+					margin-bottom: 5px !important;
+					
+        }
+
+        &.selected {
+          background-color: $color-brand-primary;
+          p {
+            color: $color-text-dark;
+          }
+        }
+      }
+
+      .day-one {
+        @include border-radius(5px 0 0 5px);
+      }
+
+      .day-two {
+        @include border-radius(0 5px 5px 0);
+        border-left: none;
+      }
+    }
+  }
+
+  .schedule-container {
+		max-width: 1160px;
+		
+		@include lg-up-to {
+			width: 94%;
+		}
+
+		@include sm-up-to {
+			width: 86%;
+		}
+
+    .schedule-content-header {
+      padding-left: 140px;
+      p {
+				width: 33%;
+				line-height: 120px;
+      }
+
+      p.great-hall {
+        color: #ff4095;
+      }
+      p.small-hall {
+        color: #ffbf00;
+      }
+      p.council-chamber {
+        color: #00e0ff;
+      }
+    }
+
+    .schedule-content {
+      width: 100%;
+
+      p.schedule-time {
+        min-width: 120px;
+
+        color: $color-brand-primary;
+        font-family: "Titillium Web";
+        font-weight: 400;
+        font-size: 1.5em;
+        line-height: 140px;
+
+        text-align: center;
+				margin: 0 20px 0 0;
+				
+				@include lg-up-to {
+					line-height: inherit;
+					margin-bottom: 10px;
+
+					&:first-child { margin-top: 40px; }
+				}
+      }
+
+      .schedule-sessions {
+				width: calc(100% - 140px);
+
+				margin-bottom: 10px;
+
+				@include lg-up-to {
+					width: 100%;
+				}
+
+				.break {
+					width: 100%;
+
+					background-color: #140F34;
+					box-shadow: 0 6px 10px 0 #0D082D;
+					p { line-height: 140px; }
+				}
+
+        .session {
+          width: 510px;
+
+					background-color: #140F34;
+					box-shadow: 0 6px 10px 0 #0D082D;
+
+					padding: 20px;
+					margin-right: 10px;
+					position: relative;
+
+					&:last-child { margin-right: 0;}
+
+					@include lg-up-to {
+						width: 100%;
+						margin-bottom: 10px;
+						&:last-child {
+							margin-bottom: 15px;
+						}
+					}
+
+          .speaker-frame {
+            height: 70px;
+						width: 70px;
+
+            background: url(/img/speaker-frame.svg) no-repeat;
+            background-size: 70px 70px;
+
+            background-position: top center;
+            padding: 5px;
+
+            img {
+              width: 60px;
+              height: 60px;
+
+              @include border-radius(50%);
+
+              display: block;
+            }
+          }
+
+          .details {
+						width: calc(100% - 220px);						
+						margin-left: 30px;
+
+						@include sm-up-to {
+							width: calc(100% - 225px);
+						}
+						
+						.title {
+							max-height: 4.5em;
+							position: relative;
+							padding-bottom: 5px;
+
+							@include sm-up-to {
+								max-height: 3.9em;
+							}
+						}
+
+						.speaker-name {
+							display: inline-block;
+							float: left;
+						}
+					}
+					
+					.room {
+						position: absolute;
+						top: 20px;
+						right: 20px;
+
+						&.color-pink {
+							color: $color-room-great-hall;
+						}
+
+						&.color-yellow {
+							color: $color-room-small-hall;
+						}
+
+						&.color-blue {
+							color: $color-room-council-chamber;
+						}
+					}
+
+          &.border-left-color-pink {
+            border-left: 1px solid $color-room-great-hall;
+          }
+
+          &.border-left-color-yellow {
+            border-left: 1px solid $color-room-small-hall;
+          }
+
+          &.border-left-color-blue {
+            border-left: 1px solid $color-room-council-chamber;
+					}
+
+					&.is-keynote {
+						width: 100%;
+					}
+        }
+      }
+    }
+  }
+}

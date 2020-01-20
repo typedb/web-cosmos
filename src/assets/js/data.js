@@ -114,8 +114,14 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       startsAt,
       roomId,
       speakers: speakerIds,
-      categoryItems
+      categoryItems,
+      questionAnswers
     } = session;
+
+    const keynoteQId = 17054;
+    const isKeynoteAnswer = questionAnswers.find(qa => qa.questionId === keynoteQId);
+    
+    const isKeynote = isKeynoteAnswer ? true : false;
 
     let level = "";
     const sessionTags = [];
@@ -144,11 +150,11 @@ const formatSessions = (sessions, categories, tags, speakers) => {
 
     let room = "";
     if (roomId === 8354) {
-      room = "Great Hall";
-    } else if (roomId === 8355) {
       room = "Small Hall";
+    } else if (roomId === 8355) {
+      room = "Council Room";
     } else if (roomId === 8356) {
-      room = "Council Chamber";
+      room = "Main Hall";
     }
 
     const speakerDetails = speakers.filter(speaker => speakerIds.includes(speaker.id));
@@ -163,7 +169,8 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       speakerDetails,
       day,
       startTime,
-      room
+      room,
+      isKeynote
     };
   });
 };

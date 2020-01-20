@@ -112,10 +112,6 @@ header {
     }
   }
 
-  .speaker-frame {
-    margin-bottom: 20px !important;
-  }
-
   li {
     width: 190px !important;
     margin-bottom: 60px;
@@ -126,12 +122,14 @@ header {
 
     .speaker-frame {
       background: url(/img/speaker-frame-lg.svg) no-repeat !important;
+      margin-bottom: 20px !important;
+
+      img.profile-picture {
+        width: 170px !important;
+        height: 170px !important;
+      }
     }
 
-    img.profile-picture {
-      width: 170px !important;
-      height: 170px !important;
-    }
   }
 
   .stars {

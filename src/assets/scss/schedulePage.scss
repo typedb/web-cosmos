@@ -152,7 +152,7 @@ header {
 				}
 
         .session {
-          width: 340px;
+          width: 510px;
 
 					background-color: #140F34;
 					box-shadow: 0 6px 10px 0 #0D082D;
@@ -192,21 +192,21 @@ header {
           }
 
           .details {
-						width: calc(100% - 100px);						
+						width: calc(100% - 220px);						
 						margin-left: 30px;
 
-						@include sm-up-to {
-							width: calc(100% - 225px);
-						}
+						// @include sm-up-to {
+						// 	width: calc(100% - 225px);
+						// }
 						
 						.title {
-							max-height: 4.5em;
+							max-height: 3.9em;
 							position: relative;
 							padding-bottom: 5px;
 
-							@include sm-up-to {
-								max-height: 3.9em;
-							}
+							// @include sm-up-to {
+							// 	max-height: 3.9em;
+							// }
 						}
 
 						.speaker-name {

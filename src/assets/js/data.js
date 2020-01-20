@@ -151,11 +151,11 @@ const formatSessions = (sessions, categories, tags, speakers) => {
 
     let room = "";
     if (roomId === 8354) {
-      room = "Great Hall";
-    } else if (roomId === 8355) {
       room = "Small Hall";
+    } else if (roomId === 8355) {
+      room = "Council Room";
     } else if (roomId === 8356) {
-      room = "Council Chamber";
+      room = "Main Hall";
     }
 
     const speakerDetails = speakers.filter(speaker => speakerIds.includes(speaker.id));

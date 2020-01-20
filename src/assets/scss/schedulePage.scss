@@ -195,18 +195,18 @@ header {
 						width: calc(100% - 220px);						
 						margin-left: 30px;
 
-						// @include sm-up-to {
-						// 	width: calc(100% - 225px);
-						// }
+						@include sm-up-to {
+							width: calc(100% - 225px);
+						}
 						
 						.title {
-							max-height: 3.9em;
+							max-height: 4.5em;
 							position: relative;
 							padding-bottom: 5px;
 
-							// @include sm-up-to {
-							// 	max-height: 3.9em;
-							// }
+							@include sm-up-to {
+								max-height: 3.9em;
+							}
 						}
 
 						.speaker-name {

@@ -65,7 +65,7 @@ const getScheduleData = sessions => {
         time: startTime,
         room,
         isKeynote,
-        talks: [{ title, speakers }]
+        talks: [{ title, room, speakers }]
       };
       
       scheduleData[day].push(timedData);
@@ -115,19 +115,20 @@ const generateScheduleTime = data => {
 };
 
 const generateScheduleSession = data => {
-  const { room, isKeynote, talks } = data;
-  const fullName = 'test';
+  const { talks } = data;
+  talks.sort((a,b) => (a.room > b.room) ? 1 : ((b.room > a.room) ? -1 : 0)); 
+
 
   const roomClassMap = {
-    "Great Hall": "pink",
+    "Main Hall": "pink",
     "Small Hall": "yellow",
-    "Council Chamber": "blue"
+    "Council Room": "blue"
   };
 
   let sessionsHtml = '';
 
   talks.forEach(talk => {
-    const { title } = talk;
+    const { title, room } = talk;
     const { profileImg, fullName } = talk.speakers[0];
 
     sessionsHtml += `

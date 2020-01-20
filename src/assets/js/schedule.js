@@ -72,8 +72,6 @@ const getScheduleData = sessions => {
     }
   }
 
-  console.log(scheduleData);
-
   return scheduleData;
 };
 
@@ -85,7 +83,6 @@ const loadSchedule = (data, day) => {
 };
 
 const generateScheduleTime = data => {
-  console.log(data);
   let scheduleTimeHtml = "";
 
   if (data.time === "01:00 pm") {
@@ -129,7 +126,7 @@ const generateScheduleSession = data => {
 
   talks.forEach(talk => {
     const { title, room } = talk;
-    const { profileImg, fullName } = talk.speakers[0];
+    const { profileImg, fullName } = talk.speakers[talk.speakers.length - 1];
 
     sessionsHtml += `
       <div class="opens-modal session d-flex align-items-center border-left-color-${

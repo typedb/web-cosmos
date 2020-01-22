@@ -30,6 +30,21 @@
     position: relative;
     margin: 0 auto;
 
+    label.error, label.success {
+      width: 100%;
+      font-family: "Titillium Web";
+      text-align: left;
+      margin-top: 70px;
+    }
+
+    label.error {
+      color: $color-text-error;
+    }
+
+    label.success {
+      display: none;
+    }
+
     input {
       width: calc(100% - 140px);
       height: 50px;

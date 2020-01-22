@@ -1,9 +1,9 @@
 $(document).ready(async function() {
-  $('.button.disabled').bind('click', function (event) {
+  $(".button.disabled").bind("click", function(event) {
     event.preventDefault();
   });
 
-  if(localStorage.getItem("user-has-accepted-cookies") == null) {
+  if (localStorage.getItem("user-has-accepted-cookies") == null) {
     $(".cookie-banner").show();
     $(".cookie-banner .button-close").click(function() {
       localStorage.setItem("user-has-accepted-cookies", "true");
@@ -28,52 +28,108 @@ const handleHeaderOnScroll = () => {
 };
 
 const handleSubscription = () => {
-  $("form.newsletter button").bind("click", function (event) {
-    const subscribe = (form) => {
-      // taking the first email because there is a second hidden email input
-      const data = form.serialize().split("&")[0];
-      $.ajax({
-        type: form.attr("method"),
-        url: form.attr("action"),
-        data,
-        cache: false,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        error: function(xhr, ajaxOptions, thrownError) {
-          console.log(xhr.responseText);
-        },
-        success: function(data) {
-          if (data.result != "success") {
-            $("#mce-success-response")
-              .removeClass("d-block")
-              .addClass("d-none");
-            $("#mce-error-response")
-              .html(data.msg.replace("0 -", ""))
-              .removeClass("d-none")
-              .addClass("d-block");
-            $("form button").html("Subscribe");
-          } else {
-            $("#mce-error-response")
-              .removeClass("d-block")
-              .addClass("d-none");
-            $("#mce-success-response")
-              .html(data.msg)
-              .removeClass("d-none")
-              .addClass("d-block");
-            $("form button").html("Subscribe");
-          }
+  $("form[name='newsletter']").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      }
+    },
+
+    messages: {
+      email: "Communication needs a medium."
+    },
+
+    submitHandler: function(form) {
+      console.log('submit');
+      
+      let email = '';
+      $.each($('.email'), function (i, emailEl) {
+        debugger;
+        if($(emailEl).val().length) {
+          email = $(emailEl).val();
         }
       });
-    };
+      
+      const fields = [
+        {
+          "name": "email",
+          "value": email,
+        }
+      ];
 
-    if (event) event.preventDefault();
-    $(this).html(
-      '<div class="spinner-border spinner-border-sm" role="status"></div>'
-    );
-    subscribe($("form"));
+      debugger;
+      
+      $.ajax({
+        url: "https://api.hsforms.com/submissions/v3/integration/submit/4332244/1300d3e6-6022-4f01-940c-9a746e2b1939",
+        type: 'post',
+        data: JSON.stringify({ fields }),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        dataType: 'json',
+        success: function (data) {
+          $(form).find('label.error').hide();
+          $(form).find('label.success').show();
+        },
+        error: function (data) {
+          $(form).find('label.error').show();
+          $(form).find('label.success').hide();
+        }
+    });
+    }
   });
-};
 
+  $("form.newsletter").on("submit", function(e) {
+    $('form.newsletter').find('label.success').hide();
+    e.preventDefault();
+  });
+
+  // $("form.newsletter button").bind("click", function (event) {
+  //   const subscribe = (form) => {
+  //     // taking the first email because there is a second hidden email input
+  //     const data = form.serialize().split("&")[0];
+  //     $.ajax({
+  //       type: form.attr("method"),
+  //       url: form.attr("action"),
+  //       data,
+  //       cache: false,
+  //       dataType: "json",
+  //       contentType: "application/json; charset=utf-8",
+  //       error: function(xhr, ajaxOptions, thrownError) {
+  //         console.log(xhr.responseText);
+  //       },
+  //       success: function(data) {
+  //         if (data.result != "success") {
+  //           $("#mce-success-response")
+  //             .removeClass("d-block")
+  //             .addClass("d-none");
+  //           $("#mce-error-response")
+  //             .html(data.msg.replace("0 -", ""))
+  //             .removeClass("d-none")
+  //             .addClass("d-block");
+  //           $("form button").html("Subscribe");
+  //         } else {
+  //           $("#mce-error-response")
+  //             .removeClass("d-block")
+  //             .addClass("d-none");
+  //           $("#mce-success-response")
+  //             .html(data.msg)
+  //             .removeClass("d-none")
+  //             .addClass("d-block");
+  //           $("form button").html("Subscribe");
+  //         }
+  //       }
+  //     });
+  //   };
+
+  // if (event) event.preventDefault();
+  // $(this).html(
+  //   '<div class="spinner-border spinner-border-sm" role="status"></div>'
+  // );
+  // subscribe($("form"));
+  // });
+};
 
 const handleMobileMenu = () => {
   const toggleMobileMenu = () => {
@@ -91,12 +147,12 @@ const handleMobileMenu = () => {
     toggleMobileMenu();
   });
 
-  $(".hamburger").click(function () {
+  $(".hamburger").click(function() {
     $(this).toggleClass("is-active");
     $(".site-header").toggleClass("expanded");
   });
 
-  $(window).click((e) => {
+  $(window).click(e => {
     const clickedElement = $(e.target);
     const menuIsClicked =
       clickedElement.hasClass("hamburger") ||
@@ -112,10 +168,14 @@ const handleMobileMenu = () => {
 
 const showSpeakerModal = (speakers, sessions) => {
   const speakerName = decodeURI(window.location.hash.replace("#speaker-", ""));
-  const speakerToShow = speakers.find(speaker => speaker.fullName === speakerName);
+  const speakerToShow = speakers.find(
+    speaker => speaker.fullName === speakerName
+  );
   if (speakerToShow) {
-    $('.custom-modal.is-open').removeClass('is-open');
-    const speakerSessions = sessions.filter(session => session.speakers.includes(speakerToShow.id));
+    $(".custom-modal.is-open").removeClass("is-open");
+    const speakerSessions = sessions.filter(session =>
+      session.speakers.includes(speakerToShow.id)
+    );
     populateSpeakerModal(speakerToShow, speakerSessions, speakers);
     $("#speaker-modal").addClass("is-open");
     $("body").addClass("modal-is-open");
@@ -124,11 +184,15 @@ const showSpeakerModal = (speakers, sessions) => {
 
 const showSessionModal = (sessions, speakers) => {
   const sessionTitle = decodeURI(window.location.hash.replace("#session-", ""));
-  const sessionToShow = sessions.find(session => session.title === sessionTitle);
+  const sessionToShow = sessions.find(
+    session => session.title === sessionTitle
+  );
 
   if (sessionToShow) {
-    $('.custom-modal.is-open').removeClass('is-open');
-    const sessionSpeakers = speakers.filter(speaker => speaker.sessions.includes(Number(sessionToShow.id)));
+    $(".custom-modal.is-open").removeClass("is-open");
+    const sessionSpeakers = speakers.filter(speaker =>
+      speaker.sessions.includes(Number(sessionToShow.id))
+    );
     populateSessionModal(sessionToShow, sessionSpeakers);
     $("#session-modal").addClass("is-open");
     $("body").addClass("modal-is-open");
@@ -143,7 +207,7 @@ const handleModalRequest = (speakers, sessions) => {
     return;
   }
 
-  const modalType = newHash.split('-')[0];
+  const modalType = newHash.split("-")[0];
 
   switch (modalType) {
     case "speaker":
@@ -157,7 +221,7 @@ const handleModalRequest = (speakers, sessions) => {
       $("body").removeClass("modal-is-open");
       break;
   }
-}
+};
 
 const setModalHandlers = (speakers, sessions) => {
   $(".custom-modal-close").click(function() {
@@ -170,13 +234,13 @@ const setModalHandlers = (speakers, sessions) => {
     }
   });
 
-  $('body').on("click", ".opens-modal", function (e) {
+  $("body").on("click", ".opens-modal", function(e) {
     const clickedEl = $(e.target);
     let targetHash;
-    if (clickedEl.hasClass('opens-modal')) {
-      targetHash = clickedEl.data('hash');
-    } else {      
-      targetHash = clickedEl.parents('.opens-modal').data('hash');
+    if (clickedEl.hasClass("opens-modal")) {
+      targetHash = clickedEl.data("hash");
+    } else {
+      targetHash = clickedEl.parents(".opens-modal").data("hash");
     }
     window.location.hash = targetHash;
   });
@@ -247,7 +311,9 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
         coSpeakerNote =
           "<br /><br /><span class='cospeaker-note'> This is a joint session with ";
         coSpeakers.forEach((coSpeakerId, index) => {
-          const coSpeaker = speakers.find(coSpeaker => coSpeaker.id === coSpeakerId);
+          const coSpeaker = speakers.find(
+            coSpeaker => coSpeaker.id === coSpeakerId
+          );
           coSpeakerNote += `<a class='speaker-link' href='#speaker-${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
           if (index < coSpeakers.length - 3) {
             coSpeakerNote += ", ";
@@ -274,19 +340,18 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
   $("#social-links").html(socialLinksHtml);
   $("#bio").html(bio);
   $("#sessions").html(sessionsHtml);
-
 };
 
 const populateSessionModal = (session, speakers) => {
   const { title, description, day, startTime, room, level } = session;
-  
+
   let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white">${level}</div>`;
-  
+
   for (const tag of session.tags) {
     sessionTagsHtml += `<div class="Titillium-Rg tag tag--${tag.color}">${tag.name}</div>`;
   }
 
-  let speakersHtml = '';
+  let speakersHtml = "";
   for (const speaker of speakers) {
     speakersHtml += `
     <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4 mb-4 mb-md-0">
@@ -298,17 +363,17 @@ const populateSessionModal = (session, speakers) => {
         <p class="h6 Titillium-Rg">${speaker.position.short}</p>
       </div>
     </a>
-    `
+    `;
   }
 
-  $('#title').html(title);
-  $('#day').html(`Day ${day}`);
-  $('#date').html(day === 1 ? '6 February 2020' : '7 February 2020');
-  $('#time').html(startTime);
-  $('#room').html(room);
-  $('#tags').html(sessionTagsHtml);
-  $('#description').html(description);
-  $('#speakers').html(speakersHtml);
+  $("#title").html(title);
+  $("#day").html(`Day ${day}`);
+  $("#date").html(day === 1 ? "6 February 2020" : "7 February 2020");
+  $("#time").html(startTime);
+  $("#room").html(room);
+  $("#tags").html(sessionTagsHtml);
+  $("#description").html(description);
+  $("#speakers").html(speakersHtml);
 };
 
 const loadSpeakerCompanyLogo = speaker => {

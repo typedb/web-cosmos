@@ -212,16 +212,17 @@ header {
 						}
 						
 						.title {
-							max-height: 4.5em;
+							max-height: 7.5em;
 							position: relative;
 							padding-bottom: 5px;
 
 							@include sm-up-to {
-								max-height: 3.9em;
+								max-height: 5.5em;
 							}
 						}
 
 						.speaker-name {
+              width: 200px;
 							display: inline-block;
 							float: left;
 						}

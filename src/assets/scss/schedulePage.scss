@@ -91,7 +91,19 @@ header {
 
 		@include sm-up-to {
 			width: 86%;
-		}
+    }
+    
+    .schedule-note {
+      width: 100%;
+      font-size: 13px;
+      color: #BDB5FF;
+      text-align: left;
+      margin-left: 140px !important;
+
+      @include lg-up-to {
+				margin-left: 0 !important;
+			}
+    }
 
     .schedule-content-header {
       padding-left: 140px;

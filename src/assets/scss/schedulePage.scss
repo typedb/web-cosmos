@@ -204,12 +204,9 @@ header {
           }
 
           .details {
-						width: calc(100% - 220px);						
+						width: calc(100% - 100px);						
 						margin-left: 30px;
 
-						@include sm-up-to {
-							width: calc(100% - 225px);
-						}
 						
 						.title {
 							max-height: 7.5em;
@@ -219,20 +216,21 @@ header {
 							@include sm-up-to {
 								max-height: 5.5em;
 							}
-						}
-
-						.speaker-name {
-              width: 200px;
-							display: inline-block;
-							float: left;
-						}
+            }
+            
+            .footer {
+              float: left;
+              text-align: left;
+              display: flex;
+              align-items: center;
+              
+              p {
+                display: inline-block;
+              }
+            }
 					}
 					
 					.room {
-						position: absolute;
-						top: 20px;
-						right: 20px;
-
 						&.color-pink {
 							color: $color-room-great-hall;
 						}

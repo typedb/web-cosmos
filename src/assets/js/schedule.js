@@ -137,9 +137,12 @@ const generateScheduleSession = data => {
         </div>
         <div class="details">
           <p class="title clamped-session-title h6 Titillium-Rg text-left">${title}</p>
-          <p class="speaker-name opens-modal h6 Titillium-Rg text-color-brand text-left" data-hash="#speaker-${fullName}">${fullName}</p>
+          <div class="footer">
+            <p class="speaker-name opens-modal h6 Titillium-Rg text-color-brand text-left" data-hash="#speaker-${fullName}">${fullName}</p>
+            <p class="h6 Titillium-Rg" style="font-size: 13px;">&nbsp;@&nbsp;</p>
+            <p class="h6 Titillium-Rg room color-${roomClassMap[room]}"> ${room}</p>
+          </div>
         </div>
-        <p class="room d-block color-${roomClassMap[room]}">${room}</p>
       </div>
     `;
   });

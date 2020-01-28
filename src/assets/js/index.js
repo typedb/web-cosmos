@@ -265,6 +265,50 @@ const loadPartners = () => {
     {
       image: "6point6.png",
       url: "https://6point6.co.uk/"
+    },
+    {
+      image: "bdsg.png",
+      url: "https://berkeleydatasciencegroup.github.io/"
+    },
+    {
+      image: "capco.png",
+      url: "https://www.capco.com/"
+    },
+    {
+      image: "deloitte.png",
+      url: "https://www2.deloitte.com/uk/en.html"
+    },
+    {
+      image: "federico.png",
+      url: "http://www.unina.it/"
+    },
+    {
+      image: "innovolve.png",
+      url: "https://www.linkedin.com/company/innovolve/about/?viewAsMember=true"
+    },
+    {
+      image: "livingmatrix.png",
+      url: "https://livingmatrix.com/"
+    },
+    {
+      image: "medas.png",
+      url: "https://medas-solutions.it/"
+    },
+    {
+      image: "michigan.png",
+      url: "https://umich.edu/"
+    },
+    {
+      image: "eaglegenomics.png",
+      url: "https://www.eaglegenomics.com/"
+    },
+    {
+      image: "ucsf.png",
+      url: "https://bakarinstitute.ucsf.edu/"
+    },
+    {
+      image: "yooi.png",
+      url: "https://www.yooi.com/"
     }
   ];
 

@@ -78,20 +78,72 @@ const getScheduleData = sessions => {
 const loadSchedule = (data, day) => {
   $(".schedule-content").html("");
   for (const item of data[day]) {
-    $(".schedule-content").append(generateScheduleTime(item));
+    $(".schedule-content").append(generateScheduleTime(item, day));
   }
 };
 
-const generateScheduleTime = data => {
+const generateScheduleTime = (data, day) => {
   let scheduleTimeHtml = "";
 
-  if (data.time === "01:00 pm") {
+  if (data.time === "09:00 am") {
+    scheduleTimeHtml += `
+      <div class="schedule-items d-lg-flex">
+        <p class="schedule-time text-left" style="line-height: 70px">08:30 am</p>
+        <div class="schedule-sessions d-lg-flex">
+          <div class="break">
+            <p class="h4 Titillium-Rg w-100 text-center" style="line-height: 70px">Breakfast and Welcome</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (day === 2 && data.time === "10:45 am") {
+    scheduleTimeHtml += `
+			<div class="schedule-items d-lg-flex">
+				<p class="schedule-time text-left" style="line-height: 35px">03:00 pm</p>
+				<div class="schedule-sessions d-lg-flex">
+					<div class="break">
+					 	<p class="h4 Titillium-Rg w-100 text-center" style="line-height: 35px">Breakfast</p>
+					</div>
+				</div>
+			</div>
+		`;
+  }
+
+  if ((day === 1 && data.time === "01:15 pm") || (day === 2 && data.time === "01:00 pm")) {
     scheduleTimeHtml += `
 			<div class="schedule-items d-lg-flex">
 				<p class="schedule-time text-left">12:00 pm</p>
 				<div class="schedule-sessions d-lg-flex">
 					<div class="break">
 					 	<p class="h4 Titillium-Rg w-100 text-center">Lunch</p>
+					</div>
+				</div>
+			</div>
+		`;
+  }
+
+  if (day === 1 && data.time === "03:15 pm") {
+    scheduleTimeHtml += `
+			<div class="schedule-items d-lg-flex">
+				<p class="schedule-time text-left" style="line-height: 35px">03:00 pm</p>
+				<div class="schedule-sessions d-lg-flex">
+					<div class="break">
+					 	<p class="h4 Titillium-Rg w-100 text-center" style="line-height: 35px">Afternoon Recharge</p>
+					</div>
+				</div>
+			</div>
+		`;
+  }
+
+  if (day === 2 && data.time === "03:45 pm") {
+    scheduleTimeHtml += `
+			<div class="schedule-items d-lg-flex">
+				<p class="schedule-time text-left" style="line-height: 70px">03:15 pm</p>
+				<div class="schedule-sessions d-lg-flex">
+					<div class="break">
+					 	<p class="h4 Titillium-Rg w-100 text-center" style="line-height: 70px">Afternoon Recharge</p>
 					</div>
 				</div>
 			</div>

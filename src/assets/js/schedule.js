@@ -104,7 +104,7 @@ const generateScheduleTime = (data, day) => {
 				<p class="schedule-time text-left" style="line-height: 50px">10:30 pm</p>
 				<div class="schedule-sessions d-lg-flex">
 					<div class="break">
-					 	<p class="h4 Titillium-Rg w-100 text-center" style="line-height: 50px">Cofee and Tea</p>
+					 	<p class="h4 Titillium-Rg w-100 text-center" style="line-height: 50px">Coffee and Tea</p>
 					</div>
 				</div>
 			</div>

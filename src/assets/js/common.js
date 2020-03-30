@@ -10,6 +10,8 @@ $(document).ready(async function() {
       $(".cookie-banner").hide();
     });
   }
+
+  $(".session-video").fitVids();
 });
 
 const handleHeaderOnScroll = () => {
@@ -345,16 +347,16 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
 const populateSessionModal = (session, speakers) => {
   const { title, description, day, startTime, room, level } = session;
 
-  let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white">${level}</div>`;
+  let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white mt-2 px-2 px-md-3">${level}</div>`;
 
   for (const tag of session.tags) {
-    sessionTagsHtml += `<div class="Titillium-Rg tag tag--${tag.color}">${tag.name}</div>`;
+    sessionTagsHtml += `<div class="Titillium-Rg tag tag--${tag.color} mt-2 px-2 px-md-3">${tag.name}</div>`;
   }
 
   let speakersHtml = "";
   for (const speaker of speakers) {
     speakersHtml += `
-    <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4 mb-4 mb-md-0">
+    <a href="#speaker-${speaker.fullName}" class="speaker-container d-flex align-items-center mr-4 mb-2 mb-md-3">
       <div class="speaker-frame">
         <img src="${speaker.profileImg.src}" />
       </div>
@@ -373,7 +375,7 @@ const populateSessionModal = (session, speakers) => {
   $("#room").html(room);
   $("#tags").html(sessionTagsHtml);
   $("#description").html(description);
-  $("#speakers").html(speakersHtml);
+  $(".speakers-container").html(speakersHtml);
 };
 
 const loadSpeakerCompanyLogo = speaker => {

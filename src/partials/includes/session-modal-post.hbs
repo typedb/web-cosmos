@@ -1,0 +1,51 @@
+<div id="session-modal" class="custom-modal session-profile session-profile--post">
+    <div class="stars"></div>
+
+    <div id="session-modal-close" class="custom-modal-close"></div>
+    <div class="custom-modal-content">
+
+        <div class="custom-modal-body custom-modal-body--no-sidebar">
+            <div class="planet-blue"></div>
+
+            <p id="title" class="h2 Titillium-Rg"></p>
+
+            <div class="session-info-and-video mt-4 w-100 flex-column flex-lg-row">
+                <div class="session-info w-lg-50 w-100">
+
+                    <div id="tags" class="d-flex flex-wrap align-items-center">
+                        <div id="difficulty-level" class="Titillium-Rg tag tag--white"></div>
+                    </div>
+                    <div id="time-loation" class="d-flex mt-4 w-100 justify-content-between justify-content-md-start">
+                        <p id="date" class="h5 Titillium-Lt mr-0 mr-md-4 mr-lgc-5"></p>
+                        <p id="time" class="h5 Titillium-Lt mr-0 mr-md-4 mr-lgc-5"></p>
+                        <p id="room" class="h5 Titillium-Lt"></p>
+                    </div>
+                    <div id="speakers" class="speakers-container d-none d-lg-flex flex-column flex-lgc-row mt-4"></div>
+                </div>
+
+                <div class="session-video w-lg-50 w-100 mt-4 mt-lg-0">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d8aI6Gxh53Y" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="speakers" class="speakers-container d-flex d-lg-none flex-column flex-md-row mt-4"></div>
+            <p id="description" class="h5 Titillium-ExLt mt-2"></p>
+        </div>
+    </div>
+    {{> includes/modal-footer }}
+</div>
+
+<style>
+    .session-info-and-video {
+        //max-height: 500px;
+        display: flex;
+    }
+
+    .session-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-right: 40px;
+    }
+</style>

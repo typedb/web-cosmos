@@ -1,6 +1,6 @@
 @import "./modal";
 
-#session-modal {
+.session-profile {
 
   .custom-modal-body { 
     position: relative;
@@ -33,14 +33,7 @@
   }
 
   #title {
-    width: calc(100% - 245px);
-    @include md-up-to {
-      width: 100%;
-    }
-  }
-
-  #day, #time {
-    width: 100px;
+    width: 100%;
   }
 
   #tags {
@@ -71,6 +64,12 @@
         @include border-radius(50%);
         display: block;
       }
+    }
+  }
+
+  &--pre {
+    #day, #time {
+      width: 100px;
     }
   }
 }

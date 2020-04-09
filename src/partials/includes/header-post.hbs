@@ -1,0 +1,59 @@
+<header class="site-header
+               w-100 position-fixed fixed-top fixed-left d-none" role="banner">
+    <div class="site-header-inner
+                container container-wide
+                h-100 d-flex align-items-center justify-content-between">
+        <div class="site-header-logo
+                    d-inline position-relative">
+            <a href="./" class="d-inline-block">
+                <img class="logo-cosmos d-lg-inline-block d-none" src="/img/logos/logo-cosmos-horizontal.svg"
+                    alt="COSMOS" />
+                <img class="logo-cosmos d-inline-block d-lg-none" src="/img/logos/logo-cosmos-icononly.svg" width="47"
+                    height="42" alt="COSMOS" />
+            </a>
+        </div>
+
+        <button class="hamburger hamburger--collapse
+                       float-right d-none" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <nav class="site-header-nav
+                    align-items-center justify-content-center" role="navigation">
+            <ul class="text-center Titillium-Rg
+                       d-flex align-items-center justify-content-between mx-0 my-auto">
+                <a id="menu-item-speakers" class="menu-item" href="./speakers">
+                    <li class="h6">Speakers</li>
+                </a>
+                <a id="menu-item-sessions" class="menu-item" href="./sessions">
+                    <li class="h6">Sessions</li>
+                </a>
+                <a href="./schedule">
+                    <li class="h6">Schedule</li>
+                </a>
+                <a href="{{url-prefix}}#venue" data-scroll-to="venue">
+                    <li class="h6">Venue</li>
+                </a>
+                <a href="{{url-prefix}}#partners" data-scroll-to="partners">
+                    <li class="h6">Partners</li>
+                </a>
+                <li class="action">
+                    <a href="https://www.youtube.com/playlist?list=PLtEF8_xCPklbGuaOANOJHZ8cvbo65LN2I" class="button h5">
+                        Watch Sessions
+                    </a>
+                </li>
+            </ul>
+            <a href="https://www.youtube.com/playlist?list=PLtEF8_xCPklbGuaOANOJHZ8cvbo65LN2I" class="button d-none">
+                Watch Sessions
+            </a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .site-header-nav .button {
+        width: 170px !important;
+    }
+</style>

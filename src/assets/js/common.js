@@ -1,11 +1,11 @@
-$(document).ready(async function() {
-  $(".button.disabled").bind("click", function(event) {
+$(document).ready(async function () {
+  $(".button.disabled").bind("click", function (event) {
     event.preventDefault();
   });
 
   if (localStorage.getItem("user-has-accepted-cookies") == null) {
     $(".cookie-banner").show();
-    $(".cookie-banner .button-close").click(function() {
+    $(".cookie-banner .button-close").click(function () {
       localStorage.setItem("user-has-accepted-cookies", "true");
       $(".cookie-banner").hide();
     });
@@ -15,7 +15,7 @@ $(document).ready(async function() {
 });
 
 const handleHeaderOnScroll = () => {
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     scrollPosition = $(this).scrollTop();
     const introLogo = $(".section-intro-logoType");
     if (introLogo.length) {
@@ -34,56 +34,57 @@ const handleSubscription = () => {
     rules: {
       email: {
         required: true,
-        email: true
-      }
+        email: true,
+      },
     },
 
     messages: {
-      email: "Communication needs a medium."
+      email: "Communication needs a medium.",
     },
 
-    submitHandler: function(form) {
-      console.log('submit');
-      
-      let email = '';
-      $.each($('.email'), function (i, emailEl) {
+    submitHandler: function (form) {
+      console.log("submit");
+
+      let email = "";
+      $.each($(".email"), function (i, emailEl) {
         debugger;
-        if($(emailEl).val().length) {
+        if ($(emailEl).val().length) {
           email = $(emailEl).val();
         }
       });
-      
+
       const fields = [
         {
-          "name": "email",
-          "value": email,
-        }
+          name: "email",
+          value: email,
+        },
       ];
 
       debugger;
-      
+
       $.ajax({
-        url: "https://api.hsforms.com/submissions/v3/integration/submit/4332244/1300d3e6-6022-4f01-940c-9a746e2b1939",
-        type: 'post',
+        url:
+          "https://api.hsforms.com/submissions/v3/integration/submit/4332244/1300d3e6-6022-4f01-940c-9a746e2b1939",
+        type: "post",
         data: JSON.stringify({ fields }),
         headers: {
-            'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        dataType: 'json',
+        dataType: "json",
         success: function (data) {
-          $(form).find('label.error').hide();
-          $(form).find('label.success').show();
+          $(form).find("label.error").hide();
+          $(form).find("label.success").show();
         },
         error: function (data) {
-          $(form).find('label.error').show();
-          $(form).find('label.success').hide();
-        }
-    });
-    }
+          $(form).find("label.error").show();
+          $(form).find("label.success").hide();
+        },
+      });
+    },
   });
 
-  $("form.newsletter").on("submit", function(e) {
-    $('form.newsletter').find('label.success').hide();
+  $("form.newsletter").on("submit", function (e) {
+    $("form.newsletter").find("label.success").hide();
     e.preventDefault();
   });
 
@@ -149,12 +150,12 @@ const handleMobileMenu = () => {
     toggleMobileMenu();
   });
 
-  $(".hamburger").click(function() {
+  $(".hamburger").click(function () {
     $(this).toggleClass("is-active");
     $(".site-header").toggleClass("expanded");
   });
 
-  $(window).click(e => {
+  $(window).click((e) => {
     const clickedElement = $(e.target);
     const menuIsClicked =
       clickedElement.hasClass("hamburger") ||
@@ -171,11 +172,11 @@ const handleMobileMenu = () => {
 const showSpeakerModal = (speakers, sessions) => {
   const speakerName = decodeURI(window.location.hash.replace("#speaker-", ""));
   const speakerToShow = speakers.find(
-    speaker => speaker.fullName === speakerName
+    (speaker) => speaker.fullName === speakerName
   );
   if (speakerToShow) {
     $(".custom-modal.is-open").removeClass("is-open");
-    const speakerSessions = sessions.filter(session =>
+    const speakerSessions = sessions.filter((session) =>
       session.speakers.includes(speakerToShow.id)
     );
     populateSpeakerModal(speakerToShow, speakerSessions, speakers);
@@ -187,12 +188,12 @@ const showSpeakerModal = (speakers, sessions) => {
 const showSessionModal = (sessions, speakers) => {
   const sessionTitle = decodeURI(window.location.hash.replace("#session-", ""));
   const sessionToShow = sessions.find(
-    session => session.title === sessionTitle
+    (session) => session.title === sessionTitle
   );
 
   if (sessionToShow) {
     $(".custom-modal.is-open").removeClass("is-open");
-    const sessionSpeakers = speakers.filter(speaker =>
+    const sessionSpeakers = speakers.filter((speaker) =>
       speaker.sessions.includes(Number(sessionToShow.id))
     );
     populateSessionModal(sessionToShow, sessionSpeakers);
@@ -226,7 +227,7 @@ const handleModalRequest = (speakers, sessions) => {
 };
 
 const setModalHandlers = (speakers, sessions) => {
-  $(".custom-modal-close").click(function() {
+  $(".custom-modal-close").click(function () {
     $(".custom-modal").removeClass("is-open");
     $("body").removeClass("modal-is-open");
     if ($("#page-home #speakers").length) {
@@ -236,7 +237,7 @@ const setModalHandlers = (speakers, sessions) => {
     }
   });
 
-  $("body").on("click", ".opens-modal", function(e) {
+  $("body").on("click", ".opens-modal", function (e) {
     const clickedEl = $(e.target);
     let targetHash;
     if (clickedEl.hasClass("opens-modal")) {
@@ -254,7 +255,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
     bio,
     profileImg,
     company: { url: companyUrl, logo: companyLogoFileName },
-    position: { long: positionLong }
+    position: { long: positionLong },
   } = speaker;
 
   let socialLinksHtml = "";
@@ -295,7 +296,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
   }
 
   const sessionsHtml = sessions
-    .map(session => {
+    .map((session) => {
       let { title, description } = session;
 
       let sessionHtml = `
@@ -305,7 +306,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
             </div>
         `;
       const coSpeakers = session.speakers.filter(
-        coSpeakerId => speaker.id !== coSpeakerId
+        (coSpeakerId) => speaker.id !== coSpeakerId
       );
 
       let coSpeakerNote = "";
@@ -314,7 +315,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
           "<br /><br /><span class='cospeaker-note'> This is a joint session with ";
         coSpeakers.forEach((coSpeakerId, index) => {
           const coSpeaker = speakers.find(
-            coSpeaker => coSpeaker.id === coSpeakerId
+            (coSpeaker) => coSpeaker.id === coSpeakerId
           );
           coSpeakerNote += `<a class='speaker-link' href='#speaker-${coSpeaker.fullName}' data-speaker-id=${coSpeaker.id}>${coSpeaker.fullName}</a>`;
           if (index < coSpeakers.length - 3) {
@@ -345,7 +346,7 @@ const populateSpeakerModal = (speaker, sessions, speakers) => {
 };
 
 const populateSessionModal = (session, speakers) => {
-  const { title, description, day, startTime, room, level } = session;
+  const { title, description, day, startTime, room, level, videoId } = session;
 
   let sessionTagsHtml = `<div class="Titillium-Rg tag tag--white mt-2 px-2 px-md-3">${level}</div>`;
 
@@ -368,6 +369,20 @@ const populateSessionModal = (session, speakers) => {
     `;
   }
 
+  let videoHtml = "";
+  if (videoId) {
+    videoHtml = `
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0"
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+      </iframe>
+    `;
+  } else {
+    videoHtml = `
+      <div class="session-video-placeholder"><p class="h3 Titillium-ExLt">Video coming soon.</p></div>
+    `
+  }
+
   $("#title").html(title);
   $("#day").html(`Day ${day}`);
   $("#date").html(day === 1 ? "6 February 2020" : "7 February 2020");
@@ -375,13 +390,14 @@ const populateSessionModal = (session, speakers) => {
   $("#room").html(room);
   $("#tags").html(sessionTagsHtml);
   $("#description").html(description);
+  $("#video").html(videoHtml);
   $(".speakers-container").html(speakersHtml);
 };
 
-const loadSpeakerCompanyLogo = speaker => {
+const loadSpeakerCompanyLogo = (speaker) => {
   const {
     id,
-    company: { logo: companyLogoFileName }
+    company: { logo: companyLogoFileName },
   } = speaker;
 
   const TARGET_WIDTH = 150;
@@ -390,7 +406,7 @@ const loadSpeakerCompanyLogo = speaker => {
   const companyLogo = new Image();
   companyLogo.src = "/img/companies/" + companyLogoFileName;
 
-  const companyLogoPoll = setInterval(function() {
+  const companyLogoPoll = setInterval(function () {
     if (companyLogo.naturalWidth) {
       const originalWidth = companyLogo.naturalWidth;
       const originalHeight = companyLogo.naturalHeight;
@@ -417,13 +433,13 @@ const loadSpeakerCompanyLogo = speaker => {
   }, 10);
 };
 
-const generateSpeakerHtml = speaker => {
+const generateSpeakerHtml = (speaker) => {
   const {
     id,
     fullName,
     profileImg,
     position: { short: shortPosition },
-    company: { url: companyUrl }
+    company: { url: companyUrl },
   } = speaker;
 
   return `

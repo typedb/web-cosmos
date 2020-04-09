@@ -115,11 +115,14 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       roomId,
       speakers: speakerIds,
       categoryItems,
-      questionAnswers
+      questionAnswers,
     } = session;
 
     const keynoteQId = 17054;
     const isKeynoteAnswer = questionAnswers.find(qa => qa.questionId === keynoteQId);
+
+    const videoQId = 21785;
+    const videoId = questionAnswers.find(qa => qa.questionId === videoQId);
     
     const isKeynote = isKeynoteAnswer ? true : false;
 
@@ -170,7 +173,8 @@ const formatSessions = (sessions, categories, tags, speakers) => {
       day,
       startTime,
       room,
-      isKeynote
+      isKeynote,
+      videoId
     };
   });
 };

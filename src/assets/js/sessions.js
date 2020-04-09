@@ -1,6 +1,5 @@
 $(document).ready(async function() {
   const { tags, sessions, speakers } = await getData();
-  console.log(sessions);
   loadTags(tags);
   setTagsHandlers();
 

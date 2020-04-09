@@ -122,7 +122,8 @@ const formatSessions = (sessions, categories, tags, speakers) => {
     const isKeynoteAnswer = questionAnswers.find(qa => qa.questionId === keynoteQId);
 
     const videoQId = 21785;
-    const videoId = questionAnswers.find(qa => qa.questionId === videoQId);
+    const videoIdAQA = questionAnswers.find(qa => qa.questionId === videoQId);
+    const videoId = videoIdAQA ? videoIdAQA.answerValue : undefined
     
     const isKeynote = isKeynoteAnswer ? true : false;
 

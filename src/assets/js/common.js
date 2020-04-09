@@ -10,8 +10,6 @@ $(document).ready(async function () {
       $(".cookie-banner").hide();
     });
   }
-
-  $(".session-video").fitVids();
 });
 
 const handleHeaderOnScroll = () => {
@@ -43,8 +41,6 @@ const handleSubscription = () => {
     },
 
     submitHandler: function (form) {
-      console.log("submit");
-
       let email = "";
       $.each($(".email"), function (i, emailEl) {
         debugger;
@@ -392,6 +388,8 @@ const populateSessionModal = (session, speakers) => {
   $("#description").html(description);
   $("#video").html(videoHtml);
   $(".speakers-container").html(speakersHtml);
+
+  $(".session-video").fitVids();
 };
 
 const loadSpeakerCompanyLogo = (speaker) => {

@@ -330,6 +330,11 @@ button {
     border: 1px solid $color-brand-primary;
     color: $color-brand-primary !important;
     font-weight: 400 !important;
+
+    &:hover {
+      background: $color-brand-primary !important;
+      color: $color-text-on-brand !important;
+    }
   }
 
   &.disabled {
